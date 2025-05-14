@@ -1,0 +1,13 @@
+torch 
+torchvision 
+torchaudio
+numpy
+matplotlib
+pandas
+tqdm
+wandb
+keras
+transformers
+jupyterlab
+pytest
+black
