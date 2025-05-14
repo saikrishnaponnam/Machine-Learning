@@ -1,5 +1,6 @@
 from typing import Optional, List, overload
 
+import torch
 import torch.nn as nn
 
 
@@ -16,13 +17,13 @@ class Sequential(nn.Module):
         super().__init__()
         self.layers = layers if layers is not None else []
 
-    def add(self, layer):
+    def add(self, layer: nn.Module):
         """
         Add a layer to the model.
         """
         self.layers.append(layer)
 
-    def forward(self, x):
+    def forward(self, x: torch.Tensor):
         """
         Perform a forward pass through the model.
         """
@@ -30,7 +31,7 @@ class Sequential(nn.Module):
             x = layer.forward(x)
         return x
 
-    def backward(self, d_out):
+    def backward(self, d_out: torch.Tensor):
         """
         Perform a backward pass through the model.
         """
