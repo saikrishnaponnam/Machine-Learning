@@ -1,13 +1,14 @@
 import torch
-import torch.nn as nn
 
 from src.init import kaiming
+from src.layers.base_layer import BaseLayer
 
 
-class Linear(nn.Module):
+class Linear(BaseLayer):
 
-    def __init__(self, in_features, out_features, bias=True):
+    def __init__(self, in_features, out_features):
         super().__init__()
+        self.x = None
         self.in_features = in_features
         self.out_features = out_features
 
@@ -28,22 +29,20 @@ class Linear(nn.Module):
         """
         Inputs:
             - x: A tensor containing input data, of shape (N, in_features)
-
         Returns:
             output tensor of shape (N, out_features)
         """
+        self.x = x
         return x.matmul(self.weights) + self.bias
 
-    def backward(self, x: torch.Tensor, d_out: torch.Tensor):
+    def backward(self, d_out: torch.Tensor):
         """
         Inputs:
             - d_out: Upstream derivative tensor, of shape (N, out_features)
         Returns:
-            - dw: Gradients w.r.t W, shape (in_features, out_features)
-            - db: Gradients w.r.t b, shape (out_features)
             - dx: Gradients w.r.t x, shape (N, in_features)
         """
-        self.dW = x.T.matmul(d_out)
+        self.dW = self.x.T.matmul(d_out)
         self.db = d_out.sum(dim=0)
         dx = d_out.mm(self.weights.T)
 
