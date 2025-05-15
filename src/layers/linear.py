@@ -42,8 +42,8 @@ class Linear(BaseLayer):
         Returns:
             - dx: Gradients w.r.t x, shape (N, in_features)
         """
-        self.dW = self.x.T.matmul(d_out)
-        self.db = d_out.sum(dim=0)
-        dx = d_out.mm(self.weights.T)
+        self.dW.copy_(self.x.T.matmul(d_out))
+        self.db.copy_(d_out.sum(dim=0))
+        dx = d_out.matmul(self.weights.T)
 
         return dx

@@ -37,3 +37,12 @@ class Sequential(nn.Module):
         """
         for layer in reversed(self.layers):
             d_out = layer.backward(d_out)
+
+    def get_params(self):
+        """
+        Get parameters and gradients of all layers.
+        """
+        params = []
+        for layer in self.layers:
+            params += layer.get_params()
+        return params

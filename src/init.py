@@ -9,11 +9,4 @@ def kaiming(d_in: int, d_out: int, nonlinearity="relu"):
 
     # Linear Layer
     std = gain / math.sqrt(d_in)
-    with torch.no_grad():
-        return torch.normal(0, std, size=(d_in, d_out))
-
-# def xavier_(d_in, d_out):
-#     """ """
-#
-#     with torch.no_grad():
-#         return torch.normal(0, math.sqrt(1 / d), size=(n, d))
+    return torch.normal(0, std, size=(d_in, d_out))

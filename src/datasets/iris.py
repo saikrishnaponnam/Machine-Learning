@@ -15,8 +15,10 @@ def load_iris_data(batch_size=32) -> (DataLoader, DataLoader):
     X_train = scaler.fit_transform(X_train)
     X_test = scaler.transform(X_test)
 
-    train_dataset = TensorDataset(torch.Tensor(X_train), torch.Tensor(y_train))
-    test_dataset = TensorDataset(torch.Tensor(X_test), torch.Tensor(y_test))
+    train_dataset = TensorDataset(
+        torch.Tensor(X_train), torch.Tensor(y_train).to(dtype=torch.int32)
+    )
+    test_dataset = TensorDataset(torch.Tensor(X_test), torch.Tensor(y_test).to(dtype=torch.int32))
 
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)

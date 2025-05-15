@@ -1,3 +1,6 @@
+import torch
+
+
 class SGD:
 
     def __init__(
@@ -6,7 +9,6 @@ class SGD:
         """
         Initialize the SGD optimizer.
         """
-        super().__init__(parameters)
         self.dampening = dampening
         self.momentum = momentum
         self.weight_decay = weight_decay
@@ -18,7 +20,10 @@ class SGD:
         """
         Perform a single optimization step.
         """
-        for param, d_param in self.parameters():
-            param.data -= d_param * self.lr
+        param: torch.Tensor
+        for param, d_param in self.parameters:
+            param -= d_param * self.lr
 
-    # def zero_grad(self, set_to_none: bool = True) -> None:
+    # def zero_grad(self) -> None:
+    #     for _, d_param in self.parameters:
+    #         d_param.zero_()
