@@ -1,0 +1,10 @@
+site_name: Machine Learning Notes
+site_url: https://saikrishnaponnam.github.io/Machine-Learning/
+repo_url: https://github.com/saikrishnaponnam/Machine-Learning.git
+remote_branch: gh-pages
+theme:
+  name: material
+
+
+
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
