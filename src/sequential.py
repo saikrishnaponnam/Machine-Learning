@@ -1,4 +1,4 @@
-from typing import Optional, List, overload
+from typing import List, overload, Optional
 
 import torch
 import torch.nn as nn
