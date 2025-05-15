@@ -34,6 +34,9 @@ class Trainer:
             best_acc = float("-inf")
             patience_counter = 0
 
+        print("Training Size: ", len(self.train_loader.dataset))
+        print("Training started...")
+
         for epoch in range(epochs):
             for batch_idx, (data, target) in enumerate(self.train_loader):
                 # Forward pass

@@ -1,6 +1,6 @@
 import torch
 
-from src.datasets.iris import load_iris_data
+from src.datasets.iris import IrisDataset
 from src.layers.linear import Linear
 from src.loss.loss import CrossEntropyLoss
 from src.models.trainer import Trainer
@@ -9,7 +9,7 @@ from src.sequential import Sequential
 
 if __name__ == "__main__":
     torch.manual_seed(0)
-    train_loader, test_loader = load_iris_data()
+    train_loader, test_loader = IrisDataset().train_loader(), IrisDataset().test_loader()
 
     model = Sequential([Linear(4, 3)])
 
