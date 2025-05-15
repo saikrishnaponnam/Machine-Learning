@@ -3,9 +3,7 @@ import torch
 
 class SGD:
 
-    def __init__(
-            self, parameters, lr=1e-3, momentum=0.0, dampening=0.0, weight_decay=0.0, nesterov=False
-    ):
+    def __init__(self, parameters, lr=1e-3, momentum=0.0, dampening=0.0, weight_decay=0.0, nesterov=False):
         """
         Initialize the SGD optimizer.
         """

@@ -10,8 +10,7 @@ class Sequential(nn.Module):
     """
 
     @overload
-    def __init__(self) -> None:
-        ...
+    def __init__(self) -> None: ...
 
     def __init__(self, layers: Optional[List[nn.Module]] = None):
         super().__init__()

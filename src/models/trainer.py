@@ -3,9 +3,7 @@ from src.utils import calculate_accuracy
 
 class Trainer:
 
-    def __init__(
-            self, model, optimizer, loss_fn, train_loader, test_loader=None, early_stopping=False
-    ):
+    def __init__(self, model, optimizer, loss_fn, train_loader, test_loader=None, early_stopping=False):
         """
         Initialize the Trainer.
 
