@@ -5,8 +5,6 @@ from src.layers.base_layer import BaseLayer
 
 class Tanh(BaseLayer):
 
-
-
     def __init__(self):
         super().__init__()
 
