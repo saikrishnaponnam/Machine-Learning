@@ -1,6 +1,6 @@
 import torch
 
-from src.datasets.mnist import MNISTDataset
+from src.datasets import MNISTDataset
 from src.layers.flatten import Flatten
 from src.layers.linear import Linear
 from src.layers.relu import ReLU
@@ -14,7 +14,16 @@ if __name__ == "__main__":
     torch.manual_seed(0)
     train_loader, test_loader = MNISTDataset().train_loader(), MNISTDataset().test_loader()
 
-    model = Sequential([Flatten(), Linear(28 * 28, 256), ReLU(), Linear(256, 128), ReLU(), Linear(128, 10)])
+    model = Sequential(
+        [
+            Flatten(),
+            Linear(28 * 28, 256),
+            ReLU(),
+            Linear(256, 128),
+            ReLU(),
+            Linear(128, 10),
+        ]
+    )
 
     criterion = CrossEntropyLoss()
     optimizer = SGD(model.get_params(), lr=0.01)

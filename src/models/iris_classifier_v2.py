@@ -1,6 +1,6 @@
 import torch
 
-from src.datasets.iris import IrisDataset
+from src.datasets import IrisDataset
 from src.layers.linear import Linear
 from src.layers.relu import ReLU
 from src.loss.loss import CrossEntropyLoss

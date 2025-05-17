@@ -4,7 +4,43 @@ repo_url: https://github.com/saikrishnaponnam/Machine-Learning.git
 remote_branch: gh-pages
 theme:
   name: material
+  features:
+    - content.code.copy
 
+
+markdown_extensions:
+  - tables
+  # Images
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+  # Code blocks
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  # Math
+  - pymdownx.arithmatex:
+      generic: true
+  # Icons
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+
+extra_javascript:
+  # Math
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  # Math
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  - stylesheets/extra.css
 
 
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
