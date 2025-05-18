@@ -45,6 +45,10 @@
       
     
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -242,12 +246,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kaiming/" class="md-nav__link">
+      <a href="../../Initializers/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Kaiming Initializer
+    Weight Initializers
     
   </span>
   
@@ -358,6 +362,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Linear Algebra
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -369,6 +386,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Operations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Transformations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-spaces-and-subspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Spaces and Subspaces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eigenvalues and
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-factorizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Factorizations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#norms-and-distance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Norms and Distance Metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projections-and-orthogonality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projections and Orthogonality
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -387,7 +495,7 @@
   
   
   <span class="md-ellipsis">
-    Probability Basics
+    Probability
     
   </span>
   
@@ -425,6 +533,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Operations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-transformations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Transformations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-spaces-and-subspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector Spaces and Subspaces
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eigenvalues-and" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eigenvalues and
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix-factorizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrix Factorizations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#norms-and-distance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Norms and Distance Metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projections-and-orthogonality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projections and Orthogonality
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -443,6 +631,39 @@
 
 
 <h1 id="linear-algebra">Linear Algebra</h1>
+<h2 id="notations">Notations</h2>
+<p>Scalar <span class="arithmatex">\(x \in \mathbb{R}\)</span><br />
+Vector $ \mathbf{x} \in \mathbb{R}^n$<br />
+Matrix $ \mathbf{X} \in \mathbb{R}^{n \times m} $</p>
+<p>We will use <span class="arithmatex">\(\mathbf{X}\)</span> to denote input matrix that contains training samples and features.</p>
+<h2 id="matrix-operations">Matrix Operations</h2>
+<!-- Properties -->
+
+<h2 id="linear-transformations">Linear Transformations</h2>
+<!--  how matrices transform vector spaces.
+Geometric interpretation: Rotation, scaling, shearing, projection. -->
+
+<h2 id="vector-spaces-and-subspaces">Vector Spaces and Subspaces</h2>
+<!-- Span, basis, dimension, null space, column space, rank.
+Application: Understanding solution spaces of linear systems; identifying independent features.
+-->
+
+<h2 id="eigenvalues-and">Eigenvalues and</h2>
+<!-- Diagonalization
+Spectral decomposition -->
+
+<h2 id="matrix-factorizations">Matrix Factorizations</h2>
+<!-- LU decomposition 
+QR Decomposition
+Singular Value Decomposition (SVD) -->
+
+<h2 id="norms-and-distance-metrics">Norms and Distance Metrics</h2>
+<!--  Frobenius norms -->
+
+<h2 id="projections-and-orthogonality">Projections and Orthogonality</h2>
+<!--
+Orthogonal vectors and projections onto subspaces
+Gram-Schmidt process -->
 
 
 
@@ -491,10 +712,16 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
     
   </body>

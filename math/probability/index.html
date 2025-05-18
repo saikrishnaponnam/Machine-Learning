@@ -20,7 +20,7 @@
     
     
       
-        <title>Probability Basics - Machine Learning Notes</title>
+        <title>Probability - Machine Learning Notes</title>
       
     
     
@@ -43,6 +43,10 @@
       
     
     
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -62,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#probability-basics" class="md-skip">
+        <a href="#probability" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Probability Basics
+              Probability
             
           </span>
         </div>
@@ -240,12 +244,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kaiming/" class="md-nav__link">
+      <a href="../../Initializers/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Kaiming Initializer
+    Weight Initializers
     
   </span>
   
@@ -384,7 +388,7 @@
   
   
   <span class="md-ellipsis">
-    Probability Basics
+    Probability
     
   </span>
   
@@ -397,7 +401,7 @@
   
   
   <span class="md-ellipsis">
-    Probability Basics
+    Probability
     
   </span>
   
@@ -434,6 +438,21 @@
       Continuous distributions
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Continuous distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#central-limit-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Central Limit Theorem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -495,6 +514,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Continuous distributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#central-limit-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Central Limit Theorem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -516,9 +550,114 @@
   
 
 
-<h1 id="probability-basics">Probability Basics</h1>
+<h1 id="probability">Probability</h1>
+<div class="arithmatex">\[ Var(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] $$
+$$ Var(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 \]</div>
+<p>If X &amp; Y are independent random variables, then:</p>
+<div class="arithmatex">\[
+Var(X + Y) = Var(X) + Var(Y) \\
+Var(XY) = Var(X)Var(Y) + E[X]^2Var(Y) + E[Y]^2Var(X)
+\]</div>
+<!-- 
+1. Fundamentals of Probability:
+Probability Spaces (Sample Space, Events, Probability Measure)
+
+Axioms of Probability
+
+Conditional Probability and Independence
+
+Law of Total Probability and Bayes' Theorem
+
+2. Random Variables and Distributions:
+Discrete and Continuous Random Variables
+
+Probability Mass Function (PMF), Probability Density Function (PDF), and Cumulative Distribution Function (CDF)
+
+Joint, Marginal, and Conditional Distributions
+
+Expectation, Variance, and Covariance
+
+Moment Generating Functions and Characteristic Functions
+
+3. Common Distributions:
+Bernoulli, Binomial, and Multinomial Distributions
+
+Uniform Distribution (Discrete and Continuous)
+
+Poisson Distribution
+
+Exponential and Geometric Distributions
+
+Gaussian (Normal) Distribution
+
+Beta and Gamma Distributions
+
+Chi-Square Distribution
+
+Student’s t-Distribution
+
+4. Transformations and Sampling:
+Change of Variables
+
+Sampling Distributions
+
+Central Limit Theorem (CLT)
+
+Law of Large Numbers (LLN)
+
+5. Inference and Estimation:
+Maximum Likelihood Estimation (MLE)
+
+Bayesian Inference
+
+MAP Estimation
+
+Confidence Intervals and Hypothesis Testing
+
+Bootstrapping and Resampling Techniques
+
+6. Markov Chains and Stochastic Processes:
+Markov Chains and Transition Matrices
+
+Stationary Distributions
+
+Hidden Markov Models (HMMs)
+
+Martingales
+
+7. Information Theory:
+Entropy, Cross-Entropy, and KL Divergence
+
+Mutual Information
+
+Jensen’s Inequality and Gibbs’ Inequality
+
+8. Probabilistic Graphical Models (PGMs):
+Bayesian Networks
+
+Markov Random Fields
+
+Conditional Independence
+
+Inference in PGMs (e.g., Belief Propagation, Viterbi Algorithm)
+
+9. Advanced Topics in Probability:
+Monte Carlo Methods and Importance Sampling
+
+Variational Inference
+
+Markov Chain Monte Carlo (MCMC) Methods
+
+Gaussian Processes
+
+Stochastic Gradient Descent (SGD) and Stochastic Processes
+
+-->
+
 <h2 id="discrete-distributions">Discrete distributions</h2>
 <h2 id="continuous-distributions">Continuous distributions</h2>
+<h3 id="central-limit-theorem">Central Limit Theorem</h3>
+<p>Given a sufficiently large sample size, the sampling distribution of the sample mean will be approximately normally distributed, regardless of the shape of the population distribution, provided the population has a finite mean and variance.</p>
 
 
 
@@ -567,10 +706,16 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
       
     
   </body>
