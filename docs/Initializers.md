@@ -43,7 +43,7 @@ If weights are not initialized properly:
 - Too small: Activations and gradients shrink ⇒ vanishing gradients 
 - Too large: Activations and gradients blow up ⇒ exploding gradients  
 
-![img_1.png](random_init.png)
+![img_1.png](images/random_init.png)
 
 Xavier initialization solves this by scaling weights based on the number of input and output units in the layer.
 It assumes the activation functions are linear, sigmoid, or tanh.  
@@ -66,7 +66,7 @@ Assume weights $w_i$ and $x_i$ are independent and identically distributed (i.i.
 We want to keep the variance of the activations and gradients constant across layers. So:
 $$  \text{Var}(a^l) \approx  \text{Var}(a^{l+1}) $$
 $$ \text{Var}(\delta^{l}) \approx \text{Var}(\delta^{l+1}) $$
-Tanh is linear around zero => tanh(z) = z when z is small.
+Tanh is linear around origin => $tanh(z) \approx z$ when z is small.
 
 $$\begin{align*}
  Var(a^{l+1}) &= Var(z^{l+1}) \\
@@ -92,7 +92,7 @@ In such cases, Xavier initialization underestimates the necessary variance.
 
 Kaiming initialization is designed specifically for ReLU-like activations.
 
-![img.png](xavier_relu.png)
+![img.png](images/xavier_relu.png)
 
 
 $$ W \sim \mathcal{N}(0, \frac{2}{n_{in}}) $$
@@ -121,7 +121,6 @@ $$ \begin{align*}
 \end{align*}$$
 
 $$ Var(W) = \frac{2}{n_{in}} $$
-
 Empirically, the backward gradients will also behave reasonably as long as the forward activations are well-scaled. So unlike xavier we only try to maintain variance of activations.
 
 <!--## Orthogonal initialization -->
