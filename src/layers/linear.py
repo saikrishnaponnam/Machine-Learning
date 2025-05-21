@@ -47,3 +47,6 @@ class Linear(BaseLayer):
         dx = d_out.matmul(self.weights.T)
 
         return dx
+
+    def __repr__(self):
+        return f"Linear(in_features={self.in_features}, out_features={self.out_features})"

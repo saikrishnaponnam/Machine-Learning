@@ -18,3 +18,6 @@ class Tanh(BaseLayer):
 
     def get_params(self):
         return []
+
+    def __repr__(self):
+        return "Tanh()"

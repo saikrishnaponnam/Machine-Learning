@@ -23,3 +23,6 @@ class ReLU(BaseLayer):
 
     def get_params(self):
         return []
+
+    def __repr__(self):
+        return "ReLU()"

@@ -25,3 +25,6 @@ class Flatten(BaseLayer):
 
     def get_params(self):
         return []
+
+    def __repr__(self):
+        return "Flatten()"

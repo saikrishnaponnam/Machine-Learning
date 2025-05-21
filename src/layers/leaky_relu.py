@@ -18,3 +18,6 @@ class LeakyReLU(BaseLayer):
 
     def get_params(self):
         return []
+
+    def __repr__(self):
+        return f"LeakyReLU(slope={self.slope})"

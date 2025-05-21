@@ -45,3 +45,9 @@ class Sequential(nn.Module):
         for layer in self.layers:
             params += layer.get_params()
         return params
+
+    def summary(self):
+        print("Model Summary:")
+        for i, layer in enumerate(self.layers):
+            # params = layer.get_params()
+            print(f"({i}): {layer}")
