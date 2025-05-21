@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/optimizer/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/convolution/">
       
       
-        <link rel="prev" href="../convolution/">
+        <link rel="prev" href="../batch_norm/">
       
       
-        <link rel="next" href="../math/calculus/">
+        <link rel="next" href="../optimizer/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Optimizers - Machine Learning Notes</title>
+        <title>Convolution - Machine Learning Notes</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#optimizers" class="md-skip">
+        <a href="#convolution" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Optimizers
+              Convolution
             
           </span>
         </div>
@@ -295,28 +295,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../convolution/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Convolution
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -334,7 +312,7 @@
   
   
   <span class="md-ellipsis">
-    Optimizers
+    Convolution
     
   </span>
   
@@ -347,7 +325,7 @@
   
   
   <span class="md-ellipsis">
-    Optimizers
+    Convolution
     
   </span>
   
@@ -370,36 +348,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sgd" class="md-nav__link">
+  <a href="#forward-pass" class="md-nav__link">
     <span class="md-ellipsis">
-      SGD
+      Forward pass
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sgd-with-momentum" class="md-nav__link">
+  <a href="#backward-pass" class="md-nav__link">
     <span class="md-ellipsis">
-      SGD with momentum
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rmsprop" class="md-nav__link">
-    <span class="md-ellipsis">
-      RMSProp
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adam" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adam
+      Backward pass
     </span>
   </a>
   
@@ -409,6 +369,28 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimizers
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -554,36 +536,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sgd" class="md-nav__link">
+  <a href="#forward-pass" class="md-nav__link">
     <span class="md-ellipsis">
-      SGD
+      Forward pass
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sgd-with-momentum" class="md-nav__link">
+  <a href="#backward-pass" class="md-nav__link">
     <span class="md-ellipsis">
-      SGD with momentum
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rmsprop" class="md-nav__link">
-    <span class="md-ellipsis">
-      RMSProp
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adam" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adam
+      Backward pass
     </span>
   </a>
   
@@ -608,11 +572,42 @@
   
 
 
-<h1 id="optimizers">Optimizers</h1>
-<h2 id="sgd">SGD</h2>
-<h2 id="sgd-with-momentum">SGD with momentum</h2>
-<h2 id="rmsprop">RMSProp</h2>
-<h2 id="adam">Adam</h2>
+<h1 id="convolution">Convolution</h1>
+<p>Input: <span class="arithmatex">\(\mathbf{X} \in \mathbb{R}^{C_{in} \times H_{in} \times W_{in} }\)</span><br />
+Kernel: <span class="arithmatex">\(W \in \mathbb{R}^{C_{out} \times C_{in} \times K_H \times K_W}\)</span><br />
+Output: <span class="arithmatex">\(\mathbf{Y} \in \mathbb{R}^{C_{out} \times H_{out} \times W_{out}}\)</span><br />
+<span class="arithmatex">\(\delta = \frac{\partial L}{\partial Y} \in \mathbb{R}^{C_{out} \times H_{out} \times W_{out}}\)</span></p>
+<p><span class="arithmatex">\(H_{out} = \frac{H_{in} + 2P - K}{stride} + 1,~ W_{out} = \frac{W_{in} + 2P - K}{stride} + 1\)</span></p>
+<h2 id="forward-pass">Forward pass</h2>
+<p>stride = 1, padding = 0</p>
+<div class="arithmatex">\[Y_{c,i,j} = \sum_{k=0}^{C_{in}-1} \sum_{m=0}^{K_H-1} \sum_{n=0}^{K_W-1} W_{c,k,m,n}.X_{k, i+m, j+n} + b_c\]</div>
+<p>Vectorized form:</p>
+<div class="arithmatex">\[\tilde{W} \in \mathbb{R}^{C_{out} \times (C_{in}.K_H.K_W)} \\
+\text{Unfold Input: }\tilde{X} \in \mathbb{R}^{(C_{in}.K_H.K_W) \times (H_{out}.W_{out})} \\
+Y = \tilde{W} \cdot \tilde{X} + b \\
+\]</div>
+<h2 id="backward-pass">Backward pass</h2>
+<p><strong>Gradients w.r.t Weights:</strong></p>
+<div class="arithmatex">\[\frac{\partial L}{\partial W_{c,k,m,n}} = \sum_{i,j} \frac{\partial L}{\partial Y_{c,i,j}} \frac{\partial Y_{c,i,j}}{\partial W_{c,k,m,n}} \\
+\frac{\partial Y_{c,i,j}}{\partial W_{c,k,m,n}} = X_{k,i+m,j+n} \\
+\frac{\partial L}{\partial W_{c,k,m,n}} = \sum_{i,j} \delta_{c,i,j} X_{k,i+m,j+n}\]</div>
+<div class="arithmatex">\[ \frac{\partial L}{\partial \tilde{W}} = \delta \tilde{X}^T \]</div>
+<p><strong>Gradients w.r.t bias:</strong></p>
+<div class="arithmatex">\[
+\frac{\partial L}{\partial b_c} = \sum_{i,j} \frac{\partial L}{\partial Y_{c,i,j}} \frac{\partial Y_{c,i,j}}{\partial b_c} \\
+\frac{\partial Y_{c,i,j}}{\partial b_c} = 1 \\
+\frac{\partial L}{\partial b_c} = \sum_{i,j} \delta_{c,i,j}
+\]</div>
+<p><strong>Gradients w.r.t input:</strong></p>
+<p>$$\frac{\partial L}{\partial X_{k,p,q}} = \sum_{c=0}^{C_{out} - 1} \sum_{i=0}^{H_{out} - 1} \sum_{j=0}^{W_{out} - 1} \frac{\partial L}{\partial Y_{c,i,j}} \frac{\partial Y_{c,i,j}}{\partial X_{k,p,q}} $$
+<span class="arithmatex">\(Y_{c,i,j}\)</span> depends on <span class="arithmatex">\(X_{k,p,q}\)</span> iff: <span class="arithmatex">\(p=i+m,~ q=j+n\)</span> </p>
+<div class="arithmatex">\[\frac{\partial Y_{c,i,j}}{\partial X_{k,p,q}} = \begin{cases}
+W_{c,k,p-i,q-j} &amp; \text{if } 0 \le p-i \lt K_H \text{ and } 0 \le q-j \lt K_W \\ 0 &amp; \text{otherwise}
+\end{cases} \\
+\frac{\partial L}{\partial X_{k,p,q}} = \sum_{c=0}^{C_{out} - 1} \sum_{i=0}^{H_{out} - 1} \sum_{j=0}^{W_{out} - 1} \delta_{c,i,j} W_{c,k,p-i,q-j}\]</div>
+<p>This is equivalent to a full convolution of the gradient <span class="arithmatex">\(\delta\)</span> with the flipped kernel.
+\<span class="arithmatex">\(flip(W_{c,k,m,n}) = W_{c,k,K_H-1-m, K_W-1-n}\)</span></p>
+<div class="arithmatex">\[ \frac{\partial L}{\partial \tilde{X}} = \tilde{W}^T . \delta \]</div>
 
 
 

@@ -14,7 +14,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../optimizer/">
+        <link rel="next" href="../batch_norm/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -27,6 +27,9 @@
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -59,7 +62,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -111,8 +119,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -364,6 +372,50 @@
   
   
     <li class="md-nav__item">
+      <a href="../batch_norm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch Norm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../convolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Convolution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../optimizer/" class="md-nav__link">
         
   
@@ -394,10 +446,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -410,8 +462,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Math
           </label>
@@ -654,7 +706,7 @@ If weights are not initialized properly: </p>
 <li>Too small: Activations and gradients shrink ⇒ vanishing gradients </li>
 <li>Too large: Activations and gradients blow up ⇒ exploding gradients  </li>
 </ul>
-<p><img alt="img_1.png" src="../img_1.png" /></p>
+<p><img alt="img_1.png" src="../images/random_init.png" /></p>
 <p>Xavier initialization solves this by scaling weights based on the number of input and output units in the layer.
 It assumes the activation functions are linear, sigmoid, or tanh.<br />
 Let:</p>
@@ -668,7 +720,7 @@ Assume weights <span class="arithmatex">\(w_i\)</span> and <span class="arithmat
 <p>We want to keep the variance of the activations and gradients constant across layers. So:
 $$  \text{Var}(a^l) \approx  \text{Var}(a^{l+1}) $$
 $$ \text{Var}(\delta^{l}) \approx \text{Var}(\delta^{l+1}) $$
-Tanh is linear around zero =&gt; tanh(z) = z when z is small.</p>
+Tanh is linear around origin =&gt; <span class="arithmatex">\(tanh(z) \approx z\)</span> when z is small.</p>
 <div class="arithmatex">\[\begin{align*}
  Var(a^{l+1}) &amp;= Var(z^{l+1}) \\
  &amp; = Var(\sum_{i=1}^{n_l} w_i^{l+1}a_i^l ) \\
@@ -687,9 +739,9 @@ ReLU zeros out all negative values. On average, ReLU passes only about half of i
 This reduction in variance can cause activations to shrink across layers, potentially leading to stalled training. 
 In such cases, Xavier initialization underestimates the necessary variance.</p>
 <p>Kaiming initialization is designed specifically for ReLU-like activations.</p>
+<p><img alt="img.png" src="../images/xavier_relu.png" /></p>
 <p>$$ W \sim \mathcal{N}(0, \frac{2}{n_{in}}) $$
 The factor 2 compensates for the ReLU “drop” of half the activations</p>
-<p><img alt="img.png" src="../img.png" /></p>
 <p><strong>Goal of Xavier Initialization</strong><br />
 We want to keep the variance of the forward activations constant across layers. So:
 $$  \text{Var}(a^l) \approx  \text{Var}(a^{l-1}) $$</p>
@@ -708,8 +760,8 @@ Var(z^{l}) &amp;= Var(\sum_{i=1}^{n_{in}} w_i^{l}a_i^{l-1} ) \\
 &amp;= \frac{1}{2} \int_{-\infty}^{\infty} (z_i^{l-1})^2 P_z(z_i^{l-1}) dz_i^{l-1} \\
 &amp;= \frac{1}{2} Var(z_i^{l-1})\\
 \end{align*}\]</div>
-<div class="arithmatex">\[ Var(W) = \frac{2}{n_{in}} \]</div>
-<p>Empirically, the backward gradients will also behave reasonably as long as the forward activations are well-scaled. So unlike xavier we only try to maintain variance of activations.</p>
+<p>$$ Var(W) = \frac{2}{n_{in}} $$
+Empirically, the backward gradients will also behave reasonably as long as the forward activations are well-scaled. So unlike xavier we only try to maintain variance of activations.</p>
 <!--## Orthogonal initialization -->
 
 <h2 id="qa">Q&amp;A</h2>

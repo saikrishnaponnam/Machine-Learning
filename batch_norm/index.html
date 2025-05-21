@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/optimizer/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/batch_norm/">
       
       
-        <link rel="prev" href="../convolution/">
+        <link rel="prev" href="../Initializers/">
       
       
-        <link rel="next" href="../math/calculus/">
+        <link rel="next" href="../convolution/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Optimizers - Machine Learning Notes</title>
+        <title>Batch Norm - Machine Learning Notes</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#optimizers" class="md-skip">
+        <a href="#batch-norm" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Optimizers
+              Batch Norm
             
           </span>
         </div>
@@ -273,10 +273,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../batch_norm/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -287,6 +296,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -317,32 +327,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Optimizers
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../optimizer/" class="md-nav__link">
         
   
   
@@ -353,62 +341,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sgd" class="md-nav__link">
-    <span class="md-ellipsis">
-      SGD
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sgd-with-momentum" class="md-nav__link">
-    <span class="md-ellipsis">
-      SGD with momentum
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rmsprop" class="md-nav__link">
-    <span class="md-ellipsis">
-      RMSProp
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adam" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adam
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -547,50 +479,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sgd" class="md-nav__link">
-    <span class="md-ellipsis">
-      SGD
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sgd-with-momentum" class="md-nav__link">
-    <span class="md-ellipsis">
-      SGD with momentum
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rmsprop" class="md-nav__link">
-    <span class="md-ellipsis">
-      RMSProp
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adam" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adam
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -608,11 +496,8 @@
   
 
 
-<h1 id="optimizers">Optimizers</h1>
-<h2 id="sgd">SGD</h2>
-<h2 id="sgd-with-momentum">SGD with momentum</h2>
-<h2 id="rmsprop">RMSProp</h2>
-<h2 id="adam">Adam</h2>
+<h1 id="batch-norm">Batch Norm</h1>
+<p><a href="https://arxiv.org/abs/1502.03167">Paper</a></p>
 
 
 
