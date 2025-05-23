@@ -15,6 +15,7 @@ class Sequential(nn.Module):
     def __init__(self, layers: Optional[List[nn.Module]] = None):
         super().__init__()
         self.layers = layers if layers is not None else []
+        self.device = "cpu"
 
     def add(self, layer: nn.Module):
         """
@@ -51,3 +52,28 @@ class Sequential(nn.Module):
         for i, layer in enumerate(self.layers):
             # params = layer.get_params()
             print(f"({i}): {layer}")
+
+    def cuda(self, device=None):
+        """
+        Move the model to GPU.
+        """
+        self.device = "cuda"
+        for layer in self.layers:
+            layer.cuda(device)
+
+    def cpu(self):
+        """
+        Move the model to CPU.
+        """
+        self.device = "cpu"
+        for layer in self.layers:
+            layer.cpu()
+
+    def to(self, device):
+        """
+        Move the model to the specified device.
+        """
+        if device == "cuda":
+            self.cuda()
+        else:
+            self.cpu()

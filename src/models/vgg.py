@@ -1,3 +1,5 @@
+import argparse
+
 import torch
 
 from src.datasets.cifar10 import CIFAR10Dataset
@@ -33,7 +35,28 @@ def build_conv_layer(cfg):
     return layers
 
 
+def check_gpu(device):
+    if device == "GPU":
+        if torch.cuda.is_available():
+            print("Using GPU")
+            device = torch.device("cuda")
+        else:
+            print("GPU not available, using CPU")
+            device = torch.device("cpu")
+    else:
+        print("Using CPU")
+        device = torch.device("cpu")
+
+    return device
+
+
 if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--device", "-d", help="Select device to run CPU/GPU", type=str, default="CPU")
+
+    args = parser.parse_args()
+    device = check_gpu(args.device).type
 
     torch.manual_seed(0)
     dataset = CIFAR10Dataset()
@@ -55,6 +78,7 @@ if __name__ == "__main__":
     )
 
     model.summary()
+    model.to(device)
 
     criterion = CrossEntropyLoss()
     optimizer = SGD(model.get_params(), lr=0.01)

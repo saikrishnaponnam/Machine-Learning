@@ -78,3 +78,15 @@ class Conv(BaseLayer):
 
     def __repr__(self):
         return f"Conv(in_channels={self.in_channels}, out_channels={self.out_channels}, kernel_size={self.kernel_size}, stride={self.stride}, padding={self.padding})"
+
+    def cuda(self, device=None):
+        self.weights = self.weights.cuda()
+        self.bias = self.bias.cuda()
+        self.dW = self.dW.cuda()
+        self.db = self.db.cuda()
+
+    def cpu(self):
+        self.weights = self.weights.cpu()
+        self.bias = self.bias.cpu()
+        self.dW = self.dW.cpu()
+        self.db = self.db.cpu()

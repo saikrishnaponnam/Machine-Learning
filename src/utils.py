@@ -9,6 +9,7 @@ def calculate_accuracy(model: nn.Module, test_loader) -> float:
     total = 0
 
     for x, y in test_loader:
+        x, y = x.to(model.device), y.to(model.device)
         logits = model(x)
         _, predicted = logits.max(dim=1)
         total += y.size(0)

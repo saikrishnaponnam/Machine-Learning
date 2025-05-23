@@ -40,8 +40,9 @@ class Trainer:
         print("Training started...")
 
         for epoch in range(epochs):
-            for batch_idx, (data, target) in enumerate(tqdm(self.train_loader, desc=f"Epoch {epoch}: ")):
+            for batch_idx, (data, target) in enumerate(tqdm(self.train_loader, desc=f"Epoch {epoch + 1}: ")):
                 # Forward pass
+                data, target = data.to(device=self.model.device), target.to(device=self.model.device)
                 output = self.model(data)
 
                 # Compute loss

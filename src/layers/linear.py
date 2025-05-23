@@ -50,3 +50,15 @@ class Linear(BaseLayer):
 
     def __repr__(self):
         return f"Linear(in_features={self.in_features}, out_features={self.out_features})"
+
+    def cuda(self, device=None):
+        self.weights = self.weights.cuda()
+        self.bias = self.bias.cuda()
+        self.dW = self.dW.cuda()
+        self.db = self.db.cuda()
+
+    def cpu(self):
+        self.weights = self.weights.cpu()
+        self.bias = self.bias.cpu()
+        self.dW = self.dW.cpu()
+        self.db = self.db.cpu()
