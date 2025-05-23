@@ -1,3 +1,5 @@
+from tqdm import tqdm
+
 from src.utils import calculate_accuracy
 
 
@@ -38,7 +40,7 @@ class Trainer:
         print("Training started...")
 
         for epoch in range(epochs):
-            for batch_idx, (data, target) in enumerate(self.train_loader):
+            for batch_idx, (data, target) in enumerate(tqdm(self.train_loader, desc=f"Epoch {epoch}: ")):
                 # Forward pass
                 output = self.model(data)
 

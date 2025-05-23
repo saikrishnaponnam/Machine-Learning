@@ -7,7 +7,7 @@ from src.layers.base_layer import BaseLayer
 
 class Conv(BaseLayer):
 
-    def __init__(self, in_channels, out_channels, kernel_size, stride=1, padding=0):
+    def __init__(self, in_channels: int, out_channels: int, kernel_size: int, stride=1, padding=0):
         """
         Args:
             in_channels (int): Number of input channels.
@@ -32,7 +32,7 @@ class Conv(BaseLayer):
 
         # Cache for backward pass
         self.x_unfold = None
-        self.input_shape = None
+        self.input_size = None
 
     def forward(self, x: torch.Tensor):
         """
@@ -43,7 +43,7 @@ class Conv(BaseLayer):
             torch.Tensor: Output tensor after applying convolution.
         """
         N, _, H, W = x.shape
-        self.input_shape = (H, W)
+        self.input_size = (H, W)
         self.x_unfold = F.unfold(x, kernel_size=self.kernel_size, stride=self.stride, padding=self.padding)
 
         out = self.weights.matmul(self.x_unfold) + self.bias.view(1, -1, 1)
@@ -69,7 +69,7 @@ class Conv(BaseLayer):
         self.db.copy_(d_out_flat.sum(dim=(0, 2)))
 
         dx = self.weights.T.matmul(d_out_flat)
-        dx = F.fold(dx, self.input_shape, self.kernel_size, stride=self.stride, padding=self.padding)
+        dx = F.fold(dx, self.input_size, self.kernel_size, stride=self.stride, padding=self.padding)
 
         return dx
 
