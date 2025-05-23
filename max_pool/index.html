@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/max_pool/">
       
       
+        <link rel="prev" href="../convolution/">
       
-        <link rel="next" href="Initializers/">
+      
+        <link rel="next" href="../optimizer/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Machine Learning Notes</title>
+        <title>Max Pooling - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +50,9 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#max-pooling" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href=".." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -105,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Max Pooling
             
           </span>
         </div>
@@ -195,7 +202,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href=".." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -222,17 +229,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -243,7 +243,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -255,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Initializers/" class="md-nav__link">
+      <a href="../Initializers/" class="md-nav__link">
         
   
   
@@ -277,7 +276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="batch_norm/" class="md-nav__link">
+      <a href="../batch_norm/" class="md-nav__link">
         
   
   
@@ -299,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="convolution/" class="md-nav__link">
+      <a href="../convolution/" class="md-nav__link">
         
   
   
@@ -318,10 +317,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="max_pool/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Max Pooling
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -332,6 +353,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#forward-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward Pass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backward-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backward Pass
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -343,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="optimizer/" class="md-nav__link">
+      <a href="../optimizer/" class="md-nav__link">
         
   
   
@@ -403,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="math/calculus/" class="md-nav__link">
+      <a href="../math/calculus/" class="md-nav__link">
         
   
   
@@ -426,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="math/linear-algebra/" class="md-nav__link">
+      <a href="../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -449,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="math/probability/" class="md-nav__link">
+      <a href="../math/probability/" class="md-nav__link">
         
   
   
@@ -489,6 +548,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#forward-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward Pass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backward-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backward Pass
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -507,18 +594,24 @@
   
 
 
-  <h1>Home</h1>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<h1 id="max-pooling">Max Pooling</h1>
+<p>Max pooling is a down-sampling operation commonly used in convolutional neural networks (CNNs). It reduces the spatial dimensions of the input feature map while retaining the most important information. The operation works by sliding a window (or kernel) over the input feature map and taking the maximum value within that window.</p>
+<h2 id="forward-pass">Forward Pass</h2>
+<p>During the forward pass, max pooling takes the maximum value from each window of the input feature map. The window size and stride determine how much the window moves across the input feature map.</p>
+<p>Pooling window size: <span class="arithmatex">\(k \times k\)</span><br />
+Stride: <span class="arithmatex">\(s\)</span></p>
+<div class="arithmatex">\[ Y_{i,j} = \max_{(m,n) \in R_{i,j} } X_{m,n} \]</div>
+<p>where <span class="arithmatex">\(R_{i,j}\)</span> is the receptive field of size <span class="arithmatex">\(k \times k\)</span> starting at <span class="arithmatex">\((i.s,~j.s)\)</span>.</p>
+<h2 id="backward-pass">Backward Pass</h2>
+<p>During the backward pass, max pooling propagates the gradient only to the positions that were selected during the forward pass. The gradient is set to zero for all other positions.</p>
+<p>Let 
+- <span class="arithmatex">\(\nabla Y\)</span> be the gradient from next layer
+- <span class="arithmatex">\(\nabla X\)</span> to be backpropagated to previous(input) layer</p>
+<div class="arithmatex">\[\nabla X_{m,n} = \begin{cases} 
+\nabla Y_{i,j}, \quad \text{if } X_{m,n} = Y_{i,j} ~\text{and}~ (m,n) \in R_{i,j} \\ 
+0, \quad \text{ otherwise} 
+\end{cases}\]</div>
+<p>If multiple elements in a region are equal to the max, gradients are usually assigned arbitrarily or split.</p>
 
 
 
@@ -567,12 +660,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="javascripts/katex.js"></script>
+        <script src="../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
