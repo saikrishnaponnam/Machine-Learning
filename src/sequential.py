@@ -2,6 +2,7 @@ from typing import List, overload, Optional
 
 import torch
 import torch.nn as nn
+from torch.nn.modules.module import T
 
 
 class Sequential(nn.Module):
@@ -77,3 +78,17 @@ class Sequential(nn.Module):
             self.cuda()
         else:
             self.cpu()
+
+    def train(self, mode=True):
+        """
+        Set the model to training mode.
+        """
+        for layer in self.layers:
+            if hasattr(layer, "training"):
+                layer.training = mode
+
+    def eval(self):
+        """
+        Set the model to evaluation mode.
+        """
+        self.train(False)
