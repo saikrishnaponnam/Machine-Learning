@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/math/calculus/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/math/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../linear-algebra/">
+        <link rel="next" href="calculus/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Calculus - Machine Learning Notes</title>
+        <title>Fundamentals - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +50,9 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#calculus" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +87,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href=".." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Calculus
+              Fundamentals
             
           </span>
         </div>
@@ -162,7 +157,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href=".." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -192,7 +187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -228,7 +223,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -241,7 +236,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -258,32 +253,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Calculus
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="calculus/" class="md-nav__link">
         
   
   
@@ -294,53 +267,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#derivatives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Derivatives
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#partial-derivatives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Partial Derivatives
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matrix-derivatives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Matrix derivatives
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -353,7 +279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linear-algebra/" class="md-nav__link">
+      <a href="linear-algebra/" class="md-nav__link">
         
   
   
@@ -376,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../probability/" class="md-nav__link">
+      <a href="probability/" class="md-nav__link">
         
   
   
@@ -406,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initializers/" class="md-nav__link">
+      <a href="../Initializers/" class="md-nav__link">
         
   
   
@@ -428,7 +354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizer/" class="md-nav__link">
+      <a href="../optimizer/" class="md-nav__link">
         
   
   
@@ -450,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regularization/" class="md-nav__link">
+      <a href="../regularization/" class="md-nav__link">
         
   
   
@@ -472,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../convolution/" class="md-nav__link">
+      <a href="../convolution/" class="md-nav__link">
         
   
   
@@ -494,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../max_pool/" class="md-nav__link">
+      <a href="../max_pool/" class="md-nav__link">
         
   
   
@@ -516,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../batch_norm/" class="md-nav__link">
+      <a href="../batch_norm/" class="md-nav__link">
         
   
   
@@ -548,43 +474,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#derivatives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Derivatives
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#partial-derivatives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Partial Derivatives
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matrix-derivatives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Matrix derivatives
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -603,22 +492,9 @@
   
 
 
-<h1 id="calculus">Calculus</h1>
-<h2 id="derivatives">Derivatives</h2>
-<p>A derivative is the rate of change in a function with respect to changes in its arguments. 
-Derivatives can tell us how rapidly a loss function would increase or decrease were we to increase or decrease each parameter by an infinitesimally small amount</p>
-<div class="arithmatex">\[ f'(x) = \lim_{h \rightarrow 0 } \frac{f(x + h) - f(x)}{h} \]</div>
-<h2 id="partial-derivatives">Partial Derivatives</h2>
-<p>The partial derivative of a function with respect to one of its arguments is the derivative of that function with respect to that argument, holding all other arguments constant.</p>
-<p>Suppose that the input of function <span class="arithmatex">\(f:\mathbb{R}^n \rightarrow \mathbb{R}\)</span> is an n-dimensional vector <span class="arithmatex">\(\mathbf{x} = [x_1, x_2, \ldots, x_n]^T\)</span>.
-The gradient of the function <span class="arithmatex">\(f\)</span> with respect to <span class="arithmatex">\(\mathbf{x}\)</span> is a vector of <span class="arithmatex">\(n\)</span> partial derivatives:</p>
-<div class="arithmatex">\[\nabla_n f(\mathbf{x}) = [\partial_{x_1}f(\mathbf{x}), \partial_{x_2}f(\mathbf{x}), \dots, \partial_{x_n}f(\mathbf{x})]^T \]</div>
-<h2 id="matrix-derivatives">Matrix derivatives</h2>
-<ul>
-<li>$\nabla_{\mathbf{x}} A\mathbf{x} = A^T $</li>
-<li>$\nabla_{\mathbf{x}} \mathbf{x}^TA\mathbf{x} = (A + A^T)\mathbf{x} $</li>
-<li><span class="arithmatex">\(\nabla_{\mathbf{X}}||X||_F^2 = 2X\)</span></li>
-</ul>
+  <h1>Fundamentals</h1>
+
+
 
 
 
@@ -667,12 +543,12 @@ The gradient of the function <span class="arithmatex">\(f\)</span> with respect 
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
