@@ -1,3 +1,4 @@
+from batch_norm import BatchNorm, SpatialBatchNorm
 from conv import Conv
 from dropout import Dropout
 from flatten import Flatten
