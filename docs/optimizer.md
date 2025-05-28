@@ -2,7 +2,6 @@
 
 ## SGD
 
-
 ## SGD with momentum
 
 ## RMSProp

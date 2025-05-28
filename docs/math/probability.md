@@ -1,12 +1,12 @@
 # Probability
 
-Sample Space: entire set of possibilities for an experiment.   
-Event: subset of the sample space.  
-Probability Distribution: describes how probabilities are assigned to events.
+**Sample Space:** entire set of possibilities for an experiment.   
+**Event:** subset of the sample space.  
+**Probability Distribution:** describes how probabilities are assigned to events.
 
 
-$$ Var(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] $$
-$$ Var(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 $$
+$$ Var(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] \\
+Var(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 $$
 
 If X & Y are independent random variables, then:
 
