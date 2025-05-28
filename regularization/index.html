@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/Initializers/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/regularization/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../optimizer/">
       
       
-        <link rel="next" href="../batch_norm/">
+        <link rel="next" href="../math/calculus/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Weight Initializers - Machine Learning Notes</title>
+        <title>Regularization - Machine Learning Notes</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#weight-initializers" class="md-skip">
+        <a href="#regularization" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Weight Initializers
+              Regularization
             
           </span>
         </div>
@@ -251,32 +251,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Weight Initializers
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Initializers/" class="md-nav__link">
         
   
   
@@ -287,80 +265,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#constant-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Constant Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#random-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Random Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xavier-glorot-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Xavier (Glorot) Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kaiming-he-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kaiming (He) Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#qa" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -457,10 +361,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../regularization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Regularization
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -471,6 +397,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#l1" class="md-nav__link">
+    <span class="md-ellipsis">
+      L1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="L1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l2" class="md-nav__link">
+    <span class="md-ellipsis">
+      L2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="L2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qa_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dropout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dropout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qa_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -616,56 +634,74 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#l1" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      L1
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#constant-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Constant Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#random-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Random Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xavier-glorot-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Xavier (Glorot) Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kaiming-he-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kaiming (He) Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="L1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#qa" class="md-nav__link">
     <span class="md-ellipsis">
       Q&amp;A
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l2" class="md-nav__link">
+    <span class="md-ellipsis">
+      L2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="L2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qa_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dropout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dropout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qa_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -688,163 +724,58 @@
   
 
 
-<h1 id="weight-initializers">Weight Initializers</h1>
-<h2 id="summary">Summary</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Initialization</th>
-<th>Recommended For</th>
-<th style="text-align: center;">Preserves Variance</th>
-<th>Activation Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><code>Zero</code></td>
-<td>bias</td>
-<td style="text-align: center;"></td>
-<td>-</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Random</code></td>
-<td>Small NN</td>
-<td class="red-cross" style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></span></td>
-<td>All</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Xavier</code></td>
-<td>Shallow / Mid-depth</td>
-<td class="green-check" style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td>Tanh, Sigmoid</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>Kaiming</code></td>
-<td>Deep NN</td>
-<td class="green-check" style="text-align: center;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59z"/></svg></span></td>
-<td>ReLU, Leaky ReLU</td>
-</tr>
-</tbody>
-</table>
-<p>Behaviour of diferent initializers with respect to the variance of activations and gradients can be seen <a href="https://github.com/saikrishnaponnam/Machine-Learning/blob/main/notebooks/initializers.ipynb">here</a></p>
-<h2 id="constant-initialization">Constant Initialization</h2>
-<p>Weights of a layer are initialized to a fixed constant value. 
-Initializing all weights in a layer to a fixed constant value is not recommended. 
-When this happens, each neuron in the layer receives the same gradient during backpropagation, causing them to learn identical features. 
-This leads to redundancy, as the neurons fail to capture diverse representations. 
-Consequently, the model’s ability to learn complex patterns is significantly reduced.</p>
-<div class="arithmatex">\[ \mathbf{W}_{ij} = c \quad \forall ~ i,j \]</div>
-<h2 id="random-initialization">Random Initialization</h2>
-<p>Weights of a layer are initialized to random values. 
-Unlike constant initialization, this randomness enables each neuron to learn distinct features.
-The weights are usually drawn from a uniform or normal distribution, such as:
-$$ \mathbf{W}_{ij} \sim \mathcal{N}(\mu, \sigma^2) $$
-While this approach works reasonably well for shallow networks, it can lead to issues like vanishing or exploding gradients in deeper architectures.
-This occurs because the variance of activations and gradients may increase or decrease exponentially with the number of layers, primarily due to not accounting for the number of input and output neurons in the initialization scheme.</p>
-<h2 id="xavier-glorot-initialization">Xavier (Glorot) Initialization</h2>
-<p><a href="http://proceedings.mlr.press/v9/glorot10a/glorot10a.pdf">Paper</a><br />
-Xavier initialization aims to keep the variance of the activations and gradients constant across layers.  </p>
-<p><strong>Why Is It Needed?</strong><br />
-If weights are not initialized properly: </p>
+<h1 id="regularization">Regularization</h1>
+<h2 id="l1">L1</h2>
+<h3 id="qa">Q&amp;A</h3>
+<h2 id="l2">L2</h2>
+<h3 id="qa_1">Q&amp;A</h3>
+<h2 id="dropout">Dropout</h2>
+<p><a href="https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf">Paper</a>  </p>
+<p>Dropout is a regularization technique used to prevent overfitting in neural networks. 
+It works by randomly setting a fraction of the input units to zero during training, which helps to prevent the model from becoming too reliant on any one feature.
+During inference, dropout is turned off, and the full network is used.</p>
+<p><strong>Why is Dropout needed?</strong><br />
+Dropout helps address overfitting, especially in deep networks where the model might memorize the training data instead of learning general patterns.</p>
+<p>Acts as an ensemble of subnetworks, improving robustness.</p>
+<p><strong>Disadvantages:</strong> </p>
 <ul>
-<li>Too small: Activations and gradients shrink ⇒ vanishing gradients </li>
-<li>Too large: Activations and gradients blow up ⇒ exploding gradients  </li>
+<li>Slower convergence during training due to randomness.</li>
+<li>Incompatible with certain architectures like RNNS, LSTMs, CNNs.</li>
+<li>Can lead to underfitting if the dropout rate is too high.</li>
+<li>Can conflict with batch normalization, as it introduces noise that can affect the normalization process.</li>
 </ul>
-<p><img alt="img_1.png" src="../images/random_init.png" /></p>
-<p>Xavier initialization solves this by scaling weights based on the number of input and output units in the layer.
-It assumes the activation functions are linear, sigmoid, or tanh.<br />
-Let:</p>
-<ul>
-<li><span class="arithmatex">\(n_{in}\)</span> : number of input units to a layer</li>
-<li><span class="arithmatex">\(n_{out}\)</span> : number of output units from a layer</li>
-</ul>
-<div class="arithmatex">\[ W \sim \mathcal{N}(0, \frac{2}{n_{in} + n_{out}}) \]</div>
-<p><strong>Goal of Xavier Initialization</strong><br />
-Assume weights <span class="arithmatex">\(w_i\)</span> and <span class="arithmatex">\(x_i\)</span> are independent and identically distributed (i.i.d.) random variables.  </p>
-<p>We want to keep the variance of the activations and gradients constant across layers. So:
-$$  \text{Var}(a^l) \approx  \text{Var}(a^{l+1}) $$
-$$ \text{Var}(\delta^{l}) \approx \text{Var}(\delta^{l+1}) $$
-Tanh is linear around origin =&gt; <span class="arithmatex">\(tanh(z) \approx z\)</span> when z is small.</p>
-<div class="arithmatex">\[\begin{align*}
- Var(a^{l+1}) &amp;= Var(z^{l+1}) \\
- &amp; = Var(\sum_{i=1}^{n_l} w_i^{l+1}a_i^l ) \\
- &amp;= \sum_{i=1}^{n_l} Var(w_i^{l+1}a_i^l )  \\
- &amp;= \sum_{i=1}^{n_l} Var(w_i^{l+1}) Var(a_i^l) \\ 
- &amp;= n_{l} . Var(w_i^{l+1}) Var(a^l) \\
- Var(W) &amp;= \frac{1}{n_l}  
-\end{align*}\]</div>
-<p>Similarly for gradient <span class="arithmatex">\(Var(W) = \frac{1}{n_{l+1}}\)</span></p>
-<p>To balance the variance of the activations and gradients, we set: $ Var(W) = \frac{2}{n_{in} + n_{out}} $</p>
-<h2 id="kaiming-he-initialization">Kaiming (He) Initialization</h2>
-<p><a href="https://arxiv.org/abs/1502.01852">Paper</a><br />
-<strong>Why Is It Needed?</strong><br />
-Xavier initialization assumes that the activation function is either linear, sigmoid, or tanh. However, ReLU is not linear(near origin).
-ReLU zeros out all negative values. On average, ReLU passes only about half of its inputs forward, effectively reducing the output variance by approximately 50%. 
-This reduction in variance can cause activations to shrink across layers, potentially leading to stalled training. 
-In such cases, Xavier initialization underestimates the necessary variance.</p>
-<p>Kaiming initialization is designed specifically for ReLU-like activations.</p>
-<p><img alt="img.png" src="../images/xavier_relu.png" /></p>
-<p>$$ W \sim \mathcal{N}(0, \frac{2}{n_{in}}) $$
-The factor 2 compensates for the ReLU “drop” of half the activations</p>
-<p><strong>Goal of Xavier Initialization</strong><br />
-We want to keep the variance of the forward activations constant across layers. So:
-$$  \text{Var}(a^l) \approx  \text{Var}(a^{l-1}) $$</p>
-<div class="arithmatex">\[ \begin{align*}
-Var(z^{l}) &amp;= Var(\sum_{i=1}^{n_{in}} w_i^{l}a_i^{l-1} ) \\
-&amp; = \sum_{i=1}^{n_{in}} Var(w_i^{l}a_i^{l-1})  \\
-&amp;= n_{in}  Var(w_i^{l}a_i^{l-1})  \\
-&amp;= n_{in}(Var(w_i^{l}) Var(a_i^{l-1}) + \mathbb{E}[w_i^l]^2Var(a_i^{l-1}) + \mathbb{E}[a_i^{l-1}]^2 Var(w_i^l))\\
-&amp;= n_{in} (Var(w_i^l) (Var(a_i)^{l-1} + E[a_i^{l-1}]^2)) \\
-&amp;= n_{in} (Var(w_i^l) \mathbb{E}[(a_i^{l-1})^2])
-\end{align*}\]</div>
-<div class="arithmatex">\[ \begin{align*}
-\mathbb{E}[(z_i^{l-1})^2]) &amp;= \int_{-\infty}^{\infty} (a_i^{l-1})^2 P_a(a_i^{l-1}) da_i^{l-1} \\
-&amp;= \int_{-\infty}^{\infty} max(0, z_i^{l-1})^2 P_a(z_i^{l-1}) dz_i^{l-1} \\
-&amp;= \int_{0}^{\infty} (z_i^{l-1})^2 P_z(z_i^{l-1}) dz_i^{l-1}  \\
-&amp;= \frac{1}{2} \int_{-\infty}^{\infty} (z_i^{l-1})^2 P_z(z_i^{l-1}) dz_i^{l-1} \\
-&amp;= \frac{1}{2} Var(z_i^{l-1})\\
-\end{align*}\]</div>
-<p>$$ Var(W) = \frac{2}{n_{in}} $$
-Empirically, the backward gradients will also behave reasonably as long as the forward activations are well-scaled. So unlike xavier we only try to maintain variance of activations.</p>
-<!--## Orthogonal initialization -->
-
-<h2 id="qa">Q&amp;A</h2>
+<h3 id="qa_2">Q&amp;A</h3>
 <ol>
 <li>
-<p>Why is weight initialization important in neural networks?</p>
+<p>What happens to the network during inference if Dropout was used during training?</p>
 <ul>
-<li>Weight initialization is important because it can significantly affect the convergence speed and performance of the model. Proper initialization helps to maintain a good flow of gradients during training, preventing issues like vanishing or exploding gradients.</li>
+<li>During inference, all neurons are active, and the outputs are typically scaled to account for the dropped units during training.</li>
 </ul>
 </li>
 <li>
-<p>Can biases be initialized to zero? Why or why not?</p>
+<p>How does Dropout work in practice?</p>
 <ul>
-<li>Yes, biases can be initialized to zero. Unlike weights, initializing biases to zero does not cause symmetry issues because biases are added to the output of neurons and do not affect the learning of different features. In fact, initializing biases to zero is a common practice.</li>
+<li>At each training step, each neuron's output is set to zero with probability p (dropout rate). The remaining outputs are scaled by 1 / (1 - p) to keep the expected sum of activations the same.</li>
 </ul>
 </li>
 <li>
-<p>How does weight initialization affect vanishing or exploding gradients?</p>
+<p>What is the variance of the activations in each hidden layer when dropout is and is not applied? Draw a plot to show how this quantity evolves over time for both models.</p>
 <ul>
-<li>Weight initialization affects vanishing or exploding gradients by influencing the scale of the activations and gradients as they propagate through the layers. If weights are initialized too small, the gradients can vanish, leading to slow convergence. If weights are initialized too large, the gradients can explode, causing instability during training.</li>
+<li>When dropout is applied, the variance of activations is reduced due to the random dropping of units. Without dropout, the variance tends to be higher as all units contribute to the output. </li>
 </ul>
 </li>
 <li>
-<p>Diagnose an issue in training that could be due to bad initialization.</p>
+<p>What happens when dropout and weight decay are used at the same time? Are the results additive? Are there diminished returns (or worse)? Do they cancel each other out? </p>
 <ul>
-<li>If the model is not learning at all or learning very slowly, it could be due to bad initialization. 
-  Visualizing the gradients during training can help identify this issue.</li>
+<li>When dropout and weight decay are used together, they can complement each other. 
+   Dropout reduces overfitting by randomly dropping units, while weight decay penalizes large weights. 
+   There can be diminished returns if both techniques are too aggressive, leading to underfitting. They do not cancel each other out; rather, they work together to improve generalization.</li>
 </ul>
 </li>
 <li>
-<p>If your deep model is not learning, what role might initialization play and how would you investigate it?</p>
+<p>What happens if we apply dropout to the individual weights of the weight matrix rather than the activations?</p>
 <ul>
-<li>If a deep model isn’t learning, I would suspect initialization if:<ul>
-<li>The loss remains constant or decreases very slowly. </li>
-<li>Activations or gradients vanish or explode. </li>
-<li>All neurons appear to behave identically (symmetry).</li>
-</ul>
-</li>
-<li>Visualizing gradients and activations across layers.</li>
+<li>This is called DropConnect. Zeroing weights directly can lead to more erratic training, unless handled with care. It is also computationally more expensive.</li>
 </ul>
 </li>
 </ol>

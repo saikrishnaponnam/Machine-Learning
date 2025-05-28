@@ -285,6 +285,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Batch Norm
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -296,6 +309,82 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#forward-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward pass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backward-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backward pass
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backward pass">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-not-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      When not to use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -373,6 +462,28 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../regularization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Regularization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -382,10 +493,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -398,8 +509,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Math
           </label>
@@ -501,6 +612,71 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#forward-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward pass
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backward-pass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backward pass
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backward pass">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-not-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      When not to use
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -520,6 +696,63 @@
 
 <h1 id="batch-norm">Batch Norm</h1>
 <p><a href="https://arxiv.org/abs/1502.03167">Paper</a></p>
+<p>A technique used in deep learning to improve training speed, stability, and performance by normalizing the inputs to each layer. It helps mitigate issues like vanishing/exploding gradients and allows for higher learning rates.</p>
+<p>Training a deep neural network is challenging due to issues such as:</p>
+<ul>
+<li>Internal covariate shift: The distribution of inputs to each layer changes during training as weights are updated.</li>
+<li>Vanishing/exploding gradients: Gradients can become too small or too large, making training difficult.</li>
+<li>Training instability: Due to these shifts and gradient issues, network may train slowly or diverge.</li>
+</ul>
+<p>BatchNorm addresses these by normalizing the input to each layer, so the distribution remains more stable during training.</p>
+<h2 id="forward-pass">Forward pass</h2>
+<p>For each mini-batch, BatchNorm normalizes the actications.<br />
+Let input to a layer be <span class="arithmatex">\(x \in \mathbb{R}^{m \times d}\)</span> where m is the batch size and d is the number of features.<br />
+For each feature <span class="arithmatex">\(x_j\)</span>, compute:</p>
+<ol>
+<li>Compute the mean: <span class="arithmatex">\(\mu_j = \frac{1}{m} \sum_{i=1}^{m} x_{ij}\)</span></li>
+<li>Compute the variance: <span class="arithmatex">\(\sigma_j^2 = \frac{1}{m} \sum_{i=1}^{m} (x_{ij} - \mu_j)^2\)</span></li>
+<li>Normalize the feature: <span class="arithmatex">\(\hat{x}_{j} = \frac{x_{j} - \mu_j}{\sqrt{\sigma_j^2 + \epsilon}}\)</span><br />
+   where <span class="arithmatex">\(\epsilon\)</span> is a small constant to avoid division by zero.</li>
+<li>Scale and shift: <span class="arithmatex">\(y_{ij} = \gamma_j \hat{x}_{ij} + \beta_j \\
+    y_{j} = \gamma \hat{x}_j + \beta\)</span><br />
+   where <span class="arithmatex">\(\gamma_j\)</span> and <span class="arithmatex">\(\beta_j\)</span> are learnable parameters for each feature.</li>
+</ol>
+<h2 id="backward-pass">Backward pass</h2>
+<p>During backpropagation, gradients are computed for <span class="arithmatex">\(\gamma\)</span> and <span class="arithmatex">\(\beta\)</span> as well.  </p>
+<div class="arithmatex">\[\frac{\partial L}{\partial \gamma} = \sum_{i=1}^m \frac{\partial L}{\partial y_i}\frac{\partial y_i}{\partial \gamma} = \sum_{i=1}^m \delta_i \hat{x}_i  \\  
+\frac{\partial L}{\partial \beta} = \sum_{i=1}^m \frac{\partial L}{\partial y_i}\frac{\partial y_i}{\partial \beta} = \sum_{i=1}^m \delta_i\]</div>
+<div class="arithmatex">\[ \begin{align*} \frac{\partial L}{\partial x_i} &amp;= \sum_{j=1}^m \frac{\partial L}{\partial \hat{x}_j} \frac{\partial \hat{x}_j}{\partial x_i} \\
+\frac{\partial L}{\partial \hat{x}_j} &amp;= \frac{\partial L}{\partial y_j} \frac{\partial y_j}{\partial \hat{x}_j} = \delta_j \gamma \\
+\frac{\partial \hat{x}_j}{\partial x_i} &amp;= \frac{1}{\sigma} \frac{\partial (x_j - \mu)}{\partial x_i} + (x_j - \mu) \frac{\partial 1 / \sigma }{\partial x_i} \quad \text{Let }~ \sigma = \sqrt{\sigma^2 + \epsilon}  \\
+\frac{\partial \hat{x}_j}{\partial x_i} &amp;= \frac{1}{\sigma} \frac{\partial (x_j - \mu)}{\partial x_i} - \frac{x_j - \mu}{2 \sigma^3 } \frac{\partial \sigma^2 }{\partial x_i} \\
+\frac{\partial \sigma^2}{\partial x_i} &amp;= \sum_{j=1}^m \frac{\partial (x_j^2 + \mu^2 - 2x_j\mu )}{\partial x_i} =  \frac{2}{N} (x_i - \mu) ) \\
+\frac{\partial \hat{x}_j}{\partial x_i} &amp;= \frac{1}{\sigma} \frac{\partial (x_j - \mu)}{\partial x_i} - \frac{(x_j - \mu)(x_i - \mu)}{N \sigma^3 } 
+\end{align*}\]</div>
+<p>For j = i</p>
+<div class="arithmatex">\[ \frac{\partial \hat{x}_i}{\partial x_i} = \frac{m-1}{m \sigma} - \frac{(x_i - \mu)^2}{N \sigma^3 } \\
+\frac{\partial L}{\partial x_i}= \delta_i \gamma (\frac{m-1}{m \sigma} - \frac{(x_i - \mu)^2}{N \sigma^3 })  \]</div>
+<p>For j != i</p>
+<div class="arithmatex">\[\frac{\partial \hat{x}_i}{\partial x_i} = \frac{-1}{m\sigma} - \frac{(x_j - \mu)(x_i - \mu)}{N \sigma^3 } \\
+\frac{\partial L}{\partial x_i}= \sum_{i \ne j} \delta_j \gamma (\frac{-1}{m\sigma} - \frac{(x_j - \mu)(x_i - \mu)}{N \sigma^3 }) \]</div>
+<p>Combining both cases, we get:</p>
+<div class="arithmatex">\[\frac{\partial L}{\partial x_i} = \frac{\gamma}{m \sigma}(m\delta_i - \sum_j \delta_j - \hat{x}_i \sum_j \delta_j \hat{x}_j)\]</div>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>Keeps input distributions stable during training.</li>
+<li>Allows higher learning rates.</li>
+<li>Acts as a regularizer (due to added noise from mini-batch stats).</li>
+</ul>
+<h3 id="practical-considerations">Practical Considerations</h3>
+<ul>
+<li>During inference, we use running averages of the mean and variance computed during training instead of batch statistics.</li>
+<li>Use after fully connected or convolutional layers, before activation functions.</li>
+<li>Initialization of <span class="arithmatex">\(\gamma\)</span> and <span class="arithmatex">\(\beta\)</span> is typically set to 1 and 0 respectively.</li>
+</ul>
+<h4 id="when-not-to-use">When not to use</h4>
+<ul>
+<li>In small batch sizes, where batch statistics may not be reliable.</li>
+<li>In RNNs or LSTMs, where temporal dependencies are crucial.</li>
+</ul>
 
 
 
