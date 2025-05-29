@@ -1,0 +1,33 @@
+/* Force nav to far left */
+.md-sidebar--primary {
+    left: 0;
+    padding-left: 100px;
+    padding-top: 50px;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+}
+
+/* Force ToC to far right */
+.md-sidebar--secondary {
+    right: 0;
+    padding-right: 100px;
+    padding-top: 50px;
+    left: auto;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+}
+
+/*!* Push main content between nav and ToC *!*/
+/*.md-main__inner {*/
+/*  margin-left: 300px;  !* Adjust depending on your sidebar width *!*/
+/*  margin-right: 300px; !* Adjust depending on your toc width *!*/
+/*}*/
+
+.md-content {
+    padding-left: 100px;
+    padding-right: 100px;
+}

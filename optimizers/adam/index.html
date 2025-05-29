@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/math/probability/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/optimizers/adam/">
       
       
-        <link rel="prev" href="../linear-algebra/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../Initializers/">
+        <link rel="next" href="../sgd/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Probability - Machine Learning Notes</title>
+        <title>Adam - Machine Learning Notes</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#probability" class="md-skip">
+        <a href="#adam" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Probability
+              Adam
             
           </span>
         </div>
@@ -213,24 +213,22 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../math/" class="md-nav__link ">
               
   
   
@@ -249,7 +247,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Fundamentals
@@ -263,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../calculus/" class="md-nav__link">
+      <a href="../../math/calculus/" class="md-nav__link">
         
   
   
@@ -286,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linear-algebra/" class="md-nav__link">
+      <a href="../../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -306,32 +304,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Probability
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../math/probability/" class="md-nav__link">
         
   
   
@@ -342,59 +318,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#discrete-distributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Discrete distributions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continuous-distributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Continuous distributions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Continuous distributions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#central-limit-theorem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Central Limit Theorem
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -433,22 +356,24 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../optimizers/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -467,7 +392,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Optimizers
@@ -478,10 +403,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../optimizers/adam/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Adam
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -492,6 +439,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-adam-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Adam works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-adam-vs-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use Adam vs SGD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -504,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/sgd/" class="md-nav__link">
+      <a href="../sgd/" class="md-nav__link">
         
   
   
@@ -642,35 +654,47 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#discrete-distributions" class="md-nav__link">
+  <a href="#how-adam-works" class="md-nav__link">
     <span class="md-ellipsis">
-      Discrete distributions
+      How Adam works
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#continuous-distributions" class="md-nav__link">
+  <a href="#intution" class="md-nav__link">
     <span class="md-ellipsis">
-      Continuous distributions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Continuous distributions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#central-limit-theorem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Central Limit Theorem
+      Intution
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#cons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-adam-vs-sgd" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use Adam vs SGD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
+    </span>
+  </a>
   
 </li>
       
@@ -693,117 +717,54 @@
   
 
 
-<h1 id="probability">Probability</h1>
-<p><strong>Sample Space:</strong> entire set of possibilities for an experiment. <br />
-<strong>Event:</strong> subset of the sample space.<br />
-<strong>Probability Distribution:</strong> describes how probabilities are assigned to events.</p>
-<div class="arithmatex">\[ Var(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] \\
-Var(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2 \]</div>
-<p>If X &amp; Y are independent random variables, then:</p>
-<div class="arithmatex">\[
-Var(X + Y) = Var(X) + Var(Y) \\
-Var(XY) = Var(X)Var(Y) + E[X]^2Var(Y) + E[Y]^2Var(X)
-\]</div>
-<!-- 
-1. Fundamentals of Probability:
-Probability Spaces (Sample Space, Events, Probability Measure)
-
-Axioms of Probability
-
-Conditional Probability and Independence
-
-Law of Total Probability and Bayes' Theorem
-
-2. Random Variables and Distributions:
-Discrete and Continuous Random Variables
-
-Probability Mass Function (PMF), Probability Density Function (PDF), and Cumulative Distribution Function (CDF)
-
-Joint, Marginal, and Conditional Distributions
-
-Expectation, Variance, and Covariance
-
-Moment Generating Functions and Characteristic Functions
-
-3. Common Distributions:
-Bernoulli, Binomial, and Multinomial Distributions
-
-Uniform Distribution (Discrete and Continuous)
-
-Poisson Distribution
-
-Exponential and Geometric Distributions
-
-Gaussian (Normal) Distribution
-
-Beta and Gamma Distributions
-
-Chi-Square Distribution
-
-Student’s t-Distribution
-
-4. Transformations and Sampling:
-Change of Variables
-
-Sampling Distributions
-
-Central Limit Theorem (CLT)
-
-Law of Large Numbers (LLN)
-
-5. Inference and Estimation:
-Maximum Likelihood Estimation (MLE)
-
-Bayesian Inference
-
-MAP Estimation
-
-Confidence Intervals and Hypothesis Testing
-
-Bootstrapping and Resampling Techniques
-
-6. Markov Chains and Stochastic Processes:
-Markov Chains and Transition Matrices
-
-Stationary Distributions
-
-Hidden Markov Models (HMMs)
-
-Martingales
-
-7. Information Theory:
-Entropy, Cross-Entropy, and KL Divergence
-
-Mutual Information
-
-Jensen’s Inequality and Gibbs’ Inequality
-
-8. Probabilistic Graphical Models (PGMs):
-Bayesian Networks
-
-Markov Random Fields
-
-Conditional Independence
-
-Inference in PGMs (e.g., Belief Propagation, Viterbi Algorithm)
-
-9. Advanced Topics in Probability:
-Monte Carlo Methods and Importance Sampling
-
-Variational Inference
-
-Markov Chain Monte Carlo (MCMC) Methods
-
-Gaussian Processes
-
-Stochastic Gradient Descent (SGD) and Stochastic Processes
-
--->
-
-<h2 id="discrete-distributions">Discrete distributions</h2>
-<h2 id="continuous-distributions">Continuous distributions</h2>
-<h3 id="central-limit-theorem">Central Limit Theorem</h3>
-<p>Given a sufficiently large sample size, the sampling distribution of the sample mean will be approximately normally distributed, regardless of the shape of the population distribution, provided the population has a finite mean and variance.</p>
+<h1 id="adam">Adam</h1>
+<p><a href="https://arxiv.org/abs/1412.6980">Paper</a> | <a href="https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/optimizer/adam.py">Implementation</a></p>
+<p>In short for Adaptive Moment Estimation. It combines the advantages of two other widely used extensions SGD: AdaGrad and RMSProp.</p>
+<p>Adam uses adaptive learning rates for each parameter, which helps in dealing with sparse gradients and noisy data. 
+It also incorporates momentum to smooth out updates.</p>
+<h2 id="how-adam-works">How Adam works</h2>
+<p>Adam maintains two moving averages for each parameter:</p>
+<ol>
+<li><strong>First moment (mean)</strong>: This is the exponentially weighted average of past gradients.</li>
+</ol>
+<div class="arithmatex">\[m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t\]</div>
+<ol>
+<li><strong>Second moment (variance)</strong>: This is the exponentially weighted average of past squared gradients.</li>
+</ol>
+<div class="arithmatex">\[v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2\]</div>
+<p>where <span class="arithmatex">\(g_t = \nabla J(w_t), \quad \beta_1, \beta_2 \in [0,1)\)</span></p>
+<ol>
+<li><strong>Bias correction</strong>: Because these averages are biased towards zero, especially in the initial steps, we apply bias correction</li>
+</ol>
+<div class="arithmatex">\[ \hat{m}_t = \frac{m_t}{1 - \beta_1^t}, \quad \hat{v}_t = \frac{v_t}{1 - \beta_2^t} \]</div>
+<ol>
+<li><strong>Parameter update</strong>:</li>
+</ol>
+<div class="arithmatex">\[ w_{t+1} = w_t - \alpha \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon} \]</div>
+<h2 id="intution">Intution</h2>
+<ul>
+<li><span class="arithmatex">\(m_t\)</span>: Like momentum, it helps smooth out the updates by considering past gradients.</li>
+<li><span class="arithmatex">\(v_t\)</span>: Similar to RMSProp, it normalizes the updates by the variance of past gradients, allowing for adaptive learning rates.</li>
+</ul>
+<h2 id="cons">Cons</h2>
+<ul>
+<li>Sometimes generalizes worse than SGD.</li>
+<li>May converge to sharp minima, which can lead to overfitting.</li>
+</ul>
+<h2 id="when-to-use-adam-vs-sgd">When to use Adam vs SGD</h2>
+<ul>
+<li><strong>Adam</strong>: </li>
+<li>Working with sparse data, such as NLP tasks (transformers, LSTMs).</li>
+<li>Fast convergence or less hyperparameter tuning.</li>
+<li>Prototype quickly</li>
+<li>Imbalanced or noisy datasets.</li>
+<li><strong>SGD</strong>:</li>
+<li>When you have a lot of data and can afford longer training times.</li>
+<li>Prioritize generalization over speed.</li>
+<li>Production-level training.</li>
+<li>Need minimal memory overhead.</li>
+</ul>
+<h2 id="qa">Q&amp;A</h2>
 
 
 

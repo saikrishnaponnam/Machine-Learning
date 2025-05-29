@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/optimizer/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/optimizers/sgd/">
       
       
-        <link rel="prev" href="../Initializers/">
+        <link rel="prev" href="../adam/">
       
       
-        <link rel="next" href="../regularization/">
+        <link rel="next" href="../../regularization/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Optimizers - Machine Learning Notes</title>
+        <title>SGD - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +50,11 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+      <link rel="stylesheet" href="../../stylesheets/override.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#optimizers" class="md-skip">
+        <a href="#sgd" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Optimizers
+              SGD
             
           </span>
         </div>
@@ -162,7 +164,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -192,7 +194,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -226,7 +228,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../math/" class="md-nav__link ">
+            <a href="../../math/" class="md-nav__link ">
               
   
   
@@ -259,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/calculus/" class="md-nav__link">
+      <a href="../../math/calculus/" class="md-nav__link">
         
   
   
@@ -282,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/linear-algebra/" class="md-nav__link">
+      <a href="../../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -305,7 +307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/probability/" class="md-nav__link">
+      <a href="../../math/probability/" class="md-nav__link">
         
   
   
@@ -335,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Initializers/" class="md-nav__link">
+      <a href="../../Initializers/" class="md-nav__link">
         
   
   
@@ -358,6 +360,76 @@
   
   
   
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Optimizers
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Optimizers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adam
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -371,7 +443,7 @@
   
   
   <span class="md-ellipsis">
-    Optimizers
+    SGD
     
   </span>
   
@@ -384,7 +456,7 @@
   
   
   <span class="md-ellipsis">
-    Optimizers
+    SGD
     
   </span>
   
@@ -407,36 +479,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sgd" class="md-nav__link">
+  <a href="#minibatch-sgd" class="md-nav__link">
     <span class="md-ellipsis">
-      SGD
+      Minibatch SGD
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sgd-with-momentum" class="md-nav__link">
+  <a href="#momentum" class="md-nav__link">
     <span class="md-ellipsis">
-      SGD with momentum
+      Momentum
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rmsprop" class="md-nav__link">
+  <a href="#qa" class="md-nav__link">
     <span class="md-ellipsis">
-      RMSProp
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adam" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adam
+      Q&amp;A
     </span>
   </a>
   
@@ -449,6 +512,14 @@
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -457,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../regularization/" class="md-nav__link">
+      <a href="../../regularization/" class="md-nav__link">
         
   
   
@@ -479,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../convolution/" class="md-nav__link">
+      <a href="../../convolution/" class="md-nav__link">
         
   
   
@@ -501,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../max_pool/" class="md-nav__link">
+      <a href="../../max_pool/" class="md-nav__link">
         
   
   
@@ -523,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../batch_norm/" class="md-nav__link">
+      <a href="../../batch_norm/" class="md-nav__link">
         
   
   
@@ -565,36 +636,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sgd" class="md-nav__link">
+  <a href="#minibatch-sgd" class="md-nav__link">
     <span class="md-ellipsis">
-      SGD
+      Minibatch SGD
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sgd-with-momentum" class="md-nav__link">
+  <a href="#momentum" class="md-nav__link">
     <span class="md-ellipsis">
-      SGD with momentum
+      Momentum
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#rmsprop" class="md-nav__link">
+  <a href="#qa" class="md-nav__link">
     <span class="md-ellipsis">
-      RMSProp
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adam" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adam
+      Q&amp;A
     </span>
   </a>
   
@@ -619,11 +681,58 @@
   
 
 
-<h1 id="optimizers">Optimizers</h1>
-<h2 id="sgd">SGD</h2>
-<h2 id="sgd-with-momentum">SGD with momentum</h2>
-<h2 id="rmsprop">RMSProp</h2>
-<h2 id="adam">Adam</h2>
+<h1 id="sgd">SGD</h1>
+<p><a href="https://arxiv.org/pdf/1609.04747">Paper 1</a> | <a href="https://proceedings.mlr.press/v28/sutskever13.html">Paper 2</a> | <a href="https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/optimizer/adam.py">Implementation</a></p>
+<p>The objective function is average is  of the loss over the training dataset. The gradient of the objective function is also calculated as average of gradients at each training sample.
+Parameters are updated using this gradient. This is called Gradient descent.
+The computational cost of GD is O(n), which grows linearly with n. Therefore, when training dataset is larger, cost of gradient descent for each iteration is higher.
+This also delays convergence. Because GD is deterministic, it may get stuck in bad local minima or saddle points.</p>
+<p>In Stochastic gradient descent(SGD) we use a single datapoint sampled from training dataset to compute gradient and update parameters. 
+the stochastic gradient <span class="arithmatex">\(\nabla J_i(w)\)</span> is an unbiased estimate of the full gradient <span class="arithmatex">\(\nabla J(w)\)</span> because </p>
+<div class="arithmatex">\[\mathbb{E}_i \nabla J_i(w) = \frac{1}{n} \sum_i \nabla J_i(w) = \nabla J(w)\]</div>
+<p>This means that, on average, the stochastic gradient is a good estimate of the gradient.
+The randomness introduces a kind of jitter that can help the model escape shallow minima or saddle points.</p>
+<h2 id="minibatch-sgd">Minibatch SGD</h2>
+<p>SGD is computationally inefficient as it doesn't fully utilize the CPU or GPU. We can increase the computational efficiency of this operation by applying it to a minibatch of observations at each iteration.
+SGD has high variance is updates making it noisy and less stable convergence. May not converge smoothly or at all unless you carefully schedule learning rate.</p>
+<p>In Mini-batch SGD instead of one datapoint we sample a small batch (32, 64 or 128) and average the gradients over the batch.
+This reduces variance compared to plain SGD making updates more stable. </p>
+<h2 id="momentum">Momentum</h2>
+<p>When loss changes quickly in one direction and slowly in another direction. 
+There will be very slow progress along the shallow dimension and jitter along the steep direction.</p>
+<p>To avoid these conditions we add a momentum to the SGD to build up velocity or friction.</p>
+<div class="arithmatex">\[ v_{t+1} = \rho v_t + \nabla J(w_t) \\
+w_{t+1} = w_t - \alpha v_{t+1}
+\]</div>
+<p>where <span class="arithmatex">\(\rho\)</span> is typically 0.9 or 0.99</p>
+<p>Momentum accumulates past gradients to continue moving in the same direction, smoothing the path toward the minimum and accelerating convergence.</p>
+<p><strong>Nesterov Momentum</strong>
+A variant of momentum where gradients are computed at lookahead point, which we get using velocity.
+$$ v_{t+1} = \rho v_t + \nabla J(w_t - \rho v_t)  $$</p>
+<h2 id="qa">Q&amp;A</h2>
+<ol>
+<li>Can momentum cause the optimization to overshoot the minimum? Why or why not?</li>
+<li>Yes, if <span class="arithmatex">\(\rho\)</span> is too high and lr is also high, velocity can cause the update move away from minimum.</li>
+<li>Why does momentum help reduce oscillations during training?<ul>
+<li>In areas with steep but narrow valleys gradients can change directions quickly. Momentum averages recent gradients, dampening the effect of sudden direction changes.</li>
+</ul>
+</li>
+<li>If your training loss is oscillating wildly, how might adjusting the momentum coefficient help?<ul>
+<li>Increase momentum coefficient slightly - it will smooth out updates. Alternatively, lower the lr.</li>
+</ul>
+</li>
+<li>How would you tune momentum and learning rate together during hyperparameter optimization?<ul>
+<li>Use random search across <span class="arithmatex">\(\alpha \in {0.1, 0.01, 0.001, 0.0001}\)</span> &amp; <span class="arithmatex">\(\rho \in {0.8, 0.9, 0.95, 0.99}\)</span></li>
+<li>Tools like Optuna, Ray tune are useful in automating this.</li>
+</ul>
+</li>
+<li>Momentum helps in faster convergence, but can it affect generalization? How?<ul>
+<li>Yes, momentum can affect generalization, both positively and negatively.</li>
+<li>By smoothing the trajectory, momentum helps avoid overfitting to local noise in the data.</li>
+<li>If momentum + lr causes too aggressive convergence, it might settle in sharp minima — which tend to overfit.</li>
+</ul>
+</li>
+</ol>
 
 
 
@@ -672,12 +781,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

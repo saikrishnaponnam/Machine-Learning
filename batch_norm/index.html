@@ -50,6 +50,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../stylesheets/override.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -354,9 +356,21 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../optimizer/" class="md-nav__link">
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../optimizers/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -365,7 +379,71 @@
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Optimizers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimizers/adam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adam
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimizers/sgd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SGD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -549,6 +627,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -640,6 +727,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -660,7 +756,7 @@
 
 
 <h1 id="batch-norm">Batch Norm</h1>
-<p><a href="https://arxiv.org/abs/1502.03167">Paper</a></p>
+<p><a href="https://arxiv.org/abs/1502.03167">Paper</a> | <a href="https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/layers/batch_norm.py">Implementation</a></p>
 <p>A technique used in deep learning to improve training speed, stability, and performance by normalizing the inputs to each layer. It helps mitigate issues like vanishing/exploding gradients and allows for higher learning rates.</p>
 <p>Training a deep neural network is challenging due to issues such as:</p>
 <ul>
@@ -718,6 +814,59 @@ For each feature <span class="arithmatex">\(x_j\)</span>, compute:</p>
 <li>In small batch sizes, where batch statistics may not be reliable.</li>
 <li>In RNNs or LSTMs, where temporal dependencies are crucial.</li>
 </ul>
+<h2 id="qa">Q&amp;A</h2>
+<ol>
+<li>
+<p>How does BatchNorm affect the internal covariate shift?</p>
+<ul>
+<li>Internal covariate shift refers to the change in the distribution of inputs to a layer during training as parameters of previous layers change. BatchNorm addresses this by normalizing the input of each layer, reducing the variability and stabilizing the input distribution. This leads to faster and more stable training.</li>
+</ul>
+</li>
+<li>
+<p>How does BatchNorm affect gradient flow during backpropagation?</p>
+<ul>
+<li>By normalizing inputs, it maintains well-behaved gradients, preventing exploding or vanishing gradients.</li>
+</ul>
+</li>
+<li>
+<p>How does BatchNorm act as a form of regularization?</p>
+</li>
+<li>
+<p>During training, BatchNorm uses mini-batch statistics (mean and variance), which introduces stochasticity/noise. This noise has a regularizing effect, somewhat similar to dropout, because it makes the model less likely to overfit to training data.</p>
+</li>
+<li>
+<p>Why does BatchNorm often reduce the need for dropout?</p>
+<ul>
+<li>Because BatchNorm already introduces noise through mini-batch statistics, it provides a regularizing effect. In practice, adding dropout on top of BatchNorm sometimes hurts performance or is redundant</li>
+</ul>
+</li>
+<li>
+<p>What happens if you remove BatchNorm from a pretrained model?</p>
+<ul>
+<li>Removing BatchNorm disrupts the learned activations and distributions, leading to poor performance. The weights were trained with normalized inputs in mind, so without BatchNorm, the distribution shift can cause instability and degraded accuracy unless you fine-tune the model extensively.</li>
+</ul>
+</li>
+<li>
+<p>Can BatchNorm harm performance in some scenarios? When and why?</p>
+<ul>
+<li>Small batch sizes, Online/incremental training, RNNs</li>
+</ul>
+</li>
+<li>
+<p>What would happen if you froze the BatchNorm statistics during training?</p>
+<ul>
+<li>Freezing (i.e., not updating running mean/variance) turns BatchNorm into a form of fixed normalization. This can:<ul>
+<li>Stabilize training in transfer learning or fine-tuning. </li>
+<li>Hurt performance if the frozen stats are not representative of the new data distribution, leading to mismatch between expected and actual input distributions at inference.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>How does BatchNorm relate to whitening?</p>
+</li>
+<li>Whitening removes correlations between features. BatchNorm only normalizes each feature independently</li>
+</ol>
 
 
 

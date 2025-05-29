@@ -52,6 +52,8 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="../../stylesheets/override.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -337,6 +339,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hessian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hessian
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -427,9 +438,21 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../optimizer/" class="md-nav__link">
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../optimizers/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -438,7 +461,71 @@
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Optimizers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../optimizers/adam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adam
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../optimizers/sgd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SGD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -584,6 +671,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hessian" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hessian
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -619,6 +715,14 @@ The gradient of the function <span class="arithmatex">\(f\)</span> with respect 
 <li>$\nabla_{\mathbf{x}} \mathbf{x}^TA\mathbf{x} = (A + A^T)\mathbf{x} $</li>
 <li><span class="arithmatex">\(\nabla_{\mathbf{X}}||X||_F^2 = 2X\)</span></li>
 </ul>
+<h2 id="hessian">Hessian</h2>
+<p>Assume that the input of a function is a k-dimensional vector and its output is a scalar, so its Hessian matrix will have k eigenvalues. The solution of the function could be a local minimum, a local maximum, or a saddle point at a position where the function gradient is zero:</p>
+<ul>
+<li>When the eigenvalues of the function’s Hessian matrix at the zero-gradient position are all positive, we have a local minimum for the function.</li>
+<li>When the eigenvalues of the function’s Hessian matrix at the zero-gradient position are all negative, we have a local maximum for the function.</li>
+<li>When the eigenvalues of the function’s Hessian matrix at the zero-gradient position are negative and positive, we have a saddle point for the function.</li>
+</ul>
+<p>https://d2l.ai/chapter_optimization/convexity.html</p>
 
 
 
