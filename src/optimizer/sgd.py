@@ -14,13 +14,20 @@ class SGD:
         self.parameters = parameters
         self.lr = lr
 
+        if self.momentum > 0.0:
+            self.vel = [torch.zeros_like(param) for param, _ in self.parameters]
+
     def step(self):
         """
         Perform a single optimization step.
         """
-        param: torch.Tensor
-        for param, d_param in self.parameters:
-            param -= d_param * self.lr
+        for idx, (param, d_param) in enumerate(self.parameters):
+            vel = self.vel[idx]
+            vel.mul_(self.momentum).add_(d_param)
+            if self.nesterov:
+                param -= self.lr * (d_param + self.momentum * vel)
+            else:
+                param -= self.lr * vel
 
     # def zero_grad(self) -> None:
     #     for _, d_param in self.parameters:
