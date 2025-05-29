@@ -1,5 +1,8 @@
 # Convolution
 
+[Paper 1](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf) 
+| [Code](https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/layers/conv.py)
+
 Input: $\mathbf{X} \in \mathbb{R}^{C_{in} \times H_{in} \times W_{in} }$  
 Kernel: $W \in \mathbb{R}^{C_{out} \times C_{in} \times K_H \times K_W}$  
 Output: $\mathbf{Y} \in \mathbb{R}^{C_{out} \times H_{out} \times W_{out}}$  

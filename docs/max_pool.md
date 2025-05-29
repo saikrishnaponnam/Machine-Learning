@@ -1,4 +1,5 @@
 # Max Pooling
+[Code](https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/layers/max_pool.py)
 
 Max pooling is a down-sampling operation commonly used in convolutional neural networks (CNNs). It reduces the spatial dimensions of the input feature map while retaining the most important information. The operation works by sliding a window (or kernel) over the input feature map and taking the maximum value within that window.
 

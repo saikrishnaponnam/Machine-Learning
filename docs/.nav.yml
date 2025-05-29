@@ -1,0 +1,13 @@
+nav:
+  - index.md
+  - Fundamentals: math
+  - Initializers.md
+  - optimizers
+  - regularization.md
+  - convolution.md
+  - max_pool.md
+  - batch_norm.md
+  - "*.md"
+  - models
+  - papers
+  - "*/"

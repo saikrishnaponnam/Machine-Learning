@@ -1,15 +1,17 @@
 # Regularization
 
 ## L1
+[Paper]() | [Code]()
 
 ### Q&A
 
 ## L2
+[Paper]() | [Code]()
 
 ### Q&A
 
 ## Dropout 
-[Paper](https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf)  
+[Paper](https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf)  | [Code](https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/layers/dropout.py)
 
 Dropout is a regularization technique used to prevent overfitting in neural networks. 
 It works by randomly setting a fraction of the input units to zero during training, which helps to prevent the model from becoming too reliant on any one feature.

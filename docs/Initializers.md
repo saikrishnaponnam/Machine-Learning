@@ -1,4 +1,5 @@
 # Weight Initializers
+[Code](https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/init.py)
 
 ## Summary
 

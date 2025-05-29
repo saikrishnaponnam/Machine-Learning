@@ -43,6 +43,10 @@ extra_css:
   # Math
   - https://unpkg.com/katex@0/dist/katex.min.css
   - stylesheets/extra.css
+  - stylesheets/override.css
 
+plugins:
+  - section-index
+  - awesome-nav
 
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json

@@ -1,5 +1,5 @@
 # Batch Norm
-[Paper](https://arxiv.org/abs/1502.03167)
+[Paper](https://arxiv.org/abs/1502.03167) | [Code](https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/layers/batch_norm.py)
 
 A technique used in deep learning to improve training speed, stability, and performance by normalizing the inputs to each layer. It helps mitigate issues like vanishing/exploding gradients and allows for higher learning rates.
 
@@ -71,3 +71,31 @@ $$\frac{\partial L}{\partial x_i} = \frac{\gamma}{m \sigma}(m\delta_i - \sum_j \
 
 - In small batch sizes, where batch statistics may not be reliable.
 - In RNNs or LSTMs, where temporal dependencies are crucial.
+
+## Q&A
+1. How does BatchNorm affect the internal covariate shift?
+    - Internal covariate shift refers to the change in the distribution of inputs to a layer during training as parameters of previous layers change. BatchNorm addresses this by normalizing the input of each layer, reducing the variability and stabilizing the input distribution. This leads to faster and more stable training.
+
+2. How does BatchNorm affect gradient flow during backpropagation?
+    - By normalizing inputs, it maintains well-behaved gradients, preventing exploding or vanishing gradients.
+
+3. How does BatchNorm act as a form of regularization?
+   - During training, BatchNorm uses mini-batch statistics (mean and variance), which introduces stochasticity/noise. This noise has a regularizing effect, somewhat similar to dropout, because it makes the model less likely to overfit to training data.
+
+4. Why does BatchNorm often reduce the need for dropout?
+    - Because BatchNorm already introduces noise through mini-batch statistics, it provides a regularizing effect. In practice, adding dropout on top of BatchNorm sometimes hurts performance or is redundant
+   
+5. What happens if you remove BatchNorm from a pretrained model?
+    - Removing BatchNorm disrupts the learned activations and distributions, leading to poor performance. The weights were trained with normalized inputs in mind, so without BatchNorm, the distribution shift can cause instability and degraded accuracy unless you fine-tune the model extensively.
+
+6. Can BatchNorm harm performance in some scenarios? When and why?
+    - Small batch sizes, Online/incremental training, RNNs
+
+7. What would happen if you froze the BatchNorm statistics during training?
+    - Freezing (i.e., not updating running mean/variance) turns BatchNorm into a form of fixed normalization. This can:
+        - Stabilize training in transfer learning or fine-tuning. 
+        - Hurt performance if the frozen stats are not representative of the new data distribution, leading to mismatch between expected and actual input distributions at inference.
+
+8. How does BatchNorm relate to whitening?
+   - Whitening removes correlations between features. BatchNorm only normalizes each feature independently
+

@@ -18,20 +18,6 @@ When the numerical solution of an optimization problem is near the local optimum
 **Saddle Point:** A saddle point is any location where all gradients of a function vanish but which is neither a global nor a local minimum. 
 Optimization might stall at this point, even though it is not a minimum. For high-dimensional problems the likelihood that at least some of the eigenvalues are negative is quite high. This makes saddle points more likely than local minima.
 
-## SGD
 
-The objective function is average is  of the loss over the training dataset. The gradient of the objective function is also calculated as average of gradients at each training sample.
-Parameters are updated using this gradient. This is called Gradient descent.
-The computational cost og GD is O(n), which grows linearly with n. Therefore, when training dataset is larger, cost of gradient descent for each iteration is higher.
-
-In Stochastic gradient descent(SGD) we use a single datapoint sampled from training dataset to compute gradient and update parameters. 
-
-
-
-Only some degree of noise might knock the parameter out of the local minimum. In fact, this is one of the beneficial properties of minibatch stochastic gradient descent where the natural variation of gradients over minibatches is able to dislodge the parameters from local minima.
-
-## SGD with momentum
 
 ## RMSProp
-
-## Adam
