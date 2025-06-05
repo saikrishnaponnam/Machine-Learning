@@ -7,6 +7,8 @@ nav:
   - convolution.md
   - max_pool.md
   - batch_norm.md
+  - rnn.md
+  - lstm.md
   - "*.md"
   - models
   - papers
