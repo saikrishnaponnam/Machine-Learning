@@ -8,6 +8,12 @@ from src.layers import ReLU, Tanh
 
 
 class RNNBase(nn.Module, ABC):
+    """
+    Abstract base class for RNN layers.
+
+    Defines the required interface for RNN layers, including forward and backward passes,
+    and parameter retrieval.
+    """
 
     @abstractmethod
     def forward(self, x: torch.Tensor, hx: torch.Tensor = None):
@@ -60,18 +66,26 @@ class RNN(RNNBase):
         self.activation = ReLU() if nonlinearity == "relu" else Tanh()
 
         # Weights and biases initialization
-        self.w_xh = kaiming(input_size, hidden_size)
-        self.w_hh = kaiming(hidden_size, hidden_size)
-        self.bh = torch.zeros(hidden_size)
-
-        self.dw_xh = torch.zeros_like(self.w_xh)
-        self.dw_hh = torch.zeros_like(self.w_hh)
-        self.dbh = torch.zeros_like(self.bh)
+        self.w_xh = []
+        self.w_hh = []
+        self.bh = []
+        self.dw_xh = []
+        self.dw_hh = []
+        self.dbh = []
+        for layer in range(num_layers):
+            input_size = input_size if layer == 0 else hidden_size
+            self.w_xh.append(kaiming(input_size, hidden_size))
+            self.w_hh.append(kaiming(hidden_size, hidden_size))
+            self.bh.append(torch.zeros(hidden_size))
+            self.dw_xh.append(torch.zeros_like(self.w_xh[-1]))
+            self.dw_hh.append(torch.zeros_like(self.w_hh[-1]))
+            self.dbh.append(torch.zeros_like(self.bh[-1]))
 
         # Cache for backward pass
         self.hidden_states = None
         self.inputs = None
         self.raw_outputs = None
+        self.x = None
 
     def forward(self, x: torch.Tensor, hx: torch.Tensor = None):
         """
@@ -90,8 +104,7 @@ class RNN(RNNBase):
             x = x.transpose(0, 1)
         seq_len, N, _ = x.shape
         if hx is None:
-            hx = torch.zeros(N, self.hidden_size, device=x.device)
-            # hx = [torch.zeros(N, self.hidden_size, device=x.device) for _ in range(self.num_layers)]
+            hx = [torch.zeros(N, self.hidden_size, device=x.device) for _ in range(self.num_layers)]
 
         self.inputs = []
         self.hidden_states = []
@@ -101,20 +114,26 @@ class RNN(RNNBase):
         h_prev = hx
         for t in range(seq_len):
             x_t = x[t]  # (N, input_size)
-
-            a_t = x_t.matmul(self.w_xh) + h_prev.matmul(self.w_hh) + self.bh
-            h_t = self.activation(a_t)
+            h_t = []
+            a_t = []
+            # TODO: Vectorize the multi-layer computation
+            for l in range(self.num_layers):
+                a_t_l = x_t.matmul(self.w_xh[l]) + h_prev[l].matmul(self.w_hh[l]) + self.bh[l]
+                h_t_l = self.activation(a_t_l)
+                a_t += [a_t_l]
+                h_t += [h_t_l]
+                x_t = h_t_l
             h_prev = h_t
-
             self.inputs += [x[t]]
-            self.hidden_states += [h_t.clone()]
+            self.hidden_states += [h_t]
             self.raw_outputs += [a_t]
 
-        output = torch.stack(self.hidden_states, dim=0)
+        # Get final layer output across all time steps / sequence
+        output = torch.stack([self.hidden_states[t][-1] for t in range(seq_len)], dim=0)
         if self.batch_first:
             output = output.transpose(0, 1)
 
-        return output, h_prev
+        return output, torch.stack(h_prev, dim=0)
 
     def backward(self, d_out: torch.Tensor):
         """
@@ -131,52 +150,64 @@ class RNN(RNNBase):
 
         seq_len, N, _ = self.x.shape
 
-        dw_xh = torch.zeros_like(self.w_xh)
-        dw_hh = torch.zeros_like(self.w_hh)
-        dbh = torch.zeros_like(self.bh)
+        dw_xh = [torch.zeros_like(self.w_xh[l]) for l in range(self.num_layers)]
+        dw_hh = [torch.zeros_like(self.w_hh[l]) for l in range(self.num_layers)]
+        dbh = [torch.zeros_like(self.bh[l]) for l in range(self.num_layers)]
 
         dx = torch.zeros_like(self.x)
-        dh_next = torch.zeros(N, self.hidden_size, device=self.x.device)
+        dh_next = [torch.zeros(N, self.hidden_size, device=self.x.device) for _ in range(self.num_layers)]
 
-        for t in range(seq_len - 1, -1, -1):
-            x_t = self.inputs[t]
-            h_t = self.hidden_states[t]
-            a_t = self.raw_outputs[t]
+        for t in reversed(range(seq_len)):
+            d_layer = d_out[t]
 
-            dh = d_out[t] + dh_next
-            if self.nonlinearity == "relu":
-                d_at = (a_t > 0).float() * dh
-            else:
-                d_at = (1 - h_t**2) * dh
+            for l in reversed(range(self.num_layers)):
+                x_t = self.inputs[t] if l == 0 else self.hidden_states[t][l - 1]
+                h_t = self.hidden_states[t][l]
+                a_t = self.raw_outputs[t][l]
+                h_prev = self.hidden_states[t - 1][l] if t > 0 else torch.zeros_like(h_t)
+                dh = d_layer + dh_next[l]
+                if self.nonlinearity == "relu":
+                    d_at = (a_t > 0).float() * dh
+                else:
+                    d_at = (1 - h_t**2) * dh
 
-            dx[t] = d_at.matmul(self.w_xh.T)
-            dw_xh += x_t.T.matmul(d_at)
-            dw_hh += (self.hidden_states[t - 1] if t > 0 else torch.zeros_like(h_t)).T.matmul(d_at)
-            dbh += d_at.sum(dim=0)
-            dh_next = d_at.matmul(self.w_hh.T)
+                if l == 0:
+                    dx[t] = d_at.matmul(self.w_xh[l].T)
 
-        self.dw_xh.copy_(dw_xh)
-        self.dw_hh.copy_(dw_hh)
-        self.dbh.copy_(dbh)
+                dw_xh[l] += x_t.T.matmul(d_at)
+                dw_hh[l] += h_prev.T.matmul(d_at)
+                dbh[l] += d_at.sum(dim=0)
+                dh_next[l] = d_at.matmul(self.w_hh[l].T)
+
+        for l in range(self.num_layers):
+            self.dw_xh[l].copy_(dw_xh[l])
+            self.dw_hh[l].copy_(dw_hh[l])
+            self.dbh[l].copy_(dbh[l])
 
         dh0 = dh_next
         return dx, dh0
 
     def get_params(self):
-        return [(self.w_xh, self.dw_xh), (self.w_hh, self.dw_hh), (self.bh, self.dbh)]
+        return (
+            [(self.w_xh[l], self.dw_xh[l]) for l in range(self.num_layers)]
+            + [(self.w_hh[l], self.dw_hh[l]) for l in range(self.num_layers)]
+            + [(self.bh[l], self.dbh[l]) for l in range(self.num_layers)]
+        )
 
     def cuda(self, device=None):
-        self.w_xh = self.w_xh.cuda(device)
-        self.w_hh = self.w_hh.cuda(device)
-        self.bh = self.bh.cuda(device)
-        self.dw_xh = self.dw_xh.cuda(device)
-        self.dw_hh = self.dw_hh.cuda(device)
-        self.dbh = self.dbh.cuda(device)
+        for l in range(self.num_layers):
+            self.w_xh[l] = self.w_xh[l].cuda(device)
+            self.w_hh[l] = self.w_hh[l].cuda(device)
+            self.bh[l] = self.bh[l].cuda(device)
+            self.dw_xh[l] = self.dw_xh[l].cuda(device)
+            self.dw_hh[l] = self.dw_hh[l].cuda(device)
+            self.dbh[l] = self.dbh[l].cuda(device)
 
     def cpu(self):
-        self.w_xh = self.w_xh.cpu()
-        self.w_hh = self.w_hh.cpu()
-        self.bh = self.bh.cpu()
-        self.dw_xh = self.dw_xh.cpu()
-        self.dw_hh = self.dw_hh.cpu()
-        self.dbh = self.dbh.cpu()
+        for l in range(self.num_layers):
+            self.w_xh[l] = self.w_xh[l].cpu()
+            self.w_hh[l] = self.w_hh[l].cpu()
+            self.bh[l] = self.bh[l].cpu()
+            self.dw_xh[l] = self.dw_xh[l].cpu()
+            self.dw_hh[l] = self.dw_hh[l].cpu()
+            self.dbh[l] = self.dbh[l].cpu()
