@@ -322,6 +322,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#chain-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chain rule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#partial-derivatives" class="md-nav__link">
     <span class="md-ellipsis">
       Partial Derivatives
@@ -618,6 +627,239 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rnn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RNN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lstm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LSTM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../models/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Models
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/rcnn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RCNN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/faster_rcnn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Faster RCNN
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/fcos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FCOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/resnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resnet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/vgg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VGG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../papers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Papers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -648,6 +890,15 @@
   <a href="#derivatives" class="md-nav__link">
     <span class="md-ellipsis">
       Derivatives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chain-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chain rule
     </span>
   </a>
   
@@ -704,6 +955,10 @@
 <p>A derivative is the rate of change in a function with respect to changes in its arguments. 
 Derivatives can tell us how rapidly a loss function would increase or decrease were we to increase or decrease each parameter by an infinitesimally small amount</p>
 <div class="arithmatex">\[ f'(x) = \lim_{h \rightarrow 0 } \frac{f(x + h) - f(x)}{h} \]</div>
+<h2 id="chain-rule">Chain rule</h2>
+<p>Used to compute the derivative of a composite function, i.e., a function that is formed by combining two or more functions.</p>
+<div class="arithmatex">\[y=f(u), \text{and }~ u = g(x)\\
+\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = f'(u) \cdot g'(x)\]</div>
 <h2 id="partial-derivatives">Partial Derivatives</h2>
 <p>The partial derivative of a function with respect to one of its arguments is the derivative of that function with respect to that argument, holding all other arguments constant.</p>
 <p>Suppose that the input of function <span class="arithmatex">\(f:\mathbb{R}^n \rightarrow \mathbb{R}\)</span> is an n-dimensional vector <span class="arithmatex">\(\mathbf{x} = [x_1, x_2, \ldots, x_n]^T\)</span>.

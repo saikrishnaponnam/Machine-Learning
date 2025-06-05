@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/models/rcnn/">
       
       
+        <link rel="prev" href="../">
       
-        <link rel="next" href="math/">
+      
+        <link rel="next" href="../faster_rcnn/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Machine Learning Notes</title>
+        <title>RCNN - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,11 +50,11 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="stylesheets/override.css">
+      <link rel="stylesheet" href="../../stylesheets/override.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#rcnn" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -87,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -107,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              RCNN
             
           </span>
         </div>
@@ -157,7 +164,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -184,17 +191,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -205,7 +205,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -229,7 +228,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="math/" class="md-nav__link ">
+            <a href="../../math/" class="md-nav__link ">
               
   
   
@@ -262,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="math/calculus/" class="md-nav__link">
+      <a href="../../math/calculus/" class="md-nav__link">
         
   
   
@@ -285,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="math/linear-algebra/" class="md-nav__link">
+      <a href="../../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -308,7 +307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="math/probability/" class="md-nav__link">
+      <a href="../../math/probability/" class="md-nav__link">
         
   
   
@@ -338,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Initializers/" class="md-nav__link">
+      <a href="../../Initializers/" class="md-nav__link">
         
   
   
@@ -372,7 +371,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="optimizers/" class="md-nav__link ">
+            <a href="../../optimizers/" class="md-nav__link ">
               
   
   
@@ -405,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="optimizers/adam/" class="md-nav__link">
+      <a href="../../optimizers/adam/" class="md-nav__link">
         
   
   
@@ -428,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="optimizers/sgd/" class="md-nav__link">
+      <a href="../../optimizers/sgd/" class="md-nav__link">
         
   
   
@@ -458,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="regularization/" class="md-nav__link">
+      <a href="../../regularization/" class="md-nav__link">
         
   
   
@@ -480,7 +479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="convolution/" class="md-nav__link">
+      <a href="../../convolution/" class="md-nav__link">
         
   
   
@@ -502,7 +501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="max_pool/" class="md-nav__link">
+      <a href="../../max_pool/" class="md-nav__link">
         
   
   
@@ -524,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="batch_norm/" class="md-nav__link">
+      <a href="../../batch_norm/" class="md-nav__link">
         
   
   
@@ -546,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="rnn/" class="md-nav__link">
+      <a href="../../rnn/" class="md-nav__link">
         
   
   
@@ -568,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="lstm/" class="md-nav__link">
+      <a href="../../lstm/" class="md-nav__link">
         
   
   
@@ -587,22 +586,24 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="models/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -621,7 +622,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Models
@@ -632,10 +633,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="models/rcnn/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    RCNN
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -646,6 +669,77 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Detection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Object Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-time-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Time detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -658,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/faster_rcnn/" class="md-nav__link">
+      <a href="../faster_rcnn/" class="md-nav__link">
         
   
   
@@ -681,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/fcos/" class="md-nav__link">
+      <a href="../fcos/" class="md-nav__link">
         
   
   
@@ -704,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/resnet/" class="md-nav__link">
+      <a href="../resnet/" class="md-nav__link">
         
   
   
@@ -727,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="models/vgg/" class="md-nav__link">
+      <a href="../vgg/" class="md-nav__link">
         
   
   
@@ -757,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="papers/" class="md-nav__link">
+      <a href="../../papers/" class="md-nav__link">
         
   
   
@@ -789,6 +883,67 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intro
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Detection
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Object Detection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#module-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Design
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-time-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Time detection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -807,9 +962,14 @@
   
 
 
-  <h1>Home</h1>
-
-
+<h1 id="rcnn">RCNN</h1>
+<p><a href="https://arxiv.org/abs/1311.2524">Paper</a> | <a href="">Code</a></p>
+<p>RCNN is an object detection model, it combines region proposal with CNN so the name R-CNN: Regions with CNN features. </p>
+<h2 id="intro">Intro</h2>
+<h2 id="object-detection">Object Detection</h2>
+<h3 id="module-design">Module Design</h3>
+<h3 id="test-time-detection">Test Time detection</h3>
+<h3 id="training">Training</h3>
 
 
 
@@ -858,12 +1018,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="javascripts/katex.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

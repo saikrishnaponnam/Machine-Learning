@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/math/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/rnn/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../batch_norm/">
       
       
-        <link rel="next" href="calculus/">
+        <link rel="next" href="../lstm/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Fundamentals - Machine Learning Notes</title>
+        <title>RNN - Machine Learning Notes</title>
       
     
     
@@ -77,6 +77,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#rnn" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -109,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fundamentals
+              RNN
             
           </span>
         </div>
@@ -208,24 +213,22 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../math/" class="md-nav__link ">
               
   
   
@@ -238,13 +241,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Fundamentals
@@ -258,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="calculus/" class="md-nav__link">
+      <a href="../math/calculus/" class="md-nav__link">
         
   
   
@@ -281,7 +284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linear-algebra/" class="md-nav__link">
+      <a href="../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -304,7 +307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="probability/" class="md-nav__link">
+      <a href="../math/probability/" class="md-nav__link">
         
   
   
@@ -539,10 +542,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../rnn/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    RNN
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -553,6 +578,155 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with sequences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rnns" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNNs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-rnns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training RNNs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Training RNNs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loss-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loss Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backpropagation-through-time-bptt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backpropagation through time (BPTT)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backpropagation through time (BPTT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradients-wrt-output-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradients w.r.t output weights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradients-wrt-input-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradients w.r.t input weights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradients-wrt-recurrent-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradients w.r.t recurrent weights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradients-wrt-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradients w.r.t input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vanishing-and-exploding-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vanishing and Exploding Gradients
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradient-clipping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient Clipping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -785,6 +959,145 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working with sequences
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rnns" class="md-nav__link">
+    <span class="md-ellipsis">
+      RNNs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-rnns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training RNNs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Training RNNs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loss-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loss Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backpropagation-through-time-bptt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backpropagation through time (BPTT)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backpropagation through time (BPTT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradients-wrt-output-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradients w.r.t output weights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradients-wrt-input-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradients w.r.t input weights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradients-wrt-recurrent-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradients w.r.t recurrent weights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradients-wrt-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradients w.r.t input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vanishing-and-exploding-gradients" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vanishing and Exploding Gradients
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradient-clipping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient Clipping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disadvantages
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -803,9 +1116,91 @@
   
 
 
-  <h1>Fundamentals</h1>
-
-
+<h1 id="rnn">RNN</h1>
+<p>For models like logistic regression and multilayer perceptron (MLP), the input <span class="arithmatex">\(x_i\)</span> is assumed to be a fixed size vector in <span class="arithmatex">\(\mathbb{R}^d\)</span>. 
+Such datasets are referred to as tabular datasets.</p>
+<p>Image data, on the other hand, consists of a grid of pixels and can be represented as a 2D matrix. 
+CNNs are used to process the spatial structure of images. 
+However, these data types are still of fixed length.</p>
+<p>But how do we handle data that is not of fixed length, such as a sequence of images in a video or a sequence of words in language tasks like image captioning or translation?</p>
+<p>Recurrent Neural Networks (RNNs) are designed to process sequential data, where the input length can vary. 
+RNNs capture the dynamics of sequences through recurrent connections, allowing them to maintain a memory of previous inputs.</p>
+<h2 id="working-with-sequences">Working with sequences</h2>
+<p>A sequence consists of an ordered list of feature vectors <span class="arithmatex">\(x_1, \dots, x_T\)</span>, where each <span class="arithmatex">\(x_t \in \mathbb{R}^d\)</span> is indexed by time step <span class="arithmatex">\(t \in \mathbb{Z}^+\)</span>.</p>
+<p>While individual inputs are typically assumed to be independently sampled from a distribution <span class="arithmatex">\(P(X)\)</span>, in sequential data, we cannot assume that each time step is independent of the previous ones.</p>
+<p>Given a sequential input, the goal may be to predict a single output <span class="arithmatex">\(y\)</span> or sequentially structured output (<span class="arithmatex">\(y_1, \dots, y_T\)</span>).</p>
+<h2 id="rnns">RNNs</h2>
+<p>An RNN processes sequential input one step at a time, maintaining a hidden state that serves as memory.
+Let's denote:</p>
+<ul>
+<li><span class="arithmatex">\(x_t \in \mathbb{R}^d\)</span>: as the input at time step <span class="arithmatex">\(t\)</span></li>
+<li><span class="arithmatex">\(h_t \in \mathbb{R}^d\)</span>: as the hidden state at time step <span class="arithmatex">\(t\)</span></li>
+<li><span class="arithmatex">\(y_t \in \mathbb{R}^m\)</span>: as the output at time step <span class="arithmatex">\(t\)</span></li>
+<li><span class="arithmatex">\(W_{xh}\)</span>: as the weight matrix for input to hidden state</li>
+<li><span class="arithmatex">\(W_{hh}\)</span>: as the weight matrix for hidden state to hidden state</li>
+<li><span class="arithmatex">\(W_{hy}\)</span>: as the weight matrix for hidden state to output</li>
+<li><span class="arithmatex">\(\phi\)</span>: as the activation function</li>
+</ul>
+<p>The hidden state <span class="arithmatex">\(h_t\)</span> at time step <span class="arithmatex">\(t\)</span> is computed from the previous hidden state <span class="arithmatex">\(h_{t-1}\)</span> and the current input <span class="arithmatex">\(x_t\)</span>.
+This hidden state stores information about the sequence up to that point. 
+Unlike traditional deep neural networks, RNNs share the same parameters across all time steps.</p>
+<figure>
+    <img alt="img.png" src="../images/rnn.png" />
+    <figcaption>RNN unrolled</figcaption>
+</figure>
+<div class="arithmatex">\[h_t = \phi(a_t) = \phi(W_{xh}x_t + W_{hh} h_{t-1} + b_h ) \\
+y_t = W_{hy} h_t + b_y\]</div>
+<p><img alt="rnn_types.png" src="../images/rnn_types.png" /></p>
+<p>Not all RNNs produce output at every time step; some only output at the final time step. 
+The key feature of an RNN is its hidden state, which captures information about the sequence.</p>
+<h2 id="training-rnns">Training RNNs</h2>
+<p>Training RNNs is similar to training other neural networks, but with some additional considerations due to the sequential nature of the data.</p>
+<h3 id="loss-function">Loss Function</h3>
+<p>The loss function for RNNs can be defined as the sum of the losses at each time step, or as the average loss across all time steps.</p>
+<div class="arithmatex">\[L = \frac{1}{T} \sum_{t=1}^{T} L_t(y_t, \hat{y}_t)\]</div>
+<p>where <span class="arithmatex">\(L\)</span> is the loss function (e.g., cross-entropy loss), <span class="arithmatex">\(y_t\)</span> is the true output at time step <span class="arithmatex">\(t\)</span>, and <span class="arithmatex">\(\hat{y}_t\)</span> is the predicted output at time step <span class="arithmatex">\(t\)</span>.</p>
+<h2 id="backpropagation-through-time-bptt">Backpropagation through time (BPTT)</h2>
+<p>When training RNNs, we often use backpropagation through time (BPTT) to compute gradients.
+BPTT is an extension of backpropagation that allows us to compute gradients for sequences by unrolling the RNN through time, one step at a time.
+The unrolled RNN is treated as a feedforward network, where each time step corresponds to a layer in the network.
+But same parameters are shared across all time steps/layers. The gradients are computed for each time step and then accumulated to update the parameters.</p>
+<p>Let <span class="arithmatex">\(\delta_y^t = \frac{\partial L_t}{\partial \hat{y}_t}\)</span>, <span class="arithmatex">\(\delta_h^t = \frac{\partial L_t}{\partial h_t}\)</span>, $\delta_a^t = \delta_h^t * \phi'(a_t) $, where <span class="arithmatex">\(\phi'(a_t)\)</span> is the derivative of the activation function element-wise.</p>
+<h3 id="gradients-wrt-output-weights">Gradients w.r.t output weights</h3>
+<div class="arithmatex">\[\begin{align*}
+\frac{\partial L}{\partial  W_{hy}} &amp;= \sum_t \frac{\partial L_t}{\partial W_{hy}} \\
+\frac{\partial L_t}{\partial W_{hy}} &amp;= \frac{\partial L_t}{\partial \hat{y}_t} \cdot \frac{\partial \hat{y}_t}{\partial w_{hy}} = \delta_y^t . (h_t)^T \\
+\frac{\partial L}{\partial W_{hy}} &amp;= \sum_t {\delta_y^t} \cdot (h_t)^T \\
+\end{align*}\]</div>
+<h3 id="gradients-wrt-input-weights">Gradients w.r.t input weights</h3>
+<p>To update the input-to-hidden weights <span class="arithmatex">\(W_{xh}\)</span>, we compute the gradient of the loss with respect to <span class="arithmatex">\(W_{xh}\)</span> by accumulating contributions from all time steps:</p>
+<div class="arithmatex">\[\begin{align*}
+\frac{\partial L}{\partial  W_{xh}} &amp;= \sum_t \frac{\partial L}{\partial  a_t} \cdot \frac{\partial a_t}{\partial  W_{xh}} \\
+\frac{\partial a_t}{\partial  W_{xh}} &amp;= (x_t)^T\\
+\frac{\partial L}{\partial  a_t} &amp;= \frac{\partial L}{\partial h_t} \frac{\partial h_t}{\partial a_t} = \frac{\partial L}{\partial h_t} * \phi'(a_t) \\ 
+\frac{\partial L}{\partial  h_t} &amp;= \frac{\partial L_t}{\partial h_t} + \frac{\partial L}{\partial h_{t+1}} \frac{\partial h_{t+1}}{\partial h_t} \\
+\frac{\partial L}{\partial  h_t} &amp;= \frac{\partial L_t}{\partial h_t} + \frac{\partial L}{\partial h_{t+1}} * \phi(a_{t+1}) \cdot W_{hh}^T \\
+\frac{\partial L}{\partial w_{xh}} &amp;= \sum_t \delta_h^t * \phi'(a_t) \cdot (x_t)^T \\ 
+\text{where } \delta_h^t &amp;= \frac{\partial L_t}{\partial h_t} + \delta_h^{t+1} * \phi'(a_{t+1}) \cdot (w_{hh})^T = \frac{\partial L_t}{\partial h_t} + \frac{\partial L}{\partial a_{t+1}} \cdot (w_{hh})^T   \\
+\end{align*}\]</div>
+<p>We get <span class="arithmatex">\(\frac{\partial L_t}{\partial h_t}\)</span> from the output (<span class="arithmatex">\(y_t\)</span> - Linear layer) or sometimes directly from loss function.</p>
+<h3 id="gradients-wrt-recurrent-weights">Gradients w.r.t recurrent weights</h3>
+<p>Similar to above</p>
+<div class="arithmatex">\[\begin{align*}
+\frac{\partial L}{\partial  W_{hh}} &amp;= \sum_t \frac{\partial L}{\partial  a_t} \cdot \frac{\partial a_t}{\partial  W_{hh}} \\
+\frac{\partial a_t}{\partial  W_{hh}} &amp;= (h_{t-1})^T\\
+\frac{\partial L}{\partial w_{hh}} &amp;= \sum_t \delta_h^t * \phi'(a_t) \cdot (h_{t-1})^T \\
+\end{align*}\]</div>
+<h3 id="gradients-wrt-input">Gradients w.r.t input</h3>
+<div class="arithmatex">\[\begin{align*}
+\frac{\partial L}{\partial  x_t} &amp;= \sum_{t} \frac{\partial L}{\partial  a_t} \cdot \frac{\partial a_t}{\partial x_t} \\
+\frac{\partial L}{\partial  x_t} &amp;= \sum_{t} \frac{\partial L}{\partial  a_t} \cdot (W_{xh})^T \\
+\end{align*}\]</div>
+<h3 id="vanishing-and-exploding-gradients">Vanishing and Exploding Gradients</h3>
+<p>RNNs are susceptible to vanishing and exploding gradients, which can make training difficult for long sequences.</p>
+<h2 id="gradient-clipping">Gradient Clipping</h2>
+<p>Gradient clipping is a technique used to mitigate exploding gradients by capping the gradients during backpropagation.</p>
+<h2 id="advantages">Advantages</h2>
+<h2 id="disadvantages">Disadvantages</h2>
 
 
 
