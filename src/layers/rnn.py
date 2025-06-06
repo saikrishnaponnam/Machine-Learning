@@ -1,41 +1,10 @@
-from abc import ABC, abstractmethod
+from typing import Optional
 
 import torch
-import torch.nn as nn
+from torch import Tensor
 
 from src.init import kaiming
-from src.layers import ReLU, Tanh
-
-
-class RNNBase(nn.Module, ABC):
-    """
-    Abstract base class for RNN layers.
-
-    Defines the required interface for RNN layers, including forward and backward passes,
-    and parameter retrieval.
-    """
-
-    @abstractmethod
-    def forward(self, x: torch.Tensor, hx: torch.Tensor = None):
-        """
-        Forward pass through the layer.
-        """
-        raise NotImplementedError("Forward pass not implemented.")
-
-    @abstractmethod
-    def backward(self, d_out: torch.Tensor):
-        """
-        Backward pass through the layer.
-        """
-        raise NotImplementedError("Backward pass not implemented.")
-
-    @abstractmethod
-    def get_params(self):
-        """
-        Returns:
-            - params: A list of tuples of (parameter, grads) (weights and bias)
-        """
-        raise NotImplementedError("get_params not implemented.")
+from src.layers import ReLU, Tanh, RNNBase
 
 
 class RNN(RNNBase):
@@ -87,7 +56,7 @@ class RNN(RNNBase):
         self.raw_outputs = None
         self.x = None
 
-    def forward(self, x: torch.Tensor, hx: torch.Tensor = None):
+    def forward(self, x: Tensor, hx: Optional[Tensor] = None):
         """
         Forward pass through the RNN layer.
         Inputs:
@@ -135,7 +104,7 @@ class RNN(RNNBase):
 
         return output, torch.stack(h_prev, dim=0)
 
-    def backward(self, d_out: torch.Tensor):
+    def backward(self, d_out: Tensor):
         """
         Backward pass through the RNN layer.
 
