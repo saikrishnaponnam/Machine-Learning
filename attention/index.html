@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/lstm/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/attention/">
       
       
-        <link rel="prev" href="../rnn/">
-      
-      
-        <link rel="next" href="../models/">
       
       
       <link rel="icon" href="../images/icon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>LSTM - Machine Learning Notes</title>
+        <title>Attention - Machine Learning Notes</title>
       
     
     
@@ -78,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lstm" class="md-skip">
+        <a href="#attention" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LSTM
+              Attention
             
           </span>
         </div>
@@ -562,32 +558,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    LSTM
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lstm/" class="md-nav__link">
         
   
   
@@ -598,62 +572,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
-    <span class="md-ellipsis">
-      Training
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backward-pass" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backward Pass
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practical-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Practical Tips
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -867,50 +785,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
-    <span class="md-ellipsis">
-      Training
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backward-pass" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backward Pass
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practical-tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      Practical Tips
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -928,71 +802,24 @@
   
 
 
-<h1 id="lstm">LSTM</h1>
-<p>The vanilla RNNs suffer from vanishing and exploding gradients, which makes them difficult to train on long sequences. 
-LSTM (Long Short-Term Memory) networks were introduced to address these issues by introducing a more complex architecture that can learn long-term dependencies.</p>
-<h2 id="architecture">Architecture</h2>
-<p>At each time step <span class="arithmatex">\(t\)</span>, an LSTM unit processes the current input <span class="arithmatex">\(x_t\)</span>, the previous hidden state <span class="arithmatex">\(h_{t−1}\)</span>, and the previous cell state <span class="arithmatex">\(C_{t-1}\)</span> to produce a new hidden state <span class="arithmatex">\(h_t\)</span> and cell state <span class="arithmatex">\(C_t\)</span>.<br />
-LSTMs use a cell state to store long-term dependencies and gates to regulate information flow.
-Each LSTM unit or cell has three main gates and two states:</p>
-<p>1.<strong>Forget Gate</strong>: Decides what information to discard from the cell state.</p>
-<div class="arithmatex">\[f_t = \sigma(W_{xf} x_t + W_{hf} h_{t-1} + b_{f})\]</div>
-<p>2.<strong>Input Gate</strong>: Decides what new information to add to the cell state.</p>
-<div class="arithmatex">\[i_t = \sigma(W_{xi} x_t + W_{hi} h_{t-1} + b_{i}) \\ \tilde{C}_t = tanh(W_{xC} x_t + W_{hC} h_{t-1} + b_C) \]</div>
-<p>3.<strong>Output Gate</strong>: Decides what information to output based on the cell state.</p>
-<div class="arithmatex">\[o_t = \sigma(W_{xo} x_t + W_{ho} h_{t-1} + b_o)\]</div>
-<p>4.<strong>Cell State</strong>: The memory of the LSTM that carries long-term information.</p>
-<div class="arithmatex">\[C_t = f_t * C_{t-1} + i_t * \tilde{C}_t\]</div>
-<p>5.<strong>Hidden State</strong>: The output of the LSTM cell at the current time step.</p>
-<div class="arithmatex">\[h_t = o_t * \tanh(C_t)\]</div>
-<figure>
-    <img alt="img.png" src="../images/lstm.png" />
-</figure>
-<h2 id="training">Training</h2>
-<p>The goal is to minimize a loss function (e.g., cross-entropy, MSE) by updating the weights of the LSTM using gradient descent and backpropagation through time (BPTT).
-BPTT is similar to RNNs but accounts for the cell state and gates in LSTMs.</p>
-<h2 id="backward-pass">Backward Pass</h2>
-<p>Input: <span class="arithmatex">\(d\_out = \frac{dL}{dh_t}\)</span> from the next layer or loss function.</p>
-<p><strong>Gradients w.r.t <span class="arithmatex">\(W_{xf}\)</span>:</strong></p>
-<div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial W_{xf}} &amp;= \frac{\partial L}{\partial f_t} \cdot \frac{\partial f_t}{\partial W_{xf}} \\
-&amp;= \frac{\partial L}{\partial C_t} \cdot \frac{\partial C_t}{\partial f_t} \cdot \frac{\partial f_t}{\partial a_f} \frac{\partial a_f}{\partial W_{xf}} \\
-&amp;= \frac{\partial L}{\partial C_t} \cdot C_{t-1} \cdot f_t (1 - f_t) \cdot (x_t)^T 
-\end{align*}\]</div>
-<p><span class="arithmatex">\(\frac{\partial L}{\partial C_t}\)</span>, this gradient arise from 2 sources:<br />
-1. Direct influence on output <span class="arithmatex">\(h_t\)</span>.<br />
-2. Backpropagated from next timestep, due to <span class="arithmatex">\(C_{t+1}\)</span> depends on <span class="arithmatex">\(C_t\)</span> via the forget gate.</p>
-<div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial C_t} &amp;= \frac{\partial L}{\partial h_t} \frac{\partial h_t}{\partial C_t} + \frac{\partial L}{\partial C_{t+1}} \frac{\partial C_{t+1}}{\partial C_t}  \\
-&amp;= \frac{\partial L}{\partial h_t} \cdot o_t \cdot (1 - \tanh^2(C_t)) + \frac{\partial L}{\partial C_{t+1}} \cdot f_{t+1}
-\end{align*}\]</div>
-<p>Gradients w.r.t <span class="arithmatex">\(W_{xi}, W_{hf}, W_{hi}\)</span> can be derived similarly.</p>
-<p><strong>Gradients w.r.t <span class="arithmatex">\(W_{xo}\)</span>:</strong></p>
-<div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial W_{xo}} &amp;= \frac{\partial L}{\partial o_t} \cdot \frac{\partial o_t}{\partial W_{xo}} \\
-&amp;= \frac{\partial L}{\partial h_t} \cdot \frac{\partial h_t}{\partial o_t} \cdot \frac{\partial o_t}{\partial a_o} \frac{\partial a_o}{\partial W_{xo}} \\
-&amp;= \frac{\partial L}{\partial h_t} \cdot \tanh(C_t) \cdot o_t (1 - o_t) \cdot (x_t)^T
-\end{align*}\]</div>
-<p>Gradients w.r.t <span class="arithmatex">\(W_{ho}\)</span> can be derived similarly.</p>
-<p><strong>Gradients w.r.t <span class="arithmatex">\(W_{xC}\)</span></strong></p>
-<div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial W_{xC}} &amp;= \frac{\partial L}{\partial \tilde{C}_t} \cdot \frac{\partial \tilde{C}_t}{\partial W_{xC}} \\
-&amp;= \frac{\partial L}{\partial C_t} \cdot \frac{\partial C_t}{\partial \tilde{C}_t} \frac{\partial \tilde{C}_t}{\partial W_{xc}} \\
-&amp;= \frac{\partial L}{\partial C_t} \cdot i_t \cdot (1 - \tilde{C}_t^2) \cdot (x_t)^T 
-\end{align*}\]</div>
-<p>Gradients w.r.t <span class="arithmatex">\(W_{hC}\)</span> can be derived similarly.</p>
-<p><strong>Gradients w.r.t input (<span class="arithmatex">\(x_t ~\&amp;~ h_{t-1}\)</span>)</strong></p>
-<div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial x_t} &amp;= \frac{\partial L}{\partial f_t} \cdot \frac{\partial f_t}{\partial x_t} + \frac{\partial L}{\partial i_t} \cdot \frac{\partial i_t}{\partial x_t} + \frac{\partial L}{\partial o_t} \cdot \frac{\partial o_t}{\partial x_t} + \frac{\partial L}{\partial \tilde{C}_t} \cdot \frac{\partial \tilde{C}_t}{\partial x_t} \\
-&amp;= \frac{\partial L}{\partial f_t} \cdot f_t (1 - f_t) \cdot W_{xf} + \frac{\partial L}{\partial i_t} \cdot i_t (1 - i_t) \cdot W_{xi} + \frac{\partial L}{\partial o_t} \cdot o_t (1 - o_t) \cdot W_{xo} + \frac{\partial L}{\partial \tilde{C}_t} \cdot (1 - \tilde{C}_t^2) \cdot W_{xC}
-\end{align*}\]</div>
-<p><span class="arithmatex">\(dx_t\)</span> is required if we are also training the layers before the LSTM layer, such as an embedding layer or a convolutional layer.</p>
-<div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial h_{t-1}} &amp;= \frac{\partial L}{\partial f_t} \cdot \frac{\partial f_t}{\partial h_{t-1}} + \frac{\partial L}{\partial i_t} \cdot \frac{\partial i_t}{\partial h_{t-1}} + \frac{\partial L}{\partial o_t} \cdot \frac{\partial o_t}{\partial h_{t-1}} + \frac{\partial L}{\partial \tilde{C}_t} \cdot \frac{\partial \tilde{C}_t}{\partial h_{t-1}} \\
-&amp;= \frac{\partial L}{\partial f_t} \cdot f_t (1 - f_t) \cdot W_{hf} + \frac{\partial L}{\partial i_t} \cdot i_t (1 - i_t) \cdot W_{hi} + \frac{\partial L}{\partial o_t} \cdot o_t (1 - o_t) \cdot W_{ho} + \frac{\partial L}{\partial C_t} \cdot (1 - \tilde{C}_t^2) \cdot W_{hC}
-\end{align*}\]</div>
-<p><span class="arithmatex">\(dh_{t-1}\)</span> is sent back to the previous time step.</p>
-<h2 id="practical-tips">Practical Tips</h2>
+<h1 id="attention">Attention</h1>
+<p>Motivation
+Standard RNNs, LSTMs, and GRUs struggle with very long sequences due to fixed-size hidden states. As the sequence grows, it becomes harder to retain relevant information. Attention mechanisms help by allowing the model to focus on different parts of the input sequence when generating each output.</p>
+<p>🔹 Key Idea
+Instead of compressing all input information into a single context vector, attention provides dynamic weighting of all encoder hidden states.</p>
+<p>🔹 Basic Attention Mechanism (Bahdanau Attention)
+Given an encoder hidden state sequence($h_1, h_2, \cdots h_T $), attention computes a context vector <span class="arithmatex">\(c_t\)</span> for each decoder step:</p>
+<ol>
+<li>Compute alignment scores (similarity between current decoder state and encoder states): <span class="arithmatex">\(e_{ti}=score(s _t, h_i)\)</span></li>
+<li>Normalize scores with softmax: <span class="arithmatex">\(\frac{exp(e_{ti})}{\sum_j exp(e_{tj})}\)</span></li>
+<li>Compute the context vector: <span class="arithmatex">\(c_t = \sum_i \alpha_{ti} h_i\)</span></li>
+</ol>
+<p>🔹 Variants of Attention
+Additive attention (Bahdanau): uses a feedforward network<br />
+Dot-product attention (Luong): simpler and more efficient</p>
+<p>🔹 Impact
+Improves performance in seq2seq tasks (e.g., translation)<br />
+Forms the foundation of Transformers</p>
 
 
 

@@ -704,18 +704,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages" class="md-nav__link">
+  <a href="#practical-tips" class="md-nav__link">
     <span class="md-ellipsis">
-      Advantages
+      Practical Tips
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#disadvantages" class="md-nav__link">
+  <a href="#qa" class="md-nav__link">
     <span class="md-ellipsis">
-      Disadvantages
+      Q&amp;A
     </span>
   </a>
   
@@ -1078,18 +1078,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages" class="md-nav__link">
+  <a href="#practical-tips" class="md-nav__link">
     <span class="md-ellipsis">
-      Advantages
+      Practical Tips
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#disadvantages" class="md-nav__link">
+  <a href="#qa" class="md-nav__link">
     <span class="md-ellipsis">
-      Disadvantages
+      Q&amp;A
     </span>
   </a>
   
@@ -1194,11 +1194,18 @@ But same parameters are shared across all time steps/layers. The gradients are c
 \frac{\partial L}{\partial  x_t} &amp;= \sum_{t} \frac{\partial L}{\partial  a_t} \cdot (W_{xh})^T \\
 \end{align*}\]</div>
 <h3 id="vanishing-and-exploding-gradients">Vanishing and Exploding Gradients</h3>
-<p>RNNs are susceptible to vanishing and exploding gradients, which can make training difficult for long sequences.</p>
+<p>Although RNNs are theoretically capable of utilizing information from sequences of any length, in practice they are constrained to remembering only a limited number of previous steps. 
+This limitation arises because RNNs often experience vanishing or exploding gradients, which makes training on long sequences challenging.
+This mainly occurs because <span class="arithmatex">\(\frac{dL}{dh_t}\)</span> depends on <span class="arithmatex">\(\frac{\partial h_t}{\partial h_k}\)</span>, which itself is a chain of derivatives. 
+With small values in the weight matrices and repeated matrix multiplications (especially as <span class="arithmatex">\( t-k \)</span> increases), the gradients shrink exponentially, often vanishing after just a few time steps.
+As a result, gradient contributions from distant time steps become negligible, and the model fails to learn long-range dependencies.</p>
 <h2 id="gradient-clipping">Gradient Clipping</h2>
 <p>Gradient clipping is a technique used to mitigate exploding gradients by capping the gradients during backpropagation.</p>
-<h2 id="advantages">Advantages</h2>
-<h2 id="disadvantages">Disadvantages</h2>
+<h2 id="practical-tips">Practical Tips</h2>
+<p>When implementing RNNs, consider the following:
+- <strong>Batching</strong>: RNNs can be trained on batches of sequences, but care must be taken to handle variable-length sequences. Padding is often used to ensure that all sequences in a batch have the same length.
+- <strong>Regularization</strong>: Techniques like dropout can be applied to RNNs, but they need to be adapted for sequential data. Variants like variational dropout or zoneout are often used.</p>
+<h2 id="qa">Q&amp;A</h2>
 
 
 
