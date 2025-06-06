@@ -4,6 +4,8 @@ repo_url: https://github.com/saikrishnaponnam/Machine-Learning.git
 remote_branch: gh-pages
 theme:
   name: material
+  logo: images/logo.png
+  favicon: images/icon.png
   palette:
     primary: deep purple
   features:

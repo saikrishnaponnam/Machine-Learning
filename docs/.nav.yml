@@ -9,7 +9,6 @@ nav:
   - batch_norm.md
   - rnn.md
   - lstm.md
-  - "*.md"
   - models
   - papers
   - "*/"

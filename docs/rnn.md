@@ -109,11 +109,20 @@ $$\begin{align*}
 \end{align*}$$
 
 ### Vanishing and Exploding Gradients
-RNNs are susceptible to vanishing and exploding gradients, which can make training difficult for long sequences.
+Although RNNs are theoretically capable of utilizing information from sequences of any length, in practice they are constrained to remembering only a limited number of previous steps. 
+This limitation arises because RNNs often experience vanishing or exploding gradients, which makes training on long sequences challenging.
+This mainly occurs because $\frac{dL}{dh_t}$ depends on $\frac{\partial h_t}{\partial h_k}$, which itself is a chain of derivatives. 
+With small values in the weight matrices and repeated matrix multiplications (especially as \( t-k \) increases), the gradients shrink exponentially, often vanishing after just a few time steps.
+As a result, gradient contributions from distant time steps become negligible, and the model fails to learn long-range dependencies.
+
 
 ## Gradient Clipping
 Gradient clipping is a technique used to mitigate exploding gradients by capping the gradients during backpropagation.
 
-## Advantages 
+## Practical Tips
+When implementing RNNs, consider the following:
+- **Batching**: RNNs can be trained on batches of sequences, but care must be taken to handle variable-length sequences. Padding is often used to ensure that all sequences in a batch have the same length.
+- **Regularization**: Techniques like dropout can be applied to RNNs, but they need to be adapted for sequential data. Variants like variational dropout or zoneout are often used.
 
-## Disadvantages
+
+## Q&A
