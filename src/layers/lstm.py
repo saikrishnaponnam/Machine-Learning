@@ -25,7 +25,9 @@ class LSTM(RNNBase):
         self.hidden_size = hidden_size
         self.batch_first = batch_first
         self.num_layers = num_layers
-        # self.bidirectional = bidirectional
+        self.bidirectional = bidirectional
+        if bidirectional:
+            raise NotImplementedError("Bidirectional LSTM is not implemented yet.")
 
         # Weights and biases initialization
         self.W_x = kaiming(input_size, 4 * hidden_size)  # Concatenated weights [W_ii, W_if, W_iC, W_io]
@@ -51,8 +53,8 @@ class LSTM(RNNBase):
         Returns:
             output (torch.Tensor): Output tensor of shape (batch, seq_len, D * hidden_size) if batch_first is True,
                           otherwise (seq_len, batch, hidden_size).
-            h_n (torch.tensor): hidden state tensor of shape (D * num_layer, batch_size, hidden_size).
-            c_n (torch.tensor): cell state tensor of shape (D * num_layer, batch_size, hidden_size).
+            h_n (torch.Tensor): hidden state tensor of shape (D * num_layer, batch_size, hidden_size).
+            c_n (torch.Tensor): cell state tensor of shape (D * num_layer, batch_size, hidden_size).
         """
         if self.batch_first:
             x = x.transpose(0, 1)
@@ -71,7 +73,7 @@ class LSTM(RNNBase):
         for t in range(seq_len):
             x_t = x[t]
             gates = x_t @ self.W_x + h_t @ self.W_h + self.b
-            f_t, i_t, c_tilde_t, o_t = torch.split(gates, self.hidden_size, dim=1)
+            i_t, f_t, c_tilde_t, o_t = torch.split(gates, self.hidden_size, dim=1)
 
             f_t = torch.sigmoid(f_t)
             i_t = torch.sigmoid(i_t)
@@ -126,7 +128,7 @@ class LSTM(RNNBase):
             dc_tilde_t = dc_t * i_t * (1 - c_tilde_t**2)
             do_t = dh_t * torch.tanh(c_t) * o_t * (1 - o_t)
 
-            d_gates = torch.cat([df_t, di_t, dc_tilde_t, do_t], dim=1)
+            d_gates = torch.cat([di_t, df_t, dc_tilde_t, do_t], dim=1)
 
             dW_x += x_t.T @ d_gates
             dW_h += h_prev.T @ d_gates
@@ -136,7 +138,11 @@ class LSTM(RNNBase):
             dh_t = d_gates @ self.W_h.T
             dc_t = dc_t * f_t
 
-        return torch.cat(dx, dim=0), (dh_t, dc_t)
+        self.dW_x.copy_(dW_x)
+        self.dW_h.copy_(dW_h)
+        self.db.copy_(db)
+
+        return torch.stack(dx, dim=0), (dh_t, dc_t)
 
     def get_params(self):
         return [(self.W_x, self.dW_x), (self.W_h, self.dW_h), (self.b, self.db)]

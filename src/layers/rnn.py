@@ -29,7 +29,9 @@ class RNN(RNNBase):
         self.hidden_size = hidden_size
         self.batch_first = batch_first
         self.num_layers = num_layers
-        # self.bidirectional = bidirectional
+        self.bidirectional = bidirectional
+        if bidirectional:
+            raise NotImplementedError("Bidirectional RNN is not implemented yet.")
 
         self.nonlinearity = nonlinearity
         self.activation = ReLU() if nonlinearity == "relu" else Tanh()
@@ -74,6 +76,8 @@ class RNN(RNNBase):
         seq_len, N, _ = x.shape
         if hx is None:
             hx = [torch.zeros(N, self.hidden_size, device=x.device) for _ in range(self.num_layers)]
+        else:
+            hx = [hx[l] for l in range(self.num_layers)]
 
         self.inputs = []
         self.hidden_states = []
@@ -127,18 +131,18 @@ class RNN(RNNBase):
         dh_next = [torch.zeros(N, self.hidden_size, device=self.x.device) for _ in range(self.num_layers)]
 
         for t in reversed(range(seq_len)):
-            d_layer = d_out[t]
+            dh_t = d_out[t]
 
             for l in reversed(range(self.num_layers)):
                 x_t = self.inputs[t] if l == 0 else self.hidden_states[t][l - 1]
                 h_t = self.hidden_states[t][l]
                 a_t = self.raw_outputs[t][l]
                 h_prev = self.hidden_states[t - 1][l] if t > 0 else torch.zeros_like(h_t)
-                dh = d_layer + dh_next[l]
+                dh_t += dh_next[l]
                 if self.nonlinearity == "relu":
-                    d_at = (a_t > 0).float() * dh
+                    d_at = (a_t > 0).float() * dh_t
                 else:
-                    d_at = (1 - h_t**2) * dh
+                    d_at = (1 - h_t**2) * dh_t
 
                 if l == 0:
                     dx[t] = d_at.matmul(self.w_xh[l].T)
@@ -154,7 +158,7 @@ class RNN(RNNBase):
             self.dbh[l].copy_(dbh[l])
 
         dh0 = dh_next
-        return dx, dh0
+        return dx, torch.stack(dh0, dim=0)
 
     def get_params(self):
         return (
