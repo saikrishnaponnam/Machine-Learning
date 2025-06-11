@@ -52,8 +52,6 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../stylesheets/override.css">
-    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -197,7 +195,7 @@
   
   
   <span class="md-ellipsis">
-    Home
+    ML Notes
     
   </span>
   
@@ -595,7 +593,7 @@
         <li class="md-nav__item">
   <a href="#working-with-sequences" class="md-nav__link">
     <span class="md-ellipsis">
-      Working with sequences
+      Working with Sequences
     </span>
   </a>
   
@@ -704,9 +702,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practical-tips" class="md-nav__link">
+  <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
-      Practical Tips
+      Best Practices
     </span>
   </a>
   
@@ -770,12 +768,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../models/" class="md-nav__link ">
+            <a href="../tokenization/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Models
+    Tokenization
     
   </span>
   
@@ -791,6 +789,173 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Tokenization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenization/bpe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BPE Tokenization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenization/wordpiece/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WordPiece [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenization/unigram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unigram [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenization/neural_tokenizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Neural Tokenizer [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenization/hf_tokenizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HF Tokenizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../models/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Models
           </label>
@@ -924,9 +1089,21 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../papers/" class="md-nav__link">
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../papers/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -935,7 +1112,48 @@
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Papers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/seq2seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seq2Seq
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -969,7 +1187,7 @@
         <li class="md-nav__item">
   <a href="#working-with-sequences" class="md-nav__link">
     <span class="md-ellipsis">
-      Working with sequences
+      Working with Sequences
     </span>
   </a>
   
@@ -1078,9 +1296,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practical-tips" class="md-nav__link">
+  <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
-      Practical Tips
+      Best Practices
     </span>
   </a>
   
@@ -1115,39 +1333,40 @@
 
 
 <h1 id="rnn">RNN</h1>
-<p>For models like logistic regression and multilayer perceptron (MLP), the input <span class="arithmatex">\(x_i\)</span> is assumed to be a fixed size vector in <span class="arithmatex">\(\mathbb{R}^d\)</span>. 
-Such datasets are referred to as tabular datasets.</p>
-<p>Image data, on the other hand, consists of a grid of pixels and can be represented as a 2D matrix. 
-CNNs are used to process the spatial structure of images. 
-However, these data types are still of fixed length.</p>
-<p>But how do we handle data that is not of fixed length, such as a sequence of images in a video or a sequence of words in language tasks like image captioning or translation?</p>
-<p>Recurrent Neural Networks (RNNs) are designed to process sequential data, where the input length can vary. 
-RNNs capture the dynamics of sequences through recurrent connections, allowing them to maintain a memory of previous inputs.</p>
-<h2 id="working-with-sequences">Working with sequences</h2>
-<p>A sequence consists of an ordered list of feature vectors <span class="arithmatex">\(x_1, \dots, x_T\)</span>, where each <span class="arithmatex">\(x_t \in \mathbb{R}^d\)</span> is indexed by time step <span class="arithmatex">\(t \in \mathbb{Z}^+\)</span>.</p>
+<p><a href="https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/layers/rnn.py">Code</a></p>
+<p>Traditional models like logistic regression and multilayer perceptrons (MLPs) expect each input <span class="arithmatex">\(x_i\)</span> to be a fixed-size vector in <span class="arithmatex">\(\mathbb{R}^d\)</span>. These are typically called tabular datasets.</p>
+<p>Image data, for example, is structured as a grid of pixels and represented as a 2D matrix. 
+Convolutional Neural Networks (CNNs) are designed to process this spatial structure. 
+However, both tabular and image data are of fixed length.But what if our data is not fixed in length? Examples include a sequence of images in a video or a sequence of words in language tasks like image captioning or translation.</p>
+<p>Recurrent Neural Networks (RNNs) are specialized for handling sequential data, where the input length can vary. 
+RNNs use recurrent connections to capture the dynamics of sequences, allowing them to maintain a memory of previous inputs.</p>
+<h2 id="working-with-sequences">Working with Sequences</h2>
+<p>A sequence is an ordered list of feature vectors <span class="arithmatex">\(x_1, \dots, x_T\)</span>, where each <span class="arithmatex">\(x_t \in \mathbb{R}^d\)</span> and <span class="arithmatex">\(t\)</span> is the time step.</p>
 <p>While individual inputs are typically assumed to be independently sampled from a distribution <span class="arithmatex">\(P(X)\)</span>, in sequential data, we cannot assume that each time step is independent of the previous ones.</p>
 <p>Given a sequential input, the goal may be to predict a single output <span class="arithmatex">\(y\)</span> or sequentially structured output (<span class="arithmatex">\(y_1, \dots, y_T\)</span>).</p>
 <h2 id="rnns">RNNs</h2>
 <p>An RNN processes sequential input one step at a time, maintaining a hidden state that serves as memory.
 Let's denote:</p>
 <ul>
-<li><span class="arithmatex">\(x_t \in \mathbb{R}^d\)</span>: as the input at time step <span class="arithmatex">\(t\)</span></li>
-<li><span class="arithmatex">\(h_t \in \mathbb{R}^d\)</span>: as the hidden state at time step <span class="arithmatex">\(t\)</span></li>
-<li><span class="arithmatex">\(y_t \in \mathbb{R}^m\)</span>: as the output at time step <span class="arithmatex">\(t\)</span></li>
-<li><span class="arithmatex">\(W_{xh}\)</span>: as the weight matrix for input to hidden state</li>
-<li><span class="arithmatex">\(W_{hh}\)</span>: as the weight matrix for hidden state to hidden state</li>
-<li><span class="arithmatex">\(W_{hy}\)</span>: as the weight matrix for hidden state to output</li>
-<li><span class="arithmatex">\(\phi\)</span>: as the activation function</li>
+<li><span class="arithmatex">\(x_t \in \mathbb{R}^d\)</span>: input at time step <span class="arithmatex">\(t\)</span></li>
+<li><span class="arithmatex">\(h_t \in \mathbb{R}^d\)</span>: hidden state at time step <span class="arithmatex">\(t\)</span></li>
+<li><span class="arithmatex">\(y_t \in \mathbb{R}^m\)</span>: output at time step <span class="arithmatex">\(t\)</span></li>
+<li><span class="arithmatex">\(W_{xh}\)</span>: weight matrix from input to hidden state</li>
+<li><span class="arithmatex">\(W_{hh}\)</span>: weight matrix from hidden state to hidden state</li>
+<li><span class="arithmatex">\(W_{hy}\)</span>: weight matrix from hidden state to output</li>
+<li><span class="arithmatex">\(\phi\)</span>: activation function</li>
 </ul>
 <p>The hidden state <span class="arithmatex">\(h_t\)</span> at time step <span class="arithmatex">\(t\)</span> is computed from the previous hidden state <span class="arithmatex">\(h_{t-1}\)</span> and the current input <span class="arithmatex">\(x_t\)</span>.
-This hidden state stores information about the sequence up to that point. 
+This hidden state stores information about the sequence up to that point.
 Unlike traditional deep neural networks, RNNs share the same parameters across all time steps.</p>
 <figure>
     <img alt="img.png" src="../images/rnn.png" />
     <figcaption>RNN unrolled</figcaption>
 </figure>
-<div class="arithmatex">\[h_t = \phi(a_t) = \phi(W_{xh}x_t + W_{hh} h_{t-1} + b_h ) \\
-y_t = W_{hy} h_t + b_y\]</div>
+<div class="arithmatex">\[\begin{align*} 
+a_t &amp;= W_{xh} x_t + W_{hh} h_{t-1} + b_h \\
+h_t &amp;= \phi(a_t)\\
+y_t &amp;= W_{hy} h_t + b_y \end{align*}\]</div>
 <p><img alt="rnn_types.png" src="../images/rnn_types.png" /></p>
 <p>Not all RNNs produce output at every time step; some only output at the final time step. 
 The key feature of an RNN is its hidden state, which captures information about the sequence.</p>
@@ -1155,7 +1374,7 @@ The key feature of an RNN is its hidden state, which captures information about 
 <p>Training RNNs is similar to training other neural networks, but with some additional considerations due to the sequential nature of the data.</p>
 <h3 id="loss-function">Loss Function</h3>
 <p>The loss function for RNNs can be defined as the sum of the losses at each time step, or as the average loss across all time steps.</p>
-<div class="arithmatex">\[L = \frac{1}{T} \sum_{t=1}^{T} L_t(y_t, \hat{y}_t)\]</div>
+<div class="arithmatex">\[L = \frac{1}{T} \sum_{t=1}^{T} l(y_t, \hat{y}_t)\]</div>
 <p>where <span class="arithmatex">\(L\)</span> is the loss function (e.g., cross-entropy loss), <span class="arithmatex">\(y_t\)</span> is the true output at time step <span class="arithmatex">\(t\)</span>, and <span class="arithmatex">\(\hat{y}_t\)</span> is the predicted output at time step <span class="arithmatex">\(t\)</span>.</p>
 <h2 id="backpropagation-through-time-bptt">Backpropagation through time (BPTT)</h2>
 <p>When training RNNs, we often use backpropagation through time (BPTT) to compute gradients.
@@ -1165,33 +1384,34 @@ But same parameters are shared across all time steps/layers. The gradients are c
 <p>Let <span class="arithmatex">\(\delta_y^t = \frac{\partial L_t}{\partial \hat{y}_t}\)</span>, <span class="arithmatex">\(\delta_h^t = \frac{\partial L_t}{\partial h_t}\)</span>, $\delta_a^t = \delta_h^t * \phi'(a_t) $, where <span class="arithmatex">\(\phi'(a_t)\)</span> is the derivative of the activation function element-wise.</p>
 <h3 id="gradients-wrt-output-weights">Gradients w.r.t output weights</h3>
 <div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial  W_{hy}} &amp;= \sum_t \frac{\partial L_t}{\partial W_{hy}} \\
-\frac{\partial L_t}{\partial W_{hy}} &amp;= \frac{\partial L_t}{\partial \hat{y}_t} \cdot \frac{\partial \hat{y}_t}{\partial w_{hy}} = \delta_y^t . (h_t)^T \\
+\frac{\partial L}{\partial  W_{hy}} &amp;= \sum_t \frac{\partial l}{\partial W_{hy}} \\
+\frac{\partial l}{\partial W_{hy}} &amp;= \frac{\partial l}{\partial \hat{y}_t} \cdot \frac{\partial \hat{y}_t}{\partial w_{hy}} = \delta_y^t . (h_t)^T \\
 \frac{\partial L}{\partial W_{hy}} &amp;= \sum_t {\delta_y^t} \cdot (h_t)^T \\
 \end{align*}\]</div>
 <h3 id="gradients-wrt-input-weights">Gradients w.r.t input weights</h3>
 <p>To update the input-to-hidden weights <span class="arithmatex">\(W_{xh}\)</span>, we compute the gradient of the loss with respect to <span class="arithmatex">\(W_{xh}\)</span> by accumulating contributions from all time steps:</p>
+<div class="arithmatex">\[
+\frac{\partial L}{\partial  W_{xh}} = \sum_t \frac{\partial l}{\partial  a_t} \cdot \frac{\partial a_t}{\partial  W_{xh}} = \sum_t \frac{\partial l}{\partial  a_t} \cdot (x_t)^T 
+\]</div>
 <div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial  W_{xh}} &amp;= \sum_t \frac{\partial L}{\partial  a_t} \cdot \frac{\partial a_t}{\partial  W_{xh}} \\
-\frac{\partial a_t}{\partial  W_{xh}} &amp;= (x_t)^T\\
-\frac{\partial L}{\partial  a_t} &amp;= \frac{\partial L}{\partial h_t} \frac{\partial h_t}{\partial a_t} = \frac{\partial L}{\partial h_t} * \phi'(a_t) \\ 
-\frac{\partial L}{\partial  h_t} &amp;= \frac{\partial L_t}{\partial h_t} + \frac{\partial L}{\partial h_{t+1}} \frac{\partial h_{t+1}}{\partial h_t} \\
-\frac{\partial L}{\partial  h_t} &amp;= \frac{\partial L_t}{\partial h_t} + \frac{\partial L}{\partial h_{t+1}} * \phi(a_{t+1}) \cdot W_{hh}^T \\
-\frac{\partial L}{\partial w_{xh}} &amp;= \sum_t \delta_h^t * \phi'(a_t) \cdot (x_t)^T \\ 
-\text{where } \delta_h^t &amp;= \frac{\partial L_t}{\partial h_t} + \delta_h^{t+1} * \phi'(a_{t+1}) \cdot (w_{hh})^T = \frac{\partial L_t}{\partial h_t} + \frac{\partial L}{\partial a_{t+1}} \cdot (w_{hh})^T   \\
+\frac{\partial l}{\partial  a_t} &amp;= \frac{\partial l}{\partial h_t} \frac{\partial h_t}{\partial a_t} = \frac{\partial l}{\partial h_t} * \phi'(a_t) \\ 
+\frac{\partial l}{\partial  h_t} &amp;= \frac{\partial l}{\partial h_t} + \frac{\partial l}{\partial h_{t+1}} \frac{\partial h_{t+1}}{\partial h_t} \\
+\frac{\partial l}{\partial  h_t} &amp;= \frac{\partial l}{\partial h_t} + \frac{\partial l}{\partial h_{t+1}} * \phi(a_{t+1}) \cdot W_{hh}^T \\
+\frac{\partial l}{\partial a_t} &amp;= \delta_h^t * \phi'(a_t) \\
+\text{where } \delta_h^t &amp;= \frac{\partial l}{\partial h_t} + \delta_h^{t+1} * \phi'(a_{t+1}) \cdot (w_{hh})^T = \frac{\partial l}{\partial h_t} + \frac{\partial l}{\partial a_{t+1}} \cdot (w_{hh})^T   \\
 \end{align*}\]</div>
-<p>We get <span class="arithmatex">\(\frac{\partial L_t}{\partial h_t}\)</span> from the output (<span class="arithmatex">\(y_t\)</span> - Linear layer) or sometimes directly from loss function.</p>
+<p>We get <span class="arithmatex">\(\frac{\partial l}{\partial h_t}\)</span> from the output (<span class="arithmatex">\(y_t\)</span> - Linear layer) or sometimes directly from loss function.</p>
 <h3 id="gradients-wrt-recurrent-weights">Gradients w.r.t recurrent weights</h3>
 <p>Similar to above</p>
 <div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial  W_{hh}} &amp;= \sum_t \frac{\partial L}{\partial  a_t} \cdot \frac{\partial a_t}{\partial  W_{hh}} \\
+\frac{\partial l}{\partial  W_{hh}} &amp;= \sum_t \frac{\partial l}{\partial  a_t} \cdot \frac{\partial a_t}{\partial  W_{hh}} \\
 \frac{\partial a_t}{\partial  W_{hh}} &amp;= (h_{t-1})^T\\
-\frac{\partial L}{\partial w_{hh}} &amp;= \sum_t \delta_h^t * \phi'(a_t) \cdot (h_{t-1})^T \\
+\frac{\partial l}{\partial w_{hh}} &amp;= \sum_t \delta_h^t * \phi'(a_t) \cdot (h_{t-1})^T \\
 \end{align*}\]</div>
 <h3 id="gradients-wrt-input">Gradients w.r.t input</h3>
 <div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial  x_t} &amp;= \sum_{t} \frac{\partial L}{\partial  a_t} \cdot \frac{\partial a_t}{\partial x_t} \\
-\frac{\partial L}{\partial  x_t} &amp;= \sum_{t} \frac{\partial L}{\partial  a_t} \cdot (W_{xh})^T \\
+\frac{\partial L}{\partial  x_t} &amp;= \sum_{t} \frac{\partial l}{\partial  a_t} \cdot \frac{\partial a_t}{\partial x_t} \\
+\frac{\partial L}{\partial  x_t} &amp;= \sum_{t} \frac{\partial l}{\partial  a_t} \cdot (W_{xh})^T \\
 \end{align*}\]</div>
 <h3 id="vanishing-and-exploding-gradients">Vanishing and Exploding Gradients</h3>
 <p>Although RNNs are theoretically capable of utilizing information from sequences of any length, in practice they are constrained to remembering only a limited number of previous steps. 
@@ -1199,12 +1419,28 @@ This limitation arises because RNNs often experience vanishing or exploding grad
 This mainly occurs because <span class="arithmatex">\(\frac{dL}{dh_t}\)</span> depends on <span class="arithmatex">\(\frac{\partial h_t}{\partial h_k}\)</span>, which itself is a chain of derivatives. 
 With small values in the weight matrices and repeated matrix multiplications (especially as <span class="arithmatex">\( t-k \)</span> increases), the gradients shrink exponentially, often vanishing after just a few time steps.
 As a result, gradient contributions from distant time steps become negligible, and the model fails to learn long-range dependencies.</p>
+<div class="arithmatex">\[\begin{align*}
+\delta_t &amp;= \frac{dl}{dh_t} + \delta_{t+1} \cdot \phi'(a_{t+1}) \cdot W_{hh}^T\\
+&amp;= \frac{dl}{dh_t} + (\frac{dl}{dh_{t+1}} + \delta_{t+2} \cdot \phi'(a_{t+2}) \cdot W_{hh}^T ) \cdot \phi'(a_{t+1}) \cdot W_{hh}^T \\
+&amp;= \frac{dl}{dh_t} + (\frac{dl}{dh_{t+1}} \cdot \phi'(a_{t+1}) \cdot W_{hh}^T ) + (\frac{dl}{dh_{t+2}} \cdot \phi'(a_{t+2}) \cdot W_{hh}^T \cdot \phi'(a_{t+1}) \cdot W_{hh}^T) + \cdots \\
+&amp;= \sum_{k=0}^{T-t} ((\Pi_{j=1}^{k} W_{hh} \cdot \phi'(a_{t+j})) \cdot \frac{dl}{dh_{t+k}})\\
+\end{align*}\]</div>
+<p>The term <span class="arithmatex">\(\prod_{i=t-k+1}^{t} W_{hh}^T \cdot \phi'(a_i)\)</span> captures the accumulated effect of the recurrent weights and the activation function's derivative over the previous <span class="arithmatex">\(k\)</span> time steps.</p>
+<p><span class="arithmatex">\(\phi\)</span> is typically a non-linear activation function like tanh or ReLU, <span class="arithmatex">\(||\phi'(a_i)|| = \gamma \le 1\)</span>.<br />
+<span class="arithmatex">\(||\Pi_{i=t-k+1}^t W_{hh} \cdot \phi'(a_i)|| \le (\gamma ||W_{hh}||)^k\)</span>  </p>
+<p>This leads to two main issues:</p>
+<ol>
+<li>As <span class="arithmatex">\(k\)</span> increases, if the weights are small, the gradients can vanish.</li>
+<li>If the weights are large, the gradients can explode.</li>
+</ol>
 <h2 id="gradient-clipping">Gradient Clipping</h2>
 <p>Gradient clipping is a technique used to mitigate exploding gradients by capping the gradients during backpropagation.</p>
-<h2 id="practical-tips">Practical Tips</h2>
-<p>When implementing RNNs, consider the following:
-- <strong>Batching</strong>: RNNs can be trained on batches of sequences, but care must be taken to handle variable-length sequences. Padding is often used to ensure that all sequences in a batch have the same length.
-- <strong>Regularization</strong>: Techniques like dropout can be applied to RNNs, but they need to be adapted for sequential data. Variants like variational dropout or zoneout are often used.</p>
+<h2 id="best-practices">Best Practices</h2>
+<p>When implementing RNNs, consider the following:</p>
+<ul>
+<li><strong>Batching</strong>: RNNs can be trained on batches of sequences, but care must be taken to handle variable-length sequences. Padding is often used to ensure that all sequences in a batch have the same length.</li>
+<li><strong>Regularization</strong>: Techniques like dropout can be applied to RNNs, but they need to be adapted for sequential data. Variants like variational dropout or zoneout are often used.</li>
+</ul>
 <h2 id="qa">Q&amp;A</h2>
 
 

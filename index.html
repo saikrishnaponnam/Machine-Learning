@@ -50,8 +50,6 @@
     
       <link rel="stylesheet" href="stylesheets/extra.css">
     
-      <link rel="stylesheet" href="stylesheets/override.css">
-    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -74,6 +72,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#ml-notes" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -106,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              ML Notes
             
           </span>
         </div>
@@ -191,13 +194,15 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="." class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Home
+    ML Notes
     
   </span>
   
@@ -600,12 +605,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="models/" class="md-nav__link ">
+            <a href="tokenization/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Models
+    Tokenization
     
   </span>
   
@@ -621,6 +626,173 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Tokenization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tokenization/bpe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BPE Tokenization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tokenization/wordpiece/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WordPiece [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tokenization/unigram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unigram [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tokenization/neural_tokenizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Neural Tokenizer [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tokenization/hf_tokenizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HF Tokenizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="models/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Models
           </label>
@@ -754,9 +926,21 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="papers/" class="md-nav__link">
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="papers/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -765,7 +949,48 @@
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Papers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="papers/seq2seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seq2Seq
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -787,6 +1012,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -805,9 +1032,45 @@
   
 
 
-  <h1>Home</h1>
-
-
+<h1 id="ml-notes">ML Notes</h1>
+<p>Welcome! This site is a collection of personal notes on machine learning concepts, featuring Python implementations of fundamental neural network layers and architectures. It is designed as a resource for both theoretical understanding and practical coding exercises.</p>
+<hr />
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li><a href="math/">Fundamentals</a><ul>
+<li><a href="math/linear-algebra/">Linear Algebra</a></li>
+<li><a href="math/probability/">Probability</a></li>
+<li><a href="math/calculus/">Calculus</a></li>
+</ul>
+</li>
+<li><a href="Initializers/">Weight Initializers</a></li>
+<li><a href="optimizers/">Optimizers</a><ul>
+<li><a href="optimizers/sgd/">SGD</a></li>
+<li><a href="optimizers/adam/">Adam</a></li>
+</ul>
+</li>
+<li><a href="regularization/">Regularization</a></li>
+<li><a href="convolution/">Convolution</a></li>
+<li><a href="max_pool/">Max Pooling</a></li>
+<li><a href="batch_norm/">Batch Normalization</a></li>
+<li><a href="rnn/">RNN</a></li>
+<li><a href="lstm/">LSTM</a></li>
+<li><a href="attention/">Attention</a></li>
+<li><a href="tokenization/">Tokenization</a></li>
+<li><a href="models/">Models</a></li>
+<li><a href="papers/">Papers</a></li>
+</ul>
+<hr />
+<p>Feel free to explore each section for detailed explanations, mathematical derivations, and code examples.</p>
+<p>References:
+- <a href="https://pytorch.org/docs/stable/index.html">PyTorch Documentation</a>
+- <a href="http://www.deeplearningbook.org/">Deep Learning Book</a>
+- <a href="http://cs231n.stanford.edu/">CS231n</a>
+- <a href="http://web.stanford.edu/class/cs224n/">CS224n</a>
+- <a href="https://d2l.ai/index.html">Dive into Deep Learning</a>
+- <a href="https://colah.github.io/">Colah's Blog</a>
+- <a href="https://karpathy.github.io/2015/05/21/rnn-effectiveness/">Andrej Karpathy blog</a>
+- <a href="https://www.nlpdemystified.org/course/introduction">NLP Demystified</a></p>
 
 
 

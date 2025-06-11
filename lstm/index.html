@@ -14,7 +14,7 @@
         <link rel="prev" href="../rnn/">
       
       
-        <link rel="next" href="../models/">
+        <link rel="next" href="../tokenization/">
       
       
       <link rel="icon" href="../images/icon.png">
@@ -51,8 +51,6 @@
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
-    
-      <link rel="stylesheet" href="../stylesheets/override.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -197,7 +195,7 @@
   
   
   <span class="md-ellipsis">
-    Home
+    ML Notes
     
   </span>
   
@@ -642,9 +640,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practical-tips" class="md-nav__link">
+  <a href="#vanishing-gradients" class="md-nav__link">
     <span class="md-ellipsis">
-      Practical Tips
+      Vanishing Gradients
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants-of-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variants of LSTM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
     </span>
   </a>
   
@@ -677,12 +702,12 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../models/" class="md-nav__link ">
+            <a href="../tokenization/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Models
+    Tokenization
     
   </span>
   
@@ -698,6 +723,173 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Tokenization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenization/bpe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BPE Tokenization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenization/wordpiece/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WordPiece [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenization/unigram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Unigram [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenization/neural_tokenizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Neural Tokenizer [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokenization/hf_tokenizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HF Tokenizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../models/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Models
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Models
           </label>
@@ -831,9 +1023,21 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../papers/" class="md-nav__link">
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../papers/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -842,7 +1046,48 @@
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Papers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/seq2seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seq2Seq
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -901,9 +1146,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practical-tips" class="md-nav__link">
+  <a href="#vanishing-gradients" class="md-nav__link">
     <span class="md-ellipsis">
-      Practical Tips
+      Vanishing Gradients
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variants-of-lstm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variants of LSTM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q&amp;A
     </span>
   </a>
   
@@ -929,6 +1201,10 @@
 
 
 <h1 id="lstm">LSTM</h1>
+<p><a href="https://www.bioinf.jku.at/publications/older/2604.pdf">Paper 1</a> 
+| <a href="https://arxiv.org/pdf/1909.09586">Paper 2</a>
+| <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">Blog</a> 
+| <a href="https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/layers/lstm.py">Code</a></p>
 <p>The vanilla RNNs suffer from vanishing and exploding gradients, which makes them difficult to train on long sequences. 
 LSTM (Long Short-Term Memory) networks were introduced to address these issues by introducing a more complex architecture that can learn long-term dependencies.</p>
 <h2 id="architecture">Architecture</h2>
@@ -967,13 +1243,6 @@ BPTT is similar to RNNs but accounts for the cell state and gates in LSTMs.</p>
 &amp;= \frac{\partial L}{\partial h_t} \cdot o_t \cdot (1 - \tanh^2(C_t)) + \frac{\partial L}{\partial C_{t+1}} \cdot f_{t+1}
 \end{align*}\]</div>
 <p>Gradients w.r.t <span class="arithmatex">\(W_{xi}, W_{hf}, W_{hi}\)</span> can be derived similarly.</p>
-<p><strong>Gradients w.r.t <span class="arithmatex">\(W_{xo}\)</span>:</strong></p>
-<div class="arithmatex">\[\begin{align*}
-\frac{\partial L}{\partial W_{xo}} &amp;= \frac{\partial L}{\partial o_t} \cdot \frac{\partial o_t}{\partial W_{xo}} \\
-&amp;= \frac{\partial L}{\partial h_t} \cdot \frac{\partial h_t}{\partial o_t} \cdot \frac{\partial o_t}{\partial a_o} \frac{\partial a_o}{\partial W_{xo}} \\
-&amp;= \frac{\partial L}{\partial h_t} \cdot \tanh(C_t) \cdot o_t (1 - o_t) \cdot (x_t)^T
-\end{align*}\]</div>
-<p>Gradients w.r.t <span class="arithmatex">\(W_{ho}\)</span> can be derived similarly.</p>
 <p><strong>Gradients w.r.t <span class="arithmatex">\(W_{xC}\)</span></strong></p>
 <div class="arithmatex">\[\begin{align*}
 \frac{\partial L}{\partial W_{xC}} &amp;= \frac{\partial L}{\partial \tilde{C}_t} \cdot \frac{\partial \tilde{C}_t}{\partial W_{xC}} \\
@@ -981,6 +1250,13 @@ BPTT is similar to RNNs but accounts for the cell state and gates in LSTMs.</p>
 &amp;= \frac{\partial L}{\partial C_t} \cdot i_t \cdot (1 - \tilde{C}_t^2) \cdot (x_t)^T 
 \end{align*}\]</div>
 <p>Gradients w.r.t <span class="arithmatex">\(W_{hC}\)</span> can be derived similarly.</p>
+<p><strong>Gradients w.r.t <span class="arithmatex">\(W_{xo}\)</span>:</strong></p>
+<div class="arithmatex">\[\begin{align*}
+\frac{\partial L}{\partial W_{xo}} &amp;= \frac{\partial L}{\partial o_t} \cdot \frac{\partial o_t}{\partial W_{xo}} \\
+&amp;= \frac{\partial L}{\partial h_t} \cdot \frac{\partial h_t}{\partial o_t} \cdot \frac{\partial o_t}{\partial a_o} \frac{\partial a_o}{\partial W_{xo}} \\
+&amp;= \frac{\partial L}{\partial h_t} \cdot \tanh(C_t) \cdot o_t (1 - o_t) \cdot (x_t)^T
+\end{align*}\]</div>
+<p>Gradients w.r.t <span class="arithmatex">\(W_{ho}\)</span> can be derived similarly.</p>
 <p><strong>Gradients w.r.t input (<span class="arithmatex">\(x_t ~\&amp;~ h_{t-1}\)</span>)</strong></p>
 <div class="arithmatex">\[\begin{align*}
 \frac{\partial L}{\partial x_t} &amp;= \frac{\partial L}{\partial f_t} \cdot \frac{\partial f_t}{\partial x_t} + \frac{\partial L}{\partial i_t} \cdot \frac{\partial i_t}{\partial x_t} + \frac{\partial L}{\partial o_t} \cdot \frac{\partial o_t}{\partial x_t} + \frac{\partial L}{\partial \tilde{C}_t} \cdot \frac{\partial \tilde{C}_t}{\partial x_t} \\
@@ -992,7 +1268,18 @@ BPTT is similar to RNNs but accounts for the cell state and gates in LSTMs.</p>
 &amp;= \frac{\partial L}{\partial f_t} \cdot f_t (1 - f_t) \cdot W_{hf} + \frac{\partial L}{\partial i_t} \cdot i_t (1 - i_t) \cdot W_{hi} + \frac{\partial L}{\partial o_t} \cdot o_t (1 - o_t) \cdot W_{ho} + \frac{\partial L}{\partial C_t} \cdot (1 - \tilde{C}_t^2) \cdot W_{hC}
 \end{align*}\]</div>
 <p><span class="arithmatex">\(dh_{t-1}\)</span> is sent back to the previous time step.</p>
-<h2 id="practical-tips">Practical Tips</h2>
+<h2 id="vanishing-gradients">Vanishing Gradients</h2>
+<p>In LSTMS the recursive part is <span class="arithmatex">\(\frac{\partial L}{\partial C_t} \propto \frac{\partial L}{\partial C_{t+1}} * f_{t+1}\)</span></p>
+<p><span class="arithmatex">\(\frac{\partial L}{\partial C_{t+1}} * f_{t+1} = \frac{\partial L}{\partial C_{t+2}} * f_{t+2} * f_{t+1} = \frac{\partial L}{\partial C_{T}} \cdot \Pi_{j=1}^{T-t} f_{t+j}\)</span></p>
+<h2 id="variants-of-lstm">Variants of LSTM</h2>
+<ul>
+<li><strong>Bidirectional LSTM</strong>: Processes the sequence in both forward and backward directions, allowing the model to capture context from both past and future.</li>
+<li><strong>Stacked LSTM</strong>: Stacks multiple LSTM layers to increase model capacity and capture more complex patterns.</li>
+<li><strong>Peephole Connections</strong>: Allows the gates to access the cell state directly, improving performance on certain tasks.</li>
+<li><strong>GRU (Gated Recurrent Unit)</strong>: A simplified version of LSTM with fewer parameters, combining the forget and input gates into a single update gate.</li>
+</ul>
+<h2 id="best-practices">Best Practices</h2>
+<h2 id="qa">Q&amp;A</h2>
 
 
 

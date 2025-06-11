@@ -8,28 +8,26 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/regularization/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/seq2seq/">
       
       
-        <link rel="prev" href="../optimizers/sgd/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../convolution/">
       
-      
-      <link rel="icon" href="../images/icon.png">
+      <link rel="icon" href="../../images/icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Regularization - Machine Learning Notes</title>
+        <title>Seq2Seq - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +48,9 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#regularization" class="md-skip">
+        <a href="#seq2seq" class="md-skip">
           Skip to content
         </a>
       
@@ -92,9 +90,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../images/logo.png" alt="logo">
+  <img src="../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Regularization
+              Seq2Seq
             
           </span>
         </div>
@@ -161,9 +159,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../images/logo.png" alt="logo">
+  <img src="../../images/logo.png" alt="logo">
 
     </a>
     Machine Learning Notes
@@ -190,7 +188,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -224,7 +222,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../math/" class="md-nav__link ">
+            <a href="../../math/" class="md-nav__link ">
               
   
   
@@ -257,7 +255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/calculus/" class="md-nav__link">
+      <a href="../../math/calculus/" class="md-nav__link">
         
   
   
@@ -280,7 +278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/linear-algebra/" class="md-nav__link">
+      <a href="../../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -303,7 +301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/probability/" class="md-nav__link">
+      <a href="../../math/probability/" class="md-nav__link">
         
   
   
@@ -333,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Initializers/" class="md-nav__link">
+      <a href="../../Initializers/" class="md-nav__link">
         
   
   
@@ -367,7 +365,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../optimizers/" class="md-nav__link ">
+            <a href="../../optimizers/" class="md-nav__link ">
               
   
   
@@ -400,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../optimizers/adam/" class="md-nav__link">
+      <a href="../../optimizers/adam/" class="md-nav__link">
         
   
   
@@ -423,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../optimizers/sgd/" class="md-nav__link">
+      <a href="../../optimizers/sgd/" class="md-nav__link">
         
   
   
@@ -450,32 +448,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Regularization
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../regularization/" class="md-nav__link">
         
   
   
@@ -486,98 +462,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#l1" class="md-nav__link">
-    <span class="md-ellipsis">
-      L1
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="L1">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l2" class="md-nav__link">
-    <span class="md-ellipsis">
-      L2
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="L2">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dropout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dropout
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Dropout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -589,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../convolution/" class="md-nav__link">
+      <a href="../../convolution/" class="md-nav__link">
         
   
   
@@ -611,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../max_pool/" class="md-nav__link">
+      <a href="../../max_pool/" class="md-nav__link">
         
   
   
@@ -633,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../batch_norm/" class="md-nav__link">
+      <a href="../../batch_norm/" class="md-nav__link">
         
   
   
@@ -655,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rnn/" class="md-nav__link">
+      <a href="../../rnn/" class="md-nav__link">
         
   
   
@@ -677,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lstm/" class="md-nav__link">
+      <a href="../../lstm/" class="md-nav__link">
         
   
   
@@ -711,7 +595,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tokenization/" class="md-nav__link ">
+            <a href="../../tokenization/" class="md-nav__link ">
               
   
   
@@ -744,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/bpe/" class="md-nav__link">
+      <a href="../../tokenization/bpe/" class="md-nav__link">
         
   
   
@@ -767,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/wordpiece/" class="md-nav__link">
+      <a href="../../tokenization/wordpiece/" class="md-nav__link">
         
   
   
@@ -790,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/unigram/" class="md-nav__link">
+      <a href="../../tokenization/unigram/" class="md-nav__link">
         
   
   
@@ -813,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/neural_tokenizer/" class="md-nav__link">
+      <a href="../../tokenization/neural_tokenizer/" class="md-nav__link">
         
   
   
@@ -836,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/hf_tokenizer/" class="md-nav__link">
+      <a href="../../tokenization/hf_tokenizer/" class="md-nav__link">
         
   
   
@@ -878,7 +762,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../models/" class="md-nav__link ">
+            <a href="../../models/" class="md-nav__link ">
               
   
   
@@ -911,7 +795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/rcnn/" class="md-nav__link">
+      <a href="../../models/rcnn/" class="md-nav__link">
         
   
   
@@ -934,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/faster_rcnn/" class="md-nav__link">
+      <a href="../../models/faster_rcnn/" class="md-nav__link">
         
   
   
@@ -957,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/fcos/" class="md-nav__link">
+      <a href="../../models/fcos/" class="md-nav__link">
         
   
   
@@ -980,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/resnet/" class="md-nav__link">
+      <a href="../../models/resnet/" class="md-nav__link">
         
   
   
@@ -1003,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/vgg/" class="md-nav__link">
+      <a href="../../models/vgg/" class="md-nav__link">
         
   
   
@@ -1030,22 +914,24 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../papers/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1064,7 +950,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             Papers
@@ -1075,10 +961,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../papers/seq2seq/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1089,6 +984,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1121,86 +1017,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#l1" class="md-nav__link">
-    <span class="md-ellipsis">
-      L1
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="L1">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l2" class="md-nav__link">
-    <span class="md-ellipsis">
-      L2
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="L2">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dropout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dropout
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Dropout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1218,63 +1034,8 @@
   
 
 
-<h1 id="regularization">Regularization</h1>
-<h2 id="l1">L1</h2>
-<p><a href="">Paper</a> | <a href="">Code</a></p>
-<h3 id="qa">Q&amp;A</h3>
-<h2 id="l2">L2</h2>
-<p><a href="">Paper</a> | <a href="">Code</a></p>
-<h3 id="qa_1">Q&amp;A</h3>
-<h2 id="dropout">Dropout</h2>
-<p><a href="https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf">Paper</a>  | <a href="https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/layers/dropout.py">Code</a></p>
-<p>Dropout is a regularization technique used to prevent overfitting in neural networks. 
-It works by randomly setting a fraction of the input units to zero during training, which helps to prevent the model from becoming too reliant on any one feature.
-During inference, dropout is turned off, and the full network is used.</p>
-<p><strong>Why is Dropout needed?</strong><br />
-Dropout helps address overfitting, especially in deep networks where the model might memorize the training data instead of learning general patterns.</p>
-<p>Acts as an ensemble of subnetworks, improving robustness.</p>
-<p><strong>Disadvantages:</strong> </p>
-<ul>
-<li>Slower convergence during training due to randomness.</li>
-<li>Incompatible with certain architectures like RNNS, LSTMs, CNNs.</li>
-<li>Can lead to underfitting if the dropout rate is too high.</li>
-<li>Can conflict with batch normalization, as it introduces noise that can affect the normalization process.</li>
-</ul>
-<h3 id="qa_2">Q&amp;A</h3>
-<ol>
-<li>
-<p>What happens to the network during inference if Dropout was used during training?</p>
-<ul>
-<li>During inference, all neurons are active, and the outputs are typically scaled to account for the dropped units during training.</li>
-</ul>
-</li>
-<li>
-<p>How does Dropout work in practice?</p>
-<ul>
-<li>At each training step, each neuron's output is set to zero with probability p (dropout rate). The remaining outputs are scaled by 1 / (1 - p) to keep the expected sum of activations the same.</li>
-</ul>
-</li>
-<li>
-<p>What is the variance of the activations in each hidden layer when dropout is and is not applied? Draw a plot to show how this quantity evolves over time for both models.</p>
-<ul>
-<li>When dropout is applied, the variance of activations is reduced due to the random dropping of units. Without dropout, the variance tends to be higher as all units contribute to the output. </li>
-</ul>
-</li>
-<li>
-<p>What happens when dropout and weight decay are used at the same time? Are the results additive? Are there diminished returns (or worse)? Do they cancel each other out? </p>
-<ul>
-<li>When dropout and weight decay are used together, they can complement each other. 
-   Dropout reduces overfitting by randomly dropping units, while weight decay penalizes large weights. 
-   There can be diminished returns if both techniques are too aggressive, leading to underfitting. They do not cancel each other out; rather, they work together to improve generalization.</li>
-</ul>
-</li>
-<li>
-<p>What happens if we apply dropout to the individual weights of the weight matrix rather than the activations?</p>
-<ul>
-<li>This is called DropConnect. Zeroing weights directly can lead to more erratic training, unless handled with care. It is also computationally more expensive.</li>
-</ul>
-</li>
-</ol>
+<h1 id="seq2seq">Seq2Seq</h1>
+<p>Paper: <a href="https://arxiv.org/abs/1409.3215">Sequence to Sequence Learning with Neural Networks</a></p>
 
 
 
@@ -1323,12 +1084,12 @@ Dropout helps address overfitting, especially in deep networks where the model m
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

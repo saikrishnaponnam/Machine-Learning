@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/regularization/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/tokenization/">
       
       
-        <link rel="prev" href="../optimizers/sgd/">
+        <link rel="prev" href="../lstm/">
       
       
-        <link rel="next" href="../convolution/">
+        <link rel="next" href="bpe/">
       
       
       <link rel="icon" href="../images/icon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Regularization - Machine Learning Notes</title>
+        <title>Tokenization - Machine Learning Notes</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#regularization" class="md-skip">
+        <a href="#tokenization" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Regularization
+              Tokenization
             
           </span>
         </div>
@@ -450,32 +450,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Regularization
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../regularization/" class="md-nav__link">
         
   
   
@@ -486,98 +464,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#l1" class="md-nav__link">
-    <span class="md-ellipsis">
-      L1
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="L1">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l2" class="md-nav__link">
-    <span class="md-ellipsis">
-      L2
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="L2">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dropout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dropout
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Dropout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -696,22 +582,24 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tokenization/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -724,13 +612,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_11" id="__nav_11_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Tokenization
@@ -744,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/bpe/" class="md-nav__link">
+      <a href="bpe/" class="md-nav__link">
         
   
   
@@ -767,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/wordpiece/" class="md-nav__link">
+      <a href="wordpiece/" class="md-nav__link">
         
   
   
@@ -790,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/unigram/" class="md-nav__link">
+      <a href="unigram/" class="md-nav__link">
         
   
   
@@ -813,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/neural_tokenizer/" class="md-nav__link">
+      <a href="neural_tokenizer/" class="md-nav__link">
         
   
   
@@ -836,7 +724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/hf_tokenizer/" class="md-nav__link">
+      <a href="hf_tokenizer/" class="md-nav__link">
         
   
   
@@ -1128,74 +1016,98 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#l1" class="md-nav__link">
+  <a href="#why-tokenization" class="md-nav__link">
     <span class="md-ellipsis">
-      L1
+      Why Tokenization?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="L1">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-tokenization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Tokenization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenization-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokenization in Practice
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tokenization in Practice">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#bpe-tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      BPE Tokenizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wordpiece-tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      WordPiece Tokenizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sentencepiece-tokenizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      SentencePiece Tokenizer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-tokenizers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Tokenizers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges-in-tokenization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges in Tokenization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#qa" class="md-nav__link">
     <span class="md-ellipsis">
       Q&amp;A
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#l2" class="md-nav__link">
-    <span class="md-ellipsis">
-      L2
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="L2">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dropout" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dropout
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Dropout">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#qa_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Q&amp;A
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1218,63 +1130,101 @@
   
 
 
-<h1 id="regularization">Regularization</h1>
-<h2 id="l1">L1</h2>
-<p><a href="">Paper</a> | <a href="">Code</a></p>
-<h3 id="qa">Q&amp;A</h3>
-<h2 id="l2">L2</h2>
-<p><a href="">Paper</a> | <a href="">Code</a></p>
-<h3 id="qa_1">Q&amp;A</h3>
-<h2 id="dropout">Dropout</h2>
-<p><a href="https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf">Paper</a>  | <a href="https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/layers/dropout.py">Code</a></p>
-<p>Dropout is a regularization technique used to prevent overfitting in neural networks. 
-It works by randomly setting a fraction of the input units to zero during training, which helps to prevent the model from becoming too reliant on any one feature.
-During inference, dropout is turned off, and the full network is used.</p>
-<p><strong>Why is Dropout needed?</strong><br />
-Dropout helps address overfitting, especially in deep networks where the model might memorize the training data instead of learning general patterns.</p>
-<p>Acts as an ensemble of subnetworks, improving robustness.</p>
-<p><strong>Disadvantages:</strong> </p>
-<ul>
-<li>Slower convergence during training due to randomness.</li>
-<li>Incompatible with certain architectures like RNNS, LSTMs, CNNs.</li>
-<li>Can lead to underfitting if the dropout rate is too high.</li>
-<li>Can conflict with batch normalization, as it introduces noise that can affect the normalization process.</li>
-</ul>
-<h3 id="qa_2">Q&amp;A</h3>
+<h1 id="tokenization">Tokenization</h1>
+<p><a href="https://arxiv.org/abs/1508.07909">BPE</a>
+| <a href="https://arxiv.org/abs/1609.08144">WordPiece</a> | <a href="https://arxiv.org/abs/1808.06226">Fast WordPiece</a>
+| <a href="https://arxiv.org/abs/1808.06226">SentencePiece</a></p>
+<p>Any ML model that processes text data requires the text to be converted into a numerical format.
+Tokenization is the process of breaking up text into smaller units called tokens. These tokens are then mapped to numerical representations that can be fed into machine learning models.
+These tokens can be words, subwords, or even characters, depending on the task and the tokenizer used.
+Tokenization is often the first step in NLP pipelines, as it allows models to work with manageable pieces of language.
+Despite being often overlooked, tokenization decisions affect model accuracy and training efficiency.</p>
+<p>This section dives into what tokenization is, common techniques, challenges, tools widely used in the NLP ecosystem and training a custom tokenizers.</p>
+<h2 id="why-tokenization">Why Tokenization?</h2>
+<p>Tokenization acts as a bridge between raw text and computational models. Without it, machines would not understand how to segment language into parts they can learn from.
+It is essential for several reasons:</p>
 <ol>
+<li><strong>Text Representation</strong>: It converts raw text into a structured format that can be processed by machine learning models.</li>
+<li><strong>Standardization</strong>: Natural language is highly variable, with different ways to express the same meaning. Tokenization helps standardize this variability.</li>
+<li><strong>Efficiency</strong>: Tokenization reduces the dimensionality of text data, making it easier to process and analyze.</li>
+</ol>
+<h2 id="types-of-tokenization">Types of Tokenization</h2>
+<ol>
+<li><strong>Word Tokenization</strong>: Splits text into words. This is the simplest form of tokenization, but it can struggle with out-of-vocabulary words and does not handle subword information.</li>
 <li>
-<p>What happens to the network during inference if Dropout was used during training?</p>
+<p>Example: "I love NLP" → ["I", "love", "NLP"]</p>
+</li>
+<li>
+<p><strong>Character Tokenization</strong>: Treats each character as a token. This is useful for languages with complex morphology or when dealing with noisy text. In some languages, it fails to capture meaningful units.</p>
 <ul>
-<li>During inference, all neurons are active, and the outputs are typically scaled to account for the dropped units during training.</li>
+<li>Example: "NLP" → ["N", "L", "P"]</li>
 </ul>
 </li>
 <li>
-<p>How does Dropout work in practice?</p>
+<p><strong>Subword Tokenization</strong>: Breaks words into smaller units, allowing the model to handle rare words and out-of-vocabulary terms more effectively.</p>
 <ul>
-<li>At each training step, each neuron's output is set to zero with probability p (dropout rate). The remaining outputs are scaled by 1 / (1 - p) to keep the expected sum of activations the same.</li>
+<li>Example: "unhappiness" → ["un", "happiness"]</li>
+<li>Common algorithms include Byte-Pair Encoding (BPE), WordPiece and SentencePiece.</li>
 </ul>
 </li>
 <li>
-<p>What is the variance of the activations in each hidden layer when dropout is and is not applied? Draw a plot to show how this quantity evolves over time for both models.</p>
+<p><strong>Sentence Tokenization</strong>: Splits text into sentences, which can be useful for tasks like summarization or question answering.</p>
 <ul>
-<li>When dropout is applied, the variance of activations is reduced due to the random dropping of units. Without dropout, the variance tends to be higher as all units contribute to the output. </li>
-</ul>
-</li>
-<li>
-<p>What happens when dropout and weight decay are used at the same time? Are the results additive? Are there diminished returns (or worse)? Do they cancel each other out? </p>
-<ul>
-<li>When dropout and weight decay are used together, they can complement each other. 
-   Dropout reduces overfitting by randomly dropping units, while weight decay penalizes large weights. 
-   There can be diminished returns if both techniques are too aggressive, leading to underfitting. They do not cancel each other out; rather, they work together to improve generalization.</li>
-</ul>
-</li>
-<li>
-<p>What happens if we apply dropout to the individual weights of the weight matrix rather than the activations?</p>
-<ul>
-<li>This is called DropConnect. Zeroing weights directly can lead to more erratic training, unless handled with care. It is also computationally more expensive.</li>
+<li>Example: "I love NLP. It's fascinating!" → ["I love NLP.", "It's fascinating!"]</li>
 </ul>
 </li>
 </ol>
+<h2 id="tokenization-in-practice">Tokenization in Practice</h2>
+<p>Tokenization is typically performed using libraries like NLTK, SpaCy, or Hugging Face's Transformers.
+These libraries provide pre-built tokenizers that can handle various languages and tokenization strategies.
+Some commonly used tokenizers include:</p>
+<h3 id="bpe-tokenizer">BPE Tokenizer</h3>
+<p>Byte-Pair Encoding (BPE) is a subword tokenization technique that iteratively merges the most frequent pairs of characters or subwords in a corpus until a predefined vocabulary size is reached.</p>
+<ul>
+<li><strong>Pros</strong>: Handles out-of-vocabulary words, reduces vocabulary size, and captures subword information.</li>
+<li><strong>Cons</strong>: Can lead to longer sequences, and the merging process can be computationally expensive.</li>
+<li>Example: "unhappiness" might be tokenized as ["un", "happi", "ness"].</li>
+</ul>
+<h3 id="wordpiece-tokenizer">WordPiece Tokenizer</h3>
+<p>WordPiece is another subword tokenization technique that splits words into subwords based on their frequency in the training corpus.</p>
+<ul>
+<li><strong>Pros</strong>: Similar to BPE, it handles out-of-vocabulary words and captures subword information.</li>
+<li><strong>Cons</strong>: Can also lead to longer sequences, and the vocabulary size is fixed during training.</li>
+<li>Example: "unhappiness" → ["un", "happiness"]</li>
+</ul>
+<h3 id="sentencepiece-tokenizer">SentencePiece Tokenizer</h3>
+<p>SentencePiece is a data-driven tokenizer that can be used for both word and subword tokenization. It treats the input text as a sequence of Unicode characters and learns a vocabulary based on the frequency of character sequences.</p>
+<ul>
+<li><strong>Pros</strong>: Language-agnostic, can handle multiple languages, and does not require pre-tokenization.</li>
+<li><strong>Cons</strong>: Requires training on a large corpus, and the resulting tokens may not align with natural language boundaries.</li>
+<li>Example: "unhappiness" → ["un", "happi", "ness"]</li>
+</ul>
+<h2 id="training-tokenizers">Training Tokenizers</h2>
+<p>If a language model is not available in the language you are interested in, or if your corpus is very different from the one your language model was trained on, you will most likely want to retrain the model from scratch using a tokenizer adapted to your data.</p>
+<p>We can use hugging face's <code>tokenizers</code> library to train a tokenizer on our own corpus. The process involves the following steps:</p>
+<ol>
+<li><strong>Prepare the Corpus</strong>: Collect a large text corpus in the target language or domain.</li>
+<li><strong>Choose a Tokenization Algorithm</strong>: Select a tokenization algorithm (e.g., BPE, WordPiece, SentencePiece) based on your requirements.</li>
+<li><strong>Load the tokenizer</strong>: We even though we are training a tokenizer from scratch, we can use the <code>tokenizers</code> library to load a pre-existing tokenizer configuration. This will keep the tokenizer compatible with the model and only vocabulary is changed.</li>
+<li><strong>Train the Tokenizer</strong>: Use the <code>train</code> method to train the tokenizer on the prepared corpus.</li>
+</ol>
+<h2 id="challenges-in-tokenization">Challenges in Tokenization</h2>
+<ol>
+<li><strong>Ambiguity</strong>: Some words can be tokenized in multiple ways, leading to ambiguity. For example, "New York" can be treated as a single token or two separate tokens.</li>
+<li><strong>Out-of-Vocabulary Words</strong>: Tokenizers may struggle with words that are not in their vocabulary, leading to unknown tokens or subword splits.</li>
+<li><strong>Language Variability</strong>: Different languages have different tokenization rules, and a tokenizer that works well for one language may not perform well for another.</li>
+<li><strong>No Whitespace Languages</strong>: Some languages, like Chinese and Japanese, do not use whitespace to separate words, making tokenization more challenging.</li>
+<li><strong>Punctuation and Special Characters</strong>: Deciding how to handle punctuation and special characters can affect the tokenization process. Some tokenizers may remove punctuation, while others may keep it as separate tokens.</li>
+<li><strong>Contextual Meaning</strong>: Some words can have different meanings based on context, and tokenization does not capture this semantic information. For example, "bank" can refer to a financial institution or the side of a river.</li>
+</ol>
+<h2 id="best-practices">Best Practices</h2>
+<ol>
+<li><strong>Choose the Right Tokenizer</strong>: Select a tokenizer that aligns with your task and data. For example, use subword tokenization for tasks involving rare words or out-of-vocabulary terms.</li>
+<li><strong>Preprocess Text</strong>: Clean and preprocess your text data before tokenization. This may include lowercasing, removing special characters, or handling contractions.</li>
+<li><strong>Unknown tokens</strong>: Tokens that are not in the tokenizer's vocabulary can be replaced with a special "unknown" token, represented as "\&lt;unk&gt;" or "[UNK]".</li>
+<li><strong>Batching</strong>: When processing sequences, ensure that all sequences in a batch are of the same length. This can be achieved by padding shorter sequences with a special "padding" token, represented as "\&lt;pad&gt;" or "[PAD]".</li>
+</ol>
+<h2 id="qa">Q&amp;A</h2>
 
 
 
