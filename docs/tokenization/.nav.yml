@@ -1,0 +1,8 @@
+nav:
+  - index.md
+  - bpe.md
+  - wordpiece.md
+  - unigram.md
+  - neural_tokenizer.md
+  - hf_tokenizer.md
+  - "*"

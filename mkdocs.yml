@@ -45,7 +45,7 @@ extra_css:
   # Math
   - https://unpkg.com/katex@0/dist/katex.min.css
   - stylesheets/extra.css
-  - stylesheets/override.css
+#  - stylesheets/override.css
 
 plugins:
   - section-index

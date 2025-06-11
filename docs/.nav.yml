@@ -9,6 +9,7 @@ nav:
   - batch_norm.md
   - rnn.md
   - lstm.md
+  - tokenization
   - models
   - papers
   - "*/"
