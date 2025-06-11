@@ -1,5 +1,10 @@
 # LSTM
 
+[Paper 1](https://www.bioinf.jku.at/publications/older/2604.pdf) 
+| [Paper 2](https://arxiv.org/pdf/1909.09586)
+| [Blog](https://colah.github.io/posts/2015-08-Understanding-LSTMs/) 
+| [Code](https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/layers/lstm.py)
+
 The vanilla RNNs suffer from vanishing and exploding gradients, which makes them difficult to train on long sequences. 
 LSTM (Long Short-Term Memory) networks were introduced to address these issues by introducing a more complex architecture that can learn long-term dependencies.
 
@@ -60,16 +65,6 @@ $$\begin{align*}
 
 Gradients w.r.t $W_{xi}, W_{hf}, W_{hi}$ can be derived similarly.
 
-**Gradients w.r.t $W_{xo}$:**
-
-$$\begin{align*}
-\frac{\partial L}{\partial W_{xo}} &= \frac{\partial L}{\partial o_t} \cdot \frac{\partial o_t}{\partial W_{xo}} \\
-&= \frac{\partial L}{\partial h_t} \cdot \frac{\partial h_t}{\partial o_t} \cdot \frac{\partial o_t}{\partial a_o} \frac{\partial a_o}{\partial W_{xo}} \\
-&= \frac{\partial L}{\partial h_t} \cdot \tanh(C_t) \cdot o_t (1 - o_t) \cdot (x_t)^T
-\end{align*}$$
-
-Gradients w.r.t $W_{ho}$ can be derived similarly.
-
 **Gradients w.r.t $W_{xC}$**
 
 $$\begin{align*}
@@ -79,6 +74,17 @@ $$\begin{align*}
 \end{align*}$$
 
 Gradients w.r.t $W_{hC}$ can be derived similarly.
+
+
+**Gradients w.r.t $W_{xo}$:**
+
+$$\begin{align*}
+\frac{\partial L}{\partial W_{xo}} &= \frac{\partial L}{\partial o_t} \cdot \frac{\partial o_t}{\partial W_{xo}} \\
+&= \frac{\partial L}{\partial h_t} \cdot \frac{\partial h_t}{\partial o_t} \cdot \frac{\partial o_t}{\partial a_o} \frac{\partial a_o}{\partial W_{xo}} \\
+&= \frac{\partial L}{\partial h_t} \cdot \tanh(C_t) \cdot o_t (1 - o_t) \cdot (x_t)^T
+\end{align*}$$
+
+Gradients w.r.t $W_{ho}$ can be derived similarly.
 
 **Gradients w.r.t input ($x_t ~\&~ h_{t-1}$)**
 
@@ -96,4 +102,18 @@ $$\begin{align*}
 
 $dh_{t-1}$ is sent back to the previous time step.
 
-## Practical Tips
+## Vanishing Gradients
+In LSTMS the recursive part is $\frac{\partial L}{\partial C_t} \propto \frac{\partial L}{\partial C_{t+1}} * f_{t+1}$
+
+$\frac{\partial L}{\partial C_{t+1}} * f_{t+1} = \frac{\partial L}{\partial C_{t+2}} * f_{t+2} * f_{t+1} = \frac{\partial L}{\partial C_{T}} \cdot \Pi_{j=1}^{T-t} f_{t+j}$
+
+## Variants of LSTM
+
+- **Bidirectional LSTM**: Processes the sequence in both forward and backward directions, allowing the model to capture context from both past and future.
+- **Stacked LSTM**: Stacks multiple LSTM layers to increase model capacity and capture more complex patterns.
+- **Peephole Connections**: Allows the gates to access the cell state directly, improving performance on certain tasks.
+- **GRU (Gated Recurrent Unit)**: A simplified version of LSTM with fewer parameters, combining the forget and input gates into a single update gate.
+
+## Best Practices
+
+## Q&A
