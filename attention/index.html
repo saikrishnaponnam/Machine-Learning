@@ -976,6 +976,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/additive_attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Additive Attention [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/dot_product_attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dot Product Attention [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/self_attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Self attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transformer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1032,12 +1124,16 @@ Given an encoder hidden state sequence($h_1, h_2, \cdots h_T $), attention compu
 <li>Normalize scores with softmax: <span class="arithmatex">\(\frac{exp(e_{ti})}{\sum_j exp(e_{tj})}\)</span></li>
 <li>Compute the context vector: <span class="arithmatex">\(c_t = \sum_i \alpha_{ti} h_i\)</span></li>
 </ol>
-<p>🔹 Variants of Attention
-Additive attention (Bahdanau): uses a feedforward network<br />
-Dot-product attention (Luong): simpler and more efficient</p>
-<p>🔹 Impact
-Improves performance in seq2seq tasks (e.g., translation)<br />
-Forms the foundation of Transformers</p>
+<p>🔹 Variants of Attention</p>
+<ul>
+<li><a href="../papers/additive_attention/">Additive attention</a> (Bahdanau): uses a feedforward network  </li>
+<li>Dot-product attention (Luong): simpler and more efficient</li>
+</ul>
+<p>🔹 Impact</p>
+<ul>
+<li>Improves performance in seq2seq tasks (e.g., translation)  </li>
+<li>Forms the foundation of Transformers</li>
+</ul>
 
 
 

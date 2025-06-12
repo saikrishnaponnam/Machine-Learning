@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/tokenization/wordpiece/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/self_attention/">
       
       
-        <link rel="prev" href="../bpe/">
+        <link rel="prev" href="../dot_product_attention/">
       
       
-        <link rel="next" href="../unigram/">
+        <link rel="next" href="../transformer/">
       
       
       <link rel="icon" href="../../images/icon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>WordPiece [WIP] - Machine Learning Notes</title>
+        <title>Self attention - Machine Learning Notes</title>
       
     
     
@@ -75,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#wordpiece-wip" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -111,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              WordPiece [WIP]
+              Self attention
             
           </span>
         </div>
@@ -582,24 +577,22 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../tokenization/" class="md-nav__link ">
               
   
   
@@ -618,7 +611,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Tokenization
@@ -632,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bpe/" class="md-nav__link">
+      <a href="../../tokenization/bpe/" class="md-nav__link">
         
   
   
@@ -652,19 +645,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tokenization/wordpiece/" class="md-nav__link">
         
   
   
@@ -675,7 +659,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -688,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unigram/" class="md-nav__link">
+      <a href="../../tokenization/unigram/" class="md-nav__link">
         
   
   
@@ -711,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../neural_tokenizer/" class="md-nav__link">
+      <a href="../../tokenization/neural_tokenizer/" class="md-nav__link">
         
   
   
@@ -734,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hf_tokenizer/" class="md-nav__link">
+      <a href="../../tokenization/hf_tokenizer/" class="md-nav__link">
         
   
   
@@ -928,22 +911,24 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../papers/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -962,7 +947,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             Papers
@@ -976,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/seq2seq/" class="md-nav__link">
+      <a href="../seq2seq/" class="md-nav__link">
         
   
   
@@ -999,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/additive_attention/" class="md-nav__link">
+      <a href="../additive_attention/" class="md-nav__link">
         
   
   
@@ -1022,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/dot_product_attention/" class="md-nav__link">
+      <a href="../dot_product_attention/" class="md-nav__link">
         
   
   
@@ -1042,10 +1027,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../papers/self_attention/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1056,6 +1048,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1068,7 +1061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/transformer/" class="md-nav__link">
+      <a href="../transformer/" class="md-nav__link">
         
   
   
@@ -1108,8 +1101,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -1128,7 +1119,9 @@
   
 
 
-<h1 id="wordpiece-wip">WordPiece [WIP]</h1>
+  <h1>Self attention</h1>
+
+
 
 
 
