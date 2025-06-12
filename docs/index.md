@@ -31,6 +31,7 @@ Feel free to explore each section for detailed explanations, mathematical deriva
 
 
 References:
+
 - [PyTorch Documentation](https://pytorch.org/docs/stable/index.html)
 - [Deep Learning Book](http://www.deeplearningbook.org/)
 - [CS231n](http://cs231n.stanford.edu/)
