@@ -24,7 +24,7 @@ To address this, the authors propose a sequence-to-sequence (seq2seq) model with
 
 Because RNNs are difficult to train, LSTMs are used for both encoder and decoder. The goal of LSTM is to estimate the conditional probability $p(y_1, y_2, \ldots, y_{T'} | x_1, x_2, \ldots, x_T)$.
 
-$$p(y_1, y_2, \ldots, y_{T'} | x_1, x_2, \ldots, x_T) = \Pi_{t=1}^{T'} p(y_t|v, y_1, \ldots, y_{t-1}) $$
+$$p(y_1, y_2, \ldots, y_{T'} | x_1, x_2, \ldots, x_T) = \prod_{t=1}^{T'} p(y_t|v, y_1, \ldots, y_{t-1}) $$
 
 where $v$ is the fixed-length vector (the last hidden state of the encoder LSTM).
 
