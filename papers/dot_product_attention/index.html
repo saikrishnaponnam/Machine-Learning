@@ -22,7 +22,7 @@
     
     
       
-        <title>Dot Product Attention [WIP] - Machine Learning Notes</title>
+        <title>Dot Product Attention - Machine Learning Notes</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dot-product-attention-wip" class="md-skip">
+        <a href="#dot-product-attention" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dot Product Attention [WIP]
+              Dot Product Attention
             
           </span>
         </div>
@@ -994,7 +994,7 @@
   
   
   <span class="md-ellipsis">
-    Additive Attention [WIP]
+    Additive Attention
     
   </span>
   
@@ -1026,7 +1026,7 @@
   
   
   <span class="md-ellipsis">
-    Dot Product Attention [WIP]
+    Dot Product Attention
     
   </span>
   
@@ -1039,7 +1039,7 @@
   
   
   <span class="md-ellipsis">
-    Dot Product Attention [WIP]
+    Dot Product Attention
     
   </span>
   
@@ -1098,6 +1098,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#input-feeding-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Feeding approach
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1128,6 +1137,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choice-of-alignment-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choice of Alignment Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1151,7 +1175,7 @@
   
   
   <span class="md-ellipsis">
-    Self attention
+    Self-Attention [WIP]
     
   </span>
   
@@ -1174,7 +1198,7 @@
   
   
   <span class="md-ellipsis">
-    Transformer
+    Transformer [WIP]
     
   </span>
   
@@ -1255,6 +1279,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#input-feeding-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Feeding approach
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1285,6 +1318,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choice-of-alignment-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choice of Alignment Function
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1306,15 +1354,57 @@
   
 
 
-<h1 id="dot-product-attention-wip">Dot Product Attention [WIP]</h1>
+<h1 id="dot-product-attention">Dot Product Attention</h1>
 <p>Paper: <a href="https://arxiv.org/abs/1508.04025">Effective Approaches to Attention-based Neural Machine Translation</a></p>
 <h2 id="introduction">Introduction</h2>
+<p>Neural Machine Translation (NMT) has gained popularity due to its minimal reliance on domain-specific knowledge and its ability to avoid the need for large phrase tables, which are common in SMT models. The introduction of attention mechanisms has further improved NMT by enabling models to learn alignments between different modalities, such as images and text or speech and text. Notably, <a href="../additive_attention/">Bahdanau et al.</a> demonstrated that attention allows NMT models to focus on the most relevant parts of the source sentence during translation, leading to better performance.</p>
+<p>This paper investigates two new types of attention mechanisms for NMT: global and local attention. It also explores various alignment functions for computing attention scores, including dot product, general, and concat functions.</p>
 <h2 id="attention-mechanism">Attention Mechanism</h2>
+<p>Attention mechanisms can be classified into two main types: global and local attention. Both approaches use an encoder-decoder architecture, but they differ in how the context vector is computed in the decoder.</p>
+<p>The encoder processes the input sentence and produces a set of hidden states, denoted as <span class="arithmatex">\(s\)</span>. The decoder then generates each target word step by step, using the previous hidden state <span class="arithmatex">\(h_{j-1}\)</span> and <span class="arithmatex">\(s\)</span>. 
+After getting the context vector, both attention types follow the same steps. </p>
+<ul>
+<li>Compute attentional hidden state from hidden state <span class="arithmatex">\(h_t\)</span> and context vector <span class="arithmatex">\(c_t\)</span>:<br />
+<span class="arithmatex">\(\tilde{h}_t = tanh(W_h [h_t;c_t])\)</span></li>
+<li>Pass the attentional vector through a softmax layer to produce the output distribution over the target vocabulary: <span class="arithmatex">\(p(y_t | y_{&lt;t}, x) = softmax(W_s \tilde{h}_t)\)</span></li>
+</ul>
 <h3 id="global-attention">Global Attention</h3>
+<p>Global attention computes the context vector by considering all positions in the source sequence. For each target word, the model calculates an alignment vector a variable-length alignment vector <span class="arithmatex">\(a_t\)</span>, whose size equals input sentence length, by comparing current target hidden state <span class="arithmatex">\(h_t\)</span> and input hidden states <span class="arithmatex">\(\bar{h}_j\)</span>:</p>
+<div class="arithmatex">\[a_{tj} = align(h_t, \bar{h}_j) = \frac{exp(score(h_t, \bar{h}_j))}{\sum_{k=1}^{T} exp(score(h_t, \bar{h}_k))}\]</div>
+<p>Score is referred as content-based function, for which the paper proposes three variants: dot product, general, and concat.</p>
+<div class="arithmatex">\[ score(h_t, \bar{h}_j) = 
+\begin{cases}
+h_t^T \bar{h}_j &amp; \text{(dot)} \\
+h_t^T W_a \bar{h}_j &amp; \text{(general)} \\
+v_a^T tanh(W_a [h_t; \bar{h}_j]) &amp; \text{(concat)}
+\end{cases} \]</div>
+<p>Given the alignment vector <span class="arithmatex">\(a_t\)</span>, the context vector <span class="arithmatex">\(c_t\)</span> is computed as a weighted sum of the source hidden states.</p>
+<p>This approach is similar to <a href="../additive_attention/">Additive Attention</a>, but differs in that it uses only the last layer's hidden state in a stacked LSTM, whereas the additive approach uses a non-stacked BiLSTM and a concatenation-based alignment function.</p>
 <h3 id="local-attention">Local Attention</h3>
+<p>While global attention is effective, it can be computationally expensive for long sequences. Local attention addresses this by focusing only on a small window of source positions for each target word.</p>
+<p>Local attention selectively focuses on a small window of context. For each target word, the model predicts an aligned position <span class="arithmatex">\(p_t\)</span> in the source sequence. The context vector is then computed using only the source hidden states within a window centered at <span class="arithmatex">\(p_t\)</span> i.e., <span class="arithmatex">\([p_t - D, p_t + D]\)</span>, where <span class="arithmatex">\(D\)</span> is empirically selected. The alignment position <span class="arithmatex">\(p_t\)</span> can be derived in 2 ways:</p>
+<ul>
+<li><strong>Monotonic alignment (local-m):</strong> <span class="arithmatex">\(p_t = t\)</span>, assuming input and target are roughly monotonically aligned.</li>
+<li><strong>Predictive alignment (local-p):</strong> <span class="arithmatex">\(p_t = S. sigmoid(v_p^T tanh(W_p h_t))\)</span>, where <span class="arithmatex">\(S\)</span> is the length of the source sentence.</li>
+</ul>
+<p>To favour alignments near <span class="arithmatex">\(p_t\)</span> we use a Gaussian distribution to compute the alignment weights:</p>
+<div class="arithmatex">\[a_{tj} = align(h_t, \bar{h}_j) exp(-\frac{(j - p_t)^2}{2\sigma^2})\]</div>
+<p>where <span class="arithmatex">\(\sigma\)</span> is empirically set to <span class="arithmatex">\(D/2\)</span>.</p>
+<h3 id="input-feeding-approach">Input Feeding approach</h3>
 <h2 id="training">Training</h2>
+<p>The models are trained on the WMT'14 dataset, which contains 4.5 million sentence pairs. The vocabulary is limited to the 50,000 most frequent words in each language.</p>
+<ul>
+<li>The stacked LSTM model consists of 4 layers, each with 1,000 hidden units and 1,000-dimensional embeddings.</li>
+<li>Model parameters are initialized uniformly in the range <span class="arithmatex">\([-0.1, 0.1]\)</span>.</li>
+<li>Training is performed for 10 epochs using SGD with an initial learning rate of 0.1. After 5 epochs, the learning rate is halved after each subsequent epoch.</li>
+<li>Dropout with a probability of 0.2 is applied, and in this case, the model is trained for 12 epochs.</li>
+</ul>
 <h2 id="experiments">Experiments</h2>
+<p>Experiments are conducted on the WMT English-German translation task in both translation directions. The paper compares various attention mechanisms (global, local-m, local-p) and alignment functions (dot, general, concat). Results demonstrate that attention-based models consistently outperform standard encoder-decoder models, particularly on longer sentences.</p>
 <h2 id="results">Results</h2>
+<p>Attention-based models achieve substantial improvements in BLEU scores compared to baseline NMT models. Among the tested approaches, local attention with predictive alignment (local-p) often yields the best performance. Additionally, these models produce more interpretable alignments, as shown by the attention weight visualizations (figure 7).</p>
+<h3 id="choice-of-alignment-function">Choice of Alignment Function</h3>
+<p>The results indicate that the dot product alignment works well for global attention, while the general alignment function performs better for local attention.</p>
 
 
 
