@@ -1391,6 +1391,11 @@ v_a^T tanh(W_a [h_t; \bar{h}_j]) &amp; \text{(concat)}
 <div class="arithmatex">\[a_{tj} = align(h_t, \bar{h}_j) exp(-\frac{(j - p_t)^2}{2\sigma^2})\]</div>
 <p>where <span class="arithmatex">\(\sigma\)</span> is empirically set to <span class="arithmatex">\(D/2\)</span>.</p>
 <h3 id="input-feeding-approach">Input Feeding approach</h3>
+<p>In standard MT, a coverage set is maintained to keep track of translated input words. But attentions decisions are made independently which is suboptimal. The attention decisions should be made jointly taking into account the past alignment information. To address this, the attentional vectors <span class="arithmatex">\(\tilde{h}_t\)</span> are concatenated with inputs at the next steps. This has two effects:</p>
+<ul>
+<li>Hope model will be fully aware of the past alignment choices.</li>
+<li>A very deep network spanning horizontally and vertically is created</li>
+</ul>
 <h2 id="training">Training</h2>
 <p>The models are trained on the WMT'14 dataset, which contains 4.5 million sentence pairs. The vocabulary is limited to the 50,000 most frequent words in each language.</p>
 <ul>
