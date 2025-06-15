@@ -57,6 +57,10 @@ where $\sigma$ is empirically set to $D/2$.
 
 ### Input Feeding approach
 
+In standard MT, a coverage set is maintained to keep track of translated input words. But attentions decisions are made independently which is suboptimal. The attention decisions should be made jointly taking into account the past alignment information. To address this, the attentional vectors $\tilde{h}_t$ are concatenated with inputs at the next steps. This has two effects:
+
+- Hope model will be fully aware of the past alignment choices.
+- A very deep network spanning horizontally and vertically is created
 
 ## Training
 
