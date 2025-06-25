@@ -1,5 +1,7 @@
 # BPE Tokenization
 
+[Code](https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/tokenizers/bpe.py)
+
 Byte Pair Encoding (BPE) is a lossless data compression technique that was originally used for compressing text data.
 The basic idea of BPE is to iteratively merge the most frequent adjacent pairs of bytes (or characters) in a corpus to form a new, longer tokens. This process continues until a predefined vocabulary size is reached or no more pairs can be merged.
 It starts with a base vocabulary of individual characters and builds up to larger subword units by merging the most common pairs.
