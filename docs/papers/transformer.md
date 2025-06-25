@@ -9,7 +9,9 @@ Prior to Transformers, sequence transduction models like RNNs, GRUs and LSTMs we
 
 ## Background
 
+Making computation faster by reducing the sequential nature of RNNs is a key motivation behind Extended Neural GPU, ByteNet, and ConvS2S. These models use convolutional layers to compute hidden representations in parallel, but the number of operations grows linearly with the distance between input or output positions, making it difficult to capture long-range dependencies.
 
+Self-attention also called intra-attention is a attention mechanism relating different positions of a single sequence to compute a representation of the same sequence. Self-attention has been successfully applied to various tasks, including reading comprehension, text summarization, textual entailment and learning task-independent sentence representations. [LSTM-Networks for Machine Reading](https://arxiv.org/abs/1601.06733), [A Decomposable Attention Model for Natural Language Inference](https://arxiv.org/abs/1606.01933), [Structured Attention Networks](https://arxiv.org/abs/1702.00887), [A deep reinfornced model for abstractive summarization](https://arxiv.org/abs/1705.04304).
 
 
 ## Architecture
@@ -33,7 +35,11 @@ The attention mechanism is the core of the Transformer architecture. It computes
 
 $$Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V$$
 
+In [dot attention](dot_product_attention.md), the queries are hidden states of the decoder, and the keys and values are hidden states of the encoder. In case of self-attention, the queries, keys, and values are all derived from the same sequence (input in encoder and output in decoder).
+
 Dot-product attention is much faster than additive attention, as it only requires a single matrix multiplication and a softmax operation. The scaling factor $\sqrt{d_k}$ is used to prevent the dot products from growing too large, which can lead to numerical instability in the softmax function.
+
+**Masked Self-Attention**: Ignores the words that comes after the current word in the sequence. This is crucial during training to ensure that the model does not peek at future tokens when generating the current token. The masking is done by setting the attention scores for future tokens to a very large negative value before applying softmax, effectively ignoring them.
 
 ### Multi-Head Attention
 
