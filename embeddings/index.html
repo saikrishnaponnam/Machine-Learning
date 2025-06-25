@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/models/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/embeddings/">
       
       
-        <link rel="prev" href="../tokenization/neural_tokenizer/">
-      
-      
-        <link rel="next" href="rcnn/">
       
       
       <link rel="icon" href="../images/icon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Models - Machine Learning Notes</title>
+        <title>Embeddings - Machine Learning Notes</title>
       
     
     
@@ -75,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#embeddings" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Models
+              Embeddings
             
           </span>
         </div>
@@ -744,24 +745,22 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../models/" class="md-nav__link ">
               
   
   
@@ -774,13 +773,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_12" id="__nav_12_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Models
@@ -794,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="rcnn/" class="md-nav__link">
+      <a href="../models/rcnn/" class="md-nav__link">
         
   
   
@@ -817,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faster_rcnn/" class="md-nav__link">
+      <a href="../models/faster_rcnn/" class="md-nav__link">
         
   
   
@@ -840,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fcos/" class="md-nav__link">
+      <a href="../models/fcos/" class="md-nav__link">
         
   
   
@@ -863,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="resnet/" class="md-nav__link">
+      <a href="../models/resnet/" class="md-nav__link">
         
   
   
@@ -886,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vgg/" class="md-nav__link">
+      <a href="../models/vgg/" class="md-nav__link">
         
   
   
@@ -1093,6 +1092,109 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bag-of-words-bow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bag of Words (BoW)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representation-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Representation Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Representation Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#word2vec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word2Vec
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glove" class="md-nav__link">
+    <span class="md-ellipsis">
+      GloVe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fasttext" class="md-nav__link">
+    <span class="md-ellipsis">
+      FastText
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Language Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      BERT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      ELMo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1111,9 +1213,16 @@
   
 
 
-  <h1>Models</h1>
-
-
+<h1 id="embeddings">Embeddings</h1>
+<h2 id="overview">Overview</h2>
+<h2 id="bag-of-words-bow">Bag of Words (BoW)</h2>
+<h2 id="representation-models">Representation Models</h2>
+<h3 id="word2vec">Word2Vec</h3>
+<h3 id="glove">GloVe</h3>
+<h3 id="fasttext">FastText</h3>
+<h2 id="language-models">Language Models</h2>
+<h3 id="bert">BERT</h3>
+<h3 id="elmo">ELMo</h3>
 
 
 

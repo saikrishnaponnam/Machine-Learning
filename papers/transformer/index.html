@@ -11,8 +11,10 @@
         <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/transformer/">
       
       
-        <link rel="prev" href="../self_attention/">
+        <link rel="prev" href="../dot_product_attention/">
       
+      
+        <link rel="next" href="../self_attention/">
       
       
       <link rel="icon" href="../../images/icon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Transformer [WIP] - Machine Learning Notes</title>
+        <title>Transformer - Machine Learning Notes</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#transformer-wip" class="md-skip">
+        <a href="#transformer" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Transformer [WIP]
+              Transformer
             
           </span>
         </div>
@@ -628,6 +630,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tokenization/hf_tokenizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HF Tokenizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tokenization/bpe/" class="md-nav__link">
         
   
@@ -703,29 +728,6 @@
   
   <span class="md-ellipsis">
     Neural Tokenizer [WIP]
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tokenization/hf_tokenizer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    HF Tokenizer
     
   </span>
   
@@ -1030,29 +1032,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../self_attention/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Self-Attention [WIP]
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1070,7 +1049,7 @@
   
   
   <span class="md-ellipsis">
-    Transformer [WIP]
+    Transformer
     
   </span>
   
@@ -1083,7 +1062,7 @@
   
   
   <span class="md-ellipsis">
-    Transformer [WIP]
+    Transformer
     
   </span>
   
@@ -1130,6 +1109,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encoder-decoder-stacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoder-Decoder Stacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-head-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Head Attention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-wise-feed-forward-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position-wise Feed-Forward Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positional-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Positional Encoding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1163,6 +1193,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self_attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Self-Attention
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1226,6 +1279,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encoder-decoder-stacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoder-Decoder Stacks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-head-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Head Attention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-wise-feed-forward-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Position-wise Feed-Forward Networks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#positional-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Positional Encoding
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1274,14 +1378,52 @@
   
 
 
-<h1 id="transformer-wip">Transformer [WIP]</h1>
-<p>Paper: <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a></p>
+<h1 id="transformer">Transformer</h1>
+<p>Paper: <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>| <a href="">Code</a></p>
 <h2 id="introduction">Introduction</h2>
+<p>The Transformer is a deep learning model introduced in the paper "Attention Is All You Need" by Vaswani et al. in 2017. It revolutionized natural language processing by relying entirely on attention mechanisms, dispensing with recurrence and convolutions entirely. Transformers have since become the foundation for state-of-the-art models in NLP, such as BERT, GPT, and many others.</p>
+<p>Prior to Transformers, sequence transduction models like RNNs, GRUs and LSTMs were state of the art approaches. However, these models struggled with long-range dependencies and parallelization.The RNNs have an inherently sequential nature which prevents parallelization within training examples. When dealing with large sequences, the memory constraints limit batching across examples. Attention mechanisms (<a href="../additive_attention/">Additive Attention</a>, <a href="../dot_product_attention/">Dot Attention</a>) were introduced to address long-range dependencies, allowing models to focus on relevant parts of the input sequence. However, such attention mechanism are used in conjunction with RNNs. The Transformer architecture was introduced to remove RNNs and rely entirely on attention and takes this further by using self-attention as its core building block.</p>
 <h2 id="background">Background</h2>
 <h2 id="architecture">Architecture</h2>
+<p>Similar to other sequence transduction models, The Transformer consists of an encoder and a decoder, each composed of multiple identical layers. The encoder processes the input sequence and passes its representation to the decoder, which generates the output sequence. Key components include:</p>
+<ul>
+<li><strong>Multi-Head Self-Attention:</strong> Allows the model to attend to information from different representation subspaces at different positions.</li>
+<li><strong>Position-wise Feed-Forward Networks:</strong> Each layer contains a fully connected feed-forward network applied to each position separately.</li>
+<li><strong>Positional Encoding:</strong> Since the model lacks recurrence, positional encodings are added to input embeddings to provide information about the order of the sequence.</li>
+<li><strong>Residual Connections and Layer Normalization:</strong> These help with training deep networks by mitigating vanishing gradients and stabilizing learning.</li>
+</ul>
+<h3 id="encoder-decoder-stacks">Encoder-Decoder Stacks</h3>
+<p><strong>Encoder</strong>: Encoder takes input and generates a rich context-sensitive representation of the input. The encoder is composed of a stack of <span class="arithmatex">\(N = 6\)</span> identical layers. Each containing two sub-layers: multi-head self-attention and position-wise fully connected feed-forward networks. Residual connections are used around each sub-layer, followed by layer normalization. To facilitate this residual connections all the sub-layers in the model as well as embeddings layer produce outputs of the same dimension <span class="arithmatex">\(d_{model} = 512\)</span>.</p>
+<p><strong>Decoder</strong>: Decoder generates the output sequence one token at a time, attending to both the previously generated tokens and the encoder's output. The decoder is also composed of a stack of <span class="arithmatex">\(N = 6\)</span> identical layers. The decoder inserts a third sub-layer, in addition to the two sub-layers in the encoder, which performs multi-head attention over the encoder's output, allowing the decoder to focus on relevant parts of the input sequence while generating each token. The masking in the self-attention layer ensures that the predictions for a given token can only depend on known outputs at earlier positions.</p>
+<h3 id="attention">Attention</h3>
+<p><strong>Scaled Dot-Product Attention</strong>:
+The attention mechanism is the core of the Transformer architecture. It computes a weighted sum of values (V) based on the similarity between queries (Q) and keys (K). The attention scores are calculated using the dot product of Q and K, scaled by the square root of the dimension of K, followed by a softmax operation to obtain weights. The output is then computed as a weighted sum of V.</p>
+<div class="arithmatex">\[Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V\]</div>
+<p>Dot-product attention is much faster than additive attention, as it only requires a single matrix multiplication and a softmax operation. The scaling factor <span class="arithmatex">\(\sqrt{d_k}\)</span> is used to prevent the dot products from growing too large, which can lead to numerical instability in the softmax function.</p>
+<h3 id="multi-head-attention">Multi-Head Attention</h3>
+<p>Multi-head attention extends the basic attention mechanism by allowing the model to jointly attend to information from different representation subspaces. Instead of performing a single attention function with <span class="arithmatex">\(d_{model}\)</span>-dimensional keys, queries, keys and values are linearly projected h times with different, learned linear projections to <span class="arithmatex">\(d_k, f_k, d_v\)</span> dimensions. On each of these projected representations, the attention function is applied in parallel, yielding <span class="arithmatex">\(d_v\)</span> dimensional <span class="arithmatex">\(h\)</span> different outputs. These outputs are then concatenated and linearly transformed to produce the final output.</p>
+<div class="arithmatex">\[MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O \\
+\text{where } head_i = Attention(QW^Q_i, KW^K_i, VW^V_i)
+\]</div>
+<p>In the original Transformer, <span class="arithmatex">\(h = 8\)</span> and <span class="arithmatex">\(d_k = d_v = 64\)</span>, resulting in a total dimension of <span class="arithmatex">\(d_{model} = h \cdot d_k = 512\)</span>.</p>
+<h3 id="position-wise-feed-forward-networks">Position-wise Feed-Forward Networks</h3>
+<p>A fully connected feed-forward network is applied to each position separately and identically. It consists of two linear transformations with a ReLU activation in between. The first linear transformation projects the input from <span class="arithmatex">\(d_{model}\)</span> to <span class="arithmatex">\(d_{ff}=2048\)</span> dimensions, and the second projects it back to <span class="arithmatex">\(d_{model}\)</span> dimensions.</p>
+<h3 id="positional-encoding">Positional Encoding</h3>
+<p>Since the Transformer does not have recurrence or convolution, it uses positional encodings to inject information about the position of tokens in the sequence. The positional encodings are added(summed) to the input embeddings and are designed to allow the model to learn relative positions. The encoding is defined using sine and cosine functions of different frequencies</p>
 <h2 id="why-self-attention">Why Self-Attention</h2>
+<p>Self-attention enables the model to weigh the importance of different words in a sequence, regardless of their distance from each other. This allows for better modeling of long-range dependencies and parallel computation, making training faster and more efficient compared to RNNs.</p>
+<p>The authors compare self-attention with RNNs and CNNs in three critical aspects: </p>
+<ul>
+<li><strong>Computational Complexity</strong>: Self-attention has a complexity of <span class="arithmatex">\(O(n^2 * d)\)</span> for a sequence of length <span class="arithmatex">\(n\)</span> and d-dimensional embeddings, while RNNs have <span class="arithmatex">\(O(n * d^2)\)</span> per step but require sequential processing. CNNs can also achieve <span class="arithmatex">\(O(k * n * d^2)\)</span> with fixed-size kernels, but they struggle with long-range dependencies.</li>
+<li><strong>Parallelization</strong>: Self-attention allows for parallel computation across all positions in the sequence, making it highly efficient on modern hardware. RNNs require sequential processing, which limits parallelization. CNNs can be parallelized but are constrained by kernel sizes.</li>
+<li><strong>Long-Range Dependencies</strong>: Self-attention can directly connect distant positions in the sequence, making it effective for modeling long-range relationships. RNNs struggle with long-range dependencies due to vanishing gradients, while CNNs require larger kernels to capture such relationships, which can lead to increased computational costs. The shorter the distance between any combinations of positions in the input and output sequences, the easier it is to learn long-range dependencies. The maximum path length in the self-attention is <span class="arithmatex">\(O(1)\)</span>, while in RNNs it is <span class="arithmatex">\(O(n)\)</span>, and in CNNs it is <span class="arithmatex">\(O(log_k n)\)</span>.</li>
+</ul>
 <h2 id="training">Training</h2>
+<p>The Transformer model was trained on the WMT 2014 English-to-German dataset, which contains 4.5 million sentence pairs. Sentences were encoded using Byte Pair Encoding (BPE), resulting in a shared source and target vocabulary of 37,000 tokens.</p>
+<p>To optimize training efficiency, sentence pairs were batched by approximate sequence length, with each batch containing about 25,000 source tokens and 25,000 target tokens.</p>
+<p>The model was trained using the Adam optimizer. The learning rate was set to <span class="arithmatex">\(d_{model}^{-0.5}\)</span>, with a warm-up phase for the first 4,000 steps. After the warm-up, the learning rate decayed proportionally to the inverse square root of the step number.</p>
 <h2 id="results">Results</h2>
+<p>The Transformer achieved state-of-the-art performance on machine translation tasks. It outperformed previous models in both translation accuracy and training speed, demonstrating the effectiveness of the self-attention mechanism and the overall architecture.</p>
 
 
 

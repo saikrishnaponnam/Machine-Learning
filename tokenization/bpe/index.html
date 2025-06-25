@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/tokenization/bpe/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../hf_tokenizer/">
       
       
         <link rel="next" href="../wordpiece/">
@@ -629,6 +629,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../hf_tokenizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HF Tokenizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -794,29 +817,6 @@
   
   <span class="md-ellipsis">
     Neural Tokenizer [WIP]
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../hf_tokenizer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    HF Tokenizer
     
   </span>
   
@@ -1122,12 +1122,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/self_attention/" class="md-nav__link">
+      <a href="../../papers/transformer/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Self-Attention [WIP]
+    Transformer
     
   </span>
   
@@ -1145,12 +1145,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/transformer/" class="md-nav__link">
+      <a href="../../papers/self_attention/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Transformer [WIP]
+    Self-Attention
     
   </span>
   
@@ -1259,6 +1259,7 @@
 
 
 <h1 id="bpe-tokenization">BPE Tokenization</h1>
+<p><a href="https://github.com/saikrishnaponnam/Machine-Learning/blob/main/src/tokenizers/bpe.py">Code</a></p>
 <p>Byte Pair Encoding (BPE) is a lossless data compression technique that was originally used for compressing text data.
 The basic idea of BPE is to iteratively merge the most frequent adjacent pairs of bytes (or characters) in a corpus to form a new, longer tokens. This process continues until a predefined vocabulary size is reached or no more pairs can be merged.
 It starts with a base vocabulary of individual characters and builds up to larger subword units by merging the most common pairs.</p>

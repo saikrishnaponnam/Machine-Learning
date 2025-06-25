@@ -11,10 +11,8 @@
         <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/self_attention/">
       
       
-        <link rel="prev" href="../dot_product_attention/">
+        <link rel="prev" href="../transformer/">
       
-      
-        <link rel="next" href="../transformer/">
       
       
       <link rel="icon" href="../../images/icon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Self-Attention [WIP] - Machine Learning Notes</title>
+        <title>Self-Attention - Machine Learning Notes</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#self-attention-wip" class="md-skip">
+        <a href="#self-attention" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Self-Attention [WIP]
+              Self-Attention
             
           </span>
         </div>
@@ -630,6 +628,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tokenization/hf_tokenizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HF Tokenizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../tokenization/bpe/" class="md-nav__link">
         
   
@@ -705,29 +726,6 @@
   
   <span class="md-ellipsis">
     Neural Tokenizer [WIP]
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tokenization/hf_tokenizer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    HF Tokenizer
     
   </span>
   
@@ -1032,6 +1030,29 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transformer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1044,41 +1065,146 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Self-Attention
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Self-Attention [WIP]
+    Self-Attention
     
   </span>
   
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../transformer/" class="md-nav__link">
         
-  
-  
-  <span class="md-ellipsis">
-    Transformer [WIP]
-    
-  </span>
-  
 
-      </a>
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#origins-of-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Origins of Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Formulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-head-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Head Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evolution-and-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evolution and Improvements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-state-and-future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current State and Future Directions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current State and Future Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Papers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1111,6 +1237,110 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#origins-of-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Origins of Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Formulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-head-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Head Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evolution-and-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evolution and Improvements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-state-and-future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current State and Future Directions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current State and Future Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Papers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1128,7 +1358,59 @@
   
 
 
-<h1 id="self-attention-wip">Self-Attention [WIP]</h1>
+<h1 id="self-attention">Self-Attention</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Self-attention is a foundational concept in modern deep learning, especially in natural language processing (NLP) and computer vision. It enables models to weigh the importance of different elements within a sequence, allowing for dynamic context-aware representations. Since its introduction, self-attention has revolutionized the design of neural architectures, leading to breakthroughs such as the Transformer and its derivatives.</p>
+<h2 id="origins-of-self-attention">Origins of Self-Attention</h2>
+<p>The concept of attention in neural networks was first popularized in the context of sequence-to-sequence models for machine translation (Bahdanau et al., 2014). The original attention mechanism allowed the decoder to focus on relevant parts of the input sequence when generating each output token. However, this was <em>encoder-decoder</em> (or <em>cross-attention</em>), not self-attention.</p>
+<p>Self-attention, sometimes called <em>intra-attention</em>, was introduced as a way for a sequence to attend to itself. The seminal paper "Attention Is All You Need" (Vaswani et al., 2017) introduced the Transformer architecture, which relies entirely on self-attention mechanisms, dispensing with recurrence and convolutions.</p>
+<h2 id="mathematical-formulation">Mathematical Formulation</h2>
+<p>Given an input sequence represented as a matrix <span class="arithmatex">\(X \in \mathbb{R}^{n \times d}\)</span> (where <span class="arithmatex">\(n\)</span> is the sequence length and <span class="arithmatex">\(d\)</span> is the embedding dimension), self-attention computes three projections:</p>
+<ul>
+<li>Queries (<span class="arithmatex">\(Q\)</span>): <span class="arithmatex">\(Q = XW^Q\)</span></li>
+<li>Keys (<span class="arithmatex">\(K\)</span>): <span class="arithmatex">\(K = XW^K\)</span></li>
+<li>Values (<span class="arithmatex">\(V\)</span>): <span class="arithmatex">\(V = XW^V\)</span></li>
+</ul>
+<p>where <span class="arithmatex">\(W^Q, W^K, W^V \in \mathbb{R}^{d \times d_k}\)</span> are learnable weight matrices.</p>
+<p>The attention scores are computed as:</p>
+<div class="arithmatex">\[
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+\]</div>
+<p>This allows each position in the sequence to aggregate information from all other positions, weighted by their relevance.</p>
+<h2 id="multi-head-self-attention">Multi-Head Self-Attention</h2>
+<p>To capture different types of relationships, the Transformer uses <em>multi-head</em> self-attention. Multiple sets of <span class="arithmatex">\(Q\)</span>, <span class="arithmatex">\(K\)</span>, and <span class="arithmatex">\(V\)</span> are learned, and their outputs are concatenated and linearly transformed. This enables the model to attend to information from different representation subspaces.</p>
+<h2 id="advantages-of-self-attention">Advantages of Self-Attention</h2>
+<ul>
+<li><strong>Parallelization</strong>: Unlike RNNs, self-attention allows for parallel computation over all positions in the sequence.</li>
+<li><strong>Long-Range Dependencies</strong>: Self-attention can directly connect distant positions, making it effective for modeling long-range relationships.</li>
+<li><strong>Flexibility</strong>: It is not limited to sequential data and has been adapted for images (Vision Transformers), graphs, and more.</li>
+</ul>
+<h2 id="evolution-and-improvements">Evolution and Improvements</h2>
+<p>Since the original Transformer, self-attention has seen numerous improvements and adaptations:</p>
+<ul>
+<li><strong>Efficient Attention</strong>: Standard self-attention has <span class="arithmatex">\(O(n^2)\)</span> complexity. Variants like Sparse Attention, Linformer, Performer, and Longformer reduce this cost for long sequences.</li>
+<li><strong>Relative Position Encodings</strong>: To better capture order information, models like Transformer-XL and T5 use relative position encodings.</li>
+<li><strong>Cross-Attention</strong>: Used in encoder-decoder models and multi-modal architectures (e.g., CLIP, DALL-E).</li>
+<li><strong>Vision Transformers (ViT)</strong>: Self-attention has been successfully applied to image patches, outperforming CNNs on some benchmarks.</li>
+</ul>
+<h2 id="applications">Applications</h2>
+<ul>
+<li><strong>Natural Language Processing</strong>: Language modeling (BERT, GPT), translation, summarization, question answering.</li>
+<li><strong>Computer Vision</strong>: Image classification, object detection, segmentation (ViT, DETR).</li>
+<li><strong>Multi-Modal Learning</strong>: Combining text, images, and audio (CLIP, Flamingo).</li>
+<li><strong>Reinforcement Learning</strong>: Modeling trajectories and policies.</li>
+</ul>
+<h2 id="current-state-and-future-directions">Current State and Future Directions</h2>
+<p>Self-attention remains at the core of state-of-the-art models. Research continues into making it more efficient, interpretable, and adaptable to new domains. Hybrid models combining self-attention with convolutions or recurrence are also being explored.</p>
+<h3 id="key-papers">Key Papers</h3>
+<ul>
+<li>[Bahdanau et al., 2014] Neural Machine Translation by Jointly Learning to Align and Translate</li>
+<li>[Vaswani et al., 2017] Attention Is All You Need</li>
+<li>[Dosovitskiy et al., 2020] An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</li>
+<li>[Zaheer et al., 2020] Big Bird: Transformers for Longer Sequences</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Self-attention has fundamentally changed the landscape of deep learning. Its ability to model complex dependencies and scale to large datasets has enabled unprecedented progress in AI. As research continues, self-attention is likely to remain a central building block in future models.</p>
 
 
 
