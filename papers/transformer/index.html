@@ -14,7 +14,7 @@
         <link rel="prev" href="../dot_product_attention/">
       
       
-        <link rel="next" href="../self_attention/">
+        <link rel="next" href="../bert/">
       
       
       <link rel="icon" href="../../images/icon.png">
@@ -1205,12 +1205,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../self_attention/" class="md-nav__link">
+      <a href="../bert/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Self-Attention
+    BERT [WIP]
     
   </span>
   
@@ -1384,6 +1384,8 @@
 <p>The Transformer is a deep learning model introduced in the paper "Attention Is All You Need" by Vaswani et al. in 2017. It revolutionized natural language processing by relying entirely on attention mechanisms, dispensing with recurrence and convolutions entirely. Transformers have since become the foundation for state-of-the-art models in NLP, such as BERT, GPT, and many others.</p>
 <p>Prior to Transformers, sequence transduction models like RNNs, GRUs and LSTMs were state of the art approaches. However, these models struggled with long-range dependencies and parallelization.The RNNs have an inherently sequential nature which prevents parallelization within training examples. When dealing with large sequences, the memory constraints limit batching across examples. Attention mechanisms (<a href="../additive_attention/">Additive Attention</a>, <a href="../dot_product_attention/">Dot Attention</a>) were introduced to address long-range dependencies, allowing models to focus on relevant parts of the input sequence. However, such attention mechanism are used in conjunction with RNNs. The Transformer architecture was introduced to remove RNNs and rely entirely on attention and takes this further by using self-attention as its core building block.</p>
 <h2 id="background">Background</h2>
+<p>Making computation faster by reducing the sequential nature of RNNs is a key motivation behind Extended Neural GPU, ByteNet, and ConvS2S. These models use convolutional layers to compute hidden representations in parallel, but the number of operations grows linearly with the distance between input or output positions, making it difficult to capture long-range dependencies.</p>
+<p>Self-attention also called intra-attention is a attention mechanism relating different positions of a single sequence to compute a representation of the same sequence. Self-attention has been successfully applied to various tasks, including reading comprehension, text summarization, textual entailment and learning task-independent sentence representations. <a href="https://arxiv.org/abs/1601.06733">LSTM-Networks for Machine Reading</a>, <a href="https://arxiv.org/abs/1606.01933">A Decomposable Attention Model for Natural Language Inference</a>, <a href="https://arxiv.org/abs/1702.00887">Structured Attention Networks</a>, <a href="https://arxiv.org/abs/1705.04304">A deep reinfornced model for abstractive summarization</a>.</p>
 <h2 id="architecture">Architecture</h2>
 <p>Similar to other sequence transduction models, The Transformer consists of an encoder and a decoder, each composed of multiple identical layers. The encoder processes the input sequence and passes its representation to the decoder, which generates the output sequence. Key components include:</p>
 <ul>
@@ -1399,7 +1401,9 @@
 <p><strong>Scaled Dot-Product Attention</strong>:
 The attention mechanism is the core of the Transformer architecture. It computes a weighted sum of values (V) based on the similarity between queries (Q) and keys (K). The attention scores are calculated using the dot product of Q and K, scaled by the square root of the dimension of K, followed by a softmax operation to obtain weights. The output is then computed as a weighted sum of V.</p>
 <div class="arithmatex">\[Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V\]</div>
+<p>In <a href="../dot_product_attention/">dot attention</a>, the queries are hidden states of the decoder, and the keys and values are hidden states of the encoder. In case of self-attention, the queries, keys, and values are all derived from the same sequence (input in encoder and output in decoder).</p>
 <p>Dot-product attention is much faster than additive attention, as it only requires a single matrix multiplication and a softmax operation. The scaling factor <span class="arithmatex">\(\sqrt{d_k}\)</span> is used to prevent the dot products from growing too large, which can lead to numerical instability in the softmax function.</p>
+<p><strong>Masked Self-Attention</strong>: Ignores the words that comes after the current word in the sequence. This is crucial during training to ensure that the model does not peek at future tokens when generating the current token. The masking is done by setting the attention scores for future tokens to a very large negative value before applying softmax, effectively ignoring them.</p>
 <h3 id="multi-head-attention">Multi-Head Attention</h3>
 <p>Multi-head attention extends the basic attention mechanism by allowing the model to jointly attend to information from different representation subspaces. Instead of performing a single attention function with <span class="arithmatex">\(d_{model}\)</span>-dimensional keys, queries, keys and values are linearly projected h times with different, learned linear projections to <span class="arithmatex">\(d_k, f_k, d_v\)</span> dimensions. On each of these projected representations, the attention function is applied in parallel, yielding <span class="arithmatex">\(d_v\)</span> dimensional <span class="arithmatex">\(h\)</span> different outputs. These outputs are then concatenated and linearly transformed to produce the final output.</p>
 <div class="arithmatex">\[MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O \\

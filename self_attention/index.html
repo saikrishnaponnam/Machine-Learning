@@ -8,28 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/tokenization/neural_tokenizer/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/self_attention/">
       
       
-        <link rel="prev" href="../unigram/">
       
       
-        <link rel="next" href="../../models/">
-      
-      
-      <link rel="icon" href="../../images/icon.png">
+      <link rel="icon" href="../images/icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Neural Tokenizer [WIP] - Machine Learning Notes</title>
+        <title>Self-Attention - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,9 +46,9 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#neural-tokenizer-wip" class="md-skip">
+        <a href="#self-attention" class="md-skip">
           Skip to content
         </a>
       
@@ -92,9 +88,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href=".." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Neural Tokenizer [WIP]
+              Self-Attention
             
           </span>
         </div>
@@ -161,9 +157,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href=".." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../images/logo.png" alt="logo">
 
     </a>
     Machine Learning Notes
@@ -190,7 +186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -224,7 +220,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../math/" class="md-nav__link ">
+            <a href="../math/" class="md-nav__link ">
               
   
   
@@ -257,7 +253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/calculus/" class="md-nav__link">
+      <a href="../math/calculus/" class="md-nav__link">
         
   
   
@@ -280,7 +276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/linear-algebra/" class="md-nav__link">
+      <a href="../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -303,7 +299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/probability/" class="md-nav__link">
+      <a href="../math/probability/" class="md-nav__link">
         
   
   
@@ -333,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initializers/" class="md-nav__link">
+      <a href="../Initializers/" class="md-nav__link">
         
   
   
@@ -367,7 +363,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../optimizers/" class="md-nav__link ">
+            <a href="../optimizers/" class="md-nav__link ">
               
   
   
@@ -400,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/adam/" class="md-nav__link">
+      <a href="../optimizers/adam/" class="md-nav__link">
         
   
   
@@ -423,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/sgd/" class="md-nav__link">
+      <a href="../optimizers/sgd/" class="md-nav__link">
         
   
   
@@ -453,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regularization/" class="md-nav__link">
+      <a href="../regularization/" class="md-nav__link">
         
   
   
@@ -475,7 +471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../convolution/" class="md-nav__link">
+      <a href="../convolution/" class="md-nav__link">
         
   
   
@@ -497,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../max_pool/" class="md-nav__link">
+      <a href="../max_pool/" class="md-nav__link">
         
   
   
@@ -519,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../batch_norm/" class="md-nav__link">
+      <a href="../batch_norm/" class="md-nav__link">
         
   
   
@@ -541,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rnn/" class="md-nav__link">
+      <a href="../rnn/" class="md-nav__link">
         
   
   
@@ -563,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lstm/" class="md-nav__link">
+      <a href="../lstm/" class="md-nav__link">
         
   
   
@@ -582,24 +578,22 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../tokenization/" class="md-nav__link ">
               
   
   
@@ -618,7 +612,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Tokenization
@@ -632,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hf_tokenizer/" class="md-nav__link">
+      <a href="../tokenization/hf_tokenizer/" class="md-nav__link">
         
   
   
@@ -655,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bpe/" class="md-nav__link">
+      <a href="../tokenization/bpe/" class="md-nav__link">
         
   
   
@@ -678,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wordpiece/" class="md-nav__link">
+      <a href="../tokenization/wordpiece/" class="md-nav__link">
         
   
   
@@ -701,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unigram/" class="md-nav__link">
+      <a href="../tokenization/unigram/" class="md-nav__link">
         
   
   
@@ -721,19 +715,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../tokenization/neural_tokenizer/" class="md-nav__link">
         
   
   
@@ -744,7 +729,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -776,7 +760,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../models/" class="md-nav__link ">
+            <a href="../models/" class="md-nav__link ">
               
   
   
@@ -809,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/rcnn/" class="md-nav__link">
+      <a href="../models/rcnn/" class="md-nav__link">
         
   
   
@@ -832,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/faster_rcnn/" class="md-nav__link">
+      <a href="../models/faster_rcnn/" class="md-nav__link">
         
   
   
@@ -855,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/fcos/" class="md-nav__link">
+      <a href="../models/fcos/" class="md-nav__link">
         
   
   
@@ -878,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/resnet/" class="md-nav__link">
+      <a href="../models/resnet/" class="md-nav__link">
         
   
   
@@ -901,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/vgg/" class="md-nav__link">
+      <a href="../models/vgg/" class="md-nav__link">
         
   
   
@@ -943,7 +927,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../papers/" class="md-nav__link ">
+            <a href="../papers/" class="md-nav__link ">
               
   
   
@@ -976,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/seq2seq/" class="md-nav__link">
+      <a href="../papers/seq2seq/" class="md-nav__link">
         
   
   
@@ -999,7 +983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/additive_attention/" class="md-nav__link">
+      <a href="../papers/additive_attention/" class="md-nav__link">
         
   
   
@@ -1022,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/dot_product_attention/" class="md-nav__link">
+      <a href="../papers/dot_product_attention/" class="md-nav__link">
         
   
   
@@ -1045,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/transformer/" class="md-nav__link">
+      <a href="../papers/transformer/" class="md-nav__link">
         
   
   
@@ -1068,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/bert/" class="md-nav__link">
+      <a href="../papers/bert/" class="md-nav__link">
         
   
   
@@ -1111,6 +1095,110 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#origins-of-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Origins of Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Formulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-head-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Head Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-self-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages of Self-Attention
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evolution-and-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evolution and Improvements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-state-and-future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Current State and Future Directions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Current State and Future Directions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Papers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1128,7 +1216,86 @@
   
 
 
-<h1 id="neural-tokenizer-wip">Neural Tokenizer [WIP]</h1>
+<h1 id="self-attention">Self-Attention</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Self-attention is a foundational concept in modern deep learning, especially in natural language processing (NLP) and computer vision. It enables models to weigh the importance of different elements within a sequence, allowing for dynamic context-aware representations. Since its introduction, self-attention has revolutionized the design of neural architectures, leading to breakthroughs such as the Transformer and its derivatives.</p>
+<h2 id="origins-of-self-attention">Origins of Self-Attention</h2>
+<p>The concept of attention in neural networks was first popularized in the context of sequence-to-sequence models for machine translation (Bahdanau et al., 2014). The original attention mechanism allowed the decoder to focus on relevant parts of the input sequence when generating each output token. However, this was <em>encoder-decoder</em> (or <em>cross-attention</em>), not self-attention.</p>
+<p>Self-attention, sometimes called <em>intra-attention</em>, was introduced as a way for a sequence to attend to itself. The seminal paper "Attention Is All You Need" (Vaswani et al., 2017) introduced the Transformer architecture, which relies entirely on self-attention mechanisms, dispensing with recurrence and convolutions.</p>
+<h2 id="mathematical-formulation">Mathematical Formulation</h2>
+<p>Given an input sequence represented as a matrix <span class="arithmatex">\(X \in \mathbb{R}^{n \times d}\)</span> (where <span class="arithmatex">\(n\)</span> is the sequence length and <span class="arithmatex">\(d\)</span> is the embedding dimension), self-attention computes three projections:</p>
+<ul>
+<li>Queries (<span class="arithmatex">\(Q\)</span>): <span class="arithmatex">\(Q = XW^Q\)</span></li>
+<li>Keys (<span class="arithmatex">\(K\)</span>): <span class="arithmatex">\(K = XW^K\)</span></li>
+<li>Values (<span class="arithmatex">\(V\)</span>): <span class="arithmatex">\(V = XW^V\)</span></li>
+</ul>
+<p>where <span class="arithmatex">\(W^Q, W^K, W^V \in \mathbb{R}^{d \times d_k}\)</span> are learnable weight matrices.</p>
+<p>The attention scores are computed as:</p>
+<div class="arithmatex">\[
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+\]</div>
+<p>This allows each position in the sequence to aggregate information from all other positions, weighted by their relevance.</p>
+<h2 id="multi-head-self-attention">Multi-Head Self-Attention</h2>
+<p>To capture different types of relationships, the Transformer uses <em>multi-head</em> self-attention. Multiple sets of <span class="arithmatex">\(Q\)</span>, <span class="arithmatex">\(K\)</span>, and <span class="arithmatex">\(V\)</span> are learned, and their outputs are concatenated and linearly transformed. This enables the model to attend to information from different representation subspaces.</p>
+<h2 id="advantages-of-self-attention">Advantages of Self-Attention</h2>
+<ul>
+<li><strong>Parallelization</strong>: Unlike RNNs, self-attention allows for parallel computation over all positions in the sequence.</li>
+<li><strong>Long-Range Dependencies</strong>: Self-attention can directly connect distant positions, making it effective for modeling long-range relationships.</li>
+<li><strong>Flexibility</strong>: It is not limited to sequential data and has been adapted for images (Vision Transformers), graphs, and more.</li>
+</ul>
+<h2 id="evolution-and-improvements">Evolution and Improvements</h2>
+<p>Since the original Transformer, self-attention has seen numerous improvements and adaptations:</p>
+<ul>
+<li><strong>Efficient Attention</strong>: Standard self-attention has <span class="arithmatex">\(O(n^2)\)</span> complexity. Variants like Sparse Attention, Linformer, Performer, and Longformer reduce this cost for long sequences.</li>
+<li><strong>Relative Position Encodings</strong>: To better capture order information, models like Transformer-XL and T5 use relative position encodings.</li>
+<li><strong>Cross-Attention</strong>: Used in encoder-decoder models and multi-modal architectures (e.g., CLIP, DALL-E).</li>
+<li><strong>Vision Transformers (ViT)</strong>: Self-attention has been successfully applied to image patches, outperforming CNNs on some benchmarks.</li>
+</ul>
+<h2 id="applications">Applications</h2>
+<ul>
+<li><strong>Natural Language Processing</strong>: Language modeling (BERT, GPT), translation, summarization, question answering.</li>
+<li><strong>Computer Vision</strong>: Image classification, object detection, segmentation (ViT, DETR).</li>
+<li><strong>Multi-Modal Learning</strong>: Combining text, images, and audio (CLIP, Flamingo).</li>
+<li><strong>Reinforcement Learning</strong>: Modeling trajectories and policies.</li>
+</ul>
+<h2 id="current-state-and-future-directions">Current State and Future Directions</h2>
+<p>Self-attention remains at the core of state-of-the-art models. Research continues into making it more efficient, interpretable, and adaptable to new domains. Hybrid models combining self-attention with convolutions or recurrence are also being explored.</p>
+<h3 id="key-papers">Key Papers</h3>
+<ul>
+<li>[Bahdanau et al., 2014] Neural Machine Translation by Jointly Learning to Align and Translate</li>
+<li>[Vaswani et al., 2017] Attention Is All You Need</li>
+<li>[Dosovitskiy et al., 2020] An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</li>
+<li>[Zaheer et al., 2020] Big Bird: Transformers for Longer Sequences</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>Self-attention has fundamentally changed the landscape of deep learning. Its ability to model complex dependencies and scale to large datasets has enabled unprecedented progress in AI. As research continues, self-attention is likely to remain a central building block in future models.</p>
+<p>Here are some examples of using Attention and Self-Attention:
+Attention
+Machine Translation: In a sequence-to-sequence model, the decoder uses Encoder-Decoder Attention to focus on specific parts of the input sentence when generating the output translation.
+Query: Decoder's hidden state
+Key: Encoder's output
+Value: Encoder's output
+Image Captioning: When generating a caption for an image, the model uses Attention to focus on specific regions of the image when generating each word of the caption.
+Query: Decoder's hidden state
+Key: Image features
+Value: Image features
+Question Answering: When answering a question based on a passage, the model uses Attention to focus on specific parts of the passage that are relevant to the question.
+Query: Question embedding
+Key: Passage embeddings
+Value: Passage embeddings</p>
+<p>Self-Attention
+Transformer Encoder: The Transformer encoder uses Self-Attention to model the relationships between different words in the input sequence.
+Query: Input sequence
+Key: Input sequence
+Value: Input sequence
+Language Modeling: When predicting the next word in a sentence, a language model using Self-Attention can attend to previous words in the sentence to inform its prediction.
+Query: Input sequence (up to the current word)
+Key: Input sequence (up to the current word)
+Value: Input sequence (up to the current word)
+Text Classification: A text classification model using Self-Attention can attend to different parts of the input text to determine its class label.
+Query: Input text
+Key: Input text
+Value: Input text</p>
 
 
 
@@ -1177,12 +1344,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
