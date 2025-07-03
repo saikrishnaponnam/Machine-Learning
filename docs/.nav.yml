@@ -1,6 +1,7 @@
 nav:
   - index.md
   - Fundamentals: math
+  - nlp.md
   - Initializers.md
   - optimizers
   - regularization.md

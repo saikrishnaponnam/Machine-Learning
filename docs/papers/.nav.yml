@@ -1,7 +1,19 @@
 nav:
   - index.md
+  - resnet.md
   - seq2seq.md
   - additive_attention.md
   - dot_product_attention.md
   - transformer.md
+  - elmo.md
+  - gpt.md
+  - bert.md
+  - roberta.md
+  - t5.md
+  - vit.md
+  - detr.md
+  - llama.md
+  - gpt2.md
+  - llama2.md
+  - lora.md
   - "*"

@@ -6,10 +6,25 @@ theme:
   name: material
   logo: images/logo.png
   favicon: images/icon.png
+  icon:
+    repo: fontawesome/brands/github
   palette:
-    primary: deep purple
+    - scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - content.code.copy
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+#    - toc.integrate
 
 
 markdown_extensions:
@@ -45,7 +60,7 @@ extra_css:
   # Math
   - https://unpkg.com/katex@0/dist/katex.min.css
   - stylesheets/extra.css
-#  - stylesheets/override.css
+  - stylesheets/override.css
 
 plugins:
   - section-index
