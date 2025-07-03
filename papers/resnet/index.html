@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/models/resnet/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/resnet/">
       
       
-        <link rel="prev" href="../fcos/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../vgg/">
+        <link rel="next" href="../seq2seq/">
       
       
       <link rel="icon" href="../../images/icon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Resnet - Machine Learning Notes</title>
+        <title>ResNet [WIP] - Machine Learning Notes</title>
       
     
     
@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#resnet-deep-residual-learning-for-image-recognition" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Resnet
+              ResNet [WIP]
             
           </span>
         </div>
@@ -822,10 +827,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -843,15 +846,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../models/" class="md-nav__link ">
               
   
   
@@ -870,7 +873,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             Models
@@ -884,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rcnn/" class="md-nav__link">
+      <a href="../../models/rcnn/" class="md-nav__link">
         
   
   
@@ -907,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faster_rcnn/" class="md-nav__link">
+      <a href="../../models/faster_rcnn/" class="md-nav__link">
         
   
   
@@ -930,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fcos/" class="md-nav__link">
+      <a href="../../models/fcos/" class="md-nav__link">
         
   
   
@@ -950,17 +953,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../models/resnet/" class="md-nav__link">
         
   
   
@@ -971,7 +967,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -984,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vgg/" class="md-nav__link">
+      <a href="../../models/vgg/" class="md-nav__link">
         
   
   
@@ -1011,8 +1006,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1034,15 +1031,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../papers/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1061,7 +1058,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_14">
             <span class="md-nav__icon md-icon"></span>
             Papers
@@ -1072,10 +1069,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../papers/resnet/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    ResNet [WIP]
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1086,6 +1105,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-residual-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Residual Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Residual Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#residual-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Residual Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-mapping-by-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Mapping by Shortcuts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiments-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiments &amp; Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1098,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/seq2seq/" class="md-nav__link">
+      <a href="../seq2seq/" class="md-nav__link">
         
   
   
@@ -1121,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/additive_attention/" class="md-nav__link">
+      <a href="../additive_attention/" class="md-nav__link">
         
   
   
@@ -1144,7 +1261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/dot_product_attention/" class="md-nav__link">
+      <a href="../dot_product_attention/" class="md-nav__link">
         
   
   
@@ -1167,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/transformer/" class="md-nav__link">
+      <a href="../transformer/" class="md-nav__link">
         
   
   
@@ -1190,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/GPT/" class="md-nav__link">
+      <a href="../GPT/" class="md-nav__link">
         
   
   
@@ -1213,7 +1330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/bert/" class="md-nav__link">
+      <a href="../bert/" class="md-nav__link">
         
   
   
@@ -1253,6 +1370,94 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Work
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-residual-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Residual Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Residual Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#residual-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Residual Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#identity-mapping-by-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identity Mapping by Shortcuts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architectures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiments-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiments &amp; Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1271,7 +1476,23 @@
   
 
 
-  <h1>Resnet</h1>
+<h1 id="resnet-deep-residual-learning-for-image-recognition">ResNet: Deep Residual Learning for Image Recognition</h1>
+<p><a href="https://arxiv.org/abs/1512.03385">Paper</a> | <a href="">Blog</a> | <a href="">Code</a></p>
+<h2 id="introduction">Introduction</h2>
+<hr />
+<h2 id="related-work">Related Work</h2>
+<hr />
+<h2 id="deep-residual-learning">Deep Residual Learning</h2>
+<hr />
+<h3 id="residual-learning">Residual Learning</h3>
+<hr />
+<h3 id="identity-mapping-by-shortcuts">Identity Mapping by Shortcuts</h3>
+<hr />
+<h3 id="architectures">Architectures</h3>
+<hr />
+<h2 id="experiments-results">Experiments &amp; Results</h2>
+<hr />
+<h2 id="_1"></h2>
 
 
 
@@ -1279,7 +1500,8 @@
 
 
 
-
+  
+  
 
 
 

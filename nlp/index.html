@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/models/resnet/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/nlp/">
       
       
-        <link rel="prev" href="../fcos/">
+        <link rel="prev" href="../math/probability/">
       
       
-        <link rel="next" href="../vgg/">
+        <link rel="next" href="../Initializers/">
       
       
-      <link rel="icon" href="../../images/icon.png">
+      <link rel="icon" href="../images/icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Resnet - Machine Learning Notes</title>
+        <title>Natural Language Processing (NLP) - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,11 +50,11 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../stylesheets/override.css">
+      <link rel="stylesheet" href="../stylesheets/override.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#natural-language-processing-nlp" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -91,9 +96,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href=".." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -110,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Resnet
+              Natural Language Processing (NLP)
             
           </span>
         </div>
@@ -186,9 +191,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href=".." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../images/logo.png" alt="logo">
 
     </a>
     Machine Learning Notes
@@ -215,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -257,7 +262,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../math/" class="md-nav__link ">
+            <a href="../math/" class="md-nav__link ">
               
   
   
@@ -290,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/calculus/" class="md-nav__link">
+      <a href="../math/calculus/" class="md-nav__link">
         
   
   
@@ -313,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/linear-algebra/" class="md-nav__link">
+      <a href="../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -336,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/probability/" class="md-nav__link">
+      <a href="../math/probability/" class="md-nav__link">
         
   
   
@@ -363,10 +368,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../nlp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Natural Language Processing (NLP)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -377,6 +404,155 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-nlp-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why is NLP Important?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-tasks-in-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Tasks in NLP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nlp-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLP Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approaches-to-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approaches to NLP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approaches to NLP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rule-based-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rule-Based Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistical-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistical Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-deep-learning-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Deep Learning Architectures:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word Embeddings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges-in-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges in NLP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#popular-nlp-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Popular NLP Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-World Applications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-future-of-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Future of NLP
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -388,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initializers/" class="md-nav__link">
+      <a href="../Initializers/" class="md-nav__link">
         
   
   
@@ -428,7 +604,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../optimizers/" class="md-nav__link ">
+            <a href="../optimizers/" class="md-nav__link ">
               
   
   
@@ -461,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/adam/" class="md-nav__link">
+      <a href="../optimizers/adam/" class="md-nav__link">
         
   
   
@@ -484,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/sgd/" class="md-nav__link">
+      <a href="../optimizers/sgd/" class="md-nav__link">
         
   
   
@@ -514,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regularization/" class="md-nav__link">
+      <a href="../regularization/" class="md-nav__link">
         
   
   
@@ -536,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../convolution/" class="md-nav__link">
+      <a href="../convolution/" class="md-nav__link">
         
   
   
@@ -558,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../max_pool/" class="md-nav__link">
+      <a href="../max_pool/" class="md-nav__link">
         
   
   
@@ -580,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../batch_norm/" class="md-nav__link">
+      <a href="../batch_norm/" class="md-nav__link">
         
   
   
@@ -602,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rnn/" class="md-nav__link">
+      <a href="../rnn/" class="md-nav__link">
         
   
   
@@ -624,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lstm/" class="md-nav__link">
+      <a href="../lstm/" class="md-nav__link">
         
   
   
@@ -670,7 +846,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tokenization/" class="md-nav__link ">
+            <a href="../tokenization/" class="md-nav__link ">
               
   
   
@@ -703,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/hf_tokenizer/" class="md-nav__link">
+      <a href="../tokenization/hf_tokenizer/" class="md-nav__link">
         
   
   
@@ -726,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/bpe/" class="md-nav__link">
+      <a href="../tokenization/bpe/" class="md-nav__link">
         
   
   
@@ -749,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/wordpiece/" class="md-nav__link">
+      <a href="../tokenization/wordpiece/" class="md-nav__link">
         
   
   
@@ -772,7 +948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/unigram/" class="md-nav__link">
+      <a href="../tokenization/unigram/" class="md-nav__link">
         
   
   
@@ -795,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/neural_tokenizer/" class="md-nav__link">
+      <a href="../tokenization/neural_tokenizer/" class="md-nav__link">
         
   
   
@@ -822,10 +998,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -843,15 +1017,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../models/" class="md-nav__link ">
               
   
   
@@ -870,7 +1044,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             Models
@@ -884,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rcnn/" class="md-nav__link">
+      <a href="../models/rcnn/" class="md-nav__link">
         
   
   
@@ -907,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../faster_rcnn/" class="md-nav__link">
+      <a href="../models/faster_rcnn/" class="md-nav__link">
         
   
   
@@ -930,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fcos/" class="md-nav__link">
+      <a href="../models/fcos/" class="md-nav__link">
         
   
   
@@ -950,17 +1124,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../models/resnet/" class="md-nav__link">
         
   
   
@@ -971,7 +1138,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -984,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vgg/" class="md-nav__link">
+      <a href="../models/vgg/" class="md-nav__link">
         
   
   
@@ -1042,7 +1208,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../papers/" class="md-nav__link ">
+            <a href="../papers/" class="md-nav__link ">
               
   
   
@@ -1075,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/resnet/" class="md-nav__link">
+      <a href="../papers/resnet/" class="md-nav__link">
         
   
   
@@ -1098,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/seq2seq/" class="md-nav__link">
+      <a href="../papers/seq2seq/" class="md-nav__link">
         
   
   
@@ -1121,7 +1287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/additive_attention/" class="md-nav__link">
+      <a href="../papers/additive_attention/" class="md-nav__link">
         
   
   
@@ -1144,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/dot_product_attention/" class="md-nav__link">
+      <a href="../papers/dot_product_attention/" class="md-nav__link">
         
   
   
@@ -1167,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/transformer/" class="md-nav__link">
+      <a href="../papers/transformer/" class="md-nav__link">
         
   
   
@@ -1190,7 +1356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/GPT/" class="md-nav__link">
+      <a href="../papers/GPT/" class="md-nav__link">
         
   
   
@@ -1213,7 +1379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/bert/" class="md-nav__link">
+      <a href="../papers/bert/" class="md-nav__link">
         
   
   
@@ -1253,6 +1419,145 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-nlp-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why is NLP Important?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-tasks-in-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Tasks in NLP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nlp-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLP Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approaches-to-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approaches to NLP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approaches to NLP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rule-based-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rule-Based Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistical-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistical Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-deep-learning-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Deep Learning Architectures:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Word Embeddings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges-in-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges in NLP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#popular-nlp-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      Popular NLP Libraries
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#real-world-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Real-World Applications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-future-of-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Future of NLP
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1271,9 +1576,88 @@
   
 
 
-  <h1>Resnet</h1>
-
-
+<h1 id="natural-language-processing-nlp">Natural Language Processing (NLP)</h1>
+<p>Natural Language Processing (NLP) is a subfield of artificial intelligence (AI) and linguistics that focuses on the interaction between computers and human (natural) languages. The goal of NLP is to enable computers to understand, interpret, generate, and respond to human language in a valuable way.</p>
+<h2 id="why-is-nlp-important">Why is NLP Important?</h2>
+<p>NLP powers many applications we use daily, such as:
+- <strong>Machine Translation</strong> (e.g., Google Translate)
+- <strong>Speech Recognition</strong> (e.g., Siri, Alexa)
+- <strong>Chatbots and Virtual Assistants</strong>
+- <strong>Text Summarization</strong>
+- <strong>Sentiment Analysis</strong>
+- <strong>Information Retrieval</strong> (e.g., search engines)</p>
+<h2 id="key-tasks-in-nlp">Key Tasks in NLP</h2>
+<ol>
+<li><strong>Tokenization</strong>: Splitting text into words, sentences, or subwords. This is often the first step in NLP pipelines.</li>
+<li><strong>Part-of-Speech Tagging</strong>: Assigning word types (noun, verb, etc.) to each token.</li>
+<li><strong>Named Entity Recognition (NER)</strong>: Identifying entities like names, locations, and organizations in text.</li>
+<li><strong>Parsing</strong>: Analyzing grammatical structure.</li>
+<li><strong>Machine Translation</strong>: Translating text from one language to another.</li>
+<li><strong>Text Classification</strong>: Assigning categories to text (e.g., spam detection, sentiment analysis).</li>
+<li><strong>Question Answering</strong>: Building systems that can answer questions posed in natural language.</li>
+<li>Textual Entailment: Determining if one sentence logically follows from another.</li>
+</ol>
+<h2 id="nlp-pipeline">NLP Pipeline</h2>
+<p>A typical NLP pipeline includes:
+1. <strong>Text Preprocessing</strong>: Cleaning, tokenizing, removing stopwords, stemming/lemmatization.
+2. <strong>Feature Extraction</strong>: Converting text to numerical features (e.g., Bag-of-Words, TF-IDF, word embeddings).
+3. <strong>Modeling</strong>: Applying machine learning or deep learning models.
+4. <strong>Postprocessing</strong>: Interpreting and presenting results.</p>
+<h2 id="approaches-to-nlp">Approaches to NLP</h2>
+<h3 id="rule-based-methods">Rule-Based Methods</h3>
+<p>Early NLP systems used hand-crafted rules and dictionaries. While effective for simple tasks, they struggled with ambiguity and scale.</p>
+<h3 id="statistical-methods">Statistical Methods</h3>
+<p>With the advent of large datasets, statistical models (e.g., Hidden Markov Models, Conditional Random Fields) became popular for tasks like POS tagging and NER.</p>
+<h3 id="deep-learning">Deep Learning</h3>
+<p>Modern NLP leverages deep learning, especially neural networks like RNNs, LSTMs, and Transformers. These models can learn complex patterns from large corpora and have led to breakthroughs in translation, summarization, and more.</p>
+<h4 id="key-deep-learning-architectures">Key Deep Learning Architectures:</h4>
+<ul>
+<li><strong>RNNs (Recurrent Neural Networks)</strong>: Good for sequential data, but suffer from vanishing gradients.</li>
+<li><strong>LSTMs/GRUs</strong>: Variants of RNNs that handle long-term dependencies better.</li>
+<li><strong>CNNs (Convolutional Neural Networks)</strong>: Used for text classification and sentence modeling.</li>
+<li><strong>Transformers</strong>: State-of-the-art for most NLP tasks. Use self-attention mechanisms to model relationships in text. Examples include BERT, GPT, and T5.</li>
+</ul>
+<h2 id="word-embeddings">Word Embeddings</h2>
+<p>Word embeddings are dense vector representations of words that capture semantic meaning. Popular methods include:
+- <strong>Word2Vec</strong>
+- <strong>GloVe</strong>
+- <strong>FastText</strong>
+- <strong>Contextual Embeddings</strong> (e.g., ELMo, BERT)</p>
+<h2 id="challenges-in-nlp">Challenges in NLP</h2>
+<ul>
+<li><strong>Ambiguity</strong>: Words and sentences can have multiple meanings.</li>
+<li><strong>Context Understanding</strong>: Meaning often depends on context.</li>
+<li><strong>Low-Resource Languages</strong>: Lack of data for many languages.</li>
+<li><strong>Bias and Fairness</strong>: Models can inherit biases from training data.</li>
+</ul>
+<h2 id="popular-nlp-libraries">Popular NLP Libraries</h2>
+<ul>
+<li><strong>NLTK</strong>: Classic Python library for NLP tasks.</li>
+<li><strong>spaCy</strong>: Fast, industrial-strength NLP library.</li>
+<li><strong>Transformers (Hugging Face)</strong>: State-of-the-art models and pipelines.</li>
+<li><strong>Stanford CoreNLP</strong>: Java-based NLP toolkit.</li>
+</ul>
+<h2 id="real-world-applications">Real-World Applications</h2>
+<ul>
+<li><strong>Search Engines</strong>: Understanding queries and ranking results.</li>
+<li><strong>Social Media Monitoring</strong>: Sentiment analysis, trend detection.</li>
+<li><strong>Healthcare</strong>: Extracting information from medical records.</li>
+<li><strong>Legal Tech</strong>: Document analysis and contract review.</li>
+</ul>
+<h2 id="the-future-of-nlp">The Future of NLP</h2>
+<p>NLP is rapidly evolving, with research focusing on:
+- <strong>Multilingual and Zero-shot Learning</strong>
+- <strong>Conversational AI</strong>
+- <strong>Explainability and Interpretability</strong>
+- <strong>Reducing Bias and Improving Fairness</strong></p>
+<p>As language models become more powerful and accessible, NLP will continue to transform how we interact with technology and information.</p>
+<hr />
+<p><strong>Further Reading:</strong>
+- <a href="../papers/transformer/">Transformer Models</a>
+- <a href="../papers/bert/">BERT</a>
+- <a href="../papers/GPT/">GPT</a>
+- <a href="../tokenization/">Tokenization Methods</a>
+- <a href="../embeddings/">Word Embeddings</a></p>
 
 
 
@@ -1328,12 +1712,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
