@@ -89,7 +89,6 @@ class RNN(RNNBase):
             x_t = x[t]  # (N, input_size)
             h_t = []
             a_t = []
-            # TODO: Vectorize the multi-layer computation
             for l in range(self.num_layers):
                 a_t_l = x_t.matmul(self.w_xh[l]) + h_prev[l].matmul(self.w_hh[l]) + self.bh[l]
                 h_t_l = self.activation(a_t_l)

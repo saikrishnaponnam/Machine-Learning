@@ -1,9 +1,9 @@
 nav:
   - index.md
-  - resnet.md
   - seq2seq.md
   - additive_attention.md
   - dot_product_attention.md
+  - resnet.md
   - transformer.md
   - elmo.md
   - gpt.md
