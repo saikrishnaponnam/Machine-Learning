@@ -5,6 +5,7 @@ from torch import Tensor
 
 from src.init import kaiming
 from src.layers import RNNBase
+from src.layers.dropout import Dropout
 
 
 class LSTM(RNNBase):
@@ -53,6 +54,9 @@ class LSTM(RNNBase):
         if bidirectional:
             raise NotImplementedError("Bidirectional LSTM is not implemented yet.")
 
+        # Dropout layers (applied to outputs of all but last layer)
+        self.dropouts = [Dropout(dropout) if dropout > 0 and l < num_layers - 1 else None for l in range(num_layers)]
+
         # Cache for backward pass
         self.cache = []
 
@@ -99,6 +103,9 @@ class LSTM(RNNBase):
                 h_t[l] = o_t * torch.tanh(c_t[l])
                 self.cache[l].append((x_t, f_t, i_t, o_t, c_tilde_t, c_t[l], h_t[l]))
                 x_t = h_t[l]
+                # Apply dropout except for last layer
+                if self.dropouts[l] is not None:
+                    x_t = self.dropouts[l].forward(x_t)
             outputs.append(h_t[-1])
         output = torch.stack(outputs, dim=0)
         if self.batch_first:
@@ -134,6 +141,9 @@ class LSTM(RNNBase):
             d_input = d_out[t]
             # Backward through layers
             for l in reversed(range(self.num_layers)):
+                # Apply dropout backward except for last layer
+                if self.dropouts[l] is not None:
+                    d_input = self.dropouts[l].backward(d_input)
                 x_t, f_t, i_t, o_t, c_tilde_t, c_t, h_t = self.cache[l][t]
                 c_prev = self.cache[l][t - 1][5] if t > 0 else torch.zeros_like(c_t)
                 h_prev = self.cache[l][t - 1][6] if t > 0 else torch.zeros_like(h_t)
