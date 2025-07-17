@@ -14,7 +14,7 @@
         <link rel="prev" href="../models/vgg/">
       
       
-        <link rel="next" href="resnet/">
+        <link rel="next" href="seq2seq/">
       
       
       <link rel="icon" href="../images/icon.png">
@@ -181,8 +181,6 @@
         <div class="md-main__inner md-grid">
           
             
-              
-                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -378,7 +376,7 @@
   
   
   <span class="md-ellipsis">
-    Natural Language Processing (NLP)
+    NLP Overview
     
   </span>
   
@@ -1029,6 +1027,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1066,29 +1068,6 @@
             Papers
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="resnet/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ResNet [WIP]
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1149,6 +1128,29 @@
   
   <span class="md-ellipsis">
     Dot Product Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="resnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ResNet [WIP]
     
   </span>
   
@@ -1228,6 +1230,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="t5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    T5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LoRA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1243,9 +1291,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1256,6 +1302,50 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      NLP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Vision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trainingfinetuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training/Finetuning
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1268,8 +1358,6 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
-
 
 
   
@@ -1277,6 +1365,7 @@
 
 
 <h1 id="table-of-contents">Table of Contents</h1>
+<h2 id="nlp">NLP</h2>
 <ul>
 <li><a href="seq2seq/">Seq2Seq</a></li>
 <li><a href="additive_attention/">Additive Attention</a></li>
@@ -1284,6 +1373,27 @@
 <li><a href="transformer/">Transformer</a></li>
 <li><a href="GPT/">GPT</a></li>
 <li><a href="bert/">BERT</a></li>
+<li><a href="t5/">T5</a></li>
+<li><a href="GPT-2.md">GPT-2</a></li>
+<li><a href="llama.md">Llama</a></li>
+<li><a href="llama-2.md">Llama-2</a></li>
+<li><a href="elmo.md">ELMo</a></li>
+<li><a href="roberta.md">RoBERTa</a></li>
+<li><a href="bart.md">BART</a></li>
+<li><a href="xlm.md">XLM</a></li>
+</ul>
+<h2 id="computer-vision">Computer Vision</h2>
+<ul>
+<li><a href="resnet/">ResNet</a></li>
+<li><a href="vit.md">ViT</a></li>
+</ul>
+<h2 id="inference">Inference</h2>
+<h2 id="trainingfinetuning">Training/Finetuning</h2>
+<ul>
+<li><a href="lora/">LoRA</a></li>
+<li><a href="qlora.md">QLoRA</a></li>
+<li><a href="peft.md">PEFT</a></li>
+<li><a href="dpo.md">DPO</a></li>
 </ul>
 
 
@@ -1292,13 +1402,8 @@
 
 
 
-  
-  
 
 
-
-
-  
 
 
 
