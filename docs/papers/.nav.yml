@@ -1,19 +1,5 @@
 nav:
   - index.md
-  - seq2seq.md
-  - additive_attention.md
-  - dot_product_attention.md
-  - resnet.md
-  - transformer.md
-  - elmo.md
-  - gpt.md
-  - bert.md
-  - roberta.md
-  - t5.md
-  - vit.md
-  - detr.md
-  - llama.md
-  - gpt2.md
-  - llama2.md
-  - lora.md
-  - "*"
+  - Vision: cv
+  - Fine Tuning: fine-tuning
+  - NLP: nlp

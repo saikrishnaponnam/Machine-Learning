@@ -1,0 +1,15 @@
+nav:
+  - index.md
+  - seq2seq.md
+  - additive_attention.md
+  - dot_product_attention.md
+  - transformer.md
+  - elmo.md
+  - gpt.md
+  - bert.md
+  - t5.md
+  - gpt2.md
+  - llama.md
+  - roberta.md
+  - llama2.md
+  - "*"

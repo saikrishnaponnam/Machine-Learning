@@ -16,6 +16,10 @@ Self-attention also called intra-attention is a attention mechanism relating dif
 
 ## Architecture
 
+<figure markdown="span">
+    ![transformer.png](images/transformer.png)
+</figure>
+
 Similar to other sequence transduction models, The Transformer consists of an encoder and a decoder, each composed of multiple identical layers. The encoder processes the input sequence and passes its representation to the decoder, which generates the output sequence. Key components include:
 
 - **Multi-Head Self-Attention:** Allows the model to attend to information from different representation subspaces at different positions.
