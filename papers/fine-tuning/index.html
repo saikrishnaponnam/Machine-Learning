@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/bert/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/fine-tuning/">
       
       
-        <link rel="prev" href="../GPT/">
+        <link rel="prev" href="../cv/vit/">
       
       
-        <link rel="next" href="../t5/">
+        <link rel="next" href="lora/">
       
       
       <link rel="icon" href="../../images/icon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>BERT - Machine Learning Notes</title>
+        <title>Fine-Tuning - Machine Learning Notes</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bert-bidirectional-encoder-representations-from-transformers" class="md-skip">
+        <a href="#fine-tuning" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              BERT
+              Fine-Tuning
             
           </span>
         </div>
@@ -1019,18 +1019,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1075,22 +1063,50 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../seq2seq/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../cv/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
-    Seq2Seq
+    Vision
     
   </span>
   
 
-      </a>
-    </li>
-  
-
+            </a>
+            
               
+              <label class="md-nav__link " for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1099,53 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../additive_attention/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Additive Attention
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dot_product_attention/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dot Product Attention
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../resnet/" class="md-nav__link">
+      <a href="../cv/resnet/" class="md-nav__link">
         
   
   
@@ -1168,7 +1138,279 @@
   
   
     <li class="md-nav__item">
-      <a href="../transformer/" class="md-nav__link">
+      <a href="../cv/vit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ViT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  
+  <span class="md-ellipsis">
+    Fine Tuning
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fine Tuning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LoRA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rlhf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RLHF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../nlp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    NLP
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_3" id="__nav_14_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp/seq2seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seq2Seq
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp/additive_attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Additive Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp/dot_product_attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dot Product Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp/transformer/" class="md-nav__link">
         
   
   
@@ -1191,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GPT/" class="md-nav__link">
+      <a href="../nlp/GPT/" class="md-nav__link">
         
   
   
@@ -1211,32 +1453,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    BERT
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../nlp/bert/" class="md-nav__link">
         
   
   
@@ -1247,104 +1467,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
-    <span class="md-ellipsis">
-      Training
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Training">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-training" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pre-training
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fine-tuning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fine-tuning
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#experiments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experiments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ablations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ablations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#impact-and-extensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Impact and Extensions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1357,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../t5/" class="md-nav__link">
+      <a href="../nlp/t5/" class="md-nav__link">
         
   
   
@@ -1380,17 +1502,48 @@
   
   
     <li class="md-nav__item">
-      <a href="../lora/" class="md-nav__link">
+      <a href="../nlp/gpt2/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    LoRA[WIP]
+    GPT-2
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp/llama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Llama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1423,92 +1576,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
-    <span class="md-ellipsis">
-      Training
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Training">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-training" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pre-training
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fine-tuning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fine-tuning
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#experiments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experiments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ablations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ablations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#impact-and-extensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Impact and Extensions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1526,69 +1593,7 @@
   
 
 
-<h1 id="bert-bidirectional-encoder-representations-from-transformers">BERT: Bidirectional Encoder Representations from Transformers</h1>
-<p><a href="https://arxiv.org/abs/1810.04805">Read the Paper</a> | <a href="https://ai.googleblog.com/2018/11/open-sourcing-bert-state-of-art-pre.html">Google AI Blog</a> | <a href="">Code (TBD)</a></p>
-<p>BERT (Bidirectional Encoder Representations from Transformers) is a revolutionary language model introduced by Google in 2018. Unlike earlier models that processed text in only one direction (left-to-right or right-to-left), BERT is designed to pre-train deep bidirectional representations by jointly conditioning on both left and right context in all layers. This enables BERT to capture richer language understanding and achieve state-of-the-art results on a wide range of NLP tasks, such as question answering, sentiment analysis, and named entity recognition.</p>
-<h2 id="introduction">Introduction</h2>
-<p>Pre-training language models has proven highly effective for improving many NLP tasks, as demonstrated by works like <a href="https://arxiv.org/abs/1511.01432">Dai and Le, 2015</a>, <a href="elmo.md">ELMo</a>, <a href="../GPT/">GPT 1</a>, and <a href="https://arxiv.org/abs/1801.06146">Howard and Ruder, 2018</a>. These approaches benefit both sentence-level and token-level tasks. However, most previous models are unidirectional, processing text either left-to-right or right-to-left, which limits their ability to fully capture the context of each word.</p>
-<p>There are two main ways to use pre-trained representations in downstream tasks:</p>
-<ul>
-<li><strong>Feature-based</strong>: Use the pre-trained representations as additional features in a task-specific architecture (e.g., ELMo).</li>
-<li><strong>Fine-tuning</strong>: Fine-tune the pre-trained model along with minimal task-specific parameters, allowing the model to adapt to the specific task.</li>
-</ul>
-<p>Both approaches traditionally rely on unidirectional language models during pre-training, which can restrict the power of the learned representations. This limitation is especially problematic for fine-tuning approaches and for token-level tasks, where understanding context from both directions is crucial.</p>
-<p>BERT overcomes these limitations by introducing a masked language model (MLM) objective. The MLM randomly masks some tokens in the input and trains the model to predict them using context from both directions. This allows BERT to learn deep bidirectional representations. Additionally, BERT uses a next sentence prediction (NSP) objective to help the model understand relationships between sentences, which is important for tasks like question answering and natural language inference.</p>
-<hr />
-<h2 id="architecture">Architecture</h2>
-<p>BERT is built entirely on the Transformer encoder architecture. It consists of multiple layers of bidirectional Transformer encoders, enabling the model to capture context from both directions in a sentence. The original paper introduces two model sizes:</p>
-<ul>
-<li><strong>BERT-Base</strong>: 12 layers (L=12), hidden size of 768 (H=768), and 12 self-attention heads (A=12).</li>
-<li><strong>BERT-Large</strong>: 24 layers (L=24), hidden size of 1024 (H=1024), and 16 self-attention heads (A=16).</li>
-</ul>
-<p>Notably, BERT-Base is designed to be comparable in size to GPT-1.</p>
-<p><strong>Input and Output Representation:</strong><br />
-To handle both single sentences and sentence pairs, BERT uses special tokens in its input sequence. The first token is always <code>[CLS]</code>, which is used for classification tasks. For sentence pairs, a <code>[SEP]</code> token separates the two sentences. The input representation is constructed by summing three types of embeddings: token embeddings, segment embeddings (to distinguish sentences), and positional embeddings (to encode word order). </p>
-<p>The combined embedding is denoted as <span class="arithmatex">\(E\)</span>. The final hidden state of the <code>[CLS]</code> token is represented as <span class="arithmatex">\(C\)</span> and is typically used for classification tasks. The final hidden state of the <span class="arithmatex">\(i^{th}\)</span> token is denoted as <span class="arithmatex">\(T_i\)</span> and is used for token-level tasks.</p>
-<hr />
-<h2 id="training">Training</h2>
-<p>BERT’s training process is divided into two main stages: pre-training and fine-tuning.</p>
-<h3 id="pre-training">Pre-training</h3>
-<p>During pre-training, BERT learns from large, unlabeled text corpora such as BooksCorpus and English Wikipedia. It uses two self-supervised objectives:</p>
-<ul>
-<li>
-<p><strong>Masked Language Modeling (MLM):</strong><br />
-  BERT randomly masks 15% of the input tokens and trains the model to predict these masked tokens using context from both directions. To reduce the mismatch between pre-training and fine-tuning (where the <code>[MASK]</code> token does not appear), BERT applies the following strategy when masking: 80% of the time, the selected token is replaced with <code>[MASK]</code>, 10% of the time, it is replaced with a random token, 10% of the time, it remains unchanged. This approach helps BERT learn to predict both masked and unmasked tokens, improving its robustness.</p>
-</li>
-<li>
-<p><strong>Next Sentence Prediction (NSP):</strong><br />
-  BERT is also trained to understand relationships between sentences. Given a pair of sentences, the model predicts whether the second sentence follows the first in the original text. The final hidden state of the <code>[CLS]</code> token is used for this task.</p>
-</li>
-</ul>
-<h3 id="fine-tuning">Fine-tuning</h3>
-<p>After pre-training, BERT can be fine-tuned on specific tasks by adding a simple output layer. The entire model is trained end-to-end on the downstream task with minimal architecture changes. Fine-tuning typically requires only a few epochs and achieves state-of-the-art results on many benchmarks.</p>
-<p>At the output layer, the final hidden vector of the [CLS] token is used for classification tasks, while the final hidden vectors of all tokens are used for token-level tasks like named entity recognition.</p>
-<hr />
-<h2 id="experiments">Experiments</h2>
-<p>BERT was evaluated on 11 NLP tasks, including:</p>
-<ul>
-<li><strong>GLUE Benchmark</strong>: Both the base and large model outperformed all previous SOTA models.</li>
-<li><strong>SQuAD v1.1 &amp; v2.0</strong>: Set new records for question answering, surpassing human-level performance on SQuAD v1.1.</li>
-<li><strong>SWAG</strong>: Outperforms the GPT baseline by 8.3%.</li>
-</ul>
-<hr />
-<h2 id="ablations">Ablations</h2>
-<ul>
-<li><strong>Pre-training</strong>:<ul>
-<li>No NSP: Removing NSP hurts performance on tasks requiring sentence relationships, like QMNLI, MNLI and SQuAD.</li>
-<li>LTR &amp; No NSP: LTR model performs worse than MLM on all tasks, showing the importance of bidirectional context.</li>
-</ul>
-</li>
-<li><strong>Model size</strong>: Larger models consistently outperform smaller ones, with BERT-Large achieving state-of-the-art results on most tasks.</li>
-<li><strong>Feature-based Approach</strong>: The feature-based approach using BERT representations were on par with previous models on CoNLL-2003 NER task, demonstrating thar BERT is effective for both fine-tuning and feature-based approaches.</li>
-</ul>
-<p>These experiments highlight that both the bidirectional pre-training and the NSP objective are crucial for BERT’s success, and that scaling up the model size further enhances its capabilities.</p>
-<h2 id="impact-and-extensions">Impact and Extensions</h2>
-<p>BERT has had a transformative impact on NLP, inspiring numerous variants and extensions such as RoBERTa, ALBERT, DistilBERT, and multilingual BERT.</p>
+<h1 id="fine-tuning">Fine-Tuning</h1>
 
 
 

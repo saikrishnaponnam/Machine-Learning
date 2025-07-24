@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/dot_product_attention/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/fine-tuning/lora/">
       
       
-        <link rel="prev" href="../additive_attention/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../resnet/">
+        <link rel="next" href="../rlhf/">
       
       
-      <link rel="icon" href="../../images/icon.png">
+      <link rel="icon" href="../../../images/icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Dot Product Attention - Machine Learning Notes</title>
+        <title>LoRA - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,11 +50,11 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../stylesheets/override.css">
+      <link rel="stylesheet" href="../../../stylesheets/override.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dot-product-attention" class="md-skip">
+        <a href="#lora-low-rank-adaptation" class="md-skip">
           Skip to content
         </a>
       
@@ -96,9 +96,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Dot Product Attention
+              LoRA
             
           </span>
         </div>
@@ -191,9 +191,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     Machine Learning Notes
@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -262,7 +262,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../math/" class="md-nav__link ">
+            <a href="../../../math/" class="md-nav__link ">
               
   
   
@@ -295,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/calculus/" class="md-nav__link">
+      <a href="../../../math/calculus/" class="md-nav__link">
         
   
   
@@ -318,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/linear-algebra/" class="md-nav__link">
+      <a href="../../../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -341,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/probability/" class="md-nav__link">
+      <a href="../../../math/probability/" class="md-nav__link">
         
   
   
@@ -371,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/" class="md-nav__link">
+      <a href="../../../nlp/" class="md-nav__link">
         
   
   
@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initializers/" class="md-nav__link">
+      <a href="../../../Initializers/" class="md-nav__link">
         
   
   
@@ -433,7 +433,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../optimizers/" class="md-nav__link ">
+            <a href="../../../optimizers/" class="md-nav__link ">
               
   
   
@@ -466,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/adam/" class="md-nav__link">
+      <a href="../../../optimizers/adam/" class="md-nav__link">
         
   
   
@@ -489,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/sgd/" class="md-nav__link">
+      <a href="../../../optimizers/sgd/" class="md-nav__link">
         
   
   
@@ -519,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regularization/" class="md-nav__link">
+      <a href="../../../regularization/" class="md-nav__link">
         
   
   
@@ -541,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../convolution/" class="md-nav__link">
+      <a href="../../../convolution/" class="md-nav__link">
         
   
   
@@ -563,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../max_pool/" class="md-nav__link">
+      <a href="../../../max_pool/" class="md-nav__link">
         
   
   
@@ -585,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../batch_norm/" class="md-nav__link">
+      <a href="../../../batch_norm/" class="md-nav__link">
         
   
   
@@ -607,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rnn/" class="md-nav__link">
+      <a href="../../../rnn/" class="md-nav__link">
         
   
   
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lstm/" class="md-nav__link">
+      <a href="../../../lstm/" class="md-nav__link">
         
   
   
@@ -675,7 +675,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tokenization/" class="md-nav__link ">
+            <a href="../../../tokenization/" class="md-nav__link ">
               
   
   
@@ -708,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/hf_tokenizer/" class="md-nav__link">
+      <a href="../../../tokenization/hf_tokenizer/" class="md-nav__link">
         
   
   
@@ -731,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/bpe/" class="md-nav__link">
+      <a href="../../../tokenization/bpe/" class="md-nav__link">
         
   
   
@@ -754,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/wordpiece/" class="md-nav__link">
+      <a href="../../../tokenization/wordpiece/" class="md-nav__link">
         
   
   
@@ -777,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/unigram/" class="md-nav__link">
+      <a href="../../../tokenization/unigram/" class="md-nav__link">
         
   
   
@@ -800,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/neural_tokenizer/" class="md-nav__link">
+      <a href="../../../tokenization/neural_tokenizer/" class="md-nav__link">
         
   
   
@@ -854,7 +854,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../models/" class="md-nav__link ">
+            <a href="../../../models/" class="md-nav__link ">
               
   
   
@@ -887,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/rcnn/" class="md-nav__link">
+      <a href="../../../models/rcnn/" class="md-nav__link">
         
   
   
@@ -910,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/faster_rcnn/" class="md-nav__link">
+      <a href="../../../models/faster_rcnn/" class="md-nav__link">
         
   
   
@@ -933,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/fcos/" class="md-nav__link">
+      <a href="../../../models/fcos/" class="md-nav__link">
         
   
   
@@ -956,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/resnet/" class="md-nav__link">
+      <a href="../../../models/resnet/" class="md-nav__link">
         
   
   
@@ -979,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/vgg/" class="md-nav__link">
+      <a href="../../../models/vgg/" class="md-nav__link">
         
   
   
@@ -1019,18 +1019,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1043,7 +1031,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -1075,13 +1063,64 @@
   
   
   
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cv/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Vision
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../seq2seq/" class="md-nav__link">
+      <a href="../../cv/resnet/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Seq2Seq
+    ResNet [WIP]
     
   </span>
   
@@ -1099,12 +1138,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../additive_attention/" class="md-nav__link">
+      <a href="../../cv/vit/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Additive Attention
+    ViT
     
   </span>
   
@@ -1114,6 +1153,67 @@
   
 
               
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Fine Tuning
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fine Tuning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1136,7 +1236,7 @@
   
   
   <span class="md-ellipsis">
-    Dot Product Attention
+    LoRA
     
   </span>
   
@@ -1149,7 +1249,7 @@
   
   
   <span class="md-ellipsis">
-    Dot Product Attention
+    LoRA
     
   </span>
   
@@ -1181,37 +1281,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attention-mechanism" class="md-nav__link">
+  <a href="#motivation" class="md-nav__link">
     <span class="md-ellipsis">
-      Attention Mechanism
+      Motivation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attention Mechanism">
+    <nav class="md-nav" aria-label="Motivation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#global-attention" class="md-nav__link">
+  <a href="#previous-solutions" class="md-nav__link">
     <span class="md-ellipsis">
-      Global Attention
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#local-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      Local Attention
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#input-feeding-approach" class="md-nav__link">
-    <span class="md-ellipsis">
-      Input Feeding approach
+      Previous Solutions
     </span>
   </a>
   
@@ -1223,37 +1305,85 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
+  <a href="#methodology" class="md-nav__link">
     <span class="md-ellipsis">
-      Training
+      Methodology
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#experiments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experiments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Results
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Results">
+    <nav class="md-nav" aria-label="Methodology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#choice-of-alignment-function" class="md-nav__link">
+  <a href="#application-to-transformers" class="md-nav__link">
     <span class="md-ellipsis">
-      Choice of Alignment Function
+      Application to Transformers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiments-and-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiments and Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiments and Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baselines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Baselines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-low-rank-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Low-Rank Updates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Low-Rank Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-weights-to-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which Weights to Update?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-rank" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimal Rank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correlation-between-delta-w-and-w" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correlation between \(\Delta W\) and \(W\)
     </span>
   </a>
   
@@ -1280,12 +1410,108 @@
   
   
     <li class="md-nav__item">
-      <a href="../resnet/" class="md-nav__link">
+      <a href="../rlhf/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    ResNet [WIP]
+    RLHF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../nlp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    NLP
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_3" id="__nav_14_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/seq2seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seq2Seq
     
   </span>
   
@@ -1303,7 +1529,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../transformer/" class="md-nav__link">
+      <a href="../../nlp/additive_attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Additive Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/dot_product_attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dot Product Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/transformer/" class="md-nav__link">
         
   
   
@@ -1326,7 +1598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GPT/" class="md-nav__link">
+      <a href="../../nlp/GPT/" class="md-nav__link">
         
   
   
@@ -1349,7 +1621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bert/" class="md-nav__link">
+      <a href="../../nlp/bert/" class="md-nav__link">
         
   
   
@@ -1372,7 +1644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../t5/" class="md-nav__link">
+      <a href="../../nlp/t5/" class="md-nav__link">
         
   
   
@@ -1395,17 +1667,48 @@
   
   
     <li class="md-nav__item">
-      <a href="../lora/" class="md-nav__link">
+      <a href="../../nlp/gpt2/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    LoRA[WIP]
+    GPT-2
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nlp/llama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Llama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1454,37 +1757,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#attention-mechanism" class="md-nav__link">
+  <a href="#motivation" class="md-nav__link">
     <span class="md-ellipsis">
-      Attention Mechanism
+      Motivation
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Attention Mechanism">
+    <nav class="md-nav" aria-label="Motivation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#global-attention" class="md-nav__link">
+  <a href="#previous-solutions" class="md-nav__link">
     <span class="md-ellipsis">
-      Global Attention
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#local-attention" class="md-nav__link">
-    <span class="md-ellipsis">
-      Local Attention
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#input-feeding-approach" class="md-nav__link">
-    <span class="md-ellipsis">
-      Input Feeding approach
+      Previous Solutions
     </span>
   </a>
   
@@ -1496,37 +1781,85 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
+  <a href="#methodology" class="md-nav__link">
     <span class="md-ellipsis">
-      Training
+      Methodology
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#experiments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experiments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Results
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Results">
+    <nav class="md-nav" aria-label="Methodology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#choice-of-alignment-function" class="md-nav__link">
+  <a href="#application-to-transformers" class="md-nav__link">
     <span class="md-ellipsis">
-      Choice of Alignment Function
+      Application to Transformers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiments-and-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiments and Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiments and Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#baselines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Baselines
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-low-rank-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Low-Rank Updates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Low-Rank Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#which-weights-to-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which Weights to Update?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-rank" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimal Rank
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correlation-between-delta-w-and-w" class="md-nav__link">
+    <span class="md-ellipsis">
+      Correlation between \(\Delta W\) and \(W\)
     </span>
   </a>
   
@@ -1556,68 +1889,114 @@
   
 
 
-<h1 id="dot-product-attention">Dot Product Attention</h1>
-<p>Paper: <a href="https://arxiv.org/abs/1508.04025">Effective Approaches to Attention-based Neural Machine Translation</a></p>
+<h1 id="lora-low-rank-adaptation">LoRA: Low-Rank Adaptation</h1>
+<p><a href="https://arxiv.org/abs/2106.09685">Paper</a> | <a href="TODO">Code</a> | <a href="https://huggingface.co/learn/llm-course/en/chapter11/4">Hugging Face</a></p>
 <h2 id="introduction">Introduction</h2>
-<p>Neural Machine Translation (NMT) has gained popularity due to its minimal reliance on domain-specific knowledge and its ability to avoid the need for large phrase tables, which are common in SMT models. The introduction of attention mechanisms has further improved NMT by enabling models to learn alignments between different modalities, such as images and text or speech and text. Notably, <a href="../additive_attention/">Bahdanau et al.</a> demonstrated that attention allows NMT models to focus on the most relevant parts of the source sentence during translation, leading to better performance.</p>
-<p>This paper investigates two new types of attention mechanisms for NMT: global and local attention. It also explores various alignment functions for computing attention scores, including dot product, general, and concat functions.</p>
-<h2 id="attention-mechanism">Attention Mechanism</h2>
-<p>Attention mechanisms can be classified into two main types: global and local attention. Both approaches use an encoder-decoder architecture, but they differ in how the context vector is computed in the decoder.</p>
-<p>The encoder processes the input sentence and produces a set of hidden states, denoted as <span class="arithmatex">\(s\)</span>. The decoder then generates each target word step by step, using the previous hidden state <span class="arithmatex">\(h_{j-1}\)</span> and <span class="arithmatex">\(s\)</span>. 
-After getting the context vector, both attention types follow the same steps. </p>
+<p>Pre-training large-scale language models and adapting them to various downstream tasks has become standard practice. Typically, this adaptation is done through fine-tuning, which updates all parameters of the pre-trained model. However, for models with billions of parameters, this process is computationally expensive and memory-intensive.</p>
+<p>Several methods have been proposed to address these challenges, such as updating only a subset of parameters or adding external modules for new tasks. However, these approaches often introduce inference latency (e.g., adapters), reduce usable sequence length (e.g., prefix-tuning), or underperform compared to full fine-tuning.</p>
+<p><strong>Low-Rank Adaptation (LoRA)</strong> is a parameter-efficient fine-tuning technique that overcomes these limitations. LoRA introduces trainable low-rank matrices into existing model weights, significantly reducing the number of trainable parameters while maintaining—or even improving—performance.</p>
+<p>The main advantages of LoRA are:</p>
 <ul>
-<li>Compute attentional hidden state from hidden state <span class="arithmatex">\(h_t\)</span> and context vector <span class="arithmatex">\(c_t\)</span>:<br />
-<span class="arithmatex">\(\tilde{h}_t = tanh(W_h [h_t;c_t])\)</span></li>
-<li>Pass the attentional vector through a softmax layer to produce the output distribution over the target vocabulary: <span class="arithmatex">\(p(y_t | y_{&lt;t}, x) = softmax(W_s \tilde{h}_t)\)</span></li>
+<li><strong>Parameter Efficiency:</strong> LoRA reduces the number of trainable parameters, making training more efficient and accessible.</li>
+<li><strong>Modularity:</strong> Task-specific adapters can be swapped in and out without modifying the base model.</li>
+<li><strong>Inference Efficiency:</strong> LoRA does not add computation during inference, avoiding the latency issues of adapter layers.</li>
 </ul>
-<h3 id="global-attention">Global Attention</h3>
-<p>Global attention computes the context vector by considering all positions in the source sequence. For each target word, the model calculates an alignment vector a variable-length alignment vector <span class="arithmatex">\(a_t\)</span>, whose size equals input sentence length, by comparing current target hidden state <span class="arithmatex">\(h_t\)</span> and input hidden states <span class="arithmatex">\(\bar{h}_j\)</span>:</p>
-<div class="arithmatex">\[a_{tj} = align(h_t, \bar{h}_j) = \frac{exp(score(h_t, \bar{h}_j))}{\sum_{k=1}^{T} exp(score(h_t, \bar{h}_k))}\]</div>
-<p>Score is referred as content-based function, for which the paper proposes three variants: dot product, general, and concat.</p>
-<div class="arithmatex">\[ score(h_t, \bar{h}_j) = 
-\begin{cases}
-h_t^T \bar{h}_j &amp; \text{(dot)} \\
-h_t^T W_a \bar{h}_j &amp; \text{(general)} \\
-v_a^T tanh(W_a [h_t; \bar{h}_j]) &amp; \text{(concat)}
-\end{cases} \]</div>
-<p>Given the alignment vector <span class="arithmatex">\(a_t\)</span>, the context vector <span class="arithmatex">\(c_t\)</span> is computed as a weighted sum of the source hidden states.</p>
-<p>This approach is similar to <a href="../additive_attention/">Additive Attention</a>, but differs in that it uses only the last layer's hidden state in a stacked LSTM, whereas the additive approach uses a non-stacked BiLSTM and a concatenation-based alignment function.</p>
-<h3 id="local-attention">Local Attention</h3>
-<p>While global attention is effective, it can be computationally expensive for long sequences. Local attention addresses this by focusing only on a small window of source positions for each target word.</p>
-<p>Local attention selectively focuses on a small window of context. For each target word, the model predicts an aligned position <span class="arithmatex">\(p_t\)</span> in the source sequence. The context vector is then computed using only the source hidden states within a window centered at <span class="arithmatex">\(p_t\)</span> i.e., <span class="arithmatex">\([p_t - D, p_t + D]\)</span>, where <span class="arithmatex">\(D\)</span> is empirically selected. The alignment position <span class="arithmatex">\(p_t\)</span> can be derived in 2 ways:</p>
+<hr />
+<h2 id="motivation">Motivation</h2>
+<p>Given a pre-trained autoregressive language model <span class="arithmatex">\(P_{\Phi}(y|x)\)</span>, adapting it to new tasks typically means updating the pre-trained weights <span class="arithmatex">\(\Phi_0\)</span> to <span class="arithmatex">\(\Phi_0 + \Delta \Phi\)</span> by maximizing the conditional language modeling objective:</p>
+<div class="arithmatex">\[
+\max_{\Phi} \sum_{(x,y)} \sum_{t=1}^{|y|} \log(P_{\Phi}(y_t | x, y_{&lt; t}))
+\]</div>
+<p>For large models, the number of parameters in <span class="arithmatex">\(\Delta \Phi\)</span> is as large as in <span class="arithmatex">\(\Phi_0\)</span>, making storage and training impractical.</p>
+<p>LoRA addresses this by expressing the task-specific parameter update <span class="arithmatex">\(\Delta \Phi\)</span> using a much smaller set of parameters <span class="arithmatex">\(\Theta\)</span>, such that <span class="arithmatex">\(\Delta \Phi = \Delta \Phi(\Theta)\)</span>. The optimization then becomes:</p>
+<div class="arithmatex">\[
+\max_{\Theta} \sum_{(x,y)} \sum_{t=1}^{|y|} \log(P_{\Phi_0 + \Delta \Phi(\Theta)}(y_t | x, y_{&lt; t}))
+\]</div>
+<h3 id="previous-solutions">Previous Solutions</h3>
 <ul>
-<li><strong>Monotonic alignment (local-m):</strong> <span class="arithmatex">\(p_t = t\)</span>, assuming input and target are roughly monotonically aligned.</li>
-<li><strong>Predictive alignment (local-p):</strong> <span class="arithmatex">\(p_t = S. sigmoid(v_p^T tanh(W_p h_t))\)</span>, where <span class="arithmatex">\(S\)</span> is the length of the source sentence.</li>
+<li>
+<p><strong>Adapter Layers:</strong> Introduced by Houlsby et al., these add two adapter layers per Transformer block. Lin et al. proposed using one adapter layer per block with an additional LayerNorm. While these methods reduce the number of trainable parameters, they increase computational load during inference. Although adapter layers have relatively few parameters, their sequential processing can hinder latency, especially in large neural networks that rely on parallelism.</p>
+</li>
+<li>
+<p><strong>Prefix Tuning:</strong> This method reduces the sequence length available for processing downstream tasks, which can be limiting.</p>
+</li>
 </ul>
-<p>To favour alignments near <span class="arithmatex">\(p_t\)</span> we use a Gaussian distribution to compute the alignment weights:</p>
-<div class="arithmatex">\[a_{tj} = align(h_t, \bar{h}_j) exp(-\frac{(j - p_t)^2}{2\sigma^2})\]</div>
-<p>where <span class="arithmatex">\(\sigma\)</span> is empirically set to <span class="arithmatex">\(D/2\)</span>.</p>
-<h3 id="input-feeding-approach">Input Feeding approach</h3>
-<p>In standard MT, a coverage set is maintained to keep track of translated input words. But attentions decisions are made independently which is suboptimal. The attention decisions should be made jointly taking into account the past alignment information. To address this, the attentional vectors <span class="arithmatex">\(\tilde{h}_t\)</span> are concatenated with inputs at the next steps. This has two effects:</p>
+<hr />
+<h2 id="methodology">Methodology</h2>
+<p>LoRA modifies the standard fine-tuning process by decomposing the weight updates into low-rank matrices. Instead of updating the full weight matrix <span class="arithmatex">\(W_0\)</span> in a neural network layer, LoRA freezes <span class="arithmatex">\(W_0\)</span> and adds a trainable low-rank update:</p>
+<div class="arithmatex">\[
+W = W_0 + \Delta W
+\]</div>
+<p>where <span class="arithmatex">\(\Delta W\)</span> is parameterized as the product of two smaller matrices:</p>
+<div class="arithmatex">\[
+\Delta W = BA
+\]</div>
 <ul>
-<li>Hope model will be fully aware of the past alignment choices.</li>
-<li>A very deep network spanning horizontally and vertically is created</li>
+<li><span class="arithmatex">\(W \in \mathbb{R}^{d \times k}\)</span> </li>
+<li><span class="arithmatex">\(B \in \mathbb{R}^{d \times r}\)</span></li>
+<li><span class="arithmatex">\(A \in \mathbb{R}^{r \times k}\)</span></li>
+<li><span class="arithmatex">\(r \ll \min(d, k)\)</span> </li>
 </ul>
-<h2 id="training">Training</h2>
-<p>The models are trained on the WMT'14 dataset, which contains 4.5 million sentence pairs. The vocabulary is limited to the 50,000 most frequent words in each language.</p>
+<p>This means only <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are trained, while <span class="arithmatex">\(W_0\)</span> remains fixed. The total number of trainable parameters is reduced from <span class="arithmatex">\(dk\)</span> to <span class="arithmatex">\(r(d + k)\)</span> per layer. A is initialized with a random Gaussian distribution and B with zero.</p>
+<p>The forward pass now becomes: <span class="arithmatex">\(h = W_0x + \Delta Wx = W_0x + BAx\)</span></p>
+<p><strong>Generalization of Full Fine Tuning:</strong> As we increase the number of trainable parameters, training LoRA roughly converges to training the original model. </p>
+<h3 id="application-to-transformers">Application to Transformers</h3>
+<p>In the Transformer architecture, there are four matrices (<span class="arithmatex">\(W_1, W_k, W_v, W_o\)</span>) in the attention layer and two in the MLP layer. This implementation applies LoRA only to the attention weights, freezing the MLP layer for downstream tasks. </p>
+<hr />
+<h2 id="experiments-and-results">Experiments and Results</h2>
+<h3 id="baselines">Baselines</h3>
 <ul>
-<li>The stacked LSTM model consists of 4 layers, each with 1,000 hidden units and 1,000-dimensional embeddings.</li>
-<li>Model parameters are initialized uniformly in the range <span class="arithmatex">\([-0.1, 0.1]\)</span>.</li>
-<li>Training is performed for 10 epochs using SGD with an initial learning rate of 0.1. After 5 epochs, the learning rate is halved after each subsequent epoch.</li>
-<li>Dropout with a probability of 0.2 is applied, and in this case, the model is trained for 12 epochs.</li>
+<li><strong>Fine Tuning (FT):</strong> The model is initialized with pre-training weights, and all parameters are updated through gradient descent.</li>
+<li><strong>Bias-only (BitFit):</strong> Only the bias vectors are trained, with all other parameters frozen.</li>
+<li><strong>Prefix-embedding tuning (PreEmbed):</strong> Special trainable tokens are inserted among the input tokens, impacting performance based on their placement. The number of trainable parameters is <span class="arithmatex">\(|\Theta| = d_{model} \times (l_p + l_i)\)</span>, where <span class="arithmatex">\(l_p\)</span> and <span class="arithmatex">\(l_i\)</span> are the numbers of prefix and infix tokens, respectively.</li>
+<li><strong>Prefix-layer tuning (PreLayer):</strong> An extension of PreEmbed that learns the activations after every layer, with <span class="arithmatex">\(|\Theta| = L \times d_{model} \times (l_p + l_i)\)</span>.</li>
+<li><strong>Adapter tuning (Adpt):</strong> Two types of adapter layers are tested: Adapter <span class="arithmatex">\(^H\)</span>, which inserts adapter layers between the self-attention and MLP layers with a subsequent residual connection, and Adapter <span class="arithmatex">\(^L\)</span>, which adds an adapter layer only after the MLP layer and a LayerNorm. The number of trainable parameters is <span class="arithmatex">\(|\Theta| = \hat{L}_{Adpt} \times (2 \times d_{model} \times r + r + d_{model}) + 2 \times \hat{L}_{LN} \times d_{model}\)</span>.</li>
+<li><strong>LoRA:</strong> Applies LoRA only to <span class="arithmatex">\(W_q\)</span> and <span class="arithmatex">\(W_v\)</span>, with <span class="arithmatex">\(|\Theta| = 2 \times \hat{L}_{LoRA} \times d_{model} \times r\)</span>.</li>
 </ul>
-<h2 id="experiments">Experiments</h2>
-<p>Experiments are conducted on the WMT English-German translation task in both translation directions. The paper compares various attention mechanisms (global, local-m, local-p) and alignment functions (dot, general, concat). Results demonstrate that attention-based models consistently outperform standard encoder-decoder models, particularly on longer sentences.</p>
-<h2 id="results">Results</h2>
-<p>Attention-based models achieve substantial improvements in BLEU scores compared to baseline NMT models. Among the tested approaches, local attention with predictive alignment (local-p) often yields the best performance. Additionally, these models produce more interpretable alignments, as shown by the attention weight visualizations (figure 7).</p>
-<h3 id="choice-of-alignment-function">Choice of Alignment Function</h3>
-<p>The results indicate that the dot product alignment works well for global attention, while the general alignment function performs better for local attention.</p>
+<p>Experiments conducted on RoBERTA, GPT-2, and GPT-3 models demonstrate that LoRA matches or outperforms the baseline fine-tuning methods while requiring the fewest trainable parameters.</p>
+<figure>
+    <img alt="alt text" src="../images/lora_gpt2.png" />
+</figure>
+<hr />
+<h2 id="understanding-low-rank-updates">Understanding Low-Rank Updates</h2>
+<p>The low-rank structure of LoRA not only reduces hardware requirements but also provides better interpretability regarding how the updated weights correlate with the pre-trained weights. </p>
+<h3 id="which-weights-to-update">Which Weights to Update?</h3>
+<p>Given a fixed computational budget, which weight matrices should be updated to maximize the performance on downstream tasks? Experiments on GPT-3 175B with <span class="arithmatex">\(r=8\)</span> adapting one type of attention weight, or <span class="arithmatex">\(r=4\)</span> adapting two types for all 96 layers, provide insights. Adapting only one type of weight resulted in lower performance than adapting two types. This indicates that even a rank-four representation can capture sufficient information in <span class="arithmatex">\(\Delta W\)</span>, making it preferable to adapt more weights rather than increasing the rank of a single type.</p>
+<h3 id="optimal-rank">Optimal Rank</h3>
+<p>The impact of different ranks <span class="arithmatex">\(r\)</span> was tested by adapting {<span class="arithmatex">\(W_r, W_v\)</span>}, {W_q, W_k, W_v, W_o}, and <span class="arithmatex">\(W_q\)</span>. Results showed that LoRA performs competitively even with a very small <span class="arithmatex">\(r\)</span>, suggesting that the update matrix <span class="arithmatex">\(\Delta W\)</span> might have a small intrinsic rank. </p>
+<p>To further validate this, the authors examined the overlap of the subspaces learned with different choices of <span class="arithmatex">\(r\)</span>. Given <span class="arithmatex">\(A_{r=8}\)</span> and <span class="arithmatex">\(A_r={64}\)</span> which are learned adaptation matrices with r=8 and 64. By performing SVD we get <span class="arithmatex">\(U_{r=8}\)</span> and <span class="arithmatex">\(U_{r=64}\)</span>. The normalized subspace similarity using Grassmann distance gives how much of the subspace spanned by the top i singular vectors of <span class="arithmatex">\(A_{r=8}\)</span> is contained in the subspace spanned by the top j singular vectors of <span class="arithmatex">\(A_{r=64}\)</span>.</p>
+<div class="arithmatex">\[\phi(A_{r=8}, A_{r=64}, i, j) = \frac{||U_{r=8}^{iT} U_{r=64}^{j}||_F^2}{\min(i, j)} \in [0, 1]\]</div>
+<p>The results show that the top singular vector overlap significantly while other do not. This explains why r=1 performs quite well on downstream tasks for GPT-3.</p>
+<h3 id="correlation-between-delta-w-and-w">Correlation between <span class="arithmatex">\(\Delta W\)</span> and <span class="arithmatex">\(W\)</span></h3>
+<!-- ## Advantages of LoRA
+
+- **Parameter Efficiency:** Only a small number of parameters are trained, reducing memory and storage requirements.
+- **Modularity:** Task-specific adapters can be swapped in and out without modifying the base model.
+- **Scalability:** Enables fine-tuning of very large models on modest hardware.
+- **Performance:** Empirical results show that LoRA can match or even surpass full fine-tuning in many tasks.
+- **Compatibility:** Can be combined with other parameter-efficient methods (e.g., adapters, prompt tuning).
+
+## Limitations
+
+- **Expressivity:** The low-rank constraint may limit the expressiveness of the adaptation for some tasks.
+- **Hyperparameter Sensitivity:** The choice of rank $r$ and placement of LoRA modules can affect performance.
+- **Not Always Optimal:** For some tasks, full fine-tuning or other adaptation methods may outperform LoRA.
+
+## Applications
+
+- **Natural Language Processing:** LoRA is widely used for adapting large language models (e.g., GPT, BERT) to downstream tasks.
+- **Computer Vision:** Applied to vision transformers and other deep models.
+- **Multi-task Learning:** Efficiently maintains multiple task-specific adapters for a single base model.
+- **On-Device Inference:** Enables deployment of personalized models on edge devices with limited resources. -->
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -1666,12 +2045,12 @@ v_a^T tanh(W_a [h_t; \bar{h}_j]) &amp; \text{(concat)}
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

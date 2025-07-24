@@ -8,28 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/additive_attention/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/rl/">
       
       
-        <link rel="prev" href="../seq2seq/">
       
       
-        <link rel="next" href="../dot_product_attention/">
-      
-      
-      <link rel="icon" href="../../images/icon.png">
+      <link rel="icon" href="../images/icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Additive Attention - Machine Learning Notes</title>
+        <title>Reinforcement Learning - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,11 +46,11 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../stylesheets/override.css">
+      <link rel="stylesheet" href="../stylesheets/override.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#additive-attention" class="md-skip">
+        <a href="#reinforcement-learning" class="md-skip">
           Skip to content
         </a>
       
@@ -96,9 +92,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href=".." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Additive Attention
+              Reinforcement Learning
             
           </span>
         </div>
@@ -191,9 +187,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href=".." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../images/logo.png" alt="logo">
 
     </a>
     Machine Learning Notes
@@ -220,7 +216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -262,7 +258,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../math/" class="md-nav__link ">
+            <a href="../math/" class="md-nav__link ">
               
   
   
@@ -295,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/calculus/" class="md-nav__link">
+      <a href="../math/calculus/" class="md-nav__link">
         
   
   
@@ -318,7 +314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/linear-algebra/" class="md-nav__link">
+      <a href="../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -341,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/probability/" class="md-nav__link">
+      <a href="../math/probability/" class="md-nav__link">
         
   
   
@@ -371,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/" class="md-nav__link">
+      <a href="../nlp/" class="md-nav__link">
         
   
   
@@ -393,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initializers/" class="md-nav__link">
+      <a href="../Initializers/" class="md-nav__link">
         
   
   
@@ -433,7 +429,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../optimizers/" class="md-nav__link ">
+            <a href="../optimizers/" class="md-nav__link ">
               
   
   
@@ -466,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/adam/" class="md-nav__link">
+      <a href="../optimizers/adam/" class="md-nav__link">
         
   
   
@@ -489,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/sgd/" class="md-nav__link">
+      <a href="../optimizers/sgd/" class="md-nav__link">
         
   
   
@@ -519,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regularization/" class="md-nav__link">
+      <a href="../regularization/" class="md-nav__link">
         
   
   
@@ -541,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../convolution/" class="md-nav__link">
+      <a href="../convolution/" class="md-nav__link">
         
   
   
@@ -563,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../max_pool/" class="md-nav__link">
+      <a href="../max_pool/" class="md-nav__link">
         
   
   
@@ -585,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../batch_norm/" class="md-nav__link">
+      <a href="../batch_norm/" class="md-nav__link">
         
   
   
@@ -607,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rnn/" class="md-nav__link">
+      <a href="../rnn/" class="md-nav__link">
         
   
   
@@ -629,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lstm/" class="md-nav__link">
+      <a href="../lstm/" class="md-nav__link">
         
   
   
@@ -675,7 +671,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tokenization/" class="md-nav__link ">
+            <a href="../tokenization/" class="md-nav__link ">
               
   
   
@@ -708,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/hf_tokenizer/" class="md-nav__link">
+      <a href="../tokenization/hf_tokenizer/" class="md-nav__link">
         
   
   
@@ -731,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/bpe/" class="md-nav__link">
+      <a href="../tokenization/bpe/" class="md-nav__link">
         
   
   
@@ -754,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/wordpiece/" class="md-nav__link">
+      <a href="../tokenization/wordpiece/" class="md-nav__link">
         
   
   
@@ -777,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/unigram/" class="md-nav__link">
+      <a href="../tokenization/unigram/" class="md-nav__link">
         
   
   
@@ -800,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/neural_tokenizer/" class="md-nav__link">
+      <a href="../tokenization/neural_tokenizer/" class="md-nav__link">
         
   
   
@@ -854,7 +850,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../models/" class="md-nav__link ">
+            <a href="../models/" class="md-nav__link ">
               
   
   
@@ -887,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/rcnn/" class="md-nav__link">
+      <a href="../models/rcnn/" class="md-nav__link">
         
   
   
@@ -910,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/faster_rcnn/" class="md-nav__link">
+      <a href="../models/faster_rcnn/" class="md-nav__link">
         
   
   
@@ -933,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/fcos/" class="md-nav__link">
+      <a href="../models/fcos/" class="md-nav__link">
         
   
   
@@ -956,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/resnet/" class="md-nav__link">
+      <a href="../models/resnet/" class="md-nav__link">
         
   
   
@@ -979,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/vgg/" class="md-nav__link">
+      <a href="../models/vgg/" class="md-nav__link">
         
   
   
@@ -1006,24 +1002,10 @@
       
   
   
-    
   
   
-  
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -1035,15 +1017,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../papers/" class="md-nav__link ">
               
   
   
@@ -1062,7 +1044,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_14">
             <span class="md-nav__icon md-icon"></span>
             Papers
@@ -1075,165 +1057,50 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../seq2seq/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Seq2Seq
     
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
       
         
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+        
           
-  
-  
-  <span class="md-ellipsis">
-    Additive Attention
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Additive Attention
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#background" class="md-nav__link">
-    <span class="md-ellipsis">
-      Background
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Architecture">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#decoder" class="md-nav__link">
-    <span class="md-ellipsis">
-      Decoder
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#encoder" class="md-nav__link">
-    <span class="md-ellipsis">
-      Encoder
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
-    <span class="md-ellipsis">
-      Training
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#experiments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experiments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Results
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
+          <div class="md-nav__link md-nav__container">
+            <a href="../papers/cv/" class="md-nav__link ">
               
+  
+  
+  <span class="md-ellipsis">
+    Vision
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1242,30 +1109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dot_product_attention/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dot Product Attention
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../resnet/" class="md-nav__link">
+      <a href="../papers/cv/resnet/" class="md-nav__link">
         
   
   
@@ -1288,7 +1132,277 @@
   
   
     <li class="md-nav__item">
-      <a href="../transformer/" class="md-nav__link">
+      <a href="../papers/cv/vit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ViT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../papers/fine-tuning/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Fine Tuning
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fine Tuning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/fine-tuning/lora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LoRA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/fine-tuning/rlhf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RLHF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../papers/nlp/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    NLP
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_3" id="__nav_14_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            NLP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/nlp/seq2seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Seq2Seq
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/nlp/additive_attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Additive Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/nlp/dot_product_attention/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Dot Product Attention
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/nlp/transformer/" class="md-nav__link">
         
   
   
@@ -1311,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../GPT/" class="md-nav__link">
+      <a href="../papers/nlp/GPT/" class="md-nav__link">
         
   
   
@@ -1334,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bert/" class="md-nav__link">
+      <a href="../papers/nlp/bert/" class="md-nav__link">
         
   
   
@@ -1357,7 +1471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../t5/" class="md-nav__link">
+      <a href="../papers/nlp/t5/" class="md-nav__link">
         
   
   
@@ -1380,17 +1494,48 @@
   
   
     <li class="md-nav__item">
-      <a href="../lora/" class="md-nav__link">
+      <a href="../papers/nlp/gpt2/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    LoRA[WIP]
+    GPT-2
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/nlp/llama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Llama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1430,46 +1575,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#key-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      Key Concepts
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#background" class="md-nav__link">
+  <a href="#the-rl-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      Background
+      The RL Problem
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Architecture">
+    <nav class="md-nav" aria-label="The RL Problem">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#decoder" class="md-nav__link">
+  <a href="#markov-decision-process-mdp" class="md-nav__link">
     <span class="md-ellipsis">
-      Decoder
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#encoder" class="md-nav__link">
-    <span class="md-ellipsis">
-      Encoder
+      Markov Decision Process (MDP)
     </span>
   </a>
   
@@ -1481,27 +1608,87 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
+  <a href="#types-of-rl-algorithms" class="md-nav__link">
     <span class="md-ellipsis">
-      Training
+      Types of RL Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of RL Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-value-based-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Value-Based Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-policy-based-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Policy-Based Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-model-based-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Model-Based Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploration-vs-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploration vs. Exploitation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#experiments" class="md-nav__link">
+  <a href="#deep-reinforcement-learning" class="md-nav__link">
     <span class="md-ellipsis">
-      Experiments
+      Deep Reinforcement Learning
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#results" class="md-nav__link">
+  <a href="#applications-of-rl" class="md-nav__link">
     <span class="md-ellipsis">
-      Results
+      Applications of RL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges-in-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges in RL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Reading
     </span>
   </a>
   
@@ -1526,53 +1713,78 @@
   
 
 
-<h1 id="additive-attention">Additive Attention</h1>
-<p><strong>Paper:</strong> <a href="https://arxiv.org/abs/1409.0473">Neural Machine Translation by Jointly Learning to Align and Translate</a> (ICLR 2015)</p>
-<h2 id="introduction">Introduction</h2>
-<p>Traditional phrase-based translation systems consist of many separate components, each tuned individually. In contrast, neural machine translation (NMT) aims to build and train a single, large neural network that can generate accurate translations from input sentences.</p>
-<p>Encoder-decoder architectures are widely used in NMT. In earlier approaches (such as <a href="../seq2seq/">Seq2Seq</a> by Cho et al.), the encoder compresses the entire input sentence into a fixed-length vector, and the decoder generates the output sentence from this vector. However, this method struggles with long sentences, as it is difficult for a neural network to encode all the necessary information into a single vector. Cho et al. demonstrated that the performance of basic encoder-decoder models degrades as input sentence length increases.</p>
-<p>To overcome this limitation, the authors propose an extension to the encoder-decoder model that jointly learns to align (using attention) and translate. When generating each word, the model searches for the most relevant parts of the input sentence, focusing on positions where important information is concentrated. The model then predicts the next target word based on a context vector derived from these positions and the previously generated target words.</p>
-<p>The key advantage of this approach is that the model does not need to encode the entire input sentence into a single vector. Instead, it represents the input as a sequence of vectors and adaptively selects relevant subsets during decoding.</p>
-<h2 id="background">Background</h2>
-<p>From a probabilistic perspective, translation involves finding a target sentence <span class="arithmatex">\(y\)</span> that maximizes the conditional probability <span class="arithmatex">\(p(y|x)\)</span> given an input sentence <span class="arithmatex">\(x\)</span>. NMT models are trained to maximize this probability using parallel corpora, and have demonstrated strong performance compared to traditional methods</p>
-<p>In the encoder-decoder framework, the encoder processes an input sentence, represented as a sequence of vectors <span class="arithmatex">\(\mathbf{x} = (x_1, \cdots, x_{T_x})\)</span>, and compresses it into a single vector <span class="arithmatex">\(c\)</span>. When using an RNN as the encoder, this process is described by:</p>
-<div class="arithmatex">\[ h_t = f(x_t, h_{t-1}) \text{ and } c = q(\{h_1, \cdots, h_{T_x}\}) \]</div>
-<p>In the case of Seq2Seq, <span class="arithmatex">\(f\)</span> is an LSTM unit and <span class="arithmatex">\(q\)</span> is simply <span class="arithmatex">\(h_T\)</span>. The decoder then defines a probability distribution over the possible translations <span class="arithmatex">\(y\)</span> by breaking down the joint probability into a series of conditional probabilities:</p>
-<div class="arithmatex">\[p(y) = \prod_{t=1}^T p(y_t| \{y_1, \cdots, y_{t-1}\}, c)\]</div>
-<p>When using an RNN decoder, each conditional probability is computed as:</p>
-<div class="arithmatex">\[
-p(y_t| \{y_1, \cdots, y_{t-1}\}, c) = g(y_{t-1}, s_t, c) \qquad (1)
-\]</div>
-<p>where <span class="arithmatex">\(g\)</span> is a nonlinear function (typically multi-layer), and <span class="arithmatex">\(s_t\)</span> represents the hidden state at time <span class="arithmatex">\(t\)</span>.</p>
-<h2 id="architecture">Architecture</h2>
-<figure>
-    <img alt="img.png" src="../images/add_attn_arch.png" />
-</figure>
-<h3 id="decoder">Decoder</h3>
-<p>In the new model the conditional probability is defined as:</p>
-<div class="arithmatex">\[ p(y_i| \{y_1, \cdots, y_{i-1}\}, \mathbf{x}) = g(y_{i-1}, s_i, c_i) \]</div>
-<p>Unlike the previous encode-decoder models, here the probability is conditioned on the different context vector <span class="arithmatex">\(c_i\)</span> for each target word <span class="arithmatex">\(y_i\)</span>. The context vector is computed as a weighted sum of the encoder hidden states. Each <span class="arithmatex">\(h_i\)</span> contains information about the entire input sentence, with a strong focus on the surrounding parts.</p>
-<div class="arithmatex">\[c_i = \sum_{j=1}^{T_x} \alpha_{ij} h_j \]</div>
-<p>The weight <span class="arithmatex">\(\alpha_{ij}\)</span> is computed using a softmax function over the attention scores <span class="arithmatex">\(e_{ij}\)</span>:</p>
-<div class="arithmatex">\[\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_{k=1}^{T_x} \exp(e_{ik})}\]</div>
-<p>where <span class="arithmatex">\(e_{ij}=a(s_{i-1}, h_j)\)</span> is an alignment model which scores how well the inputs around position <span class="arithmatex">\(j\)</span> and output at position <span class="arithmatex">\(i\)</span> match.</p>
-<p>The alignment model is typically a feed-forward neural network that takes the previous decoder state <span class="arithmatex">\(s_{i-1}\)</span> and the encoder hidden state <span class="arithmatex">\(h_j\)</span> as inputs. The alignment is not a latent variable, but directly computes a soft alignment which allows the gradient to be backpropagated. This gradient can be used to train the alignment model and the encoder-decoder jointly.</p>
-<p>The probability <span class="arithmatex">\(\alpha_{ij}\)</span>, or energy <span class="arithmatex">\(e_{ij}\)</span>, reflects the importance of annotation <span class="arithmatex">\(h_j\)</span> with respect to the previous hidden state <span class="arithmatex">\(s_{i-1}\)</span> in deciding the next state <span class="arithmatex">\(s_i\)</span> and generating <span class="arithmatex">\(y_i\)</span>. This attention mechanism allows the decoder to focus on different parts of the input sequence at each step, rather than relying on a single fixed context. As a result, the encoder is no longer required to compress all information into one vector, and the decoder can dynamically attend to the most relevant input positions when generating each word.</p>
-<h3 id="encoder">Encoder</h3>
-<p>In this model the encoder processes not just the preceding words but also the following words. This is done by using a bidirectional RNN, which allows the model to capture context from both directions. </p>
-<p>A BiRNN consists of forward and backward RNN's. The forward RNN reads input as it is ordered, while the backward RNN reads it in reverse order. The hidden states from both RNNs are concatenated to form the final representation, <span class="arithmatex">\(h_j\)</span>, of each input word.</p>
-<h2 id="training">Training</h2>
-<p>The model is trained to maximize the conditional log-likelihood of the correct translation given the source sentence. Specifically, the objective is to maximize the sum of the log probabilities of the correct target words, conditioned on the source sentence and the previously generated target words. The model is trained using SGD together with Adadelta. Each SGD update is computed using a mini-batch of 80 sentences, and the model is trained for 5 days.</p>
-<h2 id="experiments">Experiments</h2>
-<p>The authors evaluated their model on the English-to-French translation task using the WMT’14 dataset. The dataset contains a total of 850M words, which is reduced to 384M words using data selection. After tokenization vocabulary is restricted to 30,000 most frequent words in each language, with rare words replaced by an [unk] token.</p>
-<p>The proposed model was compared against a baseline encoder-decoder model without attention (from Cho et al.), as well as traditional phrase-based statistical machine translation (SMT) systems. Performance was measured using BLEU scores on standard test sets: newstest2012 and newstest2013 for validation, newstest2014 for testing.</p>
-<h2 id="results">Results</h2>
-<p>The attention-based model outperformed the baseline encoder-decoder model, achieving higher BLEU scores. The performance is on par with the phrase-base systems, when only sentences with known words are considered. This approach performs better than the baseline model, even for longer sentences. The baseline model's performance degrades significantly as the length of the input sentence increases, while the attention-based model maintains a more consistent performance across different sentence lengths.</p>
-<p>Visualizations of the attention weights showed that the model learned meaningful alignments between source and target words, often corresponding to human-annotated alignments. </p>
-<figure>
-    <img alt="img.png" src="../images/add_attn_align.png" />
-    <figcaption>Alignment Visulization</figcaption>
-</figure>
+<h1 id="reinforcement-learning">Reinforcement Learning</h1>
+<p>Reinforcement Learning (RL) is a branch of machine learning where an agent learns to make decisions by interacting with an environment. Unlike supervised learning, where the model learns from labeled data, RL is based on the idea of learning from experience through trial and error, receiving feedback in the form of rewards or penalties.</p>
+<h2 id="key-concepts">Key Concepts</h2>
+<ul>
+<li><strong>Agent</strong>: The learner or decision maker.</li>
+<li><strong>Environment</strong>: The world with which the agent interacts.</li>
+<li><strong>State (s)</strong>: A representation of the current situation of the agent.</li>
+<li><strong>Action (a)</strong>: Choices made by the agent.</li>
+<li><strong>Reward (r)</strong>: Feedback from the environment to evaluate the action.</li>
+<li><strong>Policy (π)</strong>: The strategy that the agent employs to determine actions based on states.</li>
+<li><strong>Value Function (V)</strong>: Estimates how good it is for the agent to be in a given state.</li>
+<li><strong>Q-Function (Q)</strong>: Estimates the value of taking a specific action in a given state.</li>
+</ul>
+<h2 id="the-rl-problem">The RL Problem</h2>
+<p>The goal in RL is to find a policy that maximizes the cumulative reward over time. The agent observes the state, takes an action, receives a reward, and transitions to a new state. This process is often modeled as a Markov Decision Process (MDP).</p>
+<h3 id="markov-decision-process-mdp">Markov Decision Process (MDP)</h3>
+<p>An MDP is defined by:</p>
+<ul>
+<li>A set of states <span class="arithmatex">\(S\)</span></li>
+<li>A set of actions <span class="arithmatex">\(A\)</span></li>
+<li>A transition function <span class="arithmatex">\(T(s, a, s')\)</span></li>
+<li>A reward function <span class="arithmatex">\(R : S \times A -&gt; \mathbb{R}\)</span></li>
+<li>A discount factor <span class="arithmatex">\(\gamma\)</span> (gamma)</li>
+</ul>
+<h2 id="types-of-rl-algorithms">Types of RL Algorithms</h2>
+<h3 id="1-value-based-methods">1. Value-Based Methods</h3>
+<ul>
+<li><strong>Q-Learning</strong>: Learns the value of action-state pairs.</li>
+<li><strong>SARSA</strong>: Similar to Q-learning but updates using the action actually taken.</li>
+</ul>
+<h3 id="2-policy-based-methods">2. Policy-Based Methods</h3>
+<ul>
+<li><strong>REINFORCE</strong>: Directly optimizes the policy without using a value function.</li>
+<li><strong>Actor-Critic</strong>: Combines value and policy-based methods.</li>
+</ul>
+<h3 id="3-model-based-methods">3. Model-Based Methods</h3>
+<ul>
+<li>The agent builds a model of the environment and plans by simulating future states.</li>
+</ul>
+<h2 id="exploration-vs-exploitation">Exploration vs. Exploitation</h2>
+<p>A fundamental challenge in RL is balancing exploration (trying new actions) and exploitation (choosing known rewarding actions). Strategies like ε-greedy and Upper Confidence Bound (UCB) are commonly used.</p>
+<h2 id="deep-reinforcement-learning">Deep Reinforcement Learning</h2>
+<p>With the advent of deep learning, RL has been combined with neural networks to handle high-dimensional state spaces (e.g., images). Notable algorithms include:</p>
+<ul>
+<li><strong>Deep Q-Networks (DQN)</strong></li>
+<li><strong>Deep Deterministic Policy Gradient (DDPG)</strong></li>
+<li><strong>Proximal Policy Optimization (PPO)</strong></li>
+<li><strong>Trust Region Policy Optimization (TRPO)</strong></li>
+</ul>
+<h2 id="applications-of-rl">Applications of RL</h2>
+<ul>
+<li>Game playing (e.g., AlphaGo, Atari)</li>
+<li>Robotics</li>
+<li>Autonomous vehicles</li>
+<li>Recommendation systems</li>
+<li>Finance and trading</li>
+</ul>
+<h2 id="challenges-in-rl">Challenges in RL</h2>
+<ul>
+<li>Sample inefficiency</li>
+<li>Credit assignment problem</li>
+<li>Exploration in large or continuous spaces</li>
+<li>Stability and convergence</li>
+</ul>
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+<li>Sutton, R. S., &amp; Barto, A. G. (2018). <em>Reinforcement Learning: An Introduction</em>.</li>
+<li>OpenAI Spinning Up: https://spinningup.openai.com/</li>
+<li>David Silver's RL Course: https://www.davidsilver.uk/teaching/</li>
+</ul>
+<hr />
+<p>Reinforcement Learning is a powerful paradigm for sequential decision making, with growing impact across AI and real-world applications. As research advances, RL continues to unlock new possibilities in artificial intelligence.</p>
 
 
 
@@ -1627,12 +1839,12 @@ p(y_t| \{y_1, \cdots, y_{t-1}\}, c) = g(y_{t-1}, s_t, c) \qquad (1)
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

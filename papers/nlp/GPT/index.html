@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/transformer/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/GPT/">
       
       
-        <link rel="prev" href="../resnet/">
+        <link rel="prev" href="../transformer/">
       
       
-        <link rel="next" href="../GPT/">
+        <link rel="next" href="../bert/">
       
       
-      <link rel="icon" href="../../images/icon.png">
+      <link rel="icon" href="../../../images/icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Transformer - Machine Learning Notes</title>
+        <title>GPT-1 - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,11 +50,11 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../stylesheets/override.css">
+      <link rel="stylesheet" href="../../../stylesheets/override.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#transformer" class="md-skip">
+        <a href="#improving-language-understanding-with-generative-pre-training" class="md-skip">
           Skip to content
         </a>
       
@@ -96,9 +96,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Transformer
+              GPT-1
             
           </span>
         </div>
@@ -191,9 +191,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     Machine Learning Notes
@@ -220,7 +220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -262,7 +262,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../math/" class="md-nav__link ">
+            <a href="../../../math/" class="md-nav__link ">
               
   
   
@@ -295,7 +295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/calculus/" class="md-nav__link">
+      <a href="../../../math/calculus/" class="md-nav__link">
         
   
   
@@ -318,7 +318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/linear-algebra/" class="md-nav__link">
+      <a href="../../../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -341,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../math/probability/" class="md-nav__link">
+      <a href="../../../math/probability/" class="md-nav__link">
         
   
   
@@ -371,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nlp/" class="md-nav__link">
+      <a href="../../../nlp/" class="md-nav__link">
         
   
   
@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Initializers/" class="md-nav__link">
+      <a href="../../../Initializers/" class="md-nav__link">
         
   
   
@@ -433,7 +433,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../optimizers/" class="md-nav__link ">
+            <a href="../../../optimizers/" class="md-nav__link ">
               
   
   
@@ -466,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/adam/" class="md-nav__link">
+      <a href="../../../optimizers/adam/" class="md-nav__link">
         
   
   
@@ -489,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../optimizers/sgd/" class="md-nav__link">
+      <a href="../../../optimizers/sgd/" class="md-nav__link">
         
   
   
@@ -519,7 +519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../regularization/" class="md-nav__link">
+      <a href="../../../regularization/" class="md-nav__link">
         
   
   
@@ -541,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../convolution/" class="md-nav__link">
+      <a href="../../../convolution/" class="md-nav__link">
         
   
   
@@ -563,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../max_pool/" class="md-nav__link">
+      <a href="../../../max_pool/" class="md-nav__link">
         
   
   
@@ -585,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../batch_norm/" class="md-nav__link">
+      <a href="../../../batch_norm/" class="md-nav__link">
         
   
   
@@ -607,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rnn/" class="md-nav__link">
+      <a href="../../../rnn/" class="md-nav__link">
         
   
   
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lstm/" class="md-nav__link">
+      <a href="../../../lstm/" class="md-nav__link">
         
   
   
@@ -675,7 +675,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tokenization/" class="md-nav__link ">
+            <a href="../../../tokenization/" class="md-nav__link ">
               
   
   
@@ -708,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/hf_tokenizer/" class="md-nav__link">
+      <a href="../../../tokenization/hf_tokenizer/" class="md-nav__link">
         
   
   
@@ -731,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/bpe/" class="md-nav__link">
+      <a href="../../../tokenization/bpe/" class="md-nav__link">
         
   
   
@@ -754,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/wordpiece/" class="md-nav__link">
+      <a href="../../../tokenization/wordpiece/" class="md-nav__link">
         
   
   
@@ -777,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/unigram/" class="md-nav__link">
+      <a href="../../../tokenization/unigram/" class="md-nav__link">
         
   
   
@@ -800,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tokenization/neural_tokenizer/" class="md-nav__link">
+      <a href="../../../tokenization/neural_tokenizer/" class="md-nav__link">
         
   
   
@@ -854,7 +854,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../models/" class="md-nav__link ">
+            <a href="../../../models/" class="md-nav__link ">
               
   
   
@@ -887,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/rcnn/" class="md-nav__link">
+      <a href="../../../models/rcnn/" class="md-nav__link">
         
   
   
@@ -910,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/faster_rcnn/" class="md-nav__link">
+      <a href="../../../models/faster_rcnn/" class="md-nav__link">
         
   
   
@@ -933,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/fcos/" class="md-nav__link">
+      <a href="../../../models/fcos/" class="md-nav__link">
         
   
   
@@ -956,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/resnet/" class="md-nav__link">
+      <a href="../../../models/resnet/" class="md-nav__link">
         
   
   
@@ -979,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../models/vgg/" class="md-nav__link">
+      <a href="../../../models/vgg/" class="md-nav__link">
         
   
   
@@ -1019,18 +1019,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1043,7 +1031,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -1066,6 +1054,283 @@
           <label class="md-nav__title" for="__nav_14">
             <span class="md-nav__icon md-icon"></span>
             Papers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cv/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Vision
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            Vision
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/resnet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ResNet [WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/vit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ViT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../fine-tuning/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Fine Tuning
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fine Tuning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fine-tuning/lora/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LoRA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fine-tuning/rlhf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RLHF
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    NLP
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_14_3" id="__nav_14_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14_3">
+            <span class="md-nav__icon md-icon"></span>
+            NLP
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1145,12 +1410,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../resnet/" class="md-nav__link">
+      <a href="../transformer/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    ResNet [WIP]
+    Transformer
     
   </span>
   
@@ -1182,7 +1447,7 @@
   
   
   <span class="md-ellipsis">
-    Transformer
+    GPT-1
     
   </span>
   
@@ -1195,7 +1460,7 @@
   
   
   <span class="md-ellipsis">
-    Transformer
+    GPT-1
     
   </span>
   
@@ -1227,64 +1492,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#background" class="md-nav__link">
+  <a href="#framework" class="md-nav__link">
     <span class="md-ellipsis">
-      Background
+      Framework
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Architecture">
+    <nav class="md-nav" aria-label="Framework">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encoder-decoder-stacks" class="md-nav__link">
+  <a href="#1-unsupervised-pre-training" class="md-nav__link">
     <span class="md-ellipsis">
-      Encoder-Decoder Stacks
+      1. Unsupervised Pre-training
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#attention" class="md-nav__link">
+  <a href="#2-supervised-fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      Attention
+      2. Supervised Fine-tuning
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#multi-head-attention" class="md-nav__link">
+  <a href="#task-specific-input-transformations" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-Head Attention
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#position-wise-feed-forward-networks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Position-wise Feed-Forward Networks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#positional-encoding" class="md-nav__link">
-    <span class="md-ellipsis">
-      Positional Encoding
+      Task-Specific Input Transformations
     </span>
   </a>
   
@@ -1296,27 +1534,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-self-attention" class="md-nav__link">
+  <a href="#experiments" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Self-Attention
+      Experiments
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
+  <a href="#analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      Training
+      Analysis
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#results" class="md-nav__link">
+  <a href="#ablations" class="md-nav__link">
     <span class="md-ellipsis">
-      Results
+      Ablations
     </span>
   </a>
   
@@ -1326,29 +1564,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../GPT/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    GPT-1
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1407,17 +1622,48 @@
   
   
     <li class="md-nav__item">
-      <a href="../lora/" class="md-nav__link">
+      <a href="../gpt2/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    LoRA[WIP]
+    GPT-2
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llama/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Llama
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1466,64 +1712,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#background" class="md-nav__link">
+  <a href="#framework" class="md-nav__link">
     <span class="md-ellipsis">
-      Background
+      Framework
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Architecture
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Architecture">
+    <nav class="md-nav" aria-label="Framework">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encoder-decoder-stacks" class="md-nav__link">
+  <a href="#1-unsupervised-pre-training" class="md-nav__link">
     <span class="md-ellipsis">
-      Encoder-Decoder Stacks
+      1. Unsupervised Pre-training
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#attention" class="md-nav__link">
+  <a href="#2-supervised-fine-tuning" class="md-nav__link">
     <span class="md-ellipsis">
-      Attention
+      2. Supervised Fine-tuning
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#multi-head-attention" class="md-nav__link">
+  <a href="#task-specific-input-transformations" class="md-nav__link">
     <span class="md-ellipsis">
-      Multi-Head Attention
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#position-wise-feed-forward-networks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Position-wise Feed-Forward Networks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#positional-encoding" class="md-nav__link">
-    <span class="md-ellipsis">
-      Positional Encoding
+      Task-Specific Input Transformations
     </span>
   </a>
   
@@ -1535,27 +1754,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-self-attention" class="md-nav__link">
+  <a href="#experiments" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Self-Attention
+      Experiments
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
+  <a href="#analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      Training
+      Analysis
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#results" class="md-nav__link">
+  <a href="#ablations" class="md-nav__link">
     <span class="md-ellipsis">
-      Results
+      Ablations
     </span>
   </a>
   
@@ -1580,62 +1799,81 @@
   
 
 
-<h1 id="transformer">Transformer</h1>
-<p>Paper: <a href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a>| <a href="">Code</a></p>
+<h1 id="improving-language-understanding-with-generative-pre-training">Improving Language Understanding with Generative Pre-Training</h1>
+<p><a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf">Paper</a> | <a href="https://openai.com/index/language-unsupervised/">OpenAI Blog</a> | <a href="">Code</a></p>
 <h2 id="introduction">Introduction</h2>
-<p>The Transformer is a deep learning model introduced in the paper "Attention Is All You Need" by Vaswani et al. in 2017. It revolutionized natural language processing by relying entirely on attention mechanisms, dispensing with recurrence and convolutions entirely. Transformers have since become the foundation for state-of-the-art models in NLP, such as BERT, GPT, and many others.</p>
-<p>Prior to Transformers, sequence transduction models like RNNs, GRUs and LSTMs were state of the art approaches. However, these models struggled with long-range dependencies and parallelization.The RNNs have an inherently sequential nature which prevents parallelization within training examples. When dealing with large sequences, the memory constraints limit batching across examples. Attention mechanisms (<a href="../additive_attention/">Additive Attention</a>, <a href="../dot_product_attention/">Dot Attention</a>) were introduced to address long-range dependencies, allowing models to focus on relevant parts of the input sequence. However, such attention mechanism are used in conjunction with RNNs. The Transformer architecture was introduced to remove RNNs and rely entirely on attention and takes this further by using self-attention as its core building block.</p>
-<h2 id="background">Background</h2>
-<p>Making computation faster by reducing the sequential nature of RNNs is a key motivation behind Extended Neural GPU, ByteNet, and ConvS2S. These models use convolutional layers to compute hidden representations in parallel, but the number of operations grows linearly with the distance between input or output positions, making it difficult to capture long-range dependencies.</p>
-<p>Self-attention also called intra-attention is a attention mechanism relating different positions of a single sequence to compute a representation of the same sequence. Self-attention has been successfully applied to various tasks, including reading comprehension, text summarization, textual entailment and learning task-independent sentence representations. <a href="https://arxiv.org/abs/1601.06733">LSTM-Networks for Machine Reading</a>, <a href="https://arxiv.org/abs/1606.01933">A Decomposable Attention Model for Natural Language Inference</a>, <a href="https://arxiv.org/abs/1702.00887">Structured Attention Networks</a>, <a href="https://arxiv.org/abs/1705.04304">A deep reinfornced model for abstractive summarization</a>.</p>
-<h2 id="architecture">Architecture</h2>
-<p>Similar to other sequence transduction models, The Transformer consists of an encoder and a decoder, each composed of multiple identical layers. The encoder processes the input sequence and passes its representation to the decoder, which generates the output sequence. Key components include:</p>
+<p>Deep learning models typically require large amounts of labeled data, which limits their use in domains where annotated data is scarce. Models that can learn from unlabeled data offer a promising alternative. Even when labeled data is available, leveraging unlabeled data to learn better representations can significantly boost performance.</p>
+<p>However, learning representations beyond the word level presents two main challenges:</p>
+<ol>
+<li><strong>Learning Objective</strong>: The optimal objectives for learning transferable representations are not well understood.</li>
+<li><strong>Transfer Mechanism</strong>: The best way to transfer these learned representations to downstream tasks remains unclear. Existing methods often require task-specific architectures or auxiliary learning objectives.</li>
+</ol>
+<p>GPT-1 addresses these challenges with a semi-supervised approach, using a two-stage training process:</p>
 <ul>
-<li><strong>Multi-Head Self-Attention:</strong> Allows the model to attend to information from different representation subspaces at different positions.</li>
-<li><strong>Position-wise Feed-Forward Networks:</strong> Each layer contains a fully connected feed-forward network applied to each position separately.</li>
-<li><strong>Positional Encoding:</strong> Since the model lacks recurrence, positional encodings are added to input embeddings to provide information about the order of the sequence.</li>
-<li><strong>Residual Connections and Layer Normalization:</strong> These help with training deep networks by mitigating vanishing gradients and stabilizing learning.</li>
+<li><strong>Unsupervised Pre-Training</strong>: The model is first trained on large amounts of unlabeled text using a language modeling objective. This helps it learn general language representations.</li>
+<li><strong>Supervised Fine-Tuning</strong>: The pre-trained model is then fine-tuned on specific tasks using labeled data, adapting its parameters to the target task.</li>
 </ul>
-<h3 id="encoder-decoder-stacks">Encoder-Decoder Stacks</h3>
-<p><strong>Encoder</strong>: Encoder takes input and generates a rich context-sensitive representation of the input. The encoder is composed of a stack of <span class="arithmatex">\(N = 6\)</span> identical layers. Each containing two sub-layers: multi-head self-attention and position-wise fully connected feed-forward networks. Residual connections are used around each sub-layer, followed by layer normalization. To facilitate this residual connections all the sub-layers in the model as well as embeddings layer produce outputs of the same dimension <span class="arithmatex">\(d_{model} = 512\)</span>.</p>
-<p><strong>Decoder</strong>: Decoder generates the output sequence one token at a time, attending to both the previously generated tokens and the encoder's output. The decoder is also composed of a stack of <span class="arithmatex">\(N = 6\)</span> identical layers. The decoder inserts a third sub-layer, in addition to the two sub-layers in the encoder, which performs multi-head attention over the encoder's output, allowing the decoder to focus on relevant parts of the input sequence while generating each token. The masking in the self-attention layer ensures that the predictions for a given token can only depend on known outputs at earlier positions.</p>
-<h3 id="attention">Attention</h3>
-<p><strong>Scaled Dot-Product Attention</strong>:
-The attention mechanism is the core of the Transformer architecture. It computes a weighted sum of values (V) based on the similarity between queries (Q) and keys (K). The attention scores are calculated using the dot product of Q and K, scaled by the square root of the dimension of K, followed by a softmax operation to obtain weights. The output is then computed as a weighted sum of V.</p>
-<div class="arithmatex">\[Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V\]</div>
-<p>In <a href="../dot_product_attention/">dot attention</a>, the queries are hidden states of the decoder, and the keys and values are hidden states of the encoder. In case of self-attention, the queries, keys, and values are all derived from the same sequence (input in encoder and output in decoder).</p>
-<p>Dot-product attention is much faster than additive attention, as it only requires a single matrix multiplication and a softmax operation. The scaling factor <span class="arithmatex">\(\sqrt{d_k}\)</span> is used to prevent the dot products from growing too large, which can lead to numerical instability in the softmax function.</p>
-<p><strong>Masked Self-Attention</strong>: Ignores the words that comes after the current word in the sequence. This is crucial during training to ensure that the model does not peek at future tokens when generating the current token. The masking is done by setting the attention scores for future tokens to a very large negative value before applying softmax, effectively ignoring them.</p>
-<h3 id="multi-head-attention">Multi-Head Attention</h3>
-<p>Multi-head attention extends the basic attention mechanism by allowing the model to jointly attend to information from different representation subspaces. Instead of performing a single attention function with <span class="arithmatex">\(d_{model}\)</span>-dimensional keys, queries, keys and values are linearly projected h times with different, learned linear projections to <span class="arithmatex">\(d_k, f_k, d_v\)</span> dimensions. On each of these projected representations, the attention function is applied in parallel, yielding <span class="arithmatex">\(d_v\)</span> dimensional <span class="arithmatex">\(h\)</span> different outputs. These outputs are then concatenated and linearly transformed to produce the final output.</p>
-<div class="arithmatex">\[MultiHead(Q, K, V) = Concat(head_1, ..., head_h)W^O \\
-\text{where } head_i = Attention(QW^Q_i, KW^K_i, VW^V_i)
-\]</div>
-<p>In the original Transformer, <span class="arithmatex">\(h = 8\)</span> and <span class="arithmatex">\(d_k = d_v = 64\)</span>, resulting in a total dimension of <span class="arithmatex">\(d_{model} = h \cdot d_k = 512\)</span>.</p>
-<h3 id="position-wise-feed-forward-networks">Position-wise Feed-Forward Networks</h3>
-<p>A fully connected feed-forward network is applied to each position separately and identically. It consists of two linear transformations with a ReLU activation in between. The first linear transformation projects the input from <span class="arithmatex">\(d_{model}\)</span> to <span class="arithmatex">\(d_{ff}=2048\)</span> dimensions, and the second projects it back to <span class="arithmatex">\(d_{model}\)</span> dimensions.</p>
-<h3 id="positional-encoding">Positional Encoding</h3>
-<p>Since the Transformer does not have recurrence or convolution, it uses positional encodings to inject information about the position of tokens in the sequence. The positional encodings are added(summed) to the input embeddings and are designed to allow the model to learn relative positions. The encoding is defined using sine and cosine functions of different frequencies</p>
-<h2 id="why-self-attention">Why Self-Attention</h2>
-<p>Self-attention enables the model to weigh the importance of different words in a sequence, regardless of their distance from each other. This allows for better modeling of long-range dependencies and parallel computation, making training faster and more efficient compared to RNNs.</p>
-<p>The authors compare self-attention with RNNs and CNNs in three critical aspects: </p>
+<p>GPT-1 is built on the Transformer architecture, specifically using the decoder (left-to-right) for language modeling. For downstream tasks, it adapts the input format to process structured text as a single sequence of tokens, enabling the model to handle various NLP tasks without changing its core architecture.</p>
+<hr />
+<h2 id="framework">Framework</h2>
+<p>GPT-1's framework consists of two main stages:</p>
+<h3 id="1-unsupervised-pre-training">1. Unsupervised Pre-training</h3>
+<p>The first stage involves learning a high-capacity language model from a large corpus of unlabeled text.</p>
+<p><strong>Objective</strong>: Learn a general-purpose language model by predicting the next word in a sentence (language modeling objective).</p>
+<div class="arithmatex">\[L_1(\mathcal{U}) = \sum_i \log P(u_i | u_{i-k}, \cdots, u_{i-1}; \Theta)\]</div>
+<p>where <span class="arithmatex">\(\mathcal{U}\)</span> is the unlabeled corpus, <span class="arithmatex">\(u_i\)</span> is the <span class="arithmatex">\(i^{th}\)</span> word, and <span class="arithmatex">\(\Theta\)</span> are the model parameters.</p>
+<p>The Transformer decoder is used for the language model.</p>
+<div class="arithmatex">\[ \begin{align*}
+h_0 &amp;= UW_e + W_p \\
+h_l &amp;= transformer\_block(h_{l-1}) \\
+p(u) &amp;= softmax(h_nW_e^T)
+\end{align*} \]</div>
+<h3 id="2-supervised-fine-tuning">2. Supervised Fine-tuning</h3>
+<p><strong>Objective</strong>: Adapt the pre-trained model to specific NLP tasks (e.g., classification, entailment, question answering) using labeled datasets.</p>
+<div class="arithmatex">\[L_2(\mathcal{C}) = \sum_{(x, y)} log P(y | x^1, \cdots, x^m)\]</div>
+<p>where <span class="arithmatex">\(\mathcal{C}\)</span> is the labeled dataset.</p>
+<p>The inputs are passed through the pre-trained model to get the final transformer's block activations <span class="arithmatex">\(h_l^m\)</span>, which are then fed into the linear output layer to produce task-specific predictions.</p>
+<div class="arithmatex">\[ P(y | x^1, \cdots, x^m) = softmax(h_l^mW_y)\]</div>
+<p>Additionally, the authors found that including an auxiliary language modeling objective during fine-tuning helped improve generalization and accelerate convergence.</p>
+<div class="arithmatex">\[L_3(\mathcal{C}) = L_2(\mathcal{C}) + \lambda L_1(\mathcal{C})\]</div>
+<p>where <span class="arithmatex">\(\lambda\)</span> is a hyperparameter controlling the weight of the auxiliary language modeling loss.</p>
+<hr />
+<h3 id="task-specific-input-transformations">Task-Specific Input Transformations</h3>
+<p><img alt="img.png" src="../../images/gpt_1.png" /></p>
+<p>Since the model is trained on a single contiguous sequence of tokens, it requires task-specific input transformations to handle structured text inputs. These input transformations allow the use of a single model for multiple tasks, avoiding the need for task-specific architectures. The transformations include:</p>
 <ul>
-<li><strong>Computational Complexity</strong>: Self-attention has a complexity of <span class="arithmatex">\(O(n^2 * d)\)</span> for a sequence of length <span class="arithmatex">\(n\)</span> and d-dimensional embeddings, while RNNs have <span class="arithmatex">\(O(n * d^2)\)</span> per step but require sequential processing. CNNs can also achieve <span class="arithmatex">\(O(k * n * d^2)\)</span> with fixed-size kernels, but they struggle with long-range dependencies.</li>
-<li><strong>Parallelization</strong>: Self-attention allows for parallel computation across all positions in the sequence, making it highly efficient on modern hardware. RNNs require sequential processing, which limits parallelization. CNNs can be parallelized but are constrained by kernel sizes.</li>
-<li><strong>Long-Range Dependencies</strong>: Self-attention can directly connect distant positions in the sequence, making it effective for modeling long-range relationships. RNNs struggle with long-range dependencies due to vanishing gradients, while CNNs require larger kernels to capture such relationships, which can lead to increased computational costs. The shorter the distance between any combinations of positions in the input and output sequences, the easier it is to learn long-range dependencies. The maximum path length in the self-attention is <span class="arithmatex">\(O(1)\)</span>, while in RNNs it is <span class="arithmatex">\(O(n)\)</span>, and in CNNs it is <span class="arithmatex">\(O(log_k n)\)</span>.</li>
+<li>Textual Entailment: Concatenating premise and hypothesis with a delimiter token $ between them.</li>
+<li>Similarity: Two sentences are concatenated with a delimiter token between them. Both possible sentence orderings are processed independently. They are then added element-wise before passing into the linear output layer.</li>
+<li>Q&amp;A: Given a document z, a question q, and a set of possible answers <span class="arithmatex">\(a_k\)</span>. The document and question are concatenated with each possible answer <span class="arithmatex">\(a_k\)</span> with a delimiter token. Each sequence is processed independently and normalized via a softmax layer to produce a probability distribution over the possible answers.</li>
 </ul>
-<h2 id="training">Training</h2>
-<p>The Transformer model was trained on the WMT 2014 English-to-German dataset, which contains 4.5 million sentence pairs. Sentences were encoded using Byte Pair Encoding (BPE), resulting in a shared source and target vocabulary of 37,000 tokens.</p>
-<p>To optimize training efficiency, sentence pairs were batched by approximate sequence length, with each batch containing about 25,000 source tokens and 25,000 target tokens.</p>
-<p>The model was trained using the Adam optimizer. The learning rate was set to <span class="arithmatex">\(d_{model}^{-0.5}\)</span>, with a warm-up phase for the first 4,000 steps. After the warm-up, the learning rate decayed proportionally to the inverse square root of the step number.</p>
-<h2 id="results">Results</h2>
-<p>The Transformer achieved state-of-the-art performance on machine translation tasks. It outperformed previous models in both translation accuracy and training speed, demonstrating the effectiveness of the self-attention mechanism and the overall architecture.</p>
+<hr />
+<h2 id="experiments">Experiments</h2>
+<p>Pre-training was performed on the BooksCorpus dataset, which contains over 7,000 unpublished books.</p>
+<p><strong>Model Specs</strong>: A 12-layer Transformer decoder with 768 hidden units and 12 attention heads, resulting in 117M parameters. For position-wise feed-forward, 3072 hidden states were used.
+Adam optimizer with a max learning rate of 2.5e-4 and a batch size of 64 was used for pre-training. The model was trained for 100 epochs. A simple weight initialization of <span class="arithmatex">\(N(0, 0.02\)</span> is used.
+Dropout with a rate of 0.1 was used for regularization. For activation, GELU was used. Learned positional embeddings were used instead of fixed sinusoidal embeddings.</p>
+<p><strong>Fine-tuning details</strong>: Learning rate was set to 6.25e-5, and the model was fine-tuned for 3 epochs on each task.</p>
+<p>GPT-1 was evaluated on several benchmark NLP tasks, including: Natural Language Inference (SNLI, MNLI, QNLI, SciTail &amp; RTE), Question Answering (RACE &amp; Story Cloze), Semantic Similarity (MRPC, QQP &amp; STS-B) and classification (CoLA &amp; SST-2).</p>
+<hr />
+<h2 id="analysis">Analysis</h2>
+<p><strong>Impact of number of layers transferred</strong>: Each layer in the pre-trained model captures useful functionality for target tasks. The authors found that transferring all layers of the pre-trained model to the target task yields better performance up to 9% on MultiNLI.</p>
+<p><img alt="img.png" src="../../images/gpt1_analysis.png" /></p>
+<h2 id="ablations">Ablations</h2>
+<p>Ablation studies in the GPT-1 paper examined the impact of:</p>
+<ul>
+<li><strong>Auxiliary LM during fine-tuning</strong>: The auxiliary objective helps on the NLI task and QQP. Overall, it's beneficial for larger datasets.</li>
+<li><strong>Transformer VS LSTM</strong>: LSTM shows a score drop of 5.6 on average.</li>
+<li><strong>Supervised vs Semi-supervised</strong>: Lack of pre-training hurts performance across all tasks.</li>
+</ul>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -1684,12 +1922,12 @@ The attention mechanism is the core of the Transformer architecture. It computes
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
