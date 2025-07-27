@@ -10,9 +10,9 @@
 - [GPT](nlp/GPT.md)
 - [BERT](nlp/bert.md)
 - [T5](nlp/t5.md)
-<!-- - [GPT-2](GPT-2.md)
-- [Llama](llama.md)
-- [Llama-2](llama-2.md)
+- [GPT-2](nlp/gpt2.md)
+- [Llama](nlp/llama.md)
+<!-- - [Llama-2](llama-2.md)
 - [ELMo](elmo.md)
 - [RoBERTa](roberta.md)
 - [BART](bart.md)
@@ -20,8 +20,8 @@
 
 ## Computer Vision
 - [ResNet](cv/resnet.md)
-<!-- - [ViT](cv/vit.md)
-- [DETR](vc/detr.md) -->
+- [ViT](cv/vit.md)
+<!-- - [DETR](vc/detr.md) -->
 
 
 ## Inference
@@ -30,7 +30,9 @@
 ## Training/Finetuning
 <!-- - [DDP](ddp.md) -->
 - [LoRA](fine-tuning/lora.md)
-<!-- - [QLoRA](qlora.md)
+- [RLHF](fine-tuning/rlhf.md)
+<!-- 
+- [QLoRA](qlora.md)
 - [PEFT](peft.md)
 - [DPO](dpo.md) -->
 
