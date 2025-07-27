@@ -22,7 +22,7 @@
     
     
       
-        <title>ResNet [WIP] - Machine Learning Notes</title>
+        <title>ResNet - Machine Learning Notes</title>
       
     
     
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ResNet [WIP]
+              ResNet
             
           </span>
         </div>
@@ -840,8 +840,6 @@
       
         
       
-        
-      
     
     
     
@@ -939,29 +937,6 @@
   
   <span class="md-ellipsis">
     FCOS
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../models/resnet/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Resnet
     
   </span>
   
@@ -1131,7 +1106,7 @@
   
   
   <span class="md-ellipsis">
-    ResNet [WIP]
+    ResNet
     
   </span>
   
@@ -1144,7 +1119,7 @@
   
   
   <span class="md-ellipsis">
-    ResNet [WIP]
+    ResNet
     
   </span>
   
@@ -1176,22 +1151,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-work" class="md-nav__link">
+  <a href="#methodology" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Work
+      Methodology
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deep-residual-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deep Residual Learning
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deep Residual Learning">
+    <nav class="md-nav" aria-label="Methodology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1213,9 +1179,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#architectures" class="md-nav__link">
+  <a href="#architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Architectures
+      Architecture
     </span>
   </a>
   
@@ -1236,9 +1202,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#limitations-and-future-directions" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      Limitations and Future Directions
     </span>
   </a>
   
@@ -1370,7 +1336,7 @@
   
   
   <span class="md-ellipsis">
-    RLHF
+    RLHF [WIP]
     
   </span>
   
@@ -1650,7 +1616,7 @@
   
   
   <span class="md-ellipsis">
-    Llama
+    LLaMA
     
   </span>
   
@@ -1712,22 +1678,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-work" class="md-nav__link">
+  <a href="#methodology" class="md-nav__link">
     <span class="md-ellipsis">
-      Related Work
+      Methodology
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deep-residual-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deep Residual Learning
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deep Residual Learning">
+    <nav class="md-nav" aria-label="Methodology">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1749,9 +1706,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#architectures" class="md-nav__link">
+  <a href="#architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      Architectures
+      Architecture
     </span>
   </a>
   
@@ -1772,9 +1729,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#limitations-and-future-directions" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      Limitations and Future Directions
     </span>
   </a>
   
@@ -1800,22 +1757,38 @@
 
 
 <h1 id="resnet-deep-residual-learning-for-image-recognition">ResNet: Deep Residual Learning for Image Recognition</h1>
-<p><a href="https://arxiv.org/abs/1512.03385">Paper</a> | <a href="">Blog</a> | <a href="">Code</a></p>
+<p><a href="https://arxiv.org/abs/1512.03385">Paper</a> | <a href="https://github.com/KaimingHe/deep-residual-networks">Original Code</a></p>
 <h2 id="introduction">Introduction</h2>
+<p>Deep Convolutional Neural Networks have driven significant advances in image classification. Increasing the depth of these networks has generally led to better performance. However, as networks become deeper degradation problem is observed, the accuracy saturates and then degrades rapidly. But this is not due to overfitting, since even the training error increases with depth.</p>
+<p>This degradation suggests that deeper networks are harder to optimize, even though, in theory, a deeper model should perform at least as well as a shallower one by simply copying the shallow model and adding identity layers. The fact that deeper models perform worse indicates an optimization challenge.</p>
+<p>ResNet addresses this issue through <strong>residual learning</strong>. Instead of having stacked layers learn the desired mapping <span class="arithmatex">\(\mathcal{H}(x)\)</span> directly, ResNet has them learn the residual mapping <span class="arithmatex">\(\mathcal{F}(x) = \mathcal{H}(x) - x\)</span>. The intuition is that it is easier to optimize the residual function than the original mapping. If the optimal function is the identity, it is easier for the network to push the residuals to zero than to learn the identity mapping from scratch.</p>
 <hr />
-<h2 id="related-work">Related Work</h2>
-<hr />
-<h2 id="deep-residual-learning">Deep Residual Learning</h2>
-<hr />
+<h2 id="methodology">Methodology</h2>
 <h3 id="residual-learning">Residual Learning</h3>
+<p>Let <span class="arithmatex">\(\mathcal{H}(x)\)</span> be the function a stack of layers aims to learn. If multiple nonlinear layers can approximate <span class="arithmatex">\(\mathcal{H}(x)\)</span>, they should also be able to approximate the residual function <span class="arithmatex">\(\mathcal{F}(x) = \mathcal{H}(x) - x\)</span>.</p>
+<p>The reformulation is motivated by the phenomena about degradation problem. A depper model should have training error no grater than a shallower model, as the added layers can be constructed as identity mappings. But the degradation problem suggests that the solvers might have difficulty in approximating the identity mapping with multiple nonlinear layers.</p>
 <hr />
 <h3 id="identity-mapping-by-shortcuts">Identity Mapping by Shortcuts</h3>
+<figure>
+    <img alt="img.png" src="../images/resnet_block.png" />
+</figure>
+<p>Residual learning is applied to every few stacked layers. A building block is defined as:</p>
+<div class="arithmatex">\[ \mathbb{y} = \mathcal{F}(x, \{W_i\}) + x \]</div>
+<p>The operation <span class="arithmatex">\(\mathcal{F} + x\)</span> is performed by a shortcut connection and element-wise addition. The shortcut connections doesn't have any parameters making it computationally efficient. For the addition to work, <span class="arithmatex">\(\mathcal{F}\)</span> and <span class="arithmatex">\(x\)</span> must have the same dimensions. If not, a linear transformation is applied to <span class="arithmatex">\(x\)</span>:</p>
+<div class="arithmatex">\[\mathcal{y} = \mathcal{F}(x , \{W_i\}) + W_s x\]</div>
 <hr />
-<h3 id="architectures">Architectures</h3>
+<h3 id="architecture">Architecture</h3>
+<p>ResNet compares plain (non-residual) networks and residual networks to evaluate performance.</p>
+<p><strong>Plain Network</strong>: A baseline network is inspired from VGG. Conv layers have 3x3 kernels. For the same output feature map size, the layers have same number of filters. If feature map size is halved, the number of filters is doubled, to maintain same complexity per layer.</p>
+<p><strong>Residual Network</strong>: Shortcut connections are added to the plain network. When the input and output dimensions of the residual block are different, two options are considered: 1) use a linear transformation to match the dimensions, or 2) pad the input with zeros. </p>
 <hr />
 <h2 id="experiments-results">Experiments &amp; Results</h2>
+<p>ResNets are evaluated on ImageNet and CIFAR datasets for image classification, and COCO for object detection. </p>
+<p><strong>ImageNet</strong>: The deeper 34-layer plain net have higher validation and training error than shallower 18-layer plain net. The degradation is unlikely due to vanishing gradients, as backprop gradients exhibit healthy norms with batch norm.  But with ResNets the deeper 34-layer network achieves lower training and validation error than the shallower 18-layer network. The 18-layer ResNet also converges faster than the plain net. Results also shows that having projection shortcuts is not much better than identity shortcuts.</p>
+<p>Even larger ResNets with 50, 101, and 152 layers are trained. The deeper networks achieve better performance than the shallower ones. The 152-layer ResNet achieves a top-5 error of 4.49% on ImageNet validation set, which is the best result at the time of publication.</p>
 <hr />
-<h2 id="_1"></h2>
+<h2 id="limitations-and-future-directions">Limitations and Future Directions</h2>
+<p>-</p>
 
 
 

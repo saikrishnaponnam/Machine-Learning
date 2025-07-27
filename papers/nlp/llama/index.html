@@ -20,7 +20,7 @@
     
     
       
-        <title>Llama - Machine Learning Notes</title>
+        <title>LLaMA - Machine Learning Notes</title>
       
     
     
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Llama
+              LLaMA
             
           </span>
         </div>
@@ -838,8 +838,6 @@
       
         
       
-        
-      
     
     
     
@@ -937,29 +935,6 @@
   
   <span class="md-ellipsis">
     FCOS
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../models/resnet/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Resnet
     
   </span>
   
@@ -1118,7 +1093,7 @@
   
   
   <span class="md-ellipsis">
-    ResNet [WIP]
+    ResNet
     
   </span>
   
@@ -1246,7 +1221,7 @@
   
   
   <span class="md-ellipsis">
-    RLHF
+    RLHF [WIP]
     
   </span>
   
@@ -1537,7 +1512,7 @@
   
   
   <span class="md-ellipsis">
-    Llama
+    LLaMA
     
   </span>
   
@@ -1550,7 +1525,7 @@
   
   
   <span class="md-ellipsis">
-    Llama
+    LLaMA
     
   </span>
   
@@ -1618,6 +1593,24 @@
   <a href="#results" class="md-nav__link">
     <span class="md-ellipsis">
       Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bias-toxicity-and-misinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bias, Toxicity, and Misinformation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-and-future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations and Future Directions
     </span>
   </a>
   
@@ -1724,6 +1717,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bias-toxicity-and-misinformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bias, Toxicity, and Misinformation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-and-future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations and Future Directions
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1743,12 +1754,52 @@
   
 
 
-<h1 id="llama-open-and-efficient-foundation-language-models">Llama: Open and Efficient Foundation Language Models</h1>
+<h1 id="llama-open-and-efficient-foundation-language-models">LLaMA: Open and Efficient Foundation Language Models</h1>
+<p><a href="https://arxiv.org/abs/2302.13971">Paper</a> | <a href="TODO">Code</a> | <a href="https://huggingface.co/docs/transformers/en/model_doc/LLaMA">Hugging Face</a></p>
 <h2 id="introduction">Introduction</h2>
+<p>LLaMA is a family of large language models developed by Meta AI in 2023. These models are designed to be efficient, open, and accessible, making advanced language modeling capabilities available to researchers and practitioners. Unlike previous proprietary models, LLaMA is distributed under a non-commercial license, supporting academic and research use while promoting responsible AI development.</p>
+<p>Large language models (LLMs) trained on vast datasets have demonstrated impressive abilities in natural language understanding and generation. While it is often assumed that increasing model size leads to better performance, <a href="https://arxiv.org/abs/2203.15556">Hoffmann et al. (2022)</a> showed that, for a fixed budget, training smaller models on more data can outperform simply scaling up model size. However, the budget doesn't consider inference costs which is critical for serving LLMs at scale.</p>
+<p>This work focuses on training a series of language models that optimize performance across different inference budgets by using more training tokens than what is typically used. All LLaMA models are trained exclusively on publicly available datasets.</p>
 <h2 id="approach">Approach</h2>
 <h3 id="data">Data</h3>
+<p>LLaMA was trained on a large, diverse dataset comprising publicly available sources. The dataset includes:</p>
+<ul>
+<li>English CommonCrawl</li>
+<li>C4</li>
+<li>Github: Projects under BSD and MIT licenses</li>
+<li>Wikipedia</li>
+<li>Gutenberg and Books3</li>
+<li>ArXiv</li>
+<li>Stack Exchange</li>
+</ul>
+<p>The BPE algorithm is used for tokenization. The total training corpus contains approximately 1.4 trillion tokens. Rigorous data curation and deduplication ensure high-quality training data and minimize the inclusion of low-quality or harmful content.</p>
 <h3 id="architecture">Architecture</h3>
+<p>LLaMA is based on the standard transformer architecture, with several modifications for improved efficiency:</p>
+<ul>
+<li><strong>Pre-Normalization</strong>: Instead of normalizing the output, LLaMA normalizes the input of each sub-layer using RMSNorm, which replaces the traditional LayerNorm.</li>
+<li><strong>Activation Function</strong>: LLaMA uses the SwiGLU activation function instead of ReLU, improving model performance.</li>
+<li><strong>Positional Embeddings</strong>: Rotary positional embeddings are used instead of absolute positional embeddings, enhancing the model's ability to capture sequence information.</li>
+</ul>
+<p><strong>Implementation Details</strong></p>
+<ul>
+<li>LLaMA leverages FlashAttention, a memory-efficient attention mechanism that reduces memory usage and accelerates training.</li>
+<li>Checkpointing is employed to reduce the activations computations during backward pass and further improve training efficiency.</li>
+</ul>
 <h2 id="results">Results</h2>
+<p>LLaMA was evaluated in both zero-shot and few-shot settings across 20 benchmarks:</p>
+<ul>
+<li><strong>Common Sense Reasoning</strong>: LLaMA-65B outperformed Chinchilla-70B and PaLM-540B on most benchmarks. LLaMA-13B also surpassed GPT-3 on most tasks, despite being 10x smaller.</li>
+<li><strong>Reading Comprehension</strong>: LLaMA-65B is competitive with PaLM-540B, and LLaMA-13B outperformed GPT-3 by a few percentage points.</li>
+<li><strong>Code Generation</strong>: LLaMA outperformed other general models such as PaLM and LaMDA.</li>
+<li><strong>Massive Multitask Language Understanding</strong>: LLaMA-65B lags behind Chipmunk-70B and PaLM-540B, possibly because it was trained on only 177GB of books data, compared to nearly 2TB for other models. However, instruction fine-tuning significantly improves LLaMA-65B's performance.</li>
+</ul>
+<h2 id="bias-toxicity-and-misinformation">Bias, Toxicity, and Misinformation</h2>
+<ul>
+<li><strong>Toxicity</strong>: On the RealToxicityPrompts benchmark, LLaMA's toxicity scores are comparable to other models. Toxicity tends to increase with model size.</li>
+<li><strong>Bias</strong>: LLaMA models exhibit more bias than GPT-3 and OPT-175B, particularly in the religion category, followed by age and gender.</li>
+<li><strong>Misinformation</strong>: LLaMA models are likely to hallucinate incorrect answers. Compared to GPT-3, LLaMA scored higher on TruthfulQA benchmark.</li>
+</ul>
+<h2 id="limitations-and-future-directions">Limitations and Future Directions</h2>
 
 
 
