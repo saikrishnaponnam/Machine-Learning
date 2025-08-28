@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/rl/">
       
       
+        <link rel="prev" href="../tokenization/neural_tokenizer/">
+      
+      
+        <link rel="next" href="../models/">
       
       
       <link rel="icon" href="../images/icon.png">
@@ -823,6 +827,487 @@
       
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Reinforcement Learning
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reinforcement Learning
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rl-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      RL Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RL Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-environment-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent-Environment Interaction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markov-decision-process-mdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markov Decision Process (MDP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reward Signal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-discounted-and-undiscounted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return (Discounted and Undiscounted)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bellman-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bellman Equations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploration-and-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploration and Exploitation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploration and Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greedy-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greedy Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epsilon-greedy-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Epsilon-Greedy Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softmax-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Softmax Exploration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upper-confidence-bound-ucb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upper Confidence Bound (UCB)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classical-rl-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classical RL Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classical RL Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Programming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monte-carlo-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monte Carlo Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-difference-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporal Difference Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eligibility-traces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eligibility Traces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Approximation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Approximation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#value-function-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Function Approximation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy Approximation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actor-critic-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actor-Critic Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Reinforcement Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Reinforcement Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deep-q-networks-dqn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Q-Networks (DQN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-policy-gradient-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Policy Gradient Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-based-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model-Based RL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rl-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      The RL Problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The RL Problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#markov-decision-process-mdp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markov Decision Process (MDP)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-rl-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of RL Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of RL Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-value-based-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Value-Based Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-policy-based-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Policy-Based Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-model-based-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Model-Based Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploration-vs-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploration vs. Exploitation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-reinforcement-learning_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications of RL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#challenges-in-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Challenges in RL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Reading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     
@@ -844,7 +1329,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -861,14 +1346,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_14" id="__nav_14_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_13">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
             <span class="md-nav__icon md-icon"></span>
             Models
           </label>
@@ -996,7 +1481,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1013,14 +1498,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_14" id="__nav_14_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_15" id="__nav_15_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_14">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
             <span class="md-nav__icon md-icon"></span>
             Papers
           </label>
@@ -1047,7 +1532,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_1" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1064,14 +1549,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_14_1" id="__nav_14_1_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_15_1" id="__nav_15_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_14_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_1">
             <span class="md-nav__icon md-icon"></span>
             Vision
           </label>
@@ -1152,7 +1637,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1169,14 +1654,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_14_2" id="__nav_14_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_15_2" id="__nav_15_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_14_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_2">
             <span class="md-nav__icon md-icon"></span>
             Fine Tuning
           </label>
@@ -1263,6 +1748,8 @@
       
         
       
+        
+      
     
     
     
@@ -1271,7 +1758,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_3" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1288,14 +1775,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_14_3" id="__nav_14_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_15_3" id="__nav_15_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_14_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_14_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15_3">
             <span class="md-nav__icon md-icon"></span>
             NLP
           </label>
@@ -1383,6 +1870,29 @@
   
   <span class="md-ellipsis">
     Transformer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/nlp/efficient_transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Efficient Transformers
     
   </span>
   
@@ -1550,11 +2060,308 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Concepts
+      Introduction
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Applications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rl-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      RL Framework
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RL Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agent-environment-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent-Environment Interaction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#markov-decision-process-mdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markov Decision Process (MDP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reward Signal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#return-discounted-and-undiscounted" class="md-nav__link">
+    <span class="md-ellipsis">
+      Return (Discounted and Undiscounted)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bellman-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bellman Equations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploration-and-exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exploration and Exploitation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploration and Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greedy-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greedy Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#epsilon-greedy-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Epsilon-Greedy Strategy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softmax-exploration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Softmax Exploration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upper-confidence-bound-ucb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upper Confidence Bound (UCB)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classical-rl-algorithms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classical RL Algorithms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classical RL Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Programming
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monte-carlo-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monte Carlo Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temporal-difference-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporal Difference Learning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eligibility-traces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eligibility Traces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Approximation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Function Approximation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#value-function-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Function Approximation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-approximation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy Approximation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actor-critic-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actor-Critic Methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Reinforcement Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deep Reinforcement Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deep-q-networks-dqn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deep Q-Networks (DQN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-policy-gradient-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Policy Gradient Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-based-rl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model-Based RL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1569,7 +2376,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#markov-decision-process-mdp" class="md-nav__link">
+  <a href="#markov-decision-process-mdp_1" class="md-nav__link">
     <span class="md-ellipsis">
       Markov Decision Process (MDP)
     </span>
@@ -1634,7 +2441,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deep-reinforcement-learning" class="md-nav__link">
+  <a href="#deep-reinforcement-learning_1" class="md-nav__link">
     <span class="md-ellipsis">
       Deep Reinforcement Learning
     </span>
@@ -1689,21 +2496,117 @@
 
 
 <h1 id="reinforcement-learning">Reinforcement Learning</h1>
+<h2 id="introduction">Introduction</h2>
 <p>Reinforcement Learning (RL) is a branch of machine learning where an agent learns to make decisions by interacting with an environment. Unlike supervised learning, where the model learns from labeled data, RL is based on the idea of learning from experience through trial and error, receiving feedback in the form of rewards or penalties.</p>
-<h2 id="key-concepts">Key Concepts</h2>
+<h3 id="key-components">Key Components</h3>
 <ul>
 <li><strong>Agent</strong>: The learner or decision maker.</li>
 <li><strong>Environment</strong>: The world with which the agent interacts.</li>
-<li><strong>State (s)</strong>: A representation of the current situation of the agent.</li>
-<li><strong>Action (a)</strong>: Choices made by the agent.</li>
-<li><strong>Reward (r)</strong>: Feedback from the environment to evaluate the action.</li>
-<li><strong>Policy (π)</strong>: The strategy that the agent employs to determine actions based on states.</li>
-<li><strong>Value Function (V)</strong>: Estimates how good it is for the agent to be in a given state.</li>
-<li><strong>Q-Function (Q)</strong>: Estimates the value of taking a specific action in a given state.</li>
+<li><strong>Action (A)</strong>: Choices made by the agent.</li>
+<li><strong>State (S)</strong>: A representation of the current situation of the agent.</li>
+<li><strong>Reward (R)</strong>: Feedback from the environment to evaluate the action.</li>
+<li><strong>Policy (<span class="arithmatex">\(\pi\)</span>)</strong>: A mapping from states to actions.</li>
 </ul>
+<!-- 
+- **Value Function (V)**: Estimates how good it is for the agent to be in a given state.
+- **Q-Function (Q)**: Estimates the value of taking a specific action in a given state.
+-->
+
+<h3 id="learning-process">Learning Process</h3>
+<p>The learning process in RL is fundamentally based on trail and error. The agent explores the environment, takes actions, observes the resulting states and rewards, and updates its policy to maximize cumulative rewards over time.</p>
+<p>The goal of agent is to maximize the expected cumulative reward over time. This could mean:</p>
+<ul>
+<li>Maximizing immediate rewards (greedy approach)</li>
+<li>Maximizing long-term rewards (planning, exploration)</li>
+</ul>
+<h3 id="applications">Applications</h3>
+<ul>
+<li>Game playing (e.g., AlphaGo, Dota 2)</li>
+<li>Robotics (e.g., robotic control, manipulation)</li>
+<li>Finance (e.g., trading bots, portfolio management)</li>
+<li>Recommendation systems</li>
+<li>Natural language processing (e.g., dialogue systems)</li>
+</ul>
+<hr />
+<h2 id="rl-framework">RL Framework</h2>
+<h3 id="agent-environment-interaction">Agent-Environment Interaction</h3>
+<p>In RL, the agent continuously interact with the environment in discrete time steps. At each time step <span class="arithmatex">\(t\)</span>:</p>
+<ol>
+<li>The agent is in a state <span class="arithmatex">\(s_t \in S\)</span>.</li>
+<li>It chooses an action <span class="arithmatex">\(a_t \in A\)</span>.</li>
+<li>The environment responds by transitioning to a new state <span class="arithmatex">\(s_{t+1}\)</span> and returning a reward <span class="arithmatex">\(r_{t+1}\)</span>.</li>
+</ol>
+<p>This forms a sequence of interactions: <span class="arithmatex">\(s_0, a_0, r_1, s_1, a_1, r_2, s_2, \ldots\)</span></p>
+<h3 id="markov-decision-process-mdp">Markov Decision Process (MDP)</h3>
+<p>RL problems are commonly modeled using Markov Decision Processes (MDPs).</p>
+<p>An MDP is a 5-tuple:</p>
+<ul>
+<li><span class="arithmatex">\(S\)</span>: Set of states</li>
+<li><span class="arithmatex">\(S\)</span>: Set of actions</li>
+<li><span class="arithmatex">\(P(s' |s, a)\)</span>: Transition probability - probability of next state given current state and action</li>
+<li><span class="arithmatex">\(R : S \times A -&gt; \mathbb{R}\)</span>: A reward function </li>
+<li><span class="arithmatex">\(\gamma\)</span>: A discount factor</li>
+</ul>
+<p><strong>Markov Property</strong>: The future state and reward depend only on the current state and action—not on the full history.</p>
+<h3 id="policy">Policy</h3>
+<p>A policy defines the agent's behavior by mapping states to actions. It can be:</p>
+<ul>
+<li><strong>Deterministic</strong>: <span class="arithmatex">\(\pi(s) = a\)</span> </li>
+<li><strong>Stochastic</strong>: <span class="arithmatex">\(\pi(a|s)\)</span> = <span class="arithmatex">\(P(a_t = a | s_t = s)\)</span></li>
+</ul>
+<h3 id="reward-signal">Reward Signal</h3>
+<p>The reward signal <span class="arithmatex">\(r_t\)</span> is a scalar feedback from the environment that indicates how good or bad the action taken by the agent was.</p>
+<h3 id="return-discounted-and-undiscounted">Return (Discounted and Undiscounted)</h3>
+<p>The return <span class="arithmatex">\(G_t\)</span> is the cumulative reward the agent receives over time from time step t. It can be defined as:</p>
+<ul>
+<li><strong>Undiscounted Return</strong>: <span class="arithmatex">\(G_t = \sum_{i=0}^{\infty} r_{t+i+1}\)</span></li>
+<li><strong>Discounted Return</strong>: <span class="arithmatex">\(G_t = \sum_{i=0}^{\infty} \gamma^{i} r_{t+i+1}\)</span></li>
+</ul>
+<p>where <span class="arithmatex">\(\gamma\)</span> is the discount factor (0 ≤ <span class="arithmatex">\(\gamma\)</span> &lt; 1). The discount factor determines the importance of future rewards. A <span class="arithmatex">\(\gamma\)</span> close to 0 makes the agent focus on immediate rewards, while a <span class="arithmatex">\(\gamma\)</span> close to 1 makes it consider long-term rewards.</p>
+<h3 id="value-functions">Value Functions</h3>
+<p>Value functions estimate how good it is for the agent to be in a given state or to take a specific action in that state.</p>
+<p><strong>State-value function</strong>: <span class="arithmatex">\(V(s)=\mathbb{E}[G_t | s_t = s]\)</span><br />
+<strong>Action-value function</strong>: <span class="arithmatex">\(Q(s, a)=\mathbb{E}[G_t | s_t = s, a_t = a]\)</span><br />
+<strong>Advantage function</strong>: <span class="arithmatex">\(A(s, a) = Q(s, a) - V(s)\)</span></p>
+<h3 id="bellman-equations">Bellman Equations</h3>
+<p>The Bellman equations provide a recursive relationship for value functions:</p>
+<p><strong>State-value function</strong>:</p>
+<div class="arithmatex">\[V(s) = \mathbb{E}_{a \sim \pi} [R(s, a) + \gamma \sum_{s'} P(s' | s, a) V(s')]\]</div>
+<p><strong>Action-value function</strong>:</p>
+<div class="arithmatex">\[Q(s, a) = R(s, a) + \gamma \sum_{s'} P(s' | s, a) \mathbb{E}_{a' \sim \pi} [Q(s', a')]\]</div>
+<p><strong>Optimal Value Functions</strong>:
+<span class="arithmatex">\(<span class="arithmatex">\(V^*(s) = \max_{a} Q^*(s, a)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(Q^*(s, a) = R(s, a) + \gamma \max_{a'} \sum_{s'} P(s' | s, a) Q^*(s', a')\)</span>\)</span></p>
+<hr />
+<h2 id="exploration-and-exploitation">Exploration and Exploitation</h2>
+<p>At every step, the agent faces a trade-off between exploration (trying new actions to discover their effects) and exploitation (choosing the best-known action to maximize reward). Too much exploration can lead to suboptimal performance, while too much exploitation can prevent the agent from discovering better strategies.</p>
+<h3 id="greedy-strategy">Greedy Strategy</h3>
+<h3 id="epsilon-greedy-strategy">Epsilon-Greedy Strategy</h3>
+<h3 id="softmax-exploration">Softmax Exploration</h3>
+<h3 id="upper-confidence-bound-ucb">Upper Confidence Bound (UCB)</h3>
+<hr />
+<h2 id="classical-rl-algorithms">Classical RL Algorithms</h2>
+<hr />
+<h3 id="dynamic-programming">Dynamic Programming</h3>
+<hr />
+<h3 id="monte-carlo-methods">Monte Carlo Methods</h3>
+<hr />
+<h3 id="temporal-difference-learning">Temporal Difference Learning</h3>
+<hr />
+<h3 id="eligibility-traces">Eligibility Traces</h3>
+<hr />
+<h2 id="function-approximation">Function Approximation</h2>
+<h3 id="value-function-approximation">Value Function Approximation</h3>
+<h3 id="policy-approximation">Policy Approximation</h3>
+<h3 id="actor-critic-methods">Actor-Critic Methods</h3>
+<hr />
+<h2 id="deep-reinforcement-learning">Deep Reinforcement Learning</h2>
+<h3 id="deep-q-networks-dqn">Deep Q-Networks (DQN)</h3>
+<h3 id="advanced-policy-gradient-methods">Advanced Policy Gradient Methods</h3>
+<h3 id="model-based-rl">Model-Based RL</h3>
 <h2 id="the-rl-problem">The RL Problem</h2>
 <p>The goal in RL is to find a policy that maximizes the cumulative reward over time. The agent observes the state, takes an action, receives a reward, and transitions to a new state. This process is often modeled as a Markov Decision Process (MDP).</p>
-<h3 id="markov-decision-process-mdp">Markov Decision Process (MDP)</h3>
+<h3 id="markov-decision-process-mdp_1">Markov Decision Process (MDP)</h3>
 <p>An MDP is defined by:</p>
 <ul>
 <li>A set of states <span class="arithmatex">\(S\)</span></li>
@@ -1729,7 +2632,7 @@
 </ul>
 <h2 id="exploration-vs-exploitation">Exploration vs. Exploitation</h2>
 <p>A fundamental challenge in RL is balancing exploration (trying new actions) and exploitation (choosing known rewarding actions). Strategies like ε-greedy and Upper Confidence Bound (UCB) are commonly used.</p>
-<h2 id="deep-reinforcement-learning">Deep Reinforcement Learning</h2>
+<h2 id="deep-reinforcement-learning_1">Deep Reinforcement Learning</h2>
 <p>With the advent of deep learning, RL has been combined with neural networks to handle high-dimensional state spaces (e.g., images). Notable algorithms include:</p>
 <ul>
 <li><strong>Deep Q-Networks (DQN)</strong></li>
