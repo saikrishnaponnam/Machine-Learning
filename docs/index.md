@@ -22,6 +22,7 @@ Welcome! This site is a collection of personal notes on machine learning concept
 - [LSTM](lstm.md)
 - [Attention](attention.md)
 - [Tokenization](tokenization/index.md)
+- [Reinforcement Learning](rl.md)
 - [Models](models/index.md)
 - [Papers](papers/index.md)
 

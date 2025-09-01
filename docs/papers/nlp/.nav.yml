@@ -4,6 +4,7 @@ nav:
   - additive_attention.md
   - dot_product_attention.md
   - transformer.md
+  - efficient_transformers.md
   - elmo.md
   - gpt.md
   - bert.md

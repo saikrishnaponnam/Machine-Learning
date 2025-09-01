@@ -66,7 +66,7 @@ where $\lambda$ is a hyperparameter controlling the weight of the auxiliary lang
 ---
 ### Task-Specific Input Transformations
 
-![img.png](../images/gpt_1.png)
+![img.png](images/gpt_1.png)
 
 Since the model is trained on a single contiguous sequence of tokens, it requires task-specific input transformations to handle structured text inputs. These input transformations allow the use of a single model for multiple tasks, avoiding the need for task-specific architectures. The transformations include:
 
@@ -92,7 +92,7 @@ GPT-1 was evaluated on several benchmark NLP tasks, including: Natural Language 
 
 **Impact of number of layers transferred**: Each layer in the pre-trained model captures useful functionality for target tasks. The authors found that transferring all layers of the pre-trained model to the target task yields better performance up to 9% on MultiNLI.
 
-![img.png](../images/gpt1_analysis.png)
+![img.png](images/gpt1_analysis.png)
 
 ## Ablations
 

@@ -7,6 +7,7 @@
 - [Additive Attention](nlp/additive_attention.md)
 - [Dot Product Attention](nlp/dot_product_attention.md)
 - [Transformer](nlp/transformer.md)
+- [Efficient Transformer: A Survey](nlp/efficient_transformers.md)
 - [GPT](nlp/GPT.md)
 - [BERT](nlp/bert.md)
 - [T5](nlp/t5.md)

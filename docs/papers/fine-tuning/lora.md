@@ -78,7 +78,7 @@ In the Transformer architecture, there are four matrices ($W_1, W_k, W_v, W_o$) 
 
 ### Baselines
 
-- **Fine Tuning (FT):** The model is initialized with pre-training weights, and all parameters are updated through gradient descent.
+- **Fine-Tuning (FT):** The model is initialized with pre-training weights, and all parameters are updated through gradient descent.
 - **Bias-only (BitFit):** Only the bias vectors are trained, with all other parameters frozen.
 - **Prefix-embedding tuning (PreEmbed):** Special trainable tokens are inserted among the input tokens, impacting performance based on their placement. The number of trainable parameters is $|\Theta| = d_{model} \times (l_p + l_i)$, where $l_p$ and $l_i$ are the numbers of prefix and infix tokens, respectively.
 - **Prefix-layer tuning (PreLayer):** An extension of PreEmbed that learns the activations after every layer, with $|\Theta| = L \times d_{model} \times (l_p + l_i)$.
