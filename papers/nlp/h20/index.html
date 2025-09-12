@@ -8,24 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/some_terms/">
+        <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/h20/">
       
       
       
       
-      <link rel="icon" href="../images/icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <link rel="icon" href="../../../images/icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
-        <title>Terms - Machine Learning Notes</title>
+        <title>H2O - Machine Learning Notes</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,11 +46,11 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../stylesheets/override.css">
+      <link rel="stylesheet" href="../../../stylesheets/override.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,7 +67,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#terms" class="md-skip">
+        <a href="#h_2o-heavy-hitter-oracle-for-efficient-generative-inference-of-large-language-models" class="md-skip">
           Skip to content
         </a>
       
@@ -92,9 +92,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../../.." title="Machine Learning Notes" class="md-header__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Terms
+              H2O
             
           </span>
         </div>
@@ -124,20 +124,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -154,7 +154,7 @@
         <a href="https://github.com/saikrishnaponnam/Machine-Learning.git" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -187,9 +187,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
+    <a href="../../.." title="Machine Learning Notes" class="md-nav__button md-logo" aria-label="Machine Learning Notes" data-md-component="logo">
       
-  <img src="../images/logo.png" alt="logo">
+  <img src="../../../images/logo.png" alt="logo">
 
     </a>
     Machine Learning Notes
@@ -199,7 +199,7 @@
       <a href="https://github.com/saikrishnaponnam/Machine-Learning.git" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -216,7 +216,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -258,7 +258,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../math/" class="md-nav__link ">
+            <a href="../../../math/" class="md-nav__link ">
               
   
   
@@ -291,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/calculus/" class="md-nav__link">
+      <a href="../../../math/calculus/" class="md-nav__link">
         
   
   
@@ -314,7 +314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/linear-algebra/" class="md-nav__link">
+      <a href="../../../math/linear-algebra/" class="md-nav__link">
         
   
   
@@ -337,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/probability/" class="md-nav__link">
+      <a href="../../../math/probability/" class="md-nav__link">
         
   
   
@@ -367,29 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nlp/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    NLP Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Initializers/" class="md-nav__link">
+      <a href="../../../Initializers/" class="md-nav__link">
         
   
   
@@ -425,11 +403,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../optimizers/" class="md-nav__link ">
+            <a href="../../../optimizers/" class="md-nav__link ">
               
   
   
@@ -442,14 +420,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Optimizers
           </label>
@@ -462,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../optimizers/adam/" class="md-nav__link">
+      <a href="../../../optimizers/adam/" class="md-nav__link">
         
   
   
@@ -485,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../optimizers/sgd/" class="md-nav__link">
+      <a href="../../../optimizers/sgd/" class="md-nav__link">
         
   
   
@@ -515,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../regularization/" class="md-nav__link">
+      <a href="../../../regularization/" class="md-nav__link">
         
   
   
@@ -537,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../convolution/" class="md-nav__link">
+      <a href="../../../convolution/" class="md-nav__link">
         
   
   
@@ -559,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../max_pool/" class="md-nav__link">
+      <a href="../../../max_pool/" class="md-nav__link">
         
   
   
@@ -581,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../batch_norm/" class="md-nav__link">
+      <a href="../../../batch_norm/" class="md-nav__link">
         
   
   
@@ -603,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rnn/" class="md-nav__link">
+      <a href="../../../rnn/" class="md-nav__link">
         
   
   
@@ -625,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lstm/" class="md-nav__link">
+      <a href="../../../lstm/" class="md-nav__link">
         
   
   
@@ -667,11 +645,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tokenization/" class="md-nav__link ">
+            <a href="../../../tokenization/" class="md-nav__link ">
               
   
   
@@ -684,14 +662,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Tokenization
           </label>
@@ -704,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/hf_tokenizer/" class="md-nav__link">
+      <a href="../../../tokenization/hf_tokenizer/" class="md-nav__link">
         
   
   
@@ -727,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/bpe/" class="md-nav__link">
+      <a href="../../../tokenization/bpe/" class="md-nav__link">
         
   
   
@@ -750,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/wordpiece/" class="md-nav__link">
+      <a href="../../../tokenization/wordpiece/" class="md-nav__link">
         
   
   
@@ -773,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/unigram/" class="md-nav__link">
+      <a href="../../../tokenization/unigram/" class="md-nav__link">
         
   
   
@@ -796,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tokenization/neural_tokenizer/" class="md-nav__link">
+      <a href="../../../tokenization/neural_tokenizer/" class="md-nav__link">
         
   
   
@@ -815,28 +793,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Reinforcement Learning
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -866,11 +822,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../models/" class="md-nav__link ">
+            <a href="../../../models/" class="md-nav__link ">
               
   
   
@@ -883,14 +839,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_14" id="__nav_14_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_14">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Models
           </label>
@@ -903,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/rcnn/" class="md-nav__link">
+      <a href="../../../models/rcnn/" class="md-nav__link">
         
   
   
@@ -926,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/faster_rcnn/" class="md-nav__link">
+      <a href="../../../models/faster_rcnn/" class="md-nav__link">
         
   
   
@@ -949,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/fcos/" class="md-nav__link">
+      <a href="../../../models/fcos/" class="md-nav__link">
         
   
   
@@ -972,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../models/vgg/" class="md-nav__link">
+      <a href="../../../models/vgg/" class="md-nav__link">
         
   
   
@@ -1018,11 +974,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../papers/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -1035,14 +991,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_15" id="__nav_15_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_15">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             Papers
           </label>
@@ -1069,11 +1025,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../papers/cv/" class="md-nav__link ">
+            <a href="../../cv/" class="md-nav__link ">
               
   
   
@@ -1086,14 +1042,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_15_1" id="__nav_15_1_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_13_1" id="__nav_13_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_15_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_1">
             <span class="md-nav__icon md-icon"></span>
             Vision
           </label>
@@ -1106,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/cv/resnet/" class="md-nav__link">
+      <a href="../../cv/resnet/" class="md-nav__link">
         
   
   
@@ -1129,7 +1085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/cv/vit/" class="md-nav__link">
+      <a href="../../cv/vit/" class="md-nav__link">
         
   
   
@@ -1164,8 +1120,6 @@
       
         
       
-        
-      
     
     
     
@@ -1174,11 +1128,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../papers/fine-tuning/" class="md-nav__link ">
+            <a href="../../fine-tuning/" class="md-nav__link ">
               
   
   
@@ -1191,14 +1145,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_15_2" id="__nav_15_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_13_2" id="__nav_13_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_15_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_2">
             <span class="md-nav__icon md-icon"></span>
             Fine Tuning
           </label>
@@ -1211,35 +1165,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/fine-tuning/lora/" class="md-nav__link">
+      <a href="../../fine-tuning/lora/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     LoRA
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../papers/fine-tuning/rlhf/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    RLHF [WIP]
     
   </span>
   
@@ -1287,6 +1218,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1295,11 +1232,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../papers/nlp/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1312,14 +1249,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_15_3" id="__nav_15_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_13_3" id="__nav_13_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_15_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_3">
             <span class="md-nav__icon md-icon"></span>
             NLP
           </label>
@@ -1332,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/nlp/seq2seq/" class="md-nav__link">
+      <a href="../seq2seq/" class="md-nav__link">
         
   
   
@@ -1355,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/nlp/additive_attention/" class="md-nav__link">
+      <a href="../additive_attention/" class="md-nav__link">
         
   
   
@@ -1378,7 +1315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/nlp/dot_product_attention/" class="md-nav__link">
+      <a href="../dot_product_attention/" class="md-nav__link">
         
   
   
@@ -1401,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/nlp/transformer/" class="md-nav__link">
+      <a href="../transformer/" class="md-nav__link">
         
   
   
@@ -1424,30 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/nlp/efficient_transformers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Efficient Transformers
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../papers/nlp/GPT/" class="md-nav__link">
+      <a href="../gpt/" class="md-nav__link">
         
   
   
@@ -1470,7 +1384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/nlp/bert/" class="md-nav__link">
+      <a href="../bert/" class="md-nav__link">
         
   
   
@@ -1493,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/nlp/t5/" class="md-nav__link">
+      <a href="../t5/" class="md-nav__link">
         
   
   
@@ -1516,7 +1430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/nlp/gpt2/" class="md-nav__link">
+      <a href="../gpt2/" class="md-nav__link">
         
   
   
@@ -1539,12 +1453,104 @@
   
   
     <li class="md-nav__item">
-      <a href="../papers/nlp/llama/" class="md-nav__link">
+      <a href="../llama/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     LLaMA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../efficient_transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Efficient Transformers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snap_kv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SnapKV[WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../r-kv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    R-KV Cache[WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structured_state_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    S4-Structured State Spaces
     
   </span>
   
@@ -1597,9 +1603,60 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inductive-biases" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Inductive biases
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problem-setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem Setting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methodology
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methodology">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#greedy-algorithm-for-low-cost-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greedy Algorithm for Low-cost Policy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiments-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiments &amp; Results
     </span>
   </a>
   
@@ -1624,19 +1681,49 @@
   
 
 
-<h1 id="terms">Terms</h1>
-<h2 id="inductive-biases">Inductive biases</h2>
-<p>Inductive biases are assumptions made by a model about the data that help it generalize better. In computer vision, common inductive biases include </p>
+<h1 id="h_2o-heavy-hitter-oracle-for-efficient-generative-inference-of-large-language-models"><span class="arithmatex">\(H_2O\)</span>: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models</h1>
+<p><a href="https://arxiv.org/abs/2306.14048">Paper</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Although LLMs have shown remarkable capabilities in various tasks, their deployment is very costly. One reason for this the large size of KV cache. But it is also challenging to reduce the KB cache memory footprint without sacrificing model accuracy. Existing methods like Reformer and FlashAttention reduce the quadratic memory requirement but still requires large cache size. While variants like sparse transformers, low-rank based transformers can reduce cache size, but directly using them can result in high cache miss rates and degrades accuracy. </p>
+<p>An ideal cache should have:</p>
+<ol>
+<li>Small cache size. </li>
+<li>Low miss rate to maintain performance and long-content generation ability. </li>
+<li>Low cost eviction policy to reduce wall-clock time.</li>
+</ol>
+<p>However, there are three technical challenges. 1) Not clear whether KV cache can be restricted. 2) Identifying a optimal eviction policy is a combinatorial problem. 3) Even if optimal policy is found, it may be too expensive to implement.</p>
+<p>The authors found a few insights about the empirical properties of LLMs, which are used to design a efficient KV cache.</p>
 <ul>
-<li>Translation equivariance: the model's output should not change if the input is translated. A feature detected in one part of an image can also be detected elsewhere. This is built into how convolutions work.</li>
-<li>Locality: The model should focus on local features. Convolutions look at small local neighborhoods of pixels.</li>
+<li><strong>Sparsity</strong>: Attention is sparse at inference, so only 5% of KV is sufficient for decoding the same output token.</li>
+<li><strong>Heavy-hitters</strong>: A small number of tokens contribute to most of the attention scores, named heavy hitters(<span class="arithmatex">\(H_2\)</span>).</li>
+<li><strong>Greedy low-cost policy</strong>: Retaining the <span class="arithmatex">\(H_2\)</span> based on local statistics (sum of attention scores of preceding tokens) at each decode step is as effective as considering the attention of future tokens.</li>
 </ul>
+<h2 id="problem-setting">Problem Setting</h2>
+<p>Denote attention query matrix as <span class="arithmatex">\(Q \in \mathbb{R}^{n \times d}\)</span> and key matrix as <span class="arithmatex">\(K \in \mathbb{R}^{n \times d}\)</span>. $Q_{i, *} represents the i-th row of Q and <span class="arithmatex">\(K_{\le i, *}\)</span> represents the first i rows of K. Let <span class="arithmatex">\(k\)</span> denotes the budget of space and <span class="arithmatex">\(k &lt; n\)</span>. <span class="arithmatex">\(K_{S_i, *}\)</span> denotes a sub-matrix of <span class="arithmatex">\(K\)</span> which selects <span class="arithmatex">\(S_i\)</span> rows from <span class="arithmatex">\(K\)</span>. Eviction policy is defined as:</p>
+<ol>
+<li><span class="arithmatex">\(S_{i-1}\)</span> denotes source set and <span class="arithmatex">\(S_i\)</span> denotes target set. Eviction policy $g: S_{i-1} \rightarrow S_i $ is defined such that <span class="arithmatex">\(|S_i| = k\)</span> and <span class="arithmatex">\(|S_i - S_{i-1}| \le 1\)</span>.</li>
+<li>The information we have is a length-i vector <span class="arithmatex">\(o_i = D_i^{-1} .exp(Q_{i, *} (K_{S_i, *})^T)\)</span><ul>
+<li><span class="arithmatex">\(D_i = (exp(Q_{i, *} (K_{S_i, *})^T) - 1_{[i] - S_i}) . 1_i\)</span></li>
+<li>replacing <span class="arithmatex">\(S_i\)</span> by [i] leads to standard generative process.</li>
+</ul>
+</li>
+</ol>
+<p>Eviction policy updates <span class="arithmatex">\(S_i\)</span> based on <span class="arithmatex">\(S_{i-1}\)</span> and their corresponding information.</p>
+<h2 id="observations">Observations</h2>
+<p><strong>Sparsity for Small Cache Size</strong>: The normalized attention score matrix is plotted to visualise the layer-wise sparsity within attention blocks. It is observed that attention score matrices are highly sparse, with a sparsity over 95% in almost all layers. This suggests it possible to evict KV embeddings and reduce the memory footprint of KV cache.</p>
+<p><strong>Heavy-Hitters for Low Miss Rate</strong>: However designing the best eviction policy is a combinatorial problem and the standard cache design is not applicable to KV cache. Because of the sequential dependency of LLM generation, evicting important tokens can lead to high miss rate and degrade performance. Authors found that the accumulated attention scores of all tokens within attention blocks follow a power-law distribution, suggesting the existence of a small set of critical tokens.  </p>
+<h2 id="methodology">Methodology</h2>
+<h3 id="greedy-algorithm-for-low-cost-policy">Greedy Algorithm for Low-cost Policy</h3>
+<h2 id="experiments-results">Experiments &amp; Results</h2>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -1685,12 +1772,12 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
-        <script src="../javascripts/katex.js"></script>
+        <script src="../../../javascripts/katex.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

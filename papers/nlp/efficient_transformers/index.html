@@ -11,14 +11,14 @@
         <link rel="canonical" href="https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/efficient_transformers/">
       
       
-        <link rel="prev" href="../transformer/">
+        <link rel="prev" href="../llama/">
       
       
-        <link rel="next" href="../GPT/">
+        <link rel="next" href="../snap_kv/">
       
       
       <link rel="icon" href="../../../images/icon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -71,7 +71,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -128,20 +128,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
   
@@ -158,7 +158,7 @@
         <a href="https://github.com/saikrishnaponnam/Machine-Learning.git" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -203,7 +203,7 @@
       <a href="https://github.com/saikrishnaponnam/Machine-Learning.git" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -371,28 +371,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nlp/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    NLP Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../Initializers/" class="md-nav__link">
         
   
@@ -429,7 +407,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -446,14 +424,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Optimizers
           </label>
@@ -671,7 +649,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -688,14 +666,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Tokenization
           </label>
@@ -829,28 +807,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../rl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Reinforcement Learning
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
     
     
       
@@ -870,7 +826,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -887,14 +843,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_14" id="__nav_14_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_14">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             Models
           </label>
@@ -1024,7 +980,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -1041,14 +997,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_15" id="__nav_15_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_15">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             Papers
           </label>
@@ -1075,7 +1031,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1092,14 +1048,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_15_1" id="__nav_15_1_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_13_1" id="__nav_13_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_15_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_1">
             <span class="md-nav__icon md-icon"></span>
             Vision
           </label>
@@ -1170,8 +1126,6 @@
       
         
       
-        
-      
     
     
     
@@ -1180,7 +1134,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_2" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -1197,14 +1151,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_15_2" id="__nav_15_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_13_2" id="__nav_13_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_15_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_2">
             <span class="md-nav__icon md-icon"></span>
             Fine Tuning
           </label>
@@ -1223,29 +1177,6 @@
   
   <span class="md-ellipsis">
     LoRA
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../fine-tuning/rlhf/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    RLHF [WIP]
     
   </span>
   
@@ -1295,6 +1226,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1303,7 +1240,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -1320,14 +1257,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_15_3" id="__nav_15_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_13_3" id="__nav_13_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_15_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_15_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13_3">
             <span class="md-nav__icon md-icon"></span>
             NLP
           </label>
@@ -1429,102 +1366,10 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Efficient Transformers
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Efficient Transformers
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#background" class="md-nav__link">
-    <span class="md-ellipsis">
-      Background
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#taxonomy-of-efficient-transformers" class="md-nav__link">
-    <span class="md-ellipsis">
-      Taxonomy of Efficient Transformers
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
-      <a href="../GPT/" class="md-nav__link">
+      <a href="../gpt/" class="md-nav__link">
         
   
   
@@ -1632,6 +1477,350 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Efficient Transformers
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Efficient Transformers
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transformer-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer Modes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taxonomy-of-efficient-transformers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taxonomy of Efficient Transformers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-models-and-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Models and Approaches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Models and Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-compressed-transformer-liu-et-al-2018" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Compressed Transformer (Liu et al., 2018)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-transformer-parmar-et-al-2018" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Transformer (Parmar et al., 2018)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-transformer-lee-et-al-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Transformer (Lee et al., 2019)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sparse-transformer-child-et-al-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sparse Transformer (Child et al., 2019)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longformer-beltagy-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Longformer (Beltagy et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-transformer-construction-etc-ainslie-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extended Transformer Construction (ETC) (Ainslie et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bigbird-zaheer-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      BigBird (Zaheer et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-transformer-roy-et-al-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing Transformer (Roy et al., 2021)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reformer-kitaev-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reformer (Kitaev et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinkhorn-transformer-tay-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sinkhorn Transformer (Tay et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linformer-wang-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linformer (Wang et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performer-choromanski-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performer (Choromanski et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-transformer-katharopoulos-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Transformer (Katharopoulos et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer-xl-dai-et-al-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer-XL (Dai et al., 2019)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axial-transformer-ho-et-al-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      Axial Transformer (Ho et al., 2019)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orthogonal-efforts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orthogonal Efforts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snap_kv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SnapKV[WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../r-kv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    R-KV Cache[WIP]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../structured_state_space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    S4-Structured State Spaces
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1689,12 +1878,195 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Background">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#transformer-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer Modes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#taxonomy-of-efficient-transformers" class="md-nav__link">
     <span class="md-ellipsis">
       Taxonomy of Efficient Transformers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-models-and-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Models and Approaches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Models and Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-compressed-transformer-liu-et-al-2018" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Compressed Transformer (Liu et al., 2018)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-transformer-parmar-et-al-2018" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Transformer (Parmar et al., 2018)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-transformer-lee-et-al-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Transformer (Lee et al., 2019)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sparse-transformer-child-et-al-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sparse Transformer (Child et al., 2019)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#longformer-beltagy-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Longformer (Beltagy et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-transformer-construction-etc-ainslie-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extended Transformer Construction (ETC) (Ainslie et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bigbird-zaheer-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      BigBird (Zaheer et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-transformer-roy-et-al-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing Transformer (Roy et al., 2021)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reformer-kitaev-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reformer (Kitaev et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinkhorn-transformer-tay-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sinkhorn Transformer (Tay et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linformer-wang-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linformer (Wang et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performer-choromanski-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performer (Choromanski et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-transformer-katharopoulos-et-al-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Transformer (Katharopoulos et al., 2020)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transformer-xl-dai-et-al-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer-XL (Dai et al., 2019)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axial-transformer-ho-et-al-2019" class="md-nav__link">
+    <span class="md-ellipsis">
+      Axial Transformer (Ho et al., 2019)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orthogonal-efforts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Orthogonal Efforts
     </span>
   </a>
   
@@ -1722,8 +2094,238 @@
 <h1 id="efficient-transformers-a-survey">Efficient Transformers: A Survey</h1>
 <p><a href="https://arxiv.org/abs/2009.06732">Paper Link</a></p>
 <h2 id="introduction">Introduction</h2>
+<p>Transformers have transformed natural language processing and many other fields by enabling powerful sequence modeling through attention mechanisms. However, their self-attention operation has quadratic complexity with respect to input sequence length, leading to significant computational and memory challenges—especially for long sequences. As applications grow in scale, the demand for more efficient transformer architectures increases. This survey reviews recent advances in model design and architecture that improve transformer efficiency. It also introduces a taxonomy to categorize these approaches by their core techniques and primary use cases.</p>
 <h2 id="background">Background</h2>
+<p>The standard transformer architecture, introduced by Vaswani et al. (2017), uses self-attention to capture dependencies between all tokens in a sequence. While effective, self-attention scales quadratically (O(N^2)) with sequence length N, making it impractical for long documents, high-resolution images, or real-time applications. Additionally, the two-layer feed-forward network (FFN) in each block, while linear in sequence length, still contributes significantly to overall computation.</p>
+<h3 id="transformer-modes">Transformer Modes</h3>
+<p>Transformers can operate in three main modes:</p>
+<ul>
+<li><strong>Encoder-Only</strong>: For tasks like text classification and named entity recognition (e.g., BERT).</li>
+<li><strong>Decoder-Only</strong>: For autoregressive tasks such as language modeling and text generation (e.g., GPT).</li>
+<li><strong>Encoder-Decoder</strong>: For sequence-to-sequence tasks like machine translation.</li>
+</ul>
+<p>The choice of mode depends on the application and task requirements. Encoders use only self-attention, while decoders use both self-attention and cross-attention. In decoders, self-attention must be causal (attending only to previous tokens), whereas in encoders it can be non-causal. This difference influences the design of efficient self-attention mechanisms and presents unique challenges.</p>
 <h2 id="taxonomy-of-efficient-transformers">Taxonomy of Efficient Transformers</h2>
+<p>Efficient Transformers use a variety of strategies to reduce the computational and memory demands of self-attention. These strategies can be grouped into the following categories:</p>
+<ol>
+<li><strong>Fixed Attention Patterns</strong>: Restrict each token’s attention to a predefined subset of tokens, rather than the entire sequence.</li>
+<li><em>Blockwise</em>: Divide the sequence into blocks; tokens attend only within their block.</li>
+<li><em>Strided</em>: Tokens attend to others at fixed intervals.</li>
+<li>
+<p><em>Compressed</em>: Reduce sequence length before attention (e.g., pooling or strided convolution).</p>
+</li>
+<li>
+<p><strong>Combined Patterns</strong>: Integrate multiple attention patterns to enhance coverage and flexibility.</p>
+</li>
+<li>
+<p><strong>Learned Attention Patterns</strong>: The model learns which tokens to attend to during training, often by assigning tokens to clusters or buckets based on relevance.</p>
+</li>
+<li>
+<p><strong>Neural Memory Modules</strong>: Introduce learnable memory components that aggregate information from the entire sequence, acting as global tokens or memory slots.</p>
+</li>
+<li>
+<p><strong>Low-Rank Approximations</strong>: Use low-rank factorization to approximate the attention matrix, reducing computational cost.</p>
+</li>
+<li>
+<p><strong>Kernel-Based Methods</strong>: Reformulate attention as kernel operations, avoiding explicit computation of the full attention matrix.</p>
+</li>
+<li>
+<p><strong>Recurrent Memory Connections</strong>: Extend blockwise attention by connecting blocks in a recurrent manner, allowing information flow across blocks.</p>
+</li>
+<li>
+<p><strong>Downsampling Techniques</strong>: Shorten the input sequence using pooling or striding before applying attention.</p>
+</li>
+<li>
+<p><strong>Sparse Models</strong>: Activate only a subset of model parameters for each input, often using adaptive or learned sparsity mechanisms (e.g., Mixture-of-Experts).</p>
+</li>
+</ol>
+<p>These categories provide a framework for understanding the diverse approaches to making Transformers more efficient, and help guide the selection of models for specific tasks and constraints.</p>
+<h2 id="key-models-and-approaches">Key Models and Approaches</h2>
+<p>This section highlights notable efficient transformer models, summarizing their core ideas, techniques, and how they fit into the taxonomy above.</p>
+<h3 id="memory-compressed-transformer-liu-et-al-2018">Memory Compressed Transformer (<a href="https://arxiv.org/abs/1801.10198">Liu et al., 2018</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Combines local blockwise attention with sequence compression to reduce complexity.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Local attention within blocks (Fixed Attention Pattern)</li>
+<li>Strided convolution to compress keys/values (Compressed/Downsampling)</li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> <span class="arithmatex">\(O(Nb)\)</span> for local attention, <span class="arithmatex">\(O(N \cdot N/k)\)</span> for compressed attention</li>
+</ul>
+<h3 id="image-transformer-parmar-et-al-2018">Image Transformer (<a href="https://arxiv.org/abs/1802.05751">Parmar et al., 2018</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Restricts attention to local neighborhoods for image data. Input is partitioned into query blocks and each query block attends to a memory block that contains the query block and its surrounding pixels.</li>
+<li><strong>Techniques:</strong> <ul>
+<li>1D local attention: The image is flattened into a 1D sequence in raster order and divided into non-overlapping query blocks of length <span class="arithmatex">\(l_q\)</span>. Each query block attends to a memory block that contains the query block and a fixed number of pixels, <span class="arithmatex">\(l_m\)</span>, generated before query pixel.</li>
+<li>2D local attention: The image is divided into non-overlapping query blocks of size <span class="arithmatex">\(l_q = w_q x h_q\)</span>. Each query block attends to a memory block that contains the query block and a fixed number of pixels, <span class="arithmatex">\(h_m\)</span> and <span class="arithmatex">\(w_m\)</span>, generated before the query block.</li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> <span class="arithmatex">\(O(Nm)\)</span>, where <span class="arithmatex">\(m\)</span> is the memory block size</li>
+</ul>
+<h3 id="set-transformer-lee-et-al-2019">Set Transformer (<a href="https://arxiv.org/abs/1810.00825">Lee et al., 2019</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Uses attention and pooling for permutation-invariant set processing.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Induced set attention blocks (Neural Memory Modules)</li>
+</ul>
+</li>
+</ul>
+<h3 id="sparse-transformer-child-et-al-2019">Sparse Transformer (<a href="https://arxiv.org/abs/1904.10509">Child et al., 2019</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Applies fixed sparse patterns to reduce attention computation. The idea is to reduce the dense attention matrix to sparse version by only computing attention on a sparse number q,k pairs.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Combines two types of attention patterns - Strided and local attention heads. Half of the heads are dedicated to strided attention and the other half to local attention. </li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> <span class="arithmatex">\(O(N\sqrt{N})\)</span></li>
+<li><strong>Limitation</strong>: Requires custom GPU kernel implementation for efficient block-sparse variant matrix multiplication.</li>
+</ul>
+<h3 id="longformer-beltagy-et-al-2020">Longformer (<a href="https://arxiv.org/abs/2004.05150">Beltagy et al., 2020</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Combines dilated sliding window and global attention tokens for long documents.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Dilated sliding window (Fixed Pattern)</li>
+<li>Global attention tokens (Neural Memory) - like [CLS] for classification, or question tokens in QA</li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> <span class="arithmatex">\(O(Nw)\)</span>, <span class="arithmatex">\(w\)</span> = window size</li>
+</ul>
+<h3 id="extended-transformer-construction-etc-ainslie-et-al-2020">Extended Transformer Construction (ETC) (<a href="https://arxiv.org/abs/2004.08483">Ainslie et al., 2020</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Introduces global-local attention with auxiliary global tokens. The global tokens serve as memory hubs that summarize and redistribute information.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Global and local attention split (Combined Patterns, Neural Memory)</li>
+<li>The global tokens can attend to all tokens in the sequence, while local tokens can only attend to a fixed window of surrounding tokens. </li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> <span class="arithmatex">\(O(n_g^2 + n_g N)\)</span></li>
+<li><strong>Limitation:</strong> Not suitable for autoregressive decoding</li>
+</ul>
+<h3 id="bigbird-zaheer-et-al-2020">BigBird (<a href="https://arxiv.org/abs/2007.14062">Zaheer et al., 2020</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Extends ETC with global, sliding window, and random attention.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Global attention: A subset of indices is selected as global tokens. </li>
+<li>Sliding window attention: Each query attends to <span class="arithmatex">\(w/2\)</span> tokens on left and right. </li>
+<li>Random attention: Each query attends to <span class="arithmatex">\(r\)</span> random tokens in the sequence.</li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> <span class="arithmatex">\(O(N)\)</span></li>
+<li><strong>Limitation:</strong> Not suitable for autoregressive decoding</li>
+</ul>
+<h3 id="routing-transformer-roy-et-al-2021">Routing Transformer (<a href="https://arxiv.org/abs/2003.05997">Roy et al., 2021</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Learns sparse attention via online clustering of queries and keys.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Content-based clustering (Learned Patterns): Q &amp; K are projected into a routing matrix R, using a d x d orthonormal projection matrix. <span class="arithmatex">\(R = QW_R, KW_R\)</span>. The routing matrix is then clustered using K-means</li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> <span class="arithmatex">\(O(N^{1.5})\)</span></li>
+</ul>
+<h3 id="reformer-kitaev-et-al-2020">Reformer (<a href="https://arxiv.org/abs/2001.04451">Kitaev et al., 2020</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Uses locality-sensitive hashing (LSH) to sparsify attention.</li>
+<li><strong>Techniques:</strong><ul>
+<li>LSH bucketing (Learned/Fixed Patterns): The queries and keys are hashed into buckets using a random projection matrix <span class="arithmatex">\(R \in R^{k x b/2}\)</span>. The hash function is defined as <span class="arithmatex">\(hash(x) = argmax([xR; -xR])\)</span>, where x is the query or key vector. Attention is then computed only within each bucket. </li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> <span class="arithmatex">\(O(N \log N)\)</span></li>
+</ul>
+<h3 id="sinkhorn-transformer-tay-et-al-2020">Sinkhorn Transformer (<a href="https://arxiv.org/abs/2002.11296">Tay et al., 2020</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Learns block-sparse patterns by sorting input tokens.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Learned soft permutation (Learned Patterns)</li>
+<li>Blockwise local attention</li>
+</ul>
+</li>
+</ul>
+<h3 id="linformer-wang-et-al-2020">Linformer (<a href="https://arxiv.org/abs/2006.04768">Wang et al., 2020</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Projects keys/values to lower dimension for low-rank approximation.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Low-rank projection (Low-Rank Approximations)</li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> Linear in sequence length</li>
+</ul>
+<h3 id="performer-choromanski-et-al-2020">Performer (<a href="https://arxiv.org/abs/2009.14794">Choromanski et al., 2020</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Approximates attention with kernel methods and random features.</li>
+<li><strong>Techniques:</strong><ul>
+<li>FAVOR+ kernel approximation (Kernel-Based Methods)</li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> Linear in sequence length</li>
+<li><strong>Limitation:</strong> Causal masking is less efficient</li>
+</ul>
+<h3 id="linear-transformer-katharopoulos-et-al-2020">Linear Transformer (<a href="https://arxiv.org/abs/2006.16236">Katharopoulos et al., 2020</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Uses kernel-based attention and associative property for linear complexity.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Kernel-based attention (Kernel-Based Methods)</li>
+<li>RNN-style recurrence for causal masking</li>
+</ul>
+</li>
+<li><strong>Complexity:</strong> Linear in sequence length</li>
+</ul>
+<h3 id="transformer-xl-dai-et-al-2019">Transformer-XL (<a href="https://arxiv.org/abs/1901.02860">Dai et al., 2019</a>)</h3>
+<ul>
+<li><strong>Main idea:</strong> Connects blocks with recurrence to capture long-term dependencies.</li>
+<li><strong>Techniques:</strong><ul>
+<li>Recurrent memory connections (Recurrent Memory)</li>
+</ul>
+</li>
+</ul>
+<h3 id="axial-transformer-ho-et-al-2019">Axial Transformer (<a href="https://arxiv.org/abs/1912.12180">Ho et al., 2019</a>)</h3>
+<h2 id="discussion">Discussion</h2>
+<p>While efficient transformer models have made significant progress in reducing computational and memory costs, several challenges and open questions remain:</p>
+<ul>
+<li><strong>Benchmarking and Comparability:</strong></li>
+<li>Many papers use different datasets, tasks, and evaluation metrics, making direct comparison difficult.</li>
+<li>Hyperparameter choices, training regimes, and implementation details can significantly affect results.</li>
+<li>
+<p>There is a need for standardized benchmarks and fair evaluation protocols to assess efficiency and performance trade-offs.</p>
+</li>
+<li>
+<p><strong>Task and Mode Specialization:</strong></p>
+</li>
+<li>Some models are designed primarily for encoder-only tasks (e.g., classification), while others target autoregressive generation or sequence-to-sequence tasks.</li>
+<li>
+<p>Not all efficient attention mechanisms support causal masking, limiting their applicability for generative models.</p>
+</li>
+<li>
+<p><strong>Trade-offs:</strong></p>
+</li>
+<li>Reducing attention complexity often comes at the cost of reduced expressiveness or global context.</li>
+<li>Some methods introduce additional architectural complexity or require custom hardware/software support.</li>
+<li>
+<p>There is often a balance between efficiency, accuracy, and model flexibility.</p>
+</li>
+<li>
+<p><strong>Scalability and Real-World Use:</strong></p>
+</li>
+<li>While many models show promising results on synthetic or academic benchmarks, real-world deployment may reveal new bottlenecks.</li>
+<li>
+<p>Memory usage, inference speed, and ease of integration into existing pipelines are important practical considerations.</p>
+</li>
+<li>
+<p><strong>Future Directions:</strong></p>
+</li>
+<li>Continued development of hybrid models that combine multiple efficiency techniques.</li>
+<li>Exploration of adaptive and data-dependent attention mechanisms.</li>
+<li>Better understanding of the theoretical limits of efficient attention and their impact on downstream tasks.</li>
+</ul>
+<h2 id="orthogonal-efforts">Orthogonal Efforts</h2>
+<p>In addition to architectural innovations in attention mechanisms, several orthogonal strategies can further improve the efficiency and practicality of transformer models:</p>
+<ul>
+<li><strong>Weight Sharing:</strong> Reusing parameters across layers to reduce model size and memory footprint.</li>
+<li><strong>Quantization:</strong> Lowering the precision of weights and activations (e.g., from float32 to int8) to speed up computation and reduce memory usage.</li>
+<li><strong>Inference Optimization:</strong> Techniques such as pruning, distillation, and specialized hardware acceleration to make inference faster and more resource-efficient.</li>
+<li><strong>Knowledge Distillation:</strong> Training smaller models (students) to mimic larger models (teachers), achieving similar performance with fewer resources.</li>
+<li><strong>Task Adapters:</strong> Adding lightweight, task-specific modules to a shared backbone, enabling efficient multi-task learning and transfer.</li>
+<li><strong>Alternative Architectures:</strong> Exploring non-transformer models or hybrid approaches that may offer better efficiency for certain tasks or hardware.</li>
+</ul>
 
 
 
@@ -1781,10 +2383,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.path", "navigation.indexes", "navigation.top"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
         <script src="../../../javascripts/katex.js"></script>
       

@@ -2,202 +2,202 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/Initializers/</loc>
-         <lastmod>2025-08-28</lastmod>
-    </url>
-    <url>
-         <loc>https://saikrishnaponnam.github.io/Machine-Learning/attention/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/batch_norm/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/convolution/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
-         <loc>https://saikrishnaponnam.github.io/Machine-Learning/embeddings/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <loc>https://saikrishnaponnam.github.io/Machine-Learning/jax/</loc>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/lstm/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/max_pool/</loc>
-         <lastmod>2025-08-28</lastmod>
-    </url>
-    <url>
-         <loc>https://saikrishnaponnam.github.io/Machine-Learning/nlp/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/regularization/</loc>
-         <lastmod>2025-08-28</lastmod>
-    </url>
-    <url>
-         <loc>https://saikrishnaponnam.github.io/Machine-Learning/rl/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/rnn/</loc>
-         <lastmod>2025-08-28</lastmod>
-    </url>
-    <url>
-         <loc>https://saikrishnaponnam.github.io/Machine-Learning/self_attention/</loc>
-         <lastmod>2025-08-28</lastmod>
-    </url>
-    <url>
-         <loc>https://saikrishnaponnam.github.io/Machine-Learning/some_terms/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/math/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/math/calculus/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/math/linear-algebra/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/math/probability/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/models/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/models/faster_rcnn/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/models/fcos/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/models/rcnn/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/models/vgg/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/optimizers/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/optimizers/adam/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/optimizers/sgd/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/cv/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/cv/resnet/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/cv/vit/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/fine-tuning/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/fine-tuning/lora/</loc>
-         <lastmod>2025-08-28</lastmod>
-    </url>
-    <url>
-         <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/fine-tuning/rlhf/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/</loc>
-         <lastmod>2025-08-28</lastmod>
-    </url>
-    <url>
-         <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/GPT/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/additive_attention/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/bert/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/dot_product_attention/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/efficient_transformers/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
+    </url>
+    <url>
+         <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/gpt/</loc>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/gpt2/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
+    </url>
+    <url>
+         <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/h20/</loc>
+         <lastmod>2025-09-12</lastmod>
+    </url>
+    <url>
+         <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/kv_cache_survey/</loc>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/llama/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
+    </url>
+    <url>
+         <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/r-kv/</loc>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/seq2seq/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
+    </url>
+    <url>
+         <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/snap_kv/</loc>
+         <lastmod>2025-09-12</lastmod>
+    </url>
+    <url>
+         <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/streaming_llm/</loc>
+         <lastmod>2025-09-12</lastmod>
+    </url>
+    <url>
+         <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/structured_state_space/</loc>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/t5/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/papers/nlp/transformer/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/tokenization/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/tokenization/bpe/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/tokenization/hf_tokenizer/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/tokenization/neural_tokenizer/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/tokenization/unigram/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
     <url>
          <loc>https://saikrishnaponnam.github.io/Machine-Learning/tokenization/wordpiece/</loc>
-         <lastmod>2025-08-28</lastmod>
+         <lastmod>2025-09-12</lastmod>
     </url>
 </urlset>
