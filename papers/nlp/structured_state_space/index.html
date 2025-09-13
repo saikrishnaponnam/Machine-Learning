@@ -1720,6 +1720,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ablation-studies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ablation Studies
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1890,6 +1899,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ablation-studies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ablation Studies
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1917,15 +1935,79 @@
 <p>This paper introduces the Structured State Space(S4) sequence model base on SSM that solves the critical bottleneck. S4 reparameterize the structured state matrix A by decomposing them as the sum of low-rank and normal term. </p>
 <h2 id="background">Background</h2>
 <h3 id="state-space-models">State Space Models</h3>
+<p>The state space model is defined by the following equations:</p>
+<div class="arithmatex">\[
+\begin{equation}
+\begin{aligned}
+    \frac{dx}{dt} &amp;= x'(t) = Ax(t) + Bu(t) \\
+    y(t) &amp;= Cx(t) + Du(t)
+\end{aligned}
+\end{equation}
+\]</div>
+<p>Where <span class="arithmatex">\(u(t) \in R^d\)</span> is the input signal, <span class="arithmatex">\(x(t) \in R^N\)</span> is the hidden state, and <span class="arithmatex">\(y(t) \in R^d\)</span> is the output signal. The matrices A, B, C, D are learnable parameters of appropriate dimensions.</p>
+<p>The goal is to use SSM as a black-box representation in a deep sequence model.</p>
 <h3 id="addressing-long-range-dependencies-with-hippo">Addressing Long-Range Dependencies with HiPPO</h3>
+<p>The basic SSM (1) performs poorly in practice. Intutively this is because the linear first-order ODEs solve to an exponential function and cause vanishing/exploding gradients problem. To address this, LSSL uses HiPPO which specifies a class of certain matrices <span class="arithmatex">\(A \in \mathbb{R}^{N \times N}\)</span> that allows <span class="arithmatex">\(x(t)\)</span> to memorize the history of <span class="arithmatex">\(u(t)\)</span>. </p>
+<div class="arithmatex">\[ \begin{equation}
+A_{nk} = \begin{cases}
+    (2n + 1)^{1/2} (2k + 1)^{1/2} &amp; \text{if } n &gt; k \\
+    n + 1 &amp; \text{if } n = k \\
+    0 &amp; \text{if } n &lt; k \\
+\end{cases}
+\end{equation}\]</div>
 <h3 id="discrete-time-ssm">Discrete-time SSM</h3>
+<p>To use SSMs on a discrete input sequence <span class="arithmatex">\((u_0, u_1, \cdots)\)</span>, we need to convert the continuous-time SSM (1) to a discrete-time SSM. Conceptually, the inputs <span class="arithmatex">\(u_k\)</span> can be viewed as samples of a continuous signal <span class="arithmatex">\(u(t)\)</span> at integer times <span class="arithmatex">\(t = k\Delta\)</span>. A bilinear discretization method is used which converts the state matrix <span class="arithmatex">\(A\)</span> into an approximate <span class="arithmatex">\(\bar{A}\)</span> as follows:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+    x_{k} &amp;= \bar{A} x_{k-1} + \bar{B} u_k \\
+    y_k &amp;= \bar{C} x_k \\
+    \bar{A} &amp;= (I - \frac{\Delta}{2} A)^{-1} (I + \frac{\Delta}{2} A) \\
+    \bar{B} &amp;= (I - \frac{\Delta}{2} A)^{-1} \Delta B \\
+    \bar{C} &amp;= C \\
+\end{aligned}
+\end{equation}\]</div>
+<p>The state equation is now a reccurence in <span class="arithmatex">\(x_k\)</span>, allowing discrete SSM to be computed like an RNN.</p>
 <h3 id="training-ssms">Training SSMs</h3>
+<p>The recurrent SSM (3) is slow to trian because of its sequential nature. To address this, the SSM is reformulated as a convolution operation. When (3) is unrolled, we have:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+    y_k &amp;= \bar{C} \bar{A}^k \bar{B} u_0 + \bar{C} \bar{A}^{k-1} \bar{B} u_1 + \cdots + \bar{C} \bar{B} u_{k-1} + \bar{CB} u_k \\
+    y &amp;= \bar{K} * u \\
+\end{aligned}
+\end{equation}\]</div>
+<div class="arithmatex">\[\begin{equation}
+\bar{K} \in \mathbb{R}^L := \mathcal{K}_L(\bar{A}, \bar{B}, \bar{C}) := (\bar{C}\bar{A}^i\bar{B})_{i\in[L]} = (\bar{C} \bar{B}, \bar{C} \bar{A} \bar{B}, \cdots, \bar{C}\bar{A}^{L-1} \bar{B}) \\
+\end{equation}\]</div>
+<p>Where <span class="arithmatex">\(*\)</span> is the convolution operator. The convolution kernel <span class="arithmatex">\(\bar{K}\)</span> can be computed in <span class="arithmatex">\(O(N^2L)\)</span> time and <span class="arithmatex">\(O(NL)\)</span> space. The convolution operation can be computed in <span class="arithmatex">\(O(L \log L)\)</span> time using FFT.</p>
+<p>However, computing <span class="arithmatex">\(\bar{K}\)</span> is still expensive for large <span class="arithmatex">\(N\)</span>. The next section introduces the S4 model which addresses this bottleneck.</p>
 <h2 id="methodology">Methodology</h2>
 <h3 id="motivation-diagonalization">Motivation: Diagonalization</h3>
+<p>The main computational bottleneck in training SSMs is computing the convolution kernel <span class="arithmatex">\(\bar{K}\)</span> which requires <span class="arithmatex">\(O(N^2L)\)</span> time and <span class="arithmatex">\(O(NL)\)</span> space. The key idea to address this is to choose a special structure for the state matrix <span class="arithmatex">\(A\)</span> that allows <span class="arithmatex">\(\bar{K}\)</span> to be computed more efficiently.</p>
+<p><strong>Lemma 3.1</strong> Conjugation is an equivalence relation on SSMs. Specifically, if <span class="arithmatex">\(V\)</span> is an invertible matrix, then the SSM <span class="arithmatex">\((A, B, C)\)</span> is equivalent to <span class="arithmatex">\((V^{-1}AV, V^{-1}B, CV)\)</span>.</p>
+<p>If <span class="arithmatex">\(A\)</span> were diagonal, then the resulting computation of <span class="arithmatex">\(\bar{K}\)</span> would be much cheaper. But unfortunately, naive diagonalization of the HiPPO matrix <span class="arithmatex">\(A\)</span> is numerically unstable. An entry in <span class="arithmatex">\(V\)</span> has magnitude <span class="arithmatex">\(2^{4N/3}\)</span>.</p>
 <h3 id="s4-parametrization">S4 Parametrization</h3>
+<p>To address the numerical instability of diagonalizing <span class="arithmatex">\(A\)</span>, we should only conjugate <span class="arithmatex">\(A\)</span> by a matrix <span class="arithmatex">\(V\)</span> that is well-conditioned. The ideal choice is a unitary matrix. By Spectral Theorem, any normal matrix <span class="arithmatex">\(A\)</span> can be diagonalized by a unitary matrix. But the HiPPO matrix <span class="arithmatex">\(A\)</span> is not normal. To address this, S4 decomposes <span class="arithmatex">\(A\)</span> as the sum of a normal matrix and a low-rank matrix. But this form is still slow and not easily optimized. So S4 applies three new techniques:</p>
+<ul>
+<li><strong>Generating functions:</strong> Instead of computing <span class="arithmatex">\(\bar{K}\)</span> directly, S4 computes its generating function <span class="arithmatex">\(\sum_{j=0}^{L-1} \bar{K}_j \zeta^j\)</span>. Evaluating this function at the roots of unity (Fourier points) gives the whole kernel. Then apply a inverse FFt to recover <span class="arithmatex">\(K\)</span>. This allows the use of fast polynomial arithmetic to compute <span class="arithmatex">\(\bar{K}\)</span> in <span class="arithmatex">\(O(N \log^2 L)\)</span> time.</li>
+<li><strong>Woodbury Identity:</strong> The generating function involves <span class="arithmatex">\((I - \bar{A} \zeta )^{-1}\)</span>. </li>
+<li><strong>Cauchy Kernel:</strong> After applying the Woodbury identity, the inverse involves computation of terms like <span class="arithmatex">\(\frac{1}{w_j - \zeta_k}\)</span> . This is a Cauchy kernel and can be computed in <span class="arithmatex">\(O(N \log N)\)</span> time using fast multipole methods.</li>
+</ul>
+<p><strong>Theorem 1</strong>: All HiPPO matrics have a NPLR respresentation</p>
+<div class="arithmatex">\[ \begin{equation} A = V \Lambda V^* - PQ^T = V (\Lambda - (V^*P)(V^*Q)^*)V^* \end{equation} \]</div>
+<p>for unitary <span class="arithmatex">\(V \in \mathbb{C}^{N \times N}\)</span> , diagonal <span class="arithmatex">\(\Lambda\)</span> and low-rank factorization <span class="arithmatex">\(P, Q \in \mathbb{R}^{N \times r}\)</span>. These matrices all satisfy r=1 or r=2.</p>
 <h3 id="s4-algorithms">S4 Algorithms</h3>
+<p><img alt="S4 algo.png" src="../images/S4%20algo.png" /></p>
+<p>By equation (6), the NPLR matrices can be conjugated into diagonal plus low-rank (DLPR) form. Computing the SSM convolution kernel <span class="arithmatex">\(\bar{K}\)</span> requires only <span class="arithmatex">\(\tilde{O}(N + L)\)</span> operations and <span class="arithmatex">\(O(N + L)\)</span> memory.</p>
 <h3 id="architecture">Architecture</h3>
+<p>An S4 layer is parameterized by <span class="arithmatex">\((\Lambda, P, Q, B, C)\)</span>. First initialize an SSM with <span class="arithmatex">\(A\)</span> set to HiPPO matrix, this SSM is unitarily equivalent to some <span class="arithmatex">\((\Lambda - PQ^*, B, C)\)</span> for some diagonal <span class="arithmatex">\(\Lambda\)</span> and vectors <span class="arithmatex">\(P, Q, B, C \in \mathbb{C}^{N \times 1}\)</span>. </p>
+<p>The overall DNN architecture of S4 is similar to prior works. S4 defines a map from <span class="arithmatex">\(\mathbb{R}^{L}\)</span> to <span class="arithmatex">\(\mathbb{R}^{L}\)</span> i.e. a 1-D sequence map. Typically, DNNs operate on a feature maps of size H instead of 1. To handle this, S4 uses H independent copies of itself, and then mixing with a position-wise linear layer for a total of <span class="arithmatex">\(O(H^2) + O(HN)\)</span> parameters.</p>
 <h2 id="experiments-results">Experiments &amp; Results</h2>
+<p><strong>Efficiency</strong>: S4 is ~30 times faster than LSSL and uses ~390 times less memory for <span class="arithmatex">\(d=512\)</span>. S4 is also as efficient as Performer and Linear Transformer.</p>
+<p><strong>LRD</strong>: S4 outperforms on all 6 tasks in LRA benchmark, with an average score of 80.48% compared to the previous SoTA of 60%.</p>
+<h2 id="ablation-studies">Ablation Studies</h2>
+<p>Tries to evaluate is S4 good because of HiPPO initialization or the NPLR structure.</p>
+<p><strong>Unconstrained SSMs</strong>: Randomly initialized (Gaussian) <span class="arithmatex">\(A\)</span> and HiPPO are compared. Although both are able to reach perfect training accuracy, HiPPO generalizes much better.</p>
+<p><strong>NLPR SSMs</strong>: Even with NLPR structure, random <span class="arithmatex">\(A\)</span> still generalizes poorly. This shows that HiPPO is critical for good performance.</p>
 
 
 
