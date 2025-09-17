@@ -14,6 +14,8 @@
         <link rel="prev" href="../r-kv/">
       
       
+        <link rel="next" href="../mamba/">
+      
       
       <link rel="icon" href="../../../images/icon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
@@ -1021,6 +1023,8 @@
       
         
       
+        
+      
     
     
     
@@ -1095,6 +1099,29 @@
   
   <span class="md-ellipsis">
     ViT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cv/how_vit_works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How Vision Transformers Work
     
   </span>
   
@@ -1203,6 +1230,8 @@
   
     
     
+      
+        
       
         
       
@@ -1729,10 +1758,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#limitations-and-future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations and Future Directions
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mamba/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mamba
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1908,6 +1969,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#limitations-and-future-directions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations and Future Directions
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2008,6 +2078,12 @@ A_{nk} = \begin{cases}
 <p>Tries to evaluate is S4 good because of HiPPO initialization or the NPLR structure.</p>
 <p><strong>Unconstrained SSMs</strong>: Randomly initialized (Gaussian) <span class="arithmatex">\(A\)</span> and HiPPO are compared. Although both are able to reach perfect training accuracy, HiPPO generalizes much better.</p>
 <p><strong>NLPR SSMs</strong>: Even with NLPR structure, random <span class="arithmatex">\(A\)</span> still generalizes poorly. This shows that HiPPO is critical for good performance.</p>
+<h2 id="limitations-and-future-directions">Limitations and Future Directions</h2>
+<ul>
+<li>S4 is not a drop-in replacement for Transformers in NLP tasks. There is still a gap between S4 and Transformers on language modeling tasks.</li>
+<li>Exploring combinations of S4 with other sequence models to complement each other's strengths.</li>
+<li>Applying S4 to other domains like vision, reinforcement learning, etc.</li>
+</ul>
 
 
 
